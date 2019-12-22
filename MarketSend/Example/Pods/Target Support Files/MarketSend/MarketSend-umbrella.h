@@ -10,7 +10,8 @@
 #endif
 #endif
 
-#import "MSAPI.h"
+#import "MSConfig.h"
+#import "MSDataCollector.h"
 
 FOUNDATION_EXPORT double MarketSendVersionNumber;
 FOUNDATION_EXPORT const unsigned char MarketSendVersionString[];

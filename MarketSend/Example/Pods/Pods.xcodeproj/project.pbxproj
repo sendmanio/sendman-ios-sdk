@@ -7,15 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		208162E609CE1957B21395194CDF4EEB /* MarketSend-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A44916C5FAE7A3C81DCA0D0FF15DED25 /* MarketSend-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26CFB0A3AFA25572E8CDB1CF2D4827AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		28BCD2A22516BBB7DD6BB1FEE73908BC /* Pods-MarketSend_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D1656AF5256F760606F9305580AEFB7 /* Pods-MarketSend_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5D0E077EB66019C844A5B8C7C39CD88B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		630F20F4CFBF54BF8D8103B9065C7138 /* MarketSend-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D2B88A564B3A054397DA43BDC9FB1EC6 /* MarketSend-dummy.m */; };
-		6F6897FBC131FBC3100B4B536F9DBCF2 /* MarketSend-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 24D2FF9E46166E97F66AA8998B400E26 /* MarketSend-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3D863014D1701DA3DE0D4450A7EFB098 /* MSDataCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CC10D20D8C34001A87E62596245C7A /* MSDataCollector.m */; };
+		6A6BD2A696247EB6051062C880951973 /* MSConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 142B4713617D21249F8DFE24562C9B7F /* MSConfig.m */; };
+		6D525E430F8F04931F7279933BAA5218 /* MarketSend-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C24F9B62E9D4F72A02725EBC9CDE2513 /* MarketSend-dummy.m */; };
+		6FA87C3F6942C128BC84131D601448D8 /* MSConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 483C69C1B346564E868952354FA7EE50 /* MSConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		71E2BB782BC9594558196AC9E28215BF /* Pods-MarketSend_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE00727F8FD59BC6BF7DA1EE3BCC07C /* Pods-MarketSend_Tests-dummy.m */; };
-		73005A35DCB3FDB54CC8004679AB549E /* MSAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D628BC53CB8DC2DAEAAA6543FDF90FF /* MSAPI.m */; };
+		735D66935FE3DD809E99486DB4DE0179 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		91A1E40E5C699BA42EC4E5381E489B5B /* Pods-MarketSend_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 80E6421A3C25B1224654BA510DA7E456 /* Pods-MarketSend_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D8EEC4EA32D9CBC3E78767C4A0AF682E /* MSAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 3EB1C9A54B882A078CE9B3AD3988EABC /* MSAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC47918D60B95C043866E4863372FB4A /* MSDataCollector.h in Headers */ = {isa = PBXBuildFile; fileRef = 643EF9341DA6BD348A52C453B8CA2081 /* MSDataCollector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FA058773300F9BE199BC6146433C575F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		FE6E949CFF7FF537D7ABDFADF8BB8310 /* Pods-MarketSend_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CAD204CEDA0AB061613993C160DEBDA /* Pods-MarketSend_Example-dummy.m */; };
 /* End PBXBuildFile section */
@@ -38,35 +40,37 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0CD4CCD3306B43D8185A345FD39D2FB7 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		02201D6E10FE4D393AAC6E6FEB696761 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
 		0D1656AF5256F760606F9305580AEFB7 /* Pods-MarketSend_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MarketSend_Example-umbrella.h"; sourceTree = "<group>"; };
 		13F1323C82B6A42AD573D4BA69F2529A /* Pods-MarketSend_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MarketSend_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		142B4713617D21249F8DFE24562C9B7F /* MSConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MSConfig.m; path = MarketSend/Classes/MSConfig.m; sourceTree = "<group>"; };
 		1A9F753777666C8282B98A323E1C56E1 /* Pods-MarketSend_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MarketSend_Example-Info.plist"; sourceTree = "<group>"; };
-		24D2FF9E46166E97F66AA8998B400E26 /* MarketSend-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MarketSend-umbrella.h"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3EB1C9A54B882A078CE9B3AD3988EABC /* MSAPI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSAPI.h; path = MarketSend/Classes/MSAPI.h; sourceTree = "<group>"; };
-		3FB7858B87A2F00706FA851BC762B3C9 /* MarketSend.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MarketSend.modulemap; sourceTree = "<group>"; };
-		4683BE716267A1FC1B849311E92EEB84 /* MarketSend-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MarketSend-prefix.pch"; sourceTree = "<group>"; };
+		381851D30EED2B51472007D3E5423601 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		3DB2BDD3A7AF59B2F2ABE6A4AF287BB1 /* MarketSend.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MarketSend.modulemap; sourceTree = "<group>"; };
+		483C69C1B346564E868952354FA7EE50 /* MSConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSConfig.h; path = MarketSend/Classes/MSConfig.h; sourceTree = "<group>"; };
 		4AFAB6169EF496737954664F8A0CDC9D /* Pods-MarketSend_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MarketSend_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		4DFDD4A9EF7451CCE29B9BFD7509E888 /* MarketSend.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = MarketSend.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		55DB4636D27794F2FA92A54A71EF2C07 /* MarketSend.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MarketSend.xcconfig; sourceTree = "<group>"; };
 		5CAD204CEDA0AB061613993C160DEBDA /* Pods-MarketSend_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MarketSend_Example-dummy.m"; sourceTree = "<group>"; };
-		6199BFBE3ACB03FB6F7AB697828248DE /* MarketSend-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MarketSend-Info.plist"; sourceTree = "<group>"; };
-		6CB60CD751B45DDAEA11696827D131C7 /* MarketSend.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = MarketSend.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		7D628BC53CB8DC2DAEAAA6543FDF90FF /* MSAPI.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MSAPI.m; path = MarketSend/Classes/MSAPI.m; sourceTree = "<group>"; };
+		643EF9341DA6BD348A52C453B8CA2081 /* MSDataCollector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSDataCollector.h; path = MarketSend/Classes/MSDataCollector.h; sourceTree = "<group>"; };
+		67CC10D20D8C34001A87E62596245C7A /* MSDataCollector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MSDataCollector.m; path = MarketSend/Classes/MSDataCollector.m; sourceTree = "<group>"; };
 		80E6421A3C25B1224654BA510DA7E456 /* Pods-MarketSend_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MarketSend_Tests-umbrella.h"; sourceTree = "<group>"; };
+		9466FC0CABCCB889CBE260C066E1AE92 /* MarketSend-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MarketSend-prefix.pch"; sourceTree = "<group>"; };
 		95232B4EEBD96622A513679DB42B75B3 /* Pods-MarketSend_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MarketSend_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		9947DE3A88F01974547A18D7831E14E5 /* Pods-MarketSend_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MarketSend_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		9BAD927B3D743F46879D8B92C813FB80 /* Pods-MarketSend_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MarketSend_Tests.modulemap"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A432E629273F1D403941F3619B1E66F1 /* Pods-MarketSend_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MarketSend_Example.release.xcconfig"; sourceTree = "<group>"; };
+		A44916C5FAE7A3C81DCA0D0FF15DED25 /* MarketSend-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MarketSend-umbrella.h"; sourceTree = "<group>"; };
 		B3BA043B68DB47CDD768700CE4A15F36 /* Pods-MarketSend_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MarketSend_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		BB94B87C8839485D79CDA97530F8F188 /* Pods-MarketSend_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MarketSend_Example-frameworks.sh"; sourceTree = "<group>"; };
+		C24F9B62E9D4F72A02725EBC9CDE2513 /* MarketSend-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MarketSend-dummy.m"; sourceTree = "<group>"; };
+		CA028C8AB779B33D533D919F5C2CF9BE /* MarketSend-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MarketSend-Info.plist"; sourceTree = "<group>"; };
 		CDCCB0AD5A2B00B865A76DF73EE3ECE7 /* Pods_MarketSend_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MarketSend_Tests.framework; path = "Pods-MarketSend_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE48C2CDCCE4F202EB2DB55FD4552C93 /* MarketSend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MarketSend.framework; path = MarketSend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D2B88A564B3A054397DA43BDC9FB1EC6 /* MarketSend-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MarketSend-dummy.m"; sourceTree = "<group>"; };
-		D595BDB8D501E9C7C5CDC935E25C07BE /* MarketSend.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MarketSend.xcconfig; sourceTree = "<group>"; };
 		DCB52A45975239EAC8E197192F9289C2 /* Pods_MarketSend_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MarketSend_Example.framework; path = "Pods-MarketSend_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE700E59DB034B247B02D70D17AF4365 /* Pods-MarketSend_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MarketSend_Tests-Info.plist"; sourceTree = "<group>"; };
-		E11EC38D9190763F0EAB492759DF378A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		E4F3A25629A9D9F0C7D9504B4FC2FD47 /* Pods-MarketSend_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MarketSend_Example.modulemap"; sourceTree = "<group>"; };
 		ECE00727F8FD59BC6BF7DA1EE3BCC07C /* Pods-MarketSend_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MarketSend_Tests-dummy.m"; sourceTree = "<group>"; };
 		EE3945207BDD05257D19BA1CB08D1385 /* Pods-MarketSend_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MarketSend_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -90,11 +94,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F677A711AA7AD8935437B5454C588DB9 /* Frameworks */ = {
+		DB4F0A91E8C03FB485D41BF3090B82BB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D0E077EB66019C844A5B8C7C39CD88B /* Foundation.framework in Frameworks */,
+				735D66935FE3DD809E99486DB4DE0179 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,16 +113,6 @@
 				CDCCB0AD5A2B00B865A76DF73EE3ECE7 /* Pods_MarketSend_Tests.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		47BCD0E9B54DC4CCF8B4CA1CBB44F532 /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				E11EC38D9190763F0EAB492759DF378A /* LICENSE */,
-				6CB60CD751B45DDAEA11696827D131C7 /* MarketSend.podspec */,
-				0CD4CCD3306B43D8185A345FD39D2FB7 /* README.md */,
-			);
-			name = Pod;
 			sourceTree = "<group>";
 		};
 		59EF303CBEDD6C9F2E92DEC2F96D2656 /* Pods-MarketSend_Example */ = {
@@ -138,21 +132,25 @@
 			path = "Target Support Files/Pods-MarketSend_Example";
 			sourceTree = "<group>";
 		};
-		75C8DD3BCDE4348CF2102434C2B38C2D /* Development Pods */ = {
+		6C3EC5D18C4AC632F4D4EF3D4F3979B5 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				7777F8C32023D36D53682E552EB12923 /* MarketSend */,
+				381851D30EED2B51472007D3E5423601 /* LICENSE */,
+				4DFDD4A9EF7451CCE29B9BFD7509E888 /* MarketSend.podspec */,
+				02201D6E10FE4D393AAC6E6FEB696761 /* README.md */,
 			);
-			name = "Development Pods";
+			name = Pod;
 			sourceTree = "<group>";
 		};
-		7777F8C32023D36D53682E552EB12923 /* MarketSend */ = {
+		6E7BAE53EE4D7C666A25649E517B3902 /* MarketSend */ = {
 			isa = PBXGroup;
 			children = (
-				3EB1C9A54B882A078CE9B3AD3988EABC /* MSAPI.h */,
-				7D628BC53CB8DC2DAEAAA6543FDF90FF /* MSAPI.m */,
-				47BCD0E9B54DC4CCF8B4CA1CBB44F532 /* Pod */,
-				EC943D128EAC92E44119A1B24704CCC7 /* Support Files */,
+				483C69C1B346564E868952354FA7EE50 /* MSConfig.h */,
+				142B4713617D21249F8DFE24562C9B7F /* MSConfig.m */,
+				643EF9341DA6BD348A52C453B8CA2081 /* MSDataCollector.h */,
+				67CC10D20D8C34001A87E62596245C7A /* MSDataCollector.m */,
+				6C3EC5D18C4AC632F4D4EF3D4F3979B5 /* Pod */,
+				9890CE03FCE96B6CB5DA533E15375899 /* Support Files */,
 			);
 			name = MarketSend;
 			path = ../..;
@@ -165,6 +163,20 @@
 				BF256E4B801A48DB311A86D6BBC0401A /* Pods-MarketSend_Tests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		9890CE03FCE96B6CB5DA533E15375899 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3DB2BDD3A7AF59B2F2ABE6A4AF287BB1 /* MarketSend.modulemap */,
+				55DB4636D27794F2FA92A54A71EF2C07 /* MarketSend.xcconfig */,
+				C24F9B62E9D4F72A02725EBC9CDE2513 /* MarketSend-dummy.m */,
+				CA028C8AB779B33D533D919F5C2CF9BE /* MarketSend-Info.plist */,
+				9466FC0CABCCB889CBE260C066E1AE92 /* MarketSend-prefix.pch */,
+				A44916C5FAE7A3C81DCA0D0FF15DED25 /* MarketSend-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/MarketSend";
 			sourceTree = "<group>";
 		};
 		BF256E4B801A48DB311A86D6BBC0401A /* Pods-MarketSend_Tests */ = {
@@ -195,7 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				75C8DD3BCDE4348CF2102434C2B38C2D /* Development Pods */,
+				D65A0B3343D299AD35A5963EFA11EFEF /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				010306F714293262163220E1BC6F2CEB /* Products */,
 				7B1B8132335AA1063DB7EBF72EDBE725 /* Targets Support Files */,
@@ -210,37 +222,32 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		EC943D128EAC92E44119A1B24704CCC7 /* Support Files */ = {
+		D65A0B3343D299AD35A5963EFA11EFEF /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3FB7858B87A2F00706FA851BC762B3C9 /* MarketSend.modulemap */,
-				D595BDB8D501E9C7C5CDC935E25C07BE /* MarketSend.xcconfig */,
-				D2B88A564B3A054397DA43BDC9FB1EC6 /* MarketSend-dummy.m */,
-				6199BFBE3ACB03FB6F7AB697828248DE /* MarketSend-Info.plist */,
-				4683BE716267A1FC1B849311E92EEB84 /* MarketSend-prefix.pch */,
-				24D2FF9E46166E97F66AA8998B400E26 /* MarketSend-umbrella.h */,
+				6E7BAE53EE4D7C666A25649E517B3902 /* MarketSend */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/MarketSend";
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		6041FD5B2148019409CCAB9D2E012F69 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				208162E609CE1957B21395194CDF4EEB /* MarketSend-umbrella.h in Headers */,
+				6FA87C3F6942C128BC84131D601448D8 /* MSConfig.h in Headers */,
+				BC47918D60B95C043866E4863372FB4A /* MSDataCollector.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8F0BE69A26AA6A886431389E5E6E64BD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				91A1E40E5C699BA42EC4E5381E489B5B /* Pods-MarketSend_Tests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9D249B3A9CB3FCE854F35E35423291C4 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6F6897FBC131FBC3100B4B536F9DBCF2 /* MarketSend-umbrella.h in Headers */,
-				D8EEC4EA32D9CBC3E78767C4A0AF682E /* MSAPI.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,12 +264,12 @@
 /* Begin PBXNativeTarget section */
 		1BDBE9345599BB6991DB4267C426E8B2 /* MarketSend */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 6319133850A22AD47AD8CBA51FC672A5 /* Build configuration list for PBXNativeTarget "MarketSend" */;
+			buildConfigurationList = 710B453D452841FDED172FA6E4603C34 /* Build configuration list for PBXNativeTarget "MarketSend" */;
 			buildPhases = (
-				9D249B3A9CB3FCE854F35E35423291C4 /* Headers */,
-				3599C66BE5208FDEFCE7438D840F3605 /* Sources */,
-				F677A711AA7AD8935437B5454C588DB9 /* Frameworks */,
-				69874F3D34A88DFCE0A6C4AF39560886 /* Resources */,
+				6041FD5B2148019409CCAB9D2E012F69 /* Headers */,
+				4A717952317554890F3F53B07AD95A94 /* Sources */,
+				DB4F0A91E8C03FB485D41BF3090B82BB /* Frameworks */,
+				1B6CDD9417285EA3A460C8EFDA8DBABF /* Resources */,
 			);
 			buildRules = (
 			);
@@ -341,14 +348,14 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		2679A8B9181052BFF1E2ABB653051674 /* Resources */ = {
+		1B6CDD9417285EA3A460C8EFDA8DBABF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		69874F3D34A88DFCE0A6C4AF39560886 /* Resources */ = {
+		2679A8B9181052BFF1E2ABB653051674 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -365,12 +372,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		3599C66BE5208FDEFCE7438D840F3605 /* Sources */ = {
+		4A717952317554890F3F53B07AD95A94 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				630F20F4CFBF54BF8D8103B9065C7138 /* MarketSend-dummy.m in Sources */,
-				73005A35DCB3FDB54CC8004679AB549E /* MSAPI.m in Sources */,
+				6D525E430F8F04931F7279933BAA5218 /* MarketSend-dummy.m in Sources */,
+				6A6BD2A696247EB6051062C880951973 /* MSConfig.m in Sources */,
+				3D863014D1701DA3DE0D4450A7EFB098 /* MSDataCollector.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,69 +509,6 @@
 			};
 			name = Release;
 		};
-		5248D1DA8020FE1D7CBFDE90B7E4B0EF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D595BDB8D501E9C7C5CDC935E25C07BE /* MarketSend.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/MarketSend/MarketSend-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MarketSend/MarketSend-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MarketSend/MarketSend.modulemap";
-				PRODUCT_MODULE_NAME = MarketSend;
-				PRODUCT_NAME = MarketSend;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		58E5DBA8B02AF1D7E5C3EA14FF8EB349 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D595BDB8D501E9C7C5CDC935E25C07BE /* MarketSend.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/MarketSend/MarketSend-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/MarketSend/MarketSend-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/MarketSend/MarketSend.modulemap";
-				PRODUCT_MODULE_NAME = MarketSend;
-				PRODUCT_NAME = MarketSend;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		7EF7227D9B20A1D549000096ACCB23D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -662,6 +607,38 @@
 			};
 			name = Release;
 		};
+		A107960D3E71FFFCF06AF13D132437DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55DB4636D27794F2FA92A54A71EF2C07 /* MarketSend.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MarketSend/MarketSend-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MarketSend/MarketSend-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MarketSend/MarketSend.modulemap";
+				PRODUCT_MODULE_NAME = MarketSend;
+				PRODUCT_NAME = MarketSend;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		BB6D86FD081DA8A3A38DA88CA7D87982 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A432E629273F1D403941F3619B1E66F1 /* Pods-MarketSend_Example.release.xcconfig */;
@@ -695,6 +672,37 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		DD6929E89AC00B849C9862CBE9B2A496 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55DB4636D27794F2FA92A54A71EF2C07 /* MarketSend.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/MarketSend/MarketSend-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/MarketSend/MarketSend-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/MarketSend/MarketSend.modulemap";
+				PRODUCT_MODULE_NAME = MarketSend;
+				PRODUCT_NAME = MarketSend;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		DE0BDDB54927F73B1F0AA07219DD11D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -741,11 +749,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		6319133850A22AD47AD8CBA51FC672A5 /* Build configuration list for PBXNativeTarget "MarketSend" */ = {
+		710B453D452841FDED172FA6E4603C34 /* Build configuration list for PBXNativeTarget "MarketSend" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				58E5DBA8B02AF1D7E5C3EA14FF8EB349 /* Debug */,
-				5248D1DA8020FE1D7CBFDE90B7E4B0EF /* Release */,
+				DD6929E89AC00B849C9862CBE9B2A496 /* Debug */,
+				A107960D3E71FFFCF06AF13D132437DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

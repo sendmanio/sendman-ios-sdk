@@ -7,13 +7,20 @@
 //
 
 #import "MSAppDelegate.h"
-#import <MarketSend/MSAPI.h>
+#import <MarketSend/MSDataCollector.h>
 
 @implementation MSAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [MSAPI setUserId];
+    MSDataCollector *collector = [MSDataCollector sharedManager];
+    MSConfig *config = [[MSConfig alloc] init];
+    config.appKey = @"hAA7rWkhRg9gdAfkXhZ_PfYLQ93Iy7vzLouY_M4ZKc8";
+    config.appSecret = @"XeaXH-WInOZX7aRFLPFw7bDSIpHNRKxe9bfrcb7hYNU";
+
+    [collector setConfig:config];
+    [collector setUserId:@"123"];
+    [collector setUserProperties:@{@"param1": @"value1"}];
     // Override point for customization after application launch.
     return YES;
 }
