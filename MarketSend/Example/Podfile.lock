@@ -1,0 +1,16 @@
+PODS:
+  - MarketSend (0.1.0)
+
+DEPENDENCIES:
+  - MarketSend (from `../`)
+
+EXTERNAL SOURCES:
+  MarketSend:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  MarketSend: e966111fd63151f78854c81705c8a0d119ff7f30
+
+PODFILE CHECKSUM: d5ba8d681dde81404541ce7ce449f92cd9a6061e
+
+COCOAPODS: 1.8.4

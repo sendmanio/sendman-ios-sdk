@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '8.0'
+
+target 'MarketSend_Example' do
+  pod 'MarketSend', :path => '../'
+
+  target 'MarketSend_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
