@@ -1,6 +1,0 @@
-framework module Pods_MarketSend_Example {
-  umbrella header "Pods-MarketSend_Example-umbrella.h"
-
-  export *
-  module * { export * }
-}

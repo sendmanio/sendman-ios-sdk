@@ -7,6 +7,7 @@
 //
 
 #import "MSAppDelegate.h"
+#import <UserNotifications/UserNotifications.h>
 #import <MarketSend/MSDataCollector.h>
 
 @implementation MSAppDelegate
@@ -15,15 +16,42 @@
 {
     MSDataCollector *collector = [MSDataCollector sharedManager];
     MSConfig *config = [[MSConfig alloc] init];
-    config.appKey = @"hAA7rWkhRg9gdAfkXhZ_PfYLQ93Iy7vzLouY_M4ZKc8";
-    config.appSecret = @"XeaXH-WInOZX7aRFLPFw7bDSIpHNRKxe9bfrcb7hYNU";
+    config.appKey = @"d3b532bc03863709c219bb4abe81901e4da40159";
+    config.appSecret = @"032d8ea194b263cf1d892af9cb231775e7e17588";
 
     [collector setConfig:config];
     [collector setUserId:@"123"];
-    [collector setUserProperties:@{@"param1": @"value1"}];
+    [collector setUserProperties:@{@"param2": @"value2", @"unique3": @"value12"}];
+
+    [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge)
+                                                                        completionHandler:^(BOOL granted, NSError * _Nullable error) {
+        NSLog(@"Push notification permission granted: %d", granted);
+        // ?
+        // TODO: should check if authorized
+        dispatch_async(dispatch_get_main_queue(), ^(){
+            [[UIApplication sharedApplication] registerForRemoteNotifications];
+        });
+    }];
     // Override point for customization after application launch.
     return YES;
 }
+
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    // NSString* newStr = [[NSString alloc] initWithData:theData encoding:NSUTF8StringEncoding];
+    const char *data = [deviceToken bytes];
+    NSMutableString *token = [NSMutableString string];
+
+    for (NSUInteger i = 0; i < [deviceToken length]; i++) {
+        [token appendFormat:@"%02.2hhX", data[i]];
+    }
+    // Should create some other token by copying this string
+    NSLog(@"The registered device token is: %@", token);
+
+    MSDataCollector *collector = [MSDataCollector sharedManager];
+    [collector setAPNToken:token];
+}
+
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {}
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

@@ -16,5 +16,6 @@
 
 - (void)setUserId:(NSString *_Nonnull)userId;
 - (void)setUserProperties:(NSDictionary *_Nonnull)properties;
+- (void)setAPNToken:(NSString *_Nonnull)token;
 
 @end

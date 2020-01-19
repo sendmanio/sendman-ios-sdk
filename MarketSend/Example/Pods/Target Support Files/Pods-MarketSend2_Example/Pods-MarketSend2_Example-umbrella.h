@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_MarketSend_ExampleVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_MarketSend_ExampleVersionString[];
+FOUNDATION_EXPORT double Pods_MarketSend2_ExampleVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_MarketSend2_ExampleVersionString[];
 

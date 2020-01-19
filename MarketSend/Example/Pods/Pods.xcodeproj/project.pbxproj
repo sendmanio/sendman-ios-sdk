@@ -8,89 +8,89 @@
 
 /* Begin PBXBuildFile section */
 		208162E609CE1957B21395194CDF4EEB /* MarketSend-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A44916C5FAE7A3C81DCA0D0FF15DED25 /* MarketSend-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		26CFB0A3AFA25572E8CDB1CF2D4827AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		28BCD2A22516BBB7DD6BB1FEE73908BC /* Pods-MarketSend_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D1656AF5256F760606F9305580AEFB7 /* Pods-MarketSend_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2B4825C5CAA57564BF63C13124D83E8E /* Pods-MarketSend2_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD93CE8B21B76D98586E4A72E4AEBB9 /* Pods-MarketSend2_Example-dummy.m */; };
+		36A46D39326D059456E432813D03126C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		3D863014D1701DA3DE0D4450A7EFB098 /* MSDataCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CC10D20D8C34001A87E62596245C7A /* MSDataCollector.m */; };
 		6A6BD2A696247EB6051062C880951973 /* MSConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 142B4713617D21249F8DFE24562C9B7F /* MSConfig.m */; };
 		6D525E430F8F04931F7279933BAA5218 /* MarketSend-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C24F9B62E9D4F72A02725EBC9CDE2513 /* MarketSend-dummy.m */; };
+		6EDFF47577CA0546418DC3A11DBD7070 /* Pods-MarketSend_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E307F9E9F88B822AE9328BC215DA0C /* Pods-MarketSend_Tests-dummy.m */; };
 		6FA87C3F6942C128BC84131D601448D8 /* MSConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 483C69C1B346564E868952354FA7EE50 /* MSConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		71E2BB782BC9594558196AC9E28215BF /* Pods-MarketSend_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE00727F8FD59BC6BF7DA1EE3BCC07C /* Pods-MarketSend_Tests-dummy.m */; };
 		735D66935FE3DD809E99486DB4DE0179 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		91A1E40E5C699BA42EC4E5381E489B5B /* Pods-MarketSend_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 80E6421A3C25B1224654BA510DA7E456 /* Pods-MarketSend_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BC47918D60B95C043866E4863372FB4A /* MSDataCollector.h in Headers */ = {isa = PBXBuildFile; fileRef = 643EF9341DA6BD348A52C453B8CA2081 /* MSDataCollector.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FA058773300F9BE199BC6146433C575F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		FE6E949CFF7FF537D7ABDFADF8BB8310 /* Pods-MarketSend_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CAD204CEDA0AB061613993C160DEBDA /* Pods-MarketSend_Example-dummy.m */; };
+		C529DADBFF223FFD62D4CD71ABCD63A8 /* Pods-MarketSend_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 45BA07F479856818F3D5E26899F88E9D /* Pods-MarketSend_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C545C8EDF8BD3369BA9653186DF4C092 /* Pods-MarketSend2_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 33FF45FBE1234E660378B6B4702C23BB /* Pods-MarketSend2_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DB6292791A53822334A5A03785F5A46B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		32A86E7DC3874AE840B5B97148993DA1 /* PBXContainerItemProxy */ = {
+		2FD62CBA91120993FB569C9B5B42C972 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 325056996AE8D35267CD06DA15746599;
+			remoteInfo = "Pods-MarketSend2_Example";
+		};
+		3A9C96EAB5656762F330798256703BDD /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 1BDBE9345599BB6991DB4267C426E8B2;
 			remoteInfo = MarketSend;
 		};
-		86919FEB1CDF0BAAFA056BADE2499328 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 76129E5E3DCD5C09D1F7292262875F63;
-			remoteInfo = "Pods-MarketSend_Example";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		02201D6E10FE4D393AAC6E6FEB696761 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		0D1656AF5256F760606F9305580AEFB7 /* Pods-MarketSend_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MarketSend_Example-umbrella.h"; sourceTree = "<group>"; };
-		13F1323C82B6A42AD573D4BA69F2529A /* Pods-MarketSend_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MarketSend_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		04DB4B4BC38762147D7343873643EA17 /* Pods-MarketSend_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MarketSend_Tests-Info.plist"; sourceTree = "<group>"; };
+		09B83892465F11C227D8AF7D67421152 /* Pods-MarketSend_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MarketSend_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		0AD93CE8B21B76D98586E4A72E4AEBB9 /* Pods-MarketSend2_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MarketSend2_Example-dummy.m"; sourceTree = "<group>"; };
+		0D093732F8ED16E8AE346D09CFA8491C /* Pods-MarketSend2_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MarketSend2_Example.release.xcconfig"; sourceTree = "<group>"; };
 		142B4713617D21249F8DFE24562C9B7F /* MSConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MSConfig.m; path = MarketSend/Classes/MSConfig.m; sourceTree = "<group>"; };
-		1A9F753777666C8282B98A323E1C56E1 /* Pods-MarketSend_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MarketSend_Example-Info.plist"; sourceTree = "<group>"; };
+		1D0C1148BF7A13F9BAC1506B8B519750 /* Pods-MarketSend2_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MarketSend2_Example-frameworks.sh"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		3370BD2FCF5450C4EF347061E8B27A83 /* Pods_MarketSend2_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MarketSend2_Example.framework; path = "Pods-MarketSend2_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		33FF45FBE1234E660378B6B4702C23BB /* Pods-MarketSend2_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MarketSend2_Example-umbrella.h"; sourceTree = "<group>"; };
+		37D1B16183F5163BEB0F3305229F1611 /* Pods-MarketSend2_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MarketSend2_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		381851D30EED2B51472007D3E5423601 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 		3DB2BDD3A7AF59B2F2ABE6A4AF287BB1 /* MarketSend.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MarketSend.modulemap; sourceTree = "<group>"; };
+		45BA07F479856818F3D5E26899F88E9D /* Pods-MarketSend_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MarketSend_Tests-umbrella.h"; sourceTree = "<group>"; };
 		483C69C1B346564E868952354FA7EE50 /* MSConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSConfig.h; path = MarketSend/Classes/MSConfig.h; sourceTree = "<group>"; };
-		4AFAB6169EF496737954664F8A0CDC9D /* Pods-MarketSend_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MarketSend_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		4C09CFA5686D83AE1BC65E9DA1D1AED4 /* Pods-MarketSend2_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MarketSend2_Example-Info.plist"; sourceTree = "<group>"; };
 		4DFDD4A9EF7451CCE29B9BFD7509E888 /* MarketSend.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = MarketSend.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		55DB4636D27794F2FA92A54A71EF2C07 /* MarketSend.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MarketSend.xcconfig; sourceTree = "<group>"; };
-		5CAD204CEDA0AB061613993C160DEBDA /* Pods-MarketSend_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MarketSend_Example-dummy.m"; sourceTree = "<group>"; };
 		643EF9341DA6BD348A52C453B8CA2081 /* MSDataCollector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSDataCollector.h; path = MarketSend/Classes/MSDataCollector.h; sourceTree = "<group>"; };
 		67CC10D20D8C34001A87E62596245C7A /* MSDataCollector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MSDataCollector.m; path = MarketSend/Classes/MSDataCollector.m; sourceTree = "<group>"; };
-		80E6421A3C25B1224654BA510DA7E456 /* Pods-MarketSend_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MarketSend_Tests-umbrella.h"; sourceTree = "<group>"; };
+		8C70BC5D45D5DFAAEB639A795ED88379 /* Pods-MarketSend_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MarketSend_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		8FAF948D8374B93B79DDC03C366CCCAE /* Pods-MarketSend2_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MarketSend2_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9466FC0CABCCB889CBE260C066E1AE92 /* MarketSend-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MarketSend-prefix.pch"; sourceTree = "<group>"; };
-		95232B4EEBD96622A513679DB42B75B3 /* Pods-MarketSend_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MarketSend_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		9947DE3A88F01974547A18D7831E14E5 /* Pods-MarketSend_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MarketSend_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		9BAD927B3D743F46879D8B92C813FB80 /* Pods-MarketSend_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MarketSend_Tests.modulemap"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A432E629273F1D403941F3619B1E66F1 /* Pods-MarketSend_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MarketSend_Example.release.xcconfig"; sourceTree = "<group>"; };
 		A44916C5FAE7A3C81DCA0D0FF15DED25 /* MarketSend-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MarketSend-umbrella.h"; sourceTree = "<group>"; };
-		B3BA043B68DB47CDD768700CE4A15F36 /* Pods-MarketSend_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MarketSend_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		BB94B87C8839485D79CDA97530F8F188 /* Pods-MarketSend_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MarketSend_Example-frameworks.sh"; sourceTree = "<group>"; };
+		A4E307F9E9F88B822AE9328BC215DA0C /* Pods-MarketSend_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MarketSend_Tests-dummy.m"; sourceTree = "<group>"; };
+		B0E1C63DFF084AAAEE28824A99A79CD6 /* Pods-MarketSend2_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MarketSend2_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		B126FA86C10E9E58ECD1507EE79777BC /* Pods-MarketSend_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MarketSend_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		C24F9B62E9D4F72A02725EBC9CDE2513 /* MarketSend-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MarketSend-dummy.m"; sourceTree = "<group>"; };
 		CA028C8AB779B33D533D919F5C2CF9BE /* MarketSend-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MarketSend-Info.plist"; sourceTree = "<group>"; };
+		CA103D6BF2F4242DED24E5A8782DE494 /* Pods-MarketSend_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MarketSend_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		CDCCB0AD5A2B00B865A76DF73EE3ECE7 /* Pods_MarketSend_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MarketSend_Tests.framework; path = "Pods-MarketSend_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE48C2CDCCE4F202EB2DB55FD4552C93 /* MarketSend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MarketSend.framework; path = MarketSend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		DCB52A45975239EAC8E197192F9289C2 /* Pods_MarketSend_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MarketSend_Example.framework; path = "Pods-MarketSend_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DE700E59DB034B247B02D70D17AF4365 /* Pods-MarketSend_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MarketSend_Tests-Info.plist"; sourceTree = "<group>"; };
-		E4F3A25629A9D9F0C7D9504B4FC2FD47 /* Pods-MarketSend_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MarketSend_Example.modulemap"; sourceTree = "<group>"; };
-		ECE00727F8FD59BC6BF7DA1EE3BCC07C /* Pods-MarketSend_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MarketSend_Tests-dummy.m"; sourceTree = "<group>"; };
-		EE3945207BDD05257D19BA1CB08D1385 /* Pods-MarketSend_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MarketSend_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		FADEF1E3BF301EC035117DF7EF4B5D2D /* Pods-MarketSend_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MarketSend_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		D1C9E8EEB6A5E84C5A61A0179429A9A6 /* Pods-MarketSend2_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MarketSend2_Example.modulemap"; sourceTree = "<group>"; };
+		E54756FA4DD835AE70E6906F5D3A7056 /* Pods-MarketSend_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MarketSend_Tests.modulemap"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		02B88322AC0B934F58BC1A66A7EB3F7C /* Frameworks */ = {
+		5AB6EE427C0F50ACB52B0DB74B47EA5A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA058773300F9BE199BC6146433C575F /* Foundation.framework in Frameworks */,
+				DB6292791A53822334A5A03785F5A46B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1F2ABC61220A9582761A3EF148B18563 /* Frameworks */ = {
+		B5E103949F7E085A9296D169910E23AA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				26CFB0A3AFA25572E8CDB1CF2D4827AC /* Foundation.framework in Frameworks */,
+				36A46D39326D059456E432813D03126C /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,31 +105,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		010306F714293262163220E1BC6F2CEB /* Products */ = {
+		628515C065152724D8DCCAFB58FBA681 /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				CE48C2CDCCE4F202EB2DB55FD4552C93 /* MarketSend.framework */,
-				DCB52A45975239EAC8E197192F9289C2 /* Pods_MarketSend_Example.framework */,
+				3370BD2FCF5450C4EF347061E8B27A83 /* Pods_MarketSend2_Example.framework */,
 				CDCCB0AD5A2B00B865A76DF73EE3ECE7 /* Pods_MarketSend_Tests.framework */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		59EF303CBEDD6C9F2E92DEC2F96D2656 /* Pods-MarketSend_Example */ = {
-			isa = PBXGroup;
-			children = (
-				E4F3A25629A9D9F0C7D9504B4FC2FD47 /* Pods-MarketSend_Example.modulemap */,
-				B3BA043B68DB47CDD768700CE4A15F36 /* Pods-MarketSend_Example-acknowledgements.markdown */,
-				4AFAB6169EF496737954664F8A0CDC9D /* Pods-MarketSend_Example-acknowledgements.plist */,
-				5CAD204CEDA0AB061613993C160DEBDA /* Pods-MarketSend_Example-dummy.m */,
-				BB94B87C8839485D79CDA97530F8F188 /* Pods-MarketSend_Example-frameworks.sh */,
-				1A9F753777666C8282B98A323E1C56E1 /* Pods-MarketSend_Example-Info.plist */,
-				0D1656AF5256F760606F9305580AEFB7 /* Pods-MarketSend_Example-umbrella.h */,
-				9947DE3A88F01974547A18D7831E14E5 /* Pods-MarketSend_Example.debug.xcconfig */,
-				A432E629273F1D403941F3619B1E66F1 /* Pods-MarketSend_Example.release.xcconfig */,
-			);
-			name = "Pods-MarketSend_Example";
-			path = "Target Support Files/Pods-MarketSend_Example";
 			sourceTree = "<group>";
 		};
 		6C3EC5D18C4AC632F4D4EF3D4F3979B5 /* Pod */ = {
@@ -156,13 +139,21 @@
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		7B1B8132335AA1063DB7EBF72EDBE725 /* Targets Support Files */ = {
+		72D59649EB9F383E5698F0874775DCAB /* Pods-MarketSend2_Example */ = {
 			isa = PBXGroup;
 			children = (
-				59EF303CBEDD6C9F2E92DEC2F96D2656 /* Pods-MarketSend_Example */,
-				BF256E4B801A48DB311A86D6BBC0401A /* Pods-MarketSend_Tests */,
+				D1C9E8EEB6A5E84C5A61A0179429A9A6 /* Pods-MarketSend2_Example.modulemap */,
+				8FAF948D8374B93B79DDC03C366CCCAE /* Pods-MarketSend2_Example-acknowledgements.markdown */,
+				37D1B16183F5163BEB0F3305229F1611 /* Pods-MarketSend2_Example-acknowledgements.plist */,
+				0AD93CE8B21B76D98586E4A72E4AEBB9 /* Pods-MarketSend2_Example-dummy.m */,
+				1D0C1148BF7A13F9BAC1506B8B519750 /* Pods-MarketSend2_Example-frameworks.sh */,
+				4C09CFA5686D83AE1BC65E9DA1D1AED4 /* Pods-MarketSend2_Example-Info.plist */,
+				33FF45FBE1234E660378B6B4702C23BB /* Pods-MarketSend2_Example-umbrella.h */,
+				B0E1C63DFF084AAAEE28824A99A79CD6 /* Pods-MarketSend2_Example.debug.xcconfig */,
+				0D093732F8ED16E8AE346D09CFA8491C /* Pods-MarketSend2_Example.release.xcconfig */,
 			);
-			name = "Targets Support Files";
+			name = "Pods-MarketSend2_Example";
+			path = "Target Support Files/Pods-MarketSend2_Example";
 			sourceTree = "<group>";
 		};
 		9890CE03FCE96B6CB5DA533E15375899 /* Support Files */ = {
@@ -179,17 +170,26 @@
 			path = "Example/Pods/Target Support Files/MarketSend";
 			sourceTree = "<group>";
 		};
-		BF256E4B801A48DB311A86D6BBC0401A /* Pods-MarketSend_Tests */ = {
+		B95DFD22E659184BDAE6E5E4FA54D00A /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				9BAD927B3D743F46879D8B92C813FB80 /* Pods-MarketSend_Tests.modulemap */,
-				EE3945207BDD05257D19BA1CB08D1385 /* Pods-MarketSend_Tests-acknowledgements.markdown */,
-				95232B4EEBD96622A513679DB42B75B3 /* Pods-MarketSend_Tests-acknowledgements.plist */,
-				ECE00727F8FD59BC6BF7DA1EE3BCC07C /* Pods-MarketSend_Tests-dummy.m */,
-				DE700E59DB034B247B02D70D17AF4365 /* Pods-MarketSend_Tests-Info.plist */,
-				80E6421A3C25B1224654BA510DA7E456 /* Pods-MarketSend_Tests-umbrella.h */,
-				13F1323C82B6A42AD573D4BA69F2529A /* Pods-MarketSend_Tests.debug.xcconfig */,
-				FADEF1E3BF301EC035117DF7EF4B5D2D /* Pods-MarketSend_Tests.release.xcconfig */,
+				72D59649EB9F383E5698F0874775DCAB /* Pods-MarketSend2_Example */,
+				B98C121C87136504D72D5539024731C2 /* Pods-MarketSend_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		B98C121C87136504D72D5539024731C2 /* Pods-MarketSend_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				E54756FA4DD835AE70E6906F5D3A7056 /* Pods-MarketSend_Tests.modulemap */,
+				CA103D6BF2F4242DED24E5A8782DE494 /* Pods-MarketSend_Tests-acknowledgements.markdown */,
+				8C70BC5D45D5DFAAEB639A795ED88379 /* Pods-MarketSend_Tests-acknowledgements.plist */,
+				A4E307F9E9F88B822AE9328BC215DA0C /* Pods-MarketSend_Tests-dummy.m */,
+				04DB4B4BC38762147D7343873643EA17 /* Pods-MarketSend_Tests-Info.plist */,
+				45BA07F479856818F3D5E26899F88E9D /* Pods-MarketSend_Tests-umbrella.h */,
+				B126FA86C10E9E58ECD1507EE79777BC /* Pods-MarketSend_Tests.debug.xcconfig */,
+				09B83892465F11C227D8AF7D67421152 /* Pods-MarketSend_Tests.release.xcconfig */,
 			);
 			name = "Pods-MarketSend_Tests";
 			path = "Target Support Files/Pods-MarketSend_Tests";
@@ -209,8 +209,8 @@
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D65A0B3343D299AD35A5963EFA11EFEF /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				010306F714293262163220E1BC6F2CEB /* Products */,
-				7B1B8132335AA1063DB7EBF72EDBE725 /* Targets Support Files */,
+				628515C065152724D8DCCAFB58FBA681 /* Products */,
+				B95DFD22E659184BDAE6E5E4FA54D00A /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -243,19 +243,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		8F0BE69A26AA6A886431389E5E6E64BD /* Headers */ = {
+		6AD450FA87E90A04C7150000D6380A7F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91A1E40E5C699BA42EC4E5381E489B5B /* Pods-MarketSend_Tests-umbrella.h in Headers */,
+				C545C8EDF8BD3369BA9653186DF4C092 /* Pods-MarketSend2_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BC13C523D9B36225303F50AF73FE291A /* Headers */ = {
+		908B38D12F818BC7F4E7C528738B5F45 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28BCD2A22516BBB7DD6BB1FEE73908BC /* Pods-MarketSend_Example-umbrella.h in Headers */,
+				C529DADBFF223FFD62D4CD71ABCD63A8 /* Pods-MarketSend_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,40 +282,40 @@
 		};
 		2B0AA1BFD83CC75D6857A6F6527341C2 /* Pods-MarketSend_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B408D9A96A04EE100AE63FE3B7628B2D /* Build configuration list for PBXNativeTarget "Pods-MarketSend_Tests" */;
+			buildConfigurationList = D029CA66114E7EFEC464EC6A19B2F463 /* Build configuration list for PBXNativeTarget "Pods-MarketSend_Tests" */;
 			buildPhases = (
-				8F0BE69A26AA6A886431389E5E6E64BD /* Headers */,
-				BD0ABBBC17440FA3064DD27F3A12BE47 /* Sources */,
-				1F2ABC61220A9582761A3EF148B18563 /* Frameworks */,
-				77A7D847B10E1E0BD7D310E91BF84DF1 /* Resources */,
+				908B38D12F818BC7F4E7C528738B5F45 /* Headers */,
+				0BDA21152A523132C2FA7E554521A8D6 /* Sources */,
+				B5E103949F7E085A9296D169910E23AA /* Frameworks */,
+				ED0A8FE24238C2F8B1C94AEBC2E88CE8 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A3843BF8F137B373C8B1D1ABB04C87E9 /* PBXTargetDependency */,
+				6D4F2BE1084CAE00D7471E9A662BD4F2 /* PBXTargetDependency */,
 			);
 			name = "Pods-MarketSend_Tests";
 			productName = "Pods-MarketSend_Tests";
 			productReference = CDCCB0AD5A2B00B865A76DF73EE3ECE7 /* Pods_MarketSend_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		76129E5E3DCD5C09D1F7292262875F63 /* Pods-MarketSend_Example */ = {
+		325056996AE8D35267CD06DA15746599 /* Pods-MarketSend2_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E3E670BEF5CB6C6D814C620A0EC1E34D /* Build configuration list for PBXNativeTarget "Pods-MarketSend_Example" */;
+			buildConfigurationList = B701720434C1A096D692B952BCA9EBB3 /* Build configuration list for PBXNativeTarget "Pods-MarketSend2_Example" */;
 			buildPhases = (
-				BC13C523D9B36225303F50AF73FE291A /* Headers */,
-				D73654B777BED79FA60CF34AE9394EE3 /* Sources */,
-				02B88322AC0B934F58BC1A66A7EB3F7C /* Frameworks */,
-				2679A8B9181052BFF1E2ABB653051674 /* Resources */,
+				6AD450FA87E90A04C7150000D6380A7F /* Headers */,
+				976719BB72E1C32B6B636977AF16AD05 /* Sources */,
+				5AB6EE427C0F50ACB52B0DB74B47EA5A /* Frameworks */,
+				AFB4A3BE6F02525896DD42D26289AA35 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				2102DCB62D67347418BA9D88689AF33C /* PBXTargetDependency */,
+				86F54ECB11B7D562E38CFC1B6EF449AE /* PBXTargetDependency */,
 			);
-			name = "Pods-MarketSend_Example";
-			productName = "Pods-MarketSend_Example";
-			productReference = DCB52A45975239EAC8E197192F9289C2 /* Pods_MarketSend_Example.framework */;
+			name = "Pods-MarketSend2_Example";
+			productName = "Pods-MarketSend2_Example";
+			productReference = 3370BD2FCF5450C4EF347061E8B27A83 /* Pods_MarketSend2_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -336,12 +336,12 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 010306F714293262163220E1BC6F2CEB /* Products */;
+			productRefGroup = 628515C065152724D8DCCAFB58FBA681 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				1BDBE9345599BB6991DB4267C426E8B2 /* MarketSend */,
-				76129E5E3DCD5C09D1F7292262875F63 /* Pods-MarketSend_Example */,
+				325056996AE8D35267CD06DA15746599 /* Pods-MarketSend2_Example */,
 				2B0AA1BFD83CC75D6857A6F6527341C2 /* Pods-MarketSend_Tests */,
 			);
 		};
@@ -355,14 +355,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		2679A8B9181052BFF1E2ABB653051674 /* Resources */ = {
+		AFB4A3BE6F02525896DD42D26289AA35 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		77A7D847B10E1E0BD7D310E91BF84DF1 /* Resources */ = {
+		ED0A8FE24238C2F8B1C94AEBC2E88CE8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -372,6 +372,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0BDA21152A523132C2FA7E554521A8D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6EDFF47577CA0546418DC3A11DBD7070 /* Pods-MarketSend_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4A717952317554890F3F53B07AD95A94 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -382,43 +390,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BD0ABBBC17440FA3064DD27F3A12BE47 /* Sources */ = {
+		976719BB72E1C32B6B636977AF16AD05 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71E2BB782BC9594558196AC9E28215BF /* Pods-MarketSend_Tests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D73654B777BED79FA60CF34AE9394EE3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FE6E949CFF7FF537D7ABDFADF8BB8310 /* Pods-MarketSend_Example-dummy.m in Sources */,
+				2B4825C5CAA57564BF63C13124D83E8E /* Pods-MarketSend2_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2102DCB62D67347418BA9D88689AF33C /* PBXTargetDependency */ = {
+		6D4F2BE1084CAE00D7471E9A662BD4F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-MarketSend2_Example";
+			target = 325056996AE8D35267CD06DA15746599 /* Pods-MarketSend2_Example */;
+			targetProxy = 2FD62CBA91120993FB569C9B5B42C972 /* PBXContainerItemProxy */;
+		};
+		86F54ECB11B7D562E38CFC1B6EF449AE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = MarketSend;
 			target = 1BDBE9345599BB6991DB4267C426E8B2 /* MarketSend */;
-			targetProxy = 32A86E7DC3874AE840B5B97148993DA1 /* PBXContainerItemProxy */;
-		};
-		A3843BF8F137B373C8B1D1ABB04C87E9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-MarketSend_Example";
-			target = 76129E5E3DCD5C09D1F7292262875F63 /* Pods-MarketSend_Example */;
-			targetProxy = 86919FEB1CDF0BAAFA056BADE2499328 /* PBXContainerItemProxy */;
+			targetProxy = 3A9C96EAB5656762F330798256703BDD /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		42AA0D4D9FB71A17D01027A36961EDED /* Debug */ = {
+		2910EE0D8D9EB40946BAF375E80694AE /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9947DE3A88F01974547A18D7831E14E5 /* Pods-MarketSend_Example.debug.xcconfig */;
+			baseConfigurationReference = 09B83892465F11C227D8AF7D67421152 /* Pods-MarketSend_Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -430,12 +430,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-MarketSend_Example/Pods-MarketSend_Example-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-MarketSend_Tests/Pods-MarketSend_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MarketSend_Example/Pods-MarketSend_Example.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-MarketSend_Tests/Pods-MarketSend_Tests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -444,10 +444,11 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		4BE66A09A74FD25164AAB3C2645B9B93 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -508,6 +509,73 @@
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
+		};
+		4C624EAD7DFD8F59D843CB273F9B99AB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0D093732F8ED16E8AE346D09CFA8491C /* Pods-MarketSend2_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MarketSend2_Example/Pods-MarketSend2_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MarketSend2_Example/Pods-MarketSend2_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		77D4BE246B628F1E45BB1E2379A55535 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B0E1C63DFF084AAAEE28824A99A79CD6 /* Pods-MarketSend2_Example.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-MarketSend2_Example/Pods-MarketSend2_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MarketSend2_Example/Pods-MarketSend2_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		7EF7227D9B20A1D549000096ACCB23D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -573,40 +641,6 @@
 			};
 			name = Debug;
 		};
-		840D5C8B5505CD61F5A793662831D348 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FADEF1E3BF301EC035117DF7EF4B5D2D /* Pods-MarketSend_Tests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-MarketSend_Tests/Pods-MarketSend_Tests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MarketSend_Tests/Pods-MarketSend_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		A107960D3E71FFFCF06AF13D132437DB /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 55DB4636D27794F2FA92A54A71EF2C07 /* MarketSend.xcconfig */;
@@ -639,9 +673,9 @@
 			};
 			name = Release;
 		};
-		BB6D86FD081DA8A3A38DA88CA7D87982 /* Release */ = {
+		D30B0DE073247B9D6C565ACC1A9E5F82 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A432E629273F1D403941F3619B1E66F1 /* Pods-MarketSend_Example.release.xcconfig */;
+			baseConfigurationReference = B126FA86C10E9E58ECD1507EE79777BC /* Pods-MarketSend_Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -653,12 +687,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-MarketSend_Example/Pods-MarketSend_Example-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-MarketSend_Tests/Pods-MarketSend_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MarketSend_Example/Pods-MarketSend_Example.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-MarketSend_Tests/Pods-MarketSend_Tests.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -667,11 +701,10 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		DD6929E89AC00B849C9862CBE9B2A496 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -704,39 +737,6 @@
 			};
 			name = Debug;
 		};
-		DE0BDDB54927F73B1F0AA07219DD11D6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 13F1323C82B6A42AD573D4BA69F2529A /* Pods-MarketSend_Tests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-MarketSend_Tests/Pods-MarketSend_Tests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MarketSend_Tests/Pods-MarketSend_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -758,20 +758,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B408D9A96A04EE100AE63FE3B7628B2D /* Build configuration list for PBXNativeTarget "Pods-MarketSend_Tests" */ = {
+		B701720434C1A096D692B952BCA9EBB3 /* Build configuration list for PBXNativeTarget "Pods-MarketSend2_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DE0BDDB54927F73B1F0AA07219DD11D6 /* Debug */,
-				840D5C8B5505CD61F5A793662831D348 /* Release */,
+				77D4BE246B628F1E45BB1E2379A55535 /* Debug */,
+				4C624EAD7DFD8F59D843CB273F9B99AB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E3E670BEF5CB6C6D814C620A0EC1E34D /* Build configuration list for PBXNativeTarget "Pods-MarketSend_Example" */ = {
+		D029CA66114E7EFEC464EC6A19B2F463 /* Build configuration list for PBXNativeTarget "Pods-MarketSend_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				42AA0D4D9FB71A17D01027A36961EDED /* Debug */,
-				BB6D86FD081DA8A3A38DA88CA7D87982 /* Release */,
+				D30B0DE073247B9D6C565ACC1A9E5F82 /* Debug */,
+				2910EE0D8D9EB40946BAF375E80694AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
