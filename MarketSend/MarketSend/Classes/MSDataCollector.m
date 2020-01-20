@@ -1,5 +1,5 @@
 //
-//  MSAPI.m
+//  MSDataCollector.m
 //  MarketSend
 //
 //  Created by Anat Harari on 22/12/2019.
@@ -7,18 +7,19 @@
 
 #import <Foundation/Foundation.h>
 #import "MSDataCollector.h"
+#import "MSDataEnricher.h"
+
+NSString *const MSAPNTokenKey = @"MSAPNToken";
 
 @interface MSDataCollector ()
 
 @property (strong, nonatomic, nullable) NSString *userId;
-@property (strong, nonatomic, nullable) NSString *apnToken;
 
 @end
 
 @implementation MSDataCollector
 
 @synthesize userId = _userId;
-@synthesize apnToken = _apnToken;
 
 # pragma mark - Constructor and Singletong Access
 
@@ -35,17 +36,17 @@
 
 - (void)setUserId:(NSString *)userId {
     _userId = userId;
+    [[MSDataEnricher sharedManager] setUserEnrichedData];
 }
 
 - (void)setUserProperties:(NSDictionary *)properties {
     // TODO: URL
     // TODO: what if config is not set
-    NSURL *requestURL = [NSURL URLWithString:@"http://192.168.1.28:4200/user/properties"];
+    NSURL *requestURL = [NSURL URLWithString:@"http://localhost:4200/user/properties"];
     NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:requestURL];
 
     NSMutableDictionary *userProperties = [NSMutableDictionary dictionaryWithDictionary:properties];
     userProperties[@"userId"] = self.userId;
-    userProperties[@"apnToken"] = self.apnToken;
 
     [urlRequest setHTTPMethod:@"POST"];
 
@@ -75,8 +76,7 @@
 }
 
 - (void)setAPNToken:(NSString *)token {
-    _apnToken = token;
-    [self setUserProperties:@{}];
+    [self setUserProperties:@{MSAPNTokenKey: token}];
 }
 
 @end

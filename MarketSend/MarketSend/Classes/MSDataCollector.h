@@ -1,5 +1,5 @@
 //
-//  MSAPI.h
+//  MSDataCollector.h
 //  Pods
 //
 //  Created by Anat Harari on 22/12/2019.

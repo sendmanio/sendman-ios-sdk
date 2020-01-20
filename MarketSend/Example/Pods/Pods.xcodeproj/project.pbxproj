@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		208162E609CE1957B21395194CDF4EEB /* MarketSend-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A44916C5FAE7A3C81DCA0D0FF15DED25 /* MarketSend-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		28F7EAAF23D5BCD80044F841 /* MSDataEnricher.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F7EAAE23D5BCD80044F841 /* MSDataEnricher.m */; };
+		28F7EAB123D5BD030044F841 /* MSDataEnricher.h in Headers */ = {isa = PBXBuildFile; fileRef = 28F7EAB023D5BD030044F841 /* MSDataEnricher.h */; };
 		2B4825C5CAA57564BF63C13124D83E8E /* Pods-MarketSend2_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD93CE8B21B76D98586E4A72E4AEBB9 /* Pods-MarketSend2_Example-dummy.m */; };
 		36A46D39326D059456E432813D03126C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		3D863014D1701DA3DE0D4450A7EFB098 /* MSDataCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CC10D20D8C34001A87E62596245C7A /* MSDataCollector.m */; };
@@ -40,30 +42,32 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02201D6E10FE4D393AAC6E6FEB696761 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		02201D6E10FE4D393AAC6E6FEB696761 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		04DB4B4BC38762147D7343873643EA17 /* Pods-MarketSend_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MarketSend_Tests-Info.plist"; sourceTree = "<group>"; };
 		09B83892465F11C227D8AF7D67421152 /* Pods-MarketSend_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MarketSend_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		0AD93CE8B21B76D98586E4A72E4AEBB9 /* Pods-MarketSend2_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MarketSend2_Example-dummy.m"; sourceTree = "<group>"; };
 		0D093732F8ED16E8AE346D09CFA8491C /* Pods-MarketSend2_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MarketSend2_Example.release.xcconfig"; sourceTree = "<group>"; };
 		142B4713617D21249F8DFE24562C9B7F /* MSConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MSConfig.m; path = MarketSend/Classes/MSConfig.m; sourceTree = "<group>"; };
 		1D0C1148BF7A13F9BAC1506B8B519750 /* Pods-MarketSend2_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MarketSend2_Example-frameworks.sh"; sourceTree = "<group>"; };
+		28F7EAAE23D5BCD80044F841 /* MSDataEnricher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MSDataEnricher.m; path = MarketSend/Classes/MSDataEnricher.m; sourceTree = "<group>"; };
+		28F7EAB023D5BD030044F841 /* MSDataEnricher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MSDataEnricher.h; path = MarketSend/Classes/MSDataEnricher.h; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		3370BD2FCF5450C4EF347061E8B27A83 /* Pods_MarketSend2_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MarketSend2_Example.framework; path = "Pods-MarketSend2_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3370BD2FCF5450C4EF347061E8B27A83 /* Pods_MarketSend2_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarketSend2_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33FF45FBE1234E660378B6B4702C23BB /* Pods-MarketSend2_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MarketSend2_Example-umbrella.h"; sourceTree = "<group>"; };
 		37D1B16183F5163BEB0F3305229F1611 /* Pods-MarketSend2_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MarketSend2_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		381851D30EED2B51472007D3E5423601 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		381851D30EED2B51472007D3E5423601 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		3DB2BDD3A7AF59B2F2ABE6A4AF287BB1 /* MarketSend.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = MarketSend.modulemap; sourceTree = "<group>"; };
 		45BA07F479856818F3D5E26899F88E9D /* Pods-MarketSend_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MarketSend_Tests-umbrella.h"; sourceTree = "<group>"; };
 		483C69C1B346564E868952354FA7EE50 /* MSConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSConfig.h; path = MarketSend/Classes/MSConfig.h; sourceTree = "<group>"; };
 		4C09CFA5686D83AE1BC65E9DA1D1AED4 /* Pods-MarketSend2_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MarketSend2_Example-Info.plist"; sourceTree = "<group>"; };
-		4DFDD4A9EF7451CCE29B9BFD7509E888 /* MarketSend.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = MarketSend.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		4DFDD4A9EF7451CCE29B9BFD7509E888 /* MarketSend.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = MarketSend.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		55DB4636D27794F2FA92A54A71EF2C07 /* MarketSend.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MarketSend.xcconfig; sourceTree = "<group>"; };
 		643EF9341DA6BD348A52C453B8CA2081 /* MSDataCollector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSDataCollector.h; path = MarketSend/Classes/MSDataCollector.h; sourceTree = "<group>"; };
 		67CC10D20D8C34001A87E62596245C7A /* MSDataCollector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MSDataCollector.m; path = MarketSend/Classes/MSDataCollector.m; sourceTree = "<group>"; };
 		8C70BC5D45D5DFAAEB639A795ED88379 /* Pods-MarketSend_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MarketSend_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		8FAF948D8374B93B79DDC03C366CCCAE /* Pods-MarketSend2_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MarketSend2_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9466FC0CABCCB889CBE260C066E1AE92 /* MarketSend-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MarketSend-prefix.pch"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A44916C5FAE7A3C81DCA0D0FF15DED25 /* MarketSend-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "MarketSend-umbrella.h"; sourceTree = "<group>"; };
 		A4E307F9E9F88B822AE9328BC215DA0C /* Pods-MarketSend_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MarketSend_Tests-dummy.m"; sourceTree = "<group>"; };
 		B0E1C63DFF084AAAEE28824A99A79CD6 /* Pods-MarketSend2_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MarketSend2_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -71,8 +75,8 @@
 		C24F9B62E9D4F72A02725EBC9CDE2513 /* MarketSend-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "MarketSend-dummy.m"; sourceTree = "<group>"; };
 		CA028C8AB779B33D533D919F5C2CF9BE /* MarketSend-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "MarketSend-Info.plist"; sourceTree = "<group>"; };
 		CA103D6BF2F4242DED24E5A8782DE494 /* Pods-MarketSend_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MarketSend_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		CDCCB0AD5A2B00B865A76DF73EE3ECE7 /* Pods_MarketSend_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MarketSend_Tests.framework; path = "Pods-MarketSend_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE48C2CDCCE4F202EB2DB55FD4552C93 /* MarketSend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = MarketSend.framework; path = MarketSend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDCCB0AD5A2B00B865A76DF73EE3ECE7 /* Pods_MarketSend_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarketSend_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE48C2CDCCE4F202EB2DB55FD4552C93 /* MarketSend.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MarketSend.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1C9E8EEB6A5E84C5A61A0179429A9A6 /* Pods-MarketSend2_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MarketSend2_Example.modulemap"; sourceTree = "<group>"; };
 		E54756FA4DD835AE70E6906F5D3A7056 /* Pods-MarketSend_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-MarketSend_Tests.modulemap"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,6 +136,8 @@
 				142B4713617D21249F8DFE24562C9B7F /* MSConfig.m */,
 				643EF9341DA6BD348A52C453B8CA2081 /* MSDataCollector.h */,
 				67CC10D20D8C34001A87E62596245C7A /* MSDataCollector.m */,
+				28F7EAB023D5BD030044F841 /* MSDataEnricher.h */,
+				28F7EAAE23D5BCD80044F841 /* MSDataEnricher.m */,
 				6C3EC5D18C4AC632F4D4EF3D4F3979B5 /* Pod */,
 				9890CE03FCE96B6CB5DA533E15375899 /* Support Files */,
 			);
@@ -237,6 +243,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28F7EAB123D5BD030044F841 /* MSDataEnricher.h in Headers */,
 				208162E609CE1957B21395194CDF4EEB /* MarketSend-umbrella.h in Headers */,
 				6FA87C3F6942C128BC84131D601448D8 /* MSConfig.h in Headers */,
 				BC47918D60B95C043866E4863372FB4A /* MSDataCollector.h in Headers */,
@@ -385,6 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6D525E430F8F04931F7279933BAA5218 /* MarketSend-dummy.m in Sources */,
+				28F7EAAF23D5BCD80044F841 /* MSDataEnricher.m in Sources */,
 				6A6BD2A696247EB6051062C880951973 /* MSConfig.m in Sources */,
 				3D863014D1701DA3DE0D4450A7EFB098 /* MSDataCollector.m in Sources */,
 			);
@@ -503,8 +511,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
