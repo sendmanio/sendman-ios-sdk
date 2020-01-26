@@ -10,6 +10,10 @@
 		208162E609CE1957B21395194CDF4EEB /* MarketSend-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A44916C5FAE7A3C81DCA0D0FF15DED25 /* MarketSend-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		28F7EAAF23D5BCD80044F841 /* MSDataEnricher.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F7EAAE23D5BCD80044F841 /* MSDataEnricher.m */; };
 		28F7EAB123D5BD030044F841 /* MSDataEnricher.h in Headers */ = {isa = PBXBuildFile; fileRef = 28F7EAB023D5BD030044F841 /* MSDataEnricher.h */; };
+		28F7EAB423DDC58D0044F841 /* MSAuthHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 28F7EAB223DDC58D0044F841 /* MSAuthHandler.h */; };
+		28F7EAB523DDC58D0044F841 /* MSAuthHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F7EAB323DDC58D0044F841 /* MSAuthHandler.m */; };
+		28F7EAB823DDC5BF0044F841 /* MSAPIHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 28F7EAB623DDC5BF0044F841 /* MSAPIHandler.h */; };
+		28F7EAB923DDC5BF0044F841 /* MSAPIHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 28F7EAB723DDC5BF0044F841 /* MSAPIHandler.m */; };
 		2B4825C5CAA57564BF63C13124D83E8E /* Pods-MarketSend2_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD93CE8B21B76D98586E4A72E4AEBB9 /* Pods-MarketSend2_Example-dummy.m */; };
 		36A46D39326D059456E432813D03126C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		3D863014D1701DA3DE0D4450A7EFB098 /* MSDataCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CC10D20D8C34001A87E62596245C7A /* MSDataCollector.m */; };
@@ -51,6 +55,10 @@
 		1D0C1148BF7A13F9BAC1506B8B519750 /* Pods-MarketSend2_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MarketSend2_Example-frameworks.sh"; sourceTree = "<group>"; };
 		28F7EAAE23D5BCD80044F841 /* MSDataEnricher.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MSDataEnricher.m; path = MarketSend/Classes/MSDataEnricher.m; sourceTree = "<group>"; };
 		28F7EAB023D5BD030044F841 /* MSDataEnricher.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MSDataEnricher.h; path = MarketSend/Classes/MSDataEnricher.h; sourceTree = "<group>"; };
+		28F7EAB223DDC58D0044F841 /* MSAuthHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MSAuthHandler.h; path = MarketSend/Classes/MSAuthHandler.h; sourceTree = "<group>"; };
+		28F7EAB323DDC58D0044F841 /* MSAuthHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MSAuthHandler.m; path = MarketSend/Classes/MSAuthHandler.m; sourceTree = "<group>"; };
+		28F7EAB623DDC5BF0044F841 /* MSAPIHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MSAPIHandler.h; path = MarketSend/Classes/MSAPIHandler.h; sourceTree = "<group>"; };
+		28F7EAB723DDC5BF0044F841 /* MSAPIHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MSAPIHandler.m; path = MarketSend/Classes/MSAPIHandler.m; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		3370BD2FCF5450C4EF347061E8B27A83 /* Pods_MarketSend2_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MarketSend2_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		33FF45FBE1234E660378B6B4702C23BB /* Pods-MarketSend2_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MarketSend2_Example-umbrella.h"; sourceTree = "<group>"; };
@@ -138,6 +146,10 @@
 				67CC10D20D8C34001A87E62596245C7A /* MSDataCollector.m */,
 				28F7EAB023D5BD030044F841 /* MSDataEnricher.h */,
 				28F7EAAE23D5BCD80044F841 /* MSDataEnricher.m */,
+				28F7EAB223DDC58D0044F841 /* MSAuthHandler.h */,
+				28F7EAB323DDC58D0044F841 /* MSAuthHandler.m */,
+				28F7EAB623DDC5BF0044F841 /* MSAPIHandler.h */,
+				28F7EAB723DDC5BF0044F841 /* MSAPIHandler.m */,
 				6C3EC5D18C4AC632F4D4EF3D4F3979B5 /* Pod */,
 				9890CE03FCE96B6CB5DA533E15375899 /* Support Files */,
 			);
@@ -245,8 +257,10 @@
 			files = (
 				28F7EAB123D5BD030044F841 /* MSDataEnricher.h in Headers */,
 				208162E609CE1957B21395194CDF4EEB /* MarketSend-umbrella.h in Headers */,
+				28F7EAB823DDC5BF0044F841 /* MSAPIHandler.h in Headers */,
 				6FA87C3F6942C128BC84131D601448D8 /* MSConfig.h in Headers */,
 				BC47918D60B95C043866E4863372FB4A /* MSDataCollector.h in Headers */,
+				28F7EAB423DDC58D0044F841 /* MSAuthHandler.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,7 +408,9 @@
 				6D525E430F8F04931F7279933BAA5218 /* MarketSend-dummy.m in Sources */,
 				28F7EAAF23D5BCD80044F841 /* MSDataEnricher.m in Sources */,
 				6A6BD2A696247EB6051062C880951973 /* MSConfig.m in Sources */,
+				28F7EAB923DDC5BF0044F841 /* MSAPIHandler.m in Sources */,
 				3D863014D1701DA3DE0D4450A7EFB098 /* MSDataCollector.m in Sources */,
+				28F7EAB523DDC58D0044F841 /* MSAuthHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

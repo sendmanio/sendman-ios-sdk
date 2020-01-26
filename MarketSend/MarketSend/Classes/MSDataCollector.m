@@ -8,18 +8,23 @@
 #import <Foundation/Foundation.h>
 #import "MSDataCollector.h"
 #import "MSDataEnricher.h"
+#import "MSAPIHandler.h"
 
 NSString *const MSAPNTokenKey = @"MSAPNToken";
 
 @interface MSDataCollector ()
 
 @property (strong, nonatomic, nullable) NSString *userId;
+@property (strong, nonatomic, nullable) NSMutableDictionary *properties;
+@property (strong, nonatomic, nullable) NSArray<NSString *> *events;
 
 @end
 
 @implementation MSDataCollector
 
 @synthesize userId = _userId;
+@synthesize properties = _properties;
+@synthesize events = _events;
 
 # pragma mark - Constructor and Singletong Access
 
@@ -32,6 +37,26 @@ NSString *const MSAPNTokenKey = @"MSAPNToken";
     return sharedMyManager;
 }
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        _properties = [[NSMutableDictionary alloc] init];
+        [self pollForNewData];
+    }
+    return self;
+}
+
+- (void) pollForNewData {
+    dispatch_queue_t serverDelaySimulationThread = dispatch_queue_create("MarketSendPoller", nil);
+    dispatch_async(serverDelaySimulationThread, ^{
+        if (self.config && [self.properties count] > 0) {
+            [self sendData];
+        }
+        [NSThread sleepForTimeInterval:2];
+        [self pollForNewData];
+    });
+}
+
 # pragma mark - Data collection
 
 - (void)setUserId:(NSString *)userId {
@@ -40,39 +65,30 @@ NSString *const MSAPNTokenKey = @"MSAPNToken";
 }
 
 - (void)setUserProperties:(NSDictionary *)properties {
-    // TODO: URL
-    // TODO: what if config is not set
-    NSURL *requestURL = [NSURL URLWithString:@"http://localhost:4200/user/properties"];
-    NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:requestURL];
+    for (NSString* key in properties) {
+        [_properties setObject:properties[key] forKey:key];
+    }
+}
 
-    NSMutableDictionary *userProperties = [NSMutableDictionary dictionaryWithDictionary:properties];
-    userProperties[@"userId"] = self.userId;
-
-    [urlRequest setHTTPMethod:@"POST"];
-
-    NSError *error;
-    NSData* jsonData = [NSJSONSerialization dataWithJSONObject:userProperties options:NSJSONWritingPrettyPrinted error:&error];
-
-    [urlRequest setHTTPBody:jsonData];
-        
-    NSString *authStr = [NSString stringWithFormat:@"%@:%@", self.config.appKey, self.config.appSecret];
-    NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
-    NSString *authValue = [NSString stringWithFormat:@"Basic %@", [[NSString alloc] initWithData:[authData base64EncodedDataWithOptions:NSDataBase64EncodingEndLineWithLineFeed] encoding:NSASCIIStringEncoding]];
-    [urlRequest setValue:authValue forHTTPHeaderField:@"Authorization"];
+- (void)sendData {
+    NSLog(@"Preparing to send data");
     
-    [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
-
-    NSURLSession *session = [NSURLSession sharedSession];
+    NSMutableDictionary *currentProperties = self.properties;
+    currentProperties[@"userId"] = self.userId;
     
-    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+    self.properties = [[NSMutableDictionary alloc] init];
+    
+    [MSAPIHandler sendDataWithJson:currentProperties andConfig:self.config forUrl:@"user/properties" responseHandler:^(NSHTTPURLResponse *httpResponse) {
         if(httpResponse.statusCode != 204) {
+            for (NSString* key in self.properties) {
+                [currentProperties setObject:self.properties[key] forKey:key];
+            }
+            [self setUserProperties:currentProperties];
             NSLog(@"Error");
         } else {
-            NSLog(@"Successfuly set properties: %@", properties);
+            NSLog(@"Successfuly set properties: %@", currentProperties);
         }
     }];
-    [dataTask resume];
 }
 
 - (void)setAPNToken:(NSString *)token {
