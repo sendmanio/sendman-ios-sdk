@@ -40,7 +40,7 @@ NSString *const MSDeviceModelKey = @"MSDeviceModel";
 
 # pragma mark - Data collection
 
-- (void)setUserEnrichedData {
+- (NSDictionary *)getUserEnrichedData {
     
     self.enrichedData = [[NSMutableDictionary alloc] init];
     
@@ -57,8 +57,10 @@ NSString *const MSDeviceModelKey = @"MSDeviceModel";
     self.enrichedData[MSDeviceModelKey] = currentDevice.model;
     
     // TODO: remove and handle bulk properties calls
-    [[MSDataCollector sharedManager] setUserProperties:self.enrichedData];
-    [self.enrichedData removeAllObjects];
+    NSMutableDictionary *currentEnrichedData = self.enrichedData;
+    self.enrichedData = [[NSMutableDictionary alloc] init];
+    return currentEnrichedData;
+    
 }
 
 @end

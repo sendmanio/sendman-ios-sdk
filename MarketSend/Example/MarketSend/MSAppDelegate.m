@@ -14,19 +14,15 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    MSDataCollector *collector = [MSDataCollector sharedManager];
     MSConfig *config = [[MSConfig alloc] init];
     config.appKey = @"d3b532bc03863709c219bb4abe81901e4da40159";
     config.appSecret = @"032d8ea194b263cf1d892af9cb231775e7e17588";
 
-    [collector setConfig:config];
-    [collector setUserId:@"123"];
-    [collector setUserProperties:@{@"param2": @"value2", @"unique3": @"value12"}];
-
-    [collector addUserEvent:@"app loaded"];
-    [collector addUserEvent:@"items selected" numberValue:[NSNumber numberWithInt:2]];
-    [collector addUserEvent:@"item type selected" stringValue:@"The good type"];
-    [collector addUserEvent:@"userl liked the app" booleanValue:YES];
+    [MSDataCollector setAppConfig:config];
+    [MSDataCollector setUserId:@"123"];
+    [MSDataCollector setUserProperties:@{@"email": @"email@email.com", @"Native App": @"YES"}];
+    
+    [MSDataCollector addUserEvent:@"App loaded"];
 
     [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge)
                                                                         completionHandler:^(BOOL granted, NSError * _Nullable error) {
@@ -52,8 +48,7 @@
     // Should create some other token by copying this string
     NSLog(@"The registered device token is: %@", token);
 
-    MSDataCollector *collector = [MSDataCollector sharedManager];
-    [collector setAPNToken:token];
+    [MSDataCollector setAPNToken:token];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {}

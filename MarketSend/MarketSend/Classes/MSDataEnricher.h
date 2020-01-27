@@ -11,6 +11,6 @@
 
 + (id _Nonnull )sharedManager;
 
-- (void)setUserEnrichedData;
+- (NSDictionary *_Nonnull)getUserEnrichedData;
 
 @end

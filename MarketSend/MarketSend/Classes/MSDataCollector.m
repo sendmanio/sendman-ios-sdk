@@ -14,7 +14,8 @@ NSString *const MSAPNTokenKey = @"MSAPNToken";
 
 @interface MSDataCollector ()
 
-@property (strong, nonatomic, nullable) NSString *userId;
+@property (strong, nonatomic, nullable) MSConfig *config;
+@property (strong, nonatomic, nullable) NSString *msUserId;
 @property (strong, nonatomic, nullable) NSString *sessionId;
 
 @property (strong, nonatomic, nullable) NSMutableDictionary *properties;
@@ -23,8 +24,6 @@ NSString *const MSAPNTokenKey = @"MSAPNToken";
 @end
 
 @implementation MSDataCollector
-
-@synthesize userId = _userId;
 
 # pragma mark - Constructor and Singletong Access
 
@@ -58,43 +57,55 @@ NSString *const MSAPNTokenKey = @"MSAPNToken";
 
 # pragma mark - Data collection
 
-- (void)setUserId:(NSString *)userId {
-    _userId = userId;
-    self.sessionId = [[NSUUID UUID] UUIDString];
-    [[MSDataEnricher sharedManager] setUserEnrichedData];
++ (void)setAppConfig:(MSConfig *)config {
+    MSDataCollector *manager = [MSDataCollector sharedManager];
+    manager.config = config;
 }
 
-- (void)setUserProperties:(NSDictionary *)properties {
-    NSNumber *now = [self now];
++ (void)setUserId:(NSString *)userId {
+    MSDataCollector *manager = [MSDataCollector sharedManager];
+    manager.msUserId = userId;
+    manager.sessionId = [[NSUUID UUID] UUIDString];
+    [MSDataCollector setUserProperties:[[MSDataEnricher sharedManager] getUserEnrichedData]];
+}
+
++ (void)setAPNToken:(NSString *)token {
+    [MSDataCollector setUserProperties:@{MSAPNTokenKey: token}];
+}
+
++ (void)setUserProperties:(NSDictionary *)properties {
+    MSDataCollector *manager = [MSDataCollector sharedManager];
+    NSNumber *now = [MSDataCollector now];
     for (NSString* key in properties) {
-        [self.properties setObject:@{@"value" : properties[key], @"timestamp": now} forKey:key];
+        [manager.properties setObject:@{@"value" : properties[key], @"timestamp": now} forKey:key];
     }
 }
 
-- (void)addUserEvent:(NSString *)eventName {
-    [self addUserEvent:eventName stringValue:@""];
++ (void)addUserEvent:(NSString *)eventName {
+    [MSDataCollector addUserEvent:eventName stringValue:@""];
 }
 
-- (void)addUserEvent:(NSString *)eventName stringValue:(NSString *)value {
-    [self addUserEvents:@{eventName: value}];
++ (void)addUserEvent:(NSString *)eventName stringValue:(NSString *)value {
+    [MSDataCollector addUserEvents:@{eventName: value}];
 }
 
-- (void)addUserEvent:(NSString *)eventName numberValue:(NSNumber *)value {
-    [self addUserEvents:@{eventName: value}];
++ (void)addUserEvent:(NSString *)eventName numberValue:(NSNumber *)value {
+    [MSDataCollector addUserEvents:@{eventName: value}];
 }
 
-- (void)addUserEvent:(NSString *)eventName booleanValue:(bool)value {
-    [self addUserEvents:@{eventName: value == YES ? @"YES" : @"NO"}];
++ (void)addUserEvent:(NSString *)eventName booleanValue:(bool)value {
+    [MSDataCollector addUserEvents:@{eventName: value == YES ? @"YES" : @"NO"}];
 }
 
-- (void)addUserEvents:(NSDictionary *)events {
-    NSNumber *now = [self now];
++ (void)addUserEvents:(NSDictionary *)events {
+    MSDataCollector *manager = [MSDataCollector sharedManager];
+    NSNumber *now = [MSDataCollector now];
     for (NSDictionary* eventName in events) {
-        [self.events addObject:@{@"key": eventName, @"value" : events[eventName], @"timestamp": now}];
+        [manager.events addObject:@{@"key": eventName, @"value" : events[eventName], @"timestamp": now}];
     }
 }
 
-- (NSNumber *)now {
++ (NSNumber *)now {
     return [NSNumber numberWithLongLong:(long long)([[NSDate date] timeIntervalSince1970] * 1000.0)];
 }
 
@@ -107,7 +118,7 @@ NSString *const MSAPNTokenKey = @"MSAPNToken";
     NSLog(@"Preparing to send data");
 
     NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
-    data[@"userId"] = self.userId;
+    data[@"userId"] = self.msUserId;
     data[@"sessionId"] = self.sessionId;
     
     NSMutableDictionary *currentProperties = self.properties;
@@ -135,10 +146,6 @@ NSString *const MSAPNTokenKey = @"MSAPNToken";
             NSLog(@"Successfuly set properties: %@", data);
         }
     }];
-}
-
-- (void)setAPNToken:(NSString *)token {
-    [self setUserProperties:@{MSAPNTokenKey: token}];
 }
 
 @end

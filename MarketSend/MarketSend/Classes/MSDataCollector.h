@@ -10,18 +10,15 @@
 
 @interface MSDataCollector : NSObject
 
-@property (strong, nonatomic, nullable) MSConfig *config;
++ (void)setAppConfig:(MSConfig *_Nonnull)config;
++ (void)setUserId:(NSString *_Nonnull)userId;
++ (void)setAPNToken:(NSString *_Nonnull)token;
 
-+ (id _Nonnull )sharedManager;
-
-- (void)setUserId:(NSString *_Nonnull)userId;
-- (void)setAPNToken:(NSString *_Nonnull)token;
-
-- (void)setUserProperties:(NSDictionary *_Nonnull)properties;
-- (void)addUserEvent:(NSString *_Nonnull)eventName;
-- (void)addUserEvent:(NSString *_Nonnull)eventName stringValue:(NSString *_Nullable)value;
-- (void)addUserEvent:(NSString *_Nonnull)eventName numberValue:(NSNumber *_Nonnull)value;
-- (void)addUserEvent:(NSString *_Nonnull)eventName booleanValue:(BOOL)value;
-- (void)addUserEvents:(NSDictionary *_Nonnull)events;
++ (void)setUserProperties:(NSDictionary *_Nonnull)properties;
++ (void)addUserEvent:(NSString *_Nonnull)eventName;
++ (void)addUserEvent:(NSString *_Nonnull)eventName stringValue:(NSString *_Nullable)value;
++ (void)addUserEvent:(NSString *_Nonnull)eventName numberValue:(NSNumber *_Nonnull)value;
++ (void)addUserEvent:(NSString *_Nonnull)eventName booleanValue:(BOOL)value;
++ (void)addUserEvents:(NSDictionary *_Nonnull)events;
 
 @end
