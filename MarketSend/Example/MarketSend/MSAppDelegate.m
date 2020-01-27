@@ -23,6 +23,11 @@
     [collector setUserId:@"123"];
     [collector setUserProperties:@{@"param2": @"value2", @"unique3": @"value12"}];
 
+    [collector addUserEvent:@"app loaded"];
+    [collector addUserEvent:@"items selected" numberValue:[NSNumber numberWithInt:2]];
+    [collector addUserEvent:@"item type selected" stringValue:@"The good type"];
+    [collector addUserEvent:@"userl liked the app" booleanValue:YES];
+
     [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge)
                                                                         completionHandler:^(BOOL granted, NSError * _Nullable error) {
         NSLog(@"Push notification permission granted: %d", granted);

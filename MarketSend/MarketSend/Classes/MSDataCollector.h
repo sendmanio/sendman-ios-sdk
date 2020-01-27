@@ -15,7 +15,13 @@
 + (id _Nonnull )sharedManager;
 
 - (void)setUserId:(NSString *_Nonnull)userId;
-- (void)setUserProperties:(NSDictionary *_Nonnull)properties;
 - (void)setAPNToken:(NSString *_Nonnull)token;
+
+- (void)setUserProperties:(NSDictionary *_Nonnull)properties;
+- (void)addUserEvent:(NSString *_Nonnull)eventName;
+- (void)addUserEvent:(NSString *_Nonnull)eventName stringValue:(NSString *_Nullable)value;
+- (void)addUserEvent:(NSString *_Nonnull)eventName numberValue:(NSNumber *_Nonnull)value;
+- (void)addUserEvent:(NSString *_Nonnull)eventName booleanValue:(BOOL)value;
+- (void)addUserEvents:(NSDictionary *_Nonnull)events;
 
 @end

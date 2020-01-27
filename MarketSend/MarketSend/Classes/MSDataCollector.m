@@ -15,16 +15,16 @@ NSString *const MSAPNTokenKey = @"MSAPNToken";
 @interface MSDataCollector ()
 
 @property (strong, nonatomic, nullable) NSString *userId;
+@property (strong, nonatomic, nullable) NSString *sessionId;
+
 @property (strong, nonatomic, nullable) NSMutableDictionary *properties;
-@property (strong, nonatomic, nullable) NSArray<NSString *> *events;
+@property (strong, nonatomic, nullable) NSMutableArray *events;
 
 @end
 
 @implementation MSDataCollector
 
 @synthesize userId = _userId;
-@synthesize properties = _properties;
-@synthesize events = _events;
 
 # pragma mark - Constructor and Singletong Access
 
@@ -40,7 +40,8 @@ NSString *const MSAPNTokenKey = @"MSAPNToken";
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _properties = [[NSMutableDictionary alloc] init];
+        self.properties = [[NSMutableDictionary alloc] init];
+        self.events = [[NSMutableArray alloc] init];
         [self pollForNewData];
     }
     return self;
@@ -49,9 +50,7 @@ NSString *const MSAPNTokenKey = @"MSAPNToken";
 - (void) pollForNewData {
     dispatch_queue_t serverDelaySimulationThread = dispatch_queue_create("MarketSendPoller", nil);
     dispatch_async(serverDelaySimulationThread, ^{
-        if (self.config && [self.properties count] > 0) {
-            [self sendData];
-        }
+        [self sendData];
         [NSThread sleepForTimeInterval:2];
         [self pollForNewData];
     });
@@ -61,32 +60,79 @@ NSString *const MSAPNTokenKey = @"MSAPNToken";
 
 - (void)setUserId:(NSString *)userId {
     _userId = userId;
+    self.sessionId = [[NSUUID UUID] UUIDString];
     [[MSDataEnricher sharedManager] setUserEnrichedData];
 }
 
 - (void)setUserProperties:(NSDictionary *)properties {
+    NSNumber *now = [self now];
     for (NSString* key in properties) {
-        [_properties setObject:properties[key] forKey:key];
+        [self.properties setObject:@{@"value" : properties[key], @"timestamp": now} forKey:key];
     }
 }
 
+- (void)addUserEvent:(NSString *)eventName {
+    [self addUserEvent:eventName stringValue:@""];
+}
+
+- (void)addUserEvent:(NSString *)eventName stringValue:(NSString *)value {
+    [self addUserEvents:@{eventName: value}];
+}
+
+- (void)addUserEvent:(NSString *)eventName numberValue:(NSNumber *)value {
+    [self addUserEvents:@{eventName: value}];
+}
+
+- (void)addUserEvent:(NSString *)eventName booleanValue:(bool)value {
+    [self addUserEvents:@{eventName: value == YES ? @"YES" : @"NO"}];
+}
+
+- (void)addUserEvents:(NSDictionary *)events {
+    NSNumber *now = [self now];
+    for (NSDictionary* eventName in events) {
+        [self.events addObject:@{@"key": eventName, @"value" : events[eventName], @"timestamp": now}];
+    }
+}
+
+- (NSNumber *)now {
+    return [NSNumber numberWithLongLong:(long long)([[NSDate date] timeIntervalSince1970] * 1000.0)];
+}
+
 - (void)sendData {
+    
+    if (!self.config || ([self.properties count] == 0 && [self.events count] == 0)) {
+        return;
+    }
+    
     NSLog(@"Preparing to send data");
+
+    NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
+    data[@"userId"] = self.userId;
+    data[@"sessionId"] = self.sessionId;
     
     NSMutableDictionary *currentProperties = self.properties;
-    currentProperties[@"userId"] = self.userId;
-    
+    data[@"properties"] = self.properties;
     self.properties = [[NSMutableDictionary alloc] init];
     
-    [MSAPIHandler sendDataWithJson:currentProperties andConfig:self.config forUrl:@"user/properties" responseHandler:^(NSHTTPURLResponse *httpResponse) {
+    NSMutableArray *currentEvents = self.events;
+    data[@"events"] = self.events;
+    self.events = [[NSMutableArray alloc] init];
+    
+    [MSAPIHandler sendDataWithJson:data andConfig:self.config forUrl:@"user/data" responseHandler:^(NSHTTPURLResponse *httpResponse) {
         if(httpResponse.statusCode != 204) {
             for (NSString* key in self.properties) {
                 [currentProperties setObject:self.properties[key] forKey:key];
             }
-            [self setUserProperties:currentProperties];
+            self.properties = currentProperties;
+            
+            for (NSDictionary* event in self.events) {
+                [currentEvents addObject:event];
+            }
+            self.events = currentEvents;
+            
             NSLog(@"Error");
         } else {
-            NSLog(@"Successfuly set properties: %@", currentProperties);
+            NSLog(@"Successfuly set properties: %@", data);
         }
     }];
 }
