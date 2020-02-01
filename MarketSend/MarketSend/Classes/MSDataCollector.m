@@ -17,6 +17,7 @@ NSString *const MSAPNTokenKey = @"MSAPNToken";
 @property (strong, nonatomic, nullable) MSConfig *config;
 @property (strong, nonatomic, nullable) NSString *msUserId;
 @property (strong, nonatomic, nullable) NSString *sessionId;
+@property (strong, nonatomic, nullable) NSNumber *sessionIdStartTimestamp;
 
 @property (strong, nonatomic, nullable) NSMutableDictionary *properties;
 @property (strong, nonatomic, nullable) NSMutableArray *events;
@@ -41,17 +42,18 @@ NSString *const MSAPNTokenKey = @"MSAPNToken";
     if (self) {
         self.properties = [[NSMutableDictionary alloc] init];
         self.events = [[NSMutableArray alloc] init];
-        [self pollForNewData];
+        [self pollForNewData:2 withSessionPersistency:NO];
+        [self pollForNewData:60 withSessionPersistency:YES];
     }
     return self;
 }
 
-- (void) pollForNewData {
-    dispatch_queue_t serverDelaySimulationThread = dispatch_queue_create("MarketSendPoller", nil);
+- (void) pollForNewData:(int)secondsInterval withSessionPersistency:(BOOL)presistSession {
+    dispatch_queue_t serverDelaySimulationThread = dispatch_queue_create("MarketSendDataPoller", nil);
     dispatch_async(serverDelaySimulationThread, ^{
-        [self sendData];
-        [NSThread sleepForTimeInterval:2];
-        [self pollForNewData];
+        [self sendData:presistSession];
+        [NSThread sleepForTimeInterval:secondsInterval];
+        [self pollForNewData: secondsInterval withSessionPersistency:presistSession];
     });
 }
 
@@ -66,6 +68,7 @@ NSString *const MSAPNTokenKey = @"MSAPNToken";
     MSDataCollector *manager = [MSDataCollector sharedManager];
     manager.msUserId = userId;
     manager.sessionId = [[NSUUID UUID] UUIDString];
+    manager.sessionIdStartTimestamp = [MSDataCollector now];
     [MSDataCollector setUserProperties:[[MSDataEnricher sharedManager] getUserEnrichedData]];
 }
 
@@ -109,9 +112,9 @@ NSString *const MSAPNTokenKey = @"MSAPNToken";
     return [NSNumber numberWithLongLong:(long long)([[NSDate date] timeIntervalSince1970] * 1000.0)];
 }
 
-- (void)sendData {
+- (void)sendData:(BOOL)presistSession {
     
-    if (!self.config || ([self.properties count] == 0 && [self.events count] == 0)) {
+    if (!self.config || (!presistSession && ([self.properties count] == 0 && [self.events count] == 0))) {
         return;
     }
     
@@ -120,6 +123,8 @@ NSString *const MSAPNTokenKey = @"MSAPNToken";
     NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
     data[@"userId"] = self.msUserId;
     data[@"sessionId"] = self.sessionId;
+    data[@"start"] = self.sessionIdStartTimestamp;
+    data[@"end"] = [MSDataCollector now];
     
     NSMutableDictionary *currentProperties = self.properties;
     data[@"properties"] = self.properties;
