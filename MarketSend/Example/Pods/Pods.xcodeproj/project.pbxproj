@@ -17,6 +17,27 @@
 		2B4825C5CAA57564BF63C13124D83E8E /* Pods-MarketSend2_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AD93CE8B21B76D98586E4A72E4AEBB9 /* Pods-MarketSend2_Example-dummy.m */; };
 		36A46D39326D059456E432813D03126C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		3D863014D1701DA3DE0D4450A7EFB098 /* MSDataCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 67CC10D20D8C34001A87E62596245C7A /* MSDataCollector.m */; };
+		62CA78E32402BFB700BCAAC9 /* MSData.h in Headers */ = {isa = PBXBuildFile; fileRef = 62CA78E22402BFB700BCAAC9 /* MSData.h */; };
+		62CA78E62402C26300BCAAC9 /* MSPropertyValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 62CA78E52402C26300BCAAC9 /* MSPropertyValue.h */; };
+		62CA78E72402C26600BCAAC9 /* MSSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 62CA78E42402C19D00BCAAC9 /* MSSession.h */; };
+		62CA78E92402C2DE00BCAAC9 /* MSCustomEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 62CA78E82402C2DE00BCAAC9 /* MSCustomEvent.h */; };
+		62CA78EB2402C3A800BCAAC9 /* MSData.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CA78EA2402C3A800BCAAC9 /* MSData.m */; };
+		62CA78ED2402C3E700BCAAC9 /* MSCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CA78EC2402C3E700BCAAC9 /* MSCustomEvent.m */; };
+		62CA78EF2402C40300BCAAC9 /* MSPropertyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CA78EE2402C40300BCAAC9 /* MSPropertyValue.m */; };
+		62CA78F12402C42400BCAAC9 /* MSSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CA78F02402C42400BCAAC9 /* MSSession.m */; };
+		62CA79022402CB9900BCAAC9 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CA78F42402CB9900BCAAC9 /* JSONValueTransformer.m */; };
+		62CA79032402CB9900BCAAC9 /* JSONKeyMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = 62CA78F52402CB9900BCAAC9 /* JSONKeyMapper.h */; };
+		62CA79042402CB9900BCAAC9 /* JSONValueTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 62CA78F62402CB9900BCAAC9 /* JSONValueTransformer.h */; };
+		62CA79052402CB9900BCAAC9 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CA78F72402CB9900BCAAC9 /* JSONKeyMapper.m */; };
+		62CA79062402CB9900BCAAC9 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CA78F92402CB9900BCAAC9 /* JSONModel.m */; };
+		62CA79072402CB9900BCAAC9 /* JSONModelError.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CA78FA2402CB9900BCAAC9 /* JSONModelError.m */; };
+		62CA79082402CB9900BCAAC9 /* JSONModelClassProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 62CA78FB2402CB9900BCAAC9 /* JSONModelClassProperty.h */; };
+		62CA79092402CB9900BCAAC9 /* JSONModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 62CA78FC2402CB9900BCAAC9 /* JSONModel.h */; };
+		62CA790A2402CB9900BCAAC9 /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CA78FD2402CB9900BCAAC9 /* JSONModelClassProperty.m */; };
+		62CA790B2402CB9900BCAAC9 /* JSONModelError.h in Headers */ = {isa = PBXBuildFile; fileRef = 62CA78FE2402CB9900BCAAC9 /* JSONModelError.h */; };
+		62CA790D2402CB9900BCAAC9 /* JSONModelLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 62CA79012402CB9900BCAAC9 /* JSONModelLib.h */; };
+		62CA79102402E18E00BCAAC9 /* MSSDKEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 62CA790E2402E18E00BCAAC9 /* MSSDKEvent.h */; };
+		62CA79112402E18E00BCAAC9 /* MSSDKEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 62CA790F2402E18E00BCAAC9 /* MSSDKEvent.m */; };
 		6A6BD2A696247EB6051062C880951973 /* MSConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 142B4713617D21249F8DFE24562C9B7F /* MSConfig.m */; };
 		6D525E430F8F04931F7279933BAA5218 /* MarketSend-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C24F9B62E9D4F72A02725EBC9CDE2513 /* MarketSend-dummy.m */; };
 		6EDFF47577CA0546418DC3A11DBD7070 /* Pods-MarketSend_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A4E307F9E9F88B822AE9328BC215DA0C /* Pods-MarketSend_Tests-dummy.m */; };
@@ -70,6 +91,28 @@
 		4C09CFA5686D83AE1BC65E9DA1D1AED4 /* Pods-MarketSend2_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MarketSend2_Example-Info.plist"; sourceTree = "<group>"; };
 		4DFDD4A9EF7451CCE29B9BFD7509E888 /* MarketSend.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = MarketSend.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		55DB4636D27794F2FA92A54A71EF2C07 /* MarketSend.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = MarketSend.xcconfig; sourceTree = "<group>"; };
+		62CA78E22402BFB700BCAAC9 /* MSData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSData.h; sourceTree = "<group>"; };
+		62CA78E42402C19D00BCAAC9 /* MSSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSSession.h; sourceTree = "<group>"; };
+		62CA78E52402C26300BCAAC9 /* MSPropertyValue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSPropertyValue.h; sourceTree = "<group>"; };
+		62CA78E82402C2DE00BCAAC9 /* MSCustomEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSCustomEvent.h; sourceTree = "<group>"; };
+		62CA78EA2402C3A800BCAAC9 /* MSData.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSData.m; sourceTree = "<group>"; };
+		62CA78EC2402C3E700BCAAC9 /* MSCustomEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSCustomEvent.m; sourceTree = "<group>"; };
+		62CA78EE2402C40300BCAAC9 /* MSPropertyValue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSPropertyValue.m; sourceTree = "<group>"; };
+		62CA78F02402C42400BCAAC9 /* MSSession.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSSession.m; sourceTree = "<group>"; };
+		62CA78F42402CB9900BCAAC9 /* JSONValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
+		62CA78F52402CB9900BCAAC9 /* JSONKeyMapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKeyMapper.h; sourceTree = "<group>"; };
+		62CA78F62402CB9900BCAAC9 /* JSONValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
+		62CA78F72402CB9900BCAAC9 /* JSONKeyMapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
+		62CA78F92402CB9900BCAAC9 /* JSONModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModel.m; sourceTree = "<group>"; };
+		62CA78FA2402CB9900BCAAC9 /* JSONModelError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelError.m; sourceTree = "<group>"; };
+		62CA78FB2402CB9900BCAAC9 /* JSONModelClassProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelClassProperty.h; sourceTree = "<group>"; };
+		62CA78FC2402CB9900BCAAC9 /* JSONModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
+		62CA78FD2402CB9900BCAAC9 /* JSONModelClassProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONModelClassProperty.m; sourceTree = "<group>"; };
+		62CA78FE2402CB9900BCAAC9 /* JSONModelError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelError.h; sourceTree = "<group>"; };
+		62CA78FF2402CB9900BCAAC9 /* JSONModel.modulemap */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = "sourcecode.module-map"; path = JSONModel.modulemap; sourceTree = "<group>"; };
+		62CA79012402CB9900BCAAC9 /* JSONModelLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONModelLib.h; sourceTree = "<group>"; };
+		62CA790E2402E18E00BCAAC9 /* MSSDKEvent.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MSSDKEvent.h; sourceTree = "<group>"; };
+		62CA790F2402E18E00BCAAC9 /* MSSDKEvent.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MSSDKEvent.m; sourceTree = "<group>"; };
 		643EF9341DA6BD348A52C453B8CA2081 /* MSDataCollector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MSDataCollector.h; path = MarketSend/Classes/MSDataCollector.h; sourceTree = "<group>"; };
 		67CC10D20D8C34001A87E62596245C7A /* MSDataCollector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MSDataCollector.m; path = MarketSend/Classes/MSDataCollector.m; sourceTree = "<group>"; };
 		8C70BC5D45D5DFAAEB639A795ED88379 /* Pods-MarketSend_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MarketSend_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
@@ -127,6 +170,59 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		62CA78E124029D9200BCAAC9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				62CA78E82402C2DE00BCAAC9 /* MSCustomEvent.h */,
+				62CA78EC2402C3E700BCAAC9 /* MSCustomEvent.m */,
+				62CA78E22402BFB700BCAAC9 /* MSData.h */,
+				62CA78EA2402C3A800BCAAC9 /* MSData.m */,
+				62CA78E52402C26300BCAAC9 /* MSPropertyValue.h */,
+				62CA78EE2402C40300BCAAC9 /* MSPropertyValue.m */,
+				62CA790E2402E18E00BCAAC9 /* MSSDKEvent.h */,
+				62CA790F2402E18E00BCAAC9 /* MSSDKEvent.m */,
+				62CA78E42402C19D00BCAAC9 /* MSSession.h */,
+				62CA78F02402C42400BCAAC9 /* MSSession.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		62CA78F22402CB9900BCAAC9 /* JSONModel */ = {
+			isa = PBXGroup;
+			children = (
+				62CA78F32402CB9900BCAAC9 /* JSONModelTransformations */,
+				62CA78F82402CB9900BCAAC9 /* JSONModel */,
+				62CA78FF2402CB9900BCAAC9 /* JSONModel.modulemap */,
+				62CA79012402CB9900BCAAC9 /* JSONModelLib.h */,
+			);
+			name = JSONModel;
+			path = ../../../../jsonmodel/JSONModel;
+			sourceTree = "<group>";
+		};
+		62CA78F32402CB9900BCAAC9 /* JSONModelTransformations */ = {
+			isa = PBXGroup;
+			children = (
+				62CA78F42402CB9900BCAAC9 /* JSONValueTransformer.m */,
+				62CA78F52402CB9900BCAAC9 /* JSONKeyMapper.h */,
+				62CA78F62402CB9900BCAAC9 /* JSONValueTransformer.h */,
+				62CA78F72402CB9900BCAAC9 /* JSONKeyMapper.m */,
+			);
+			path = JSONModelTransformations;
+			sourceTree = "<group>";
+		};
+		62CA78F82402CB9900BCAAC9 /* JSONModel */ = {
+			isa = PBXGroup;
+			children = (
+				62CA78F92402CB9900BCAAC9 /* JSONModel.m */,
+				62CA78FA2402CB9900BCAAC9 /* JSONModelError.m */,
+				62CA78FB2402CB9900BCAAC9 /* JSONModelClassProperty.h */,
+				62CA78FC2402CB9900BCAAC9 /* JSONModel.h */,
+				62CA78FD2402CB9900BCAAC9 /* JSONModelClassProperty.m */,
+				62CA78FE2402CB9900BCAAC9 /* JSONModelError.h */,
+			);
+			path = JSONModel;
+			sourceTree = "<group>";
+		};
 		6C3EC5D18C4AC632F4D4EF3D4F3979B5 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
@@ -140,6 +236,7 @@
 		6E7BAE53EE4D7C666A25649E517B3902 /* MarketSend */ = {
 			isa = PBXGroup;
 			children = (
+				62CA78E124029D9200BCAAC9 /* Models */,
 				483C69C1B346564E868952354FA7EE50 /* MSConfig.h */,
 				142B4713617D21249F8DFE24562C9B7F /* MSConfig.m */,
 				643EF9341DA6BD348A52C453B8CA2081 /* MSDataCollector.h */,
@@ -243,6 +340,7 @@
 		D65A0B3343D299AD35A5963EFA11EFEF /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
+				62CA78F22402CB9900BCAAC9 /* JSONModel */,
 				6E7BAE53EE4D7C666A25649E517B3902 /* MarketSend */,
 			);
 			name = "Development Pods";
@@ -255,12 +353,23 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62CA79102402E18E00BCAAC9 /* MSSDKEvent.h in Headers */,
 				28F7EAB123D5BD030044F841 /* MSDataEnricher.h in Headers */,
+				62CA78E62402C26300BCAAC9 /* MSPropertyValue.h in Headers */,
 				208162E609CE1957B21395194CDF4EEB /* MarketSend-umbrella.h in Headers */,
+				62CA79082402CB9900BCAAC9 /* JSONModelClassProperty.h in Headers */,
 				28F7EAB823DDC5BF0044F841 /* MSAPIHandler.h in Headers */,
+				62CA79032402CB9900BCAAC9 /* JSONKeyMapper.h in Headers */,
+				62CA790D2402CB9900BCAAC9 /* JSONModelLib.h in Headers */,
 				6FA87C3F6942C128BC84131D601448D8 /* MSConfig.h in Headers */,
 				BC47918D60B95C043866E4863372FB4A /* MSDataCollector.h in Headers */,
+				62CA790B2402CB9900BCAAC9 /* JSONModelError.h in Headers */,
 				28F7EAB423DDC58D0044F841 /* MSAuthHandler.h in Headers */,
+				62CA78E92402C2DE00BCAAC9 /* MSCustomEvent.h in Headers */,
+				62CA79092402CB9900BCAAC9 /* JSONModel.h in Headers */,
+				62CA78E72402C26600BCAAC9 /* MSSession.h in Headers */,
+				62CA79042402CB9900BCAAC9 /* JSONValueTransformer.h in Headers */,
+				62CA78E32402BFB700BCAAC9 /* MSData.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,11 +514,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62CA78EF2402C40300BCAAC9 /* MSPropertyValue.m in Sources */,
 				6D525E430F8F04931F7279933BAA5218 /* MarketSend-dummy.m in Sources */,
+				62CA790A2402CB9900BCAAC9 /* JSONModelClassProperty.m in Sources */,
 				28F7EAAF23D5BCD80044F841 /* MSDataEnricher.m in Sources */,
 				6A6BD2A696247EB6051062C880951973 /* MSConfig.m in Sources */,
+				62CA78EB2402C3A800BCAAC9 /* MSData.m in Sources */,
 				28F7EAB923DDC5BF0044F841 /* MSAPIHandler.m in Sources */,
+				62CA79052402CB9900BCAAC9 /* JSONKeyMapper.m in Sources */,
+				62CA79022402CB9900BCAAC9 /* JSONValueTransformer.m in Sources */,
+				62CA79072402CB9900BCAAC9 /* JSONModelError.m in Sources */,
 				3D863014D1701DA3DE0D4450A7EFB098 /* MSDataCollector.m in Sources */,
+				62CA79112402E18E00BCAAC9 /* MSSDKEvent.m in Sources */,
+				62CA79062402CB9900BCAAC9 /* JSONModel.m in Sources */,
+				62CA78ED2402C3E700BCAAC9 /* MSCustomEvent.m in Sources */,
+				62CA78F12402C42400BCAAC9 /* MSSession.m in Sources */,
 				28F7EAB523DDC58D0044F841 /* MSAuthHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

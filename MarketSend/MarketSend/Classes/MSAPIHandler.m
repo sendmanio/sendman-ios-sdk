@@ -31,6 +31,10 @@
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
         responseHandler(httpResponse);
+
+        if (error) {
+            NSLog(@"There was an error with sending data!");
+        }
     }];
     [dataTask resume];
 }

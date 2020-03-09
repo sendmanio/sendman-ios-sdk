@@ -9,8 +9,11 @@
 #import "MSDataCollector.h"
 #import "MSDataEnricher.h"
 #import "MSAPIHandler.h"
+#import "MSData.h"
 
 NSString *const MSAPNTokenKey = @"MSAPNToken";
+
+typedef NSMutableDictionary<NSString *, MSPropertyValue *> <NSString, MSPropertyValue> MSMutableProperties;
 
 @interface MSDataCollector ()
 
@@ -19,8 +22,11 @@ NSString *const MSAPNTokenKey = @"MSAPNToken";
 @property (strong, nonatomic, nullable) NSString *sessionId;
 @property (strong, nonatomic, nullable) NSNumber *sessionIdStartTimestamp;
 
-@property (strong, nonatomic, nullable) NSMutableDictionary *properties;
-@property (strong, nonatomic, nullable) NSMutableArray *events;
+// TODO: separate user props/events from internal ones
+@property (strong, nonatomic, nullable) MSMutableProperties *customProperties;
+@property (strong, nonatomic, nullable) MSMutableProperties *sdkProperties;
+@property (strong, nonatomic, nullable) NSMutableArray<MSCustomEvent *> <MSCustomEvent> *customEvents;
+@property (strong, nonatomic, nullable) NSMutableArray<MSSDKEvent *> <MSSDKEvent> *sdkEvents;
 
 @end
 
@@ -40,8 +46,10 @@ NSString *const MSAPNTokenKey = @"MSAPNToken";
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.properties = [[NSMutableDictionary alloc] init];
-        self.events = [[NSMutableArray alloc] init];
+        self.customProperties = [MSMutableProperties new];
+        self.sdkProperties = [MSMutableProperties new];
+        self.customEvents = [NSMutableArray<MSCustomEvent> new];
+        self.sdkEvents = [NSMutableArray<MSSDKEvent> new];
         [self pollForNewData:2 withSessionPersistency:NO];
         [self pollForNewData:60 withSessionPersistency:YES];
     }
@@ -69,19 +77,26 @@ NSString *const MSAPNTokenKey = @"MSAPNToken";
     manager.msUserId = userId;
     manager.sessionId = [[NSUUID UUID] UUIDString];
     manager.sessionIdStartTimestamp = [MSDataCollector now];
-    [MSDataCollector setUserProperties:[[MSDataEnricher sharedManager] getUserEnrichedData]];
+    [self setProperties:[[MSDataEnricher sharedManager] getUserEnrichedData] inState:manager.sdkProperties];
 }
 
 + (void)setAPNToken:(NSString *)token {
     [MSDataCollector setUserProperties:@{MSAPNTokenKey: token}];
 }
 
-+ (void)setUserProperties:(NSDictionary *)properties {
-    MSDataCollector *manager = [MSDataCollector sharedManager];
++ (void)setProperties:(NSDictionary *)properties inState:(MSMutableProperties *)stateProperties {
     NSNumber *now = [MSDataCollector now];
     for (NSString* key in properties) {
-        [manager.properties setObject:@{@"value" : properties[key], @"timestamp": now} forKey:key];
+        MSPropertyValue *propertyValue = [MSPropertyValue new];
+        propertyValue.value = properties[key];
+        propertyValue.timestamp = now;
+        [stateProperties setObject:propertyValue forKey:key];
     }
+}
+
++ (void)setUserProperties:(NSDictionary *)properties {
+    MSDataCollector *manager = [MSDataCollector sharedManager];
+    [self setProperties:properties inState:manager.customProperties];
 }
 
 + (void)addUserEvent:(NSString *)eventName {
@@ -96,15 +111,47 @@ NSString *const MSAPNTokenKey = @"MSAPNToken";
     [MSDataCollector addUserEvents:@{eventName: value}];
 }
 
-+ (void)addUserEvent:(NSString *)eventName booleanValue:(bool)value {
++ (void)addUserEvent:(NSString *)eventName booleanValue:(BOOL)value {
     [MSDataCollector addUserEvents:@{eventName: value == YES ? @"YES" : @"NO"}];
 }
 
 + (void)addUserEvents:(NSDictionary *)events {
     MSDataCollector *manager = [MSDataCollector sharedManager];
     NSNumber *now = [MSDataCollector now];
-    for (NSDictionary* eventName in events) {
-        [manager.events addObject:@{@"key": eventName, @"value" : events[eventName], @"timestamp": now}];
+    for (NSString* eventName in events) {
+        MSCustomEvent *event = [MSCustomEvent new];
+        event.key = eventName;
+        event.value = events[eventName];
+        event.timestamp = now;
+        [manager.customEvents addObject:event];
+    }
+}
+
++ (void)didOpenMessage:(NSString *)messageId atState:(UIApplicationState)appState {
+    MSSDKEvent *event = [MSSDKEvent new];
+    event.key = appState == UIApplicationStateActive ? @"Foreground Message Received" : @"App launched";
+    event.appState = [self appStateStringFromState:appState];
+    event.timestamp = [MSDataCollector now];
+    event.messageId = messageId;
+
+    MSDataCollector *manager = [MSDataCollector sharedManager];
+    if ([[manager.sdkEvents filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"messageId == %@", messageId]] firstObject]) {
+        NSLog(@"Message already handled previously");
+    } else {
+        [manager.sdkEvents addObject:event];
+    }
+}
+
++ (NSString *)appStateStringFromState:(UIApplicationState)state {
+    switch (state) {
+        case UIApplicationStateActive:
+            return @"Active";
+        case UIApplicationStateInactive:
+            return @"Inactive";
+        case UIApplicationStateBackground:
+            return @"Background";
+        default:
+            return @"Killed";
     }
 }
 
@@ -114,41 +161,61 @@ NSString *const MSAPNTokenKey = @"MSAPNToken";
 
 - (void)sendData:(BOOL)presistSession {
     
-    if (!self.config || (!presistSession && ([self.properties count] == 0 && [self.events count] == 0))) {
+    if (!self.config || (!presistSession && ([self.customProperties count] == 0 && [self.sdkProperties count] == 0 && [self.customEvents count] == 0 && [self.sdkEvents count] == 0))) {
         return;
     }
     
     NSLog(@"Preparing to send data");
 
-    NSMutableDictionary *data = [[NSMutableDictionary alloc] init];
-    data[@"userId"] = self.msUserId;
-    data[@"sessionId"] = self.sessionId;
-    data[@"start"] = self.sessionIdStartTimestamp;
-    data[@"end"] = [MSDataCollector now];
-    
-    NSMutableDictionary *currentProperties = self.properties;
-    data[@"properties"] = self.properties;
-    self.properties = [[NSMutableDictionary alloc] init];
-    
-    NSMutableArray *currentEvents = self.events;
-    data[@"events"] = self.events;
-    self.events = [[NSMutableArray alloc] init];
-    
-    [MSAPIHandler sendDataWithJson:data andConfig:self.config forUrl:@"user/data" responseHandler:^(NSHTTPURLResponse *httpResponse) {
+    MSData *data = [MSData new];
+    data.externalUserId = self.msUserId;
+
+    data.currentSession = [MSSession new];
+    data.currentSession.sessionId = self.sessionId;
+    data.currentSession.start = self.sessionIdStartTimestamp;
+    data.currentSession.end = [MSDataCollector now];
+
+    MSMutableProperties *currentCustomProperties = self.customProperties;
+    data.customProperties = self.customProperties;
+    self.customProperties = [MSMutableProperties new];
+
+    MSMutableProperties *currentSDKProperties = self.sdkProperties;
+    data.sdkProperties = self.sdkProperties;
+    self.sdkProperties = [MSMutableProperties new];
+
+    NSMutableArray<MSCustomEvent *> <MSCustomEvent> *currentCustomEvents = self.customEvents;
+    data.customEvents = self.customEvents;
+    self.customEvents = [[NSMutableArray<MSCustomEvent> alloc] init];
+
+    NSMutableArray<MSSDKEvent *> <MSSDKEvent> *currentSDKEvents = self.sdkEvents;
+    data.sdkEvents = self.sdkEvents;
+    self.sdkEvents = [[NSMutableArray<MSSDKEvent> alloc] init];
+
+    [MSAPIHandler sendDataWithJson:[data toDictionary] andConfig:self.config forUrl:@"user/data" responseHandler:^(NSHTTPURLResponse *httpResponse) {
         if(httpResponse.statusCode != 204) {
-            for (NSString* key in self.properties) {
-                [currentProperties setObject:self.properties[key] forKey:key];
+            for (NSString* key in self.customProperties) {
+                [currentCustomProperties setObject:self.customProperties[key] forKey:key];
             }
-            self.properties = currentProperties;
+            self.customProperties = currentCustomProperties;
             
-            for (NSDictionary* event in self.events) {
-                [currentEvents addObject:event];
+            for (NSString* key in self.sdkProperties) {
+                [currentSDKProperties setObject:self.sdkProperties[key] forKey:key];
             }
-            self.events = currentEvents;
+            self.sdkProperties = currentSDKProperties;
+
+            for (MSCustomEvent* customEvent in self.customEvents) {
+                [currentCustomEvents addObject:customEvent];
+            }
+            self.customEvents = currentCustomEvents;
             
+            for (MSSDKEvent* sdkEvents in self.sdkEvents) {
+                [currentSDKEvents addObject:sdkEvents];
+            }
+            self.sdkEvents = currentSDKEvents;
+
             NSLog(@"Error");
         } else {
-            NSLog(@"Successfuly set properties: %@", data);
+            NSLog(@"Successfuly set properties: %@", [data toDictionary]);
         }
     }];
 }

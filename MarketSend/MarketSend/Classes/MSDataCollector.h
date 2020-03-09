@@ -21,4 +21,6 @@
 + (void)addUserEvent:(NSString *_Nonnull)eventName booleanValue:(BOOL)value;
 + (void)addUserEvents:(NSDictionary *_Nonnull)events;
 
++ (void)didOpenMessage:(NSString *_Nonnull)messageId atState:(UIApplicationState)appState;
+
 @end
