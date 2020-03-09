@@ -33,6 +33,15 @@
             [[UIApplication sharedApplication] registerForRemoteNotifications];
         });
     }];
+
+    // In order to receive action updates
+    // TODO: merge this with subscription above
+    [UNUserNotificationCenter currentNotificationCenter].delegate = self;
+
+    if (launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey]) {
+        [MSDataCollector didOpenMessage:launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey][@"messageId"] atState:-1];
+    }
+
     // Override point for customization after application launch.
     return YES;
 }
@@ -79,5 +88,65 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler {
+    NSLog(@"didReceiveRemoteNotification with completionHandler called in state %@ with userInfo: %@", [MSAppDelegate applicationState], [MSAppDelegate jsonDict:userInfo]);
+    completionHandler(UIBackgroundFetchResultNoData);
+    // [Active, [contentAvailable]] -> called second in foreground
+    // [Active, [contentAvailable, mutableContent]] -> called second in foreground
+    // [Background, [contentAvailable]] -> called on receive in background
+    // [Background, [contentAvailable, mutableContent]] -> called on receive in background
+}
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
+    NSLog(@"didReceiveRemoteNotification (DEPRECATED) called in state %@ with userInfo: %@", [MSAppDelegate applicationState], [MSAppDelegate jsonDict:userInfo]);
+}
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center openSettingsForNotification:(UNNotification *)notification {
+    NSLog(@"openSettingsForNotification called in state %@ with userInfo: %@", [MSAppDelegate applicationState], [MSAppDelegate jsonDict:notification.request.content.userInfo]);
+}
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
+    // [Active, contentAvailable] -> called first
+    NSLog(@"willPresentNotification called in state %@ with userInfo: %@", [MSAppDelegate applicationState], [MSAppDelegate jsonDict:notification.request.content.userInfo]);
+    if (notification.request.content.userInfo) {
+        [MSDataCollector didOpenMessage:notification.request.content.userInfo[@"messageId"] atState:[[UIApplication sharedApplication] applicationState]];
+    }
+    completionHandler(UNNotificationPresentationOptionNone);
+}
+
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
+    NSLog(@"didReceiveNotificationResponse called in state %@ with action %@ and userInfo: %@", [MSAppDelegate applicationState], response.actionIdentifier, [MSAppDelegate jsonDict:response.notification.request.content.userInfo]);
+    completionHandler();
+    if (response.notification.request.content.userInfo) {
+        [MSDataCollector didOpenMessage:response.notification.request.content.userInfo[@"messageId"] atState:[[UIApplication sharedApplication] applicationState]];
+    }
+
+    // [Inactive, [contentAvailable]] -> called on click on default action when was in background
+    // [Inactive, [contentAvailable, mutableContent]] -> called on click on default action when was in background
+}
+
++ (NSString*) jsonDict:(NSDictionary *)d {
+    NSError *error;
+    if (!d) return @"{}";
+
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:d
+                                                  options:NSJSONWritingPrettyPrinted
+                                                    error:&error];
+
+    if (!jsonData) {
+       NSLog(@"%s: error: %@", __func__, error.localizedDescription);
+       return @"{}";
+    } else {
+       return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    }
+}
+
++ (NSString *)applicationState {
+    UIApplicationState state = [[UIApplication sharedApplication] applicationState];
+    return state == UIApplicationStateActive ? @"Active" : (state == UIApplicationStateInactive ? @"Inactive" : @"Background");
+}
+
 
 @end
