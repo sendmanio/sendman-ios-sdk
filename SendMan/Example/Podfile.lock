@@ -1,0 +1,16 @@
+PODS:
+  - SendMan (0.1.0)
+
+DEPENDENCIES:
+  - SendMan (from `../`)
+
+EXTERNAL SOURCES:
+  SendMan:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SendMan: e966111fd63151f78854c81705c8a0d119ff7f30
+
+PODFILE CHECKSUM: aad2dc24ab722207a334dedc58db203a61866b38
+
+COCOAPODS: 1.8.4

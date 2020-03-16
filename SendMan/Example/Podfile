@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '8.0'
+
+target 'SendMan2_Example' do
+  pod 'SendMan', :path => '../'
+
+  target 'SendMan_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

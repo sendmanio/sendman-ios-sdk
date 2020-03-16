@@ -1,0 +1,19 @@
+//
+//  SSMDKEvent.h
+//  SendMan
+//
+//  Created by Avishay Sheba Harari on 23/02/2020.
+//
+
+#import "JSONModel.h"
+
+@protocol SSMDKEvent;
+
+@interface SSMDKEvent : JSONModel
+
+@property (nonatomic) NSString *key;
+@property (nonatomic) NSString <Optional> *messageId;
+@property (nonatomic) NSNumber *timestamp;
+@property (nonatomic) NSString *appState;
+
+@end

@@ -1,0 +1,22 @@
+{
+  "name": "SendMan",
+  "version": "0.1.0",
+  "summary": "An SDK for working with SendMan's API",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/anatha/SendMan",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "anatha": "harari.anat@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/anatha/SendMan.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "SendMan/Classes/**/*"
+}

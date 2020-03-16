@@ -1,1 +1,1 @@
-# marketsend-ios-sdk
+# sendman-ios-sdk

@@ -1,0 +1,6 @@
+framework module SendMan {
+  umbrella header "SendMan-umbrella.h"
+
+  export *
+  module * { export * }
+}
