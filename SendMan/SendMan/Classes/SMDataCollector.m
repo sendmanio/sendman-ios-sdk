@@ -142,6 +142,16 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
     }
 }
 
++ (void)didOpenApp {
+    SSMDKEvent *event = [SSMDKEvent new];
+    event.key = @"App launched";
+    event.appState = [self appStateStringFromState:-1];
+    event.timestamp = [SMDataCollector now];
+
+    SMDataCollector *manager = [SMDataCollector sharedManager];
+    [manager.sdkEvents addObject:event];
+}
+
 + (NSString *)appStateStringFromState:(UIApplicationState)state {
     switch (state) {
         case UIApplicationStateActive:

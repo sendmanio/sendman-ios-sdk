@@ -21,8 +21,6 @@
     [SMDataCollector setAppConfig:config];
     [SMDataCollector setUserId:@"123"];
     [SMDataCollector setUserProperties:@{@"email": @"email@email.com", @"Native App": @"YES"}];
-    
-    [SMDataCollector addUserEvent:@"App loaded"];
 
     [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge)
                                                                         completionHandler:^(BOOL granted, NSError * _Nullable error) {
@@ -40,6 +38,8 @@
 
     if (launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey]) {
         [SMDataCollector didOpenMessage:launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey][@"messageId"] atState:-1];
+    } else {
+        [SMDataCollector didOpenApp];
     }
 
     // Override point for customization after application launch.
@@ -113,7 +113,7 @@
     if (notification.request.content.userInfo) {
         [SMDataCollector didOpenMessage:notification.request.content.userInfo[@"messageId"] atState:[[UIApplication sharedApplication] applicationState]];
     }
-    completionHandler(UNNotificationPresentationOptionNone);
+    completionHandler(UNNotificationPresentationOptionAlert);
 }
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {

@@ -22,5 +22,6 @@
 + (void)addUserEvents:(NSDictionary *_Nonnull)events;
 
 + (void)didOpenMessage:(NSString *_Nonnull)messageId atState:(UIApplicationState)appState;
++ (void)didOpenApp;
 
 @end
