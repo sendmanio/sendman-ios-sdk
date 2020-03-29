@@ -8,8 +8,8 @@
 #import "JSONModel.h"
 #import "SMCustomEvent.h"
 #import "SMPropertyValue.h"
-#import "SSMDKEvent.h"
-#import "SSMession.h"
+#import "SMSDKEvent.h"
+#import "SMSession.h"
 
 @protocol NSString;
 
@@ -17,10 +17,10 @@
 
 @property (nonatomic) NSString *userId;
 @property (nonatomic) NSString *externalUserId;
-@property (nonatomic) SSMession *currentSession;
+@property (nonatomic) SMSession *currentSession;
 @property (nonatomic) NSDictionary<NSString *, SMPropertyValue *> <NSString, SMPropertyValue> *customProperties;
 @property (nonatomic) NSDictionary<NSString *, SMPropertyValue *> <NSString, SMPropertyValue> *sdkProperties;
 @property (nonatomic) NSArray<SMCustomEvent *> <SMCustomEvent> *customEvents;
-@property (nonatomic) NSArray<SSMDKEvent *> <SSMDKEvent> *sdkEvents;
+@property (nonatomic) NSArray<SMSDKEvent *> <SMSDKEvent> *sdkEvents;
 
 @end

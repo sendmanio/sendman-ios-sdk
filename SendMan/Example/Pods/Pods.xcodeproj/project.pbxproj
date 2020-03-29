@@ -11,7 +11,7 @@
 		0D59728B0482A2CFFE59CD74D4C31081 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A6C97198B65DBE8EBC0DD011EF8D3B3 /* JSONKeyMapper.m */; };
 		0E689A2CBA53D70B540137B20A625ABC /* JSONValueTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B4A140A76800C8866FBA534D90A75E6 /* JSONValueTransformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		14D9A9AE3114C5A53A951989EDBA552A /* Pods-SendMan_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B179086DA5534F114FD7F8E1C97D60A /* Pods-SendMan_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1EA03117FA65594A86C602B7792DF0A8 /* SSMession.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC046AA9C0B3D2346676D49B31409B6 /* SSMession.m */; };
+		1EA03117FA65594A86C602B7792DF0A8 /* SMSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EC046AA9C0B3D2346676D49B31409B6 /* SMSession.m */; };
 		2F9E98856463CB1E5BF1318814383C79 /* SMConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = A387193F04E90B9BE04EDBF72441AE51 /* SMConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		32903D3C20526DF96E0ACF44A72E1D05 /* SMDataCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 21846501F975AEEFCB89C6C6C9C0BA73 /* SMDataCollector.m */; };
 		3C69709254F903989D4FEA05ACEB264B /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = C91646B62D1E52ED35E73FA7F3CBA627 /* JSONValueTransformer.m */; };
@@ -20,7 +20,7 @@
 		4DADC0D8235C4DC9C899A2D9F7AFEDB7 /* JSONModelLib.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D0C5070574A4E6E0D71C5E972940692 /* JSONModelLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5111E03216C5627CEE85BB6A4142000B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		5490440E3FD69F3C3D00B63143E4D0E0 /* SMPropertyValue.h in Headers */ = {isa = PBXBuildFile; fileRef = A28C43E3563ABA44CAF95008CC8BFC63 /* SMPropertyValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		56C9318869253D0A737E86388CD2477B /* SSMDKEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB96AD2F7D4EA1D6622F42A1422F33E /* SSMDKEvent.m */; };
+		56C9318869253D0A737E86388CD2477B /* SMSDKEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BB96AD2F7D4EA1D6622F42A1422F33E /* SMSDKEvent.m */; };
 		5E373EE4AAA89DB79A6546FFB56C6E93 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F4EF471DABFB1DD8D48CCDFD20DA26E8 /* JSONModel.m */; };
 		6BA9D1C398413A1525F6E82AF29E3C36 /* JSONModel.modulemap in Sources */ = {isa = PBXBuildFile; fileRef = 55004C44AEBF889D73149624900EDA7E /* JSONModel.modulemap */; };
 		6BD0CC41EC782D5638A5D996240926B7 /* Pods-SendMan_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6D6DDFAC10B2B40F297260224BA98 /* Pods-SendMan_Tests-dummy.m */; };
@@ -37,7 +37,7 @@
 		D01CBC36F6A4BEEB5D180E124347E47E /* SMCustomEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E54A5E18C30DECD5CEA17CD800511D9 /* SMCustomEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D0A080FDD7AC449A63608DF538657BF3 /* JSONModelError.h in Headers */ = {isa = PBXBuildFile; fileRef = F84DC1459327EAFF4E1057BA97F5B976 /* JSONModelError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D76F97B559934B8FDD2E0F5F83F1ECE5 /* SendMan-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8592C9F0806DC4CB568F09511E4549 /* SendMan-dummy.m */; };
-		D910407C0A60FDF725D25F45CFA73DBC /* SSMDKEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 436CF97E8CDCFBCDC4AA5EC8AAFD68C3 /* SSMDKEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D910407C0A60FDF725D25F45CFA73DBC /* SMSDKEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 436CF97E8CDCFBCDC4AA5EC8AAFD68C3 /* SMSDKEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC29112B98E2BA11AA002B9DD840DC82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		DE60B89ACF775F93452C0FDEE71EA4CC /* SMDataEnricher.h in Headers */ = {isa = PBXBuildFile; fileRef = 647A87B4FE4D8BDB48480BE2DB79A424 /* SMDataEnricher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E228D4998E1D6A9058D67BD247B24B40 /* Pods-SendMan2_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4775B7E1599FFD9EEFA7E2353890A3D3 /* Pods-SendMan2_Example-dummy.m */; };
@@ -46,7 +46,7 @@
 		E8236A8A5DEDC50DD807B0B0323D3599 /* JSONModelClassProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = BE40FB402A654AA57EDA0EDEC7AADD7A /* JSONModelClassProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EDF79631D2B9C49DA6D03A85762CF40B /* SMCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C309EB8774D5B52591F0CBB3E04F35 /* SMCustomEvent.m */; };
 		F08BE8199C2775E63C0C99AFA44F5CE9 /* JSONModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 879987292CB18EABCF9FCBC49033577C /* JSONModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F201A2E9FA1B784BA0F69A39D12AB5FA /* SSMession.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F840E1A2EF1F03D1E0B4A6BE7C59E6F /* SSMession.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F201A2E9FA1B784BA0F69A39D12AB5FA /* SMSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F840E1A2EF1F03D1E0B4A6BE7C59E6F /* SMSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FD3B0F07109AD953F5E8F1873D242F83 /* SMDataCollector.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F340F9A44CC3B78BC5C1F450948B638 /* SMDataCollector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -70,7 +70,7 @@
 /* Begin PBXFileReference section */
 		079E9007FE202952C59259150AB9301A /* SendMan.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SendMan.modulemap; sourceTree = "<group>"; };
 		0B179086DA5534F114FD7F8E1C97D60A /* Pods-SendMan_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SendMan_Tests-umbrella.h"; sourceTree = "<group>"; };
-		1BB96AD2F7D4EA1D6622F42A1422F33E /* SSMDKEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SSMDKEvent.m; sourceTree = "<group>"; };
+		1BB96AD2F7D4EA1D6622F42A1422F33E /* SMSDKEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMSDKEvent.m; sourceTree = "<group>"; };
 		1D24E1217FB6E36575F021DEA88E50FD /* Pods_SendMan_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SendMan_Tests.framework; path = "Pods-SendMan_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E54A5E18C30DECD5CEA17CD800511D9 /* SMCustomEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SMCustomEvent.h; sourceTree = "<group>"; };
 		1FAB7CB8A2ED6AFEAED90F89EF0A5629 /* SMAuthHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SMAuthHandler.h; path = SendMan/Classes/SMAuthHandler.h; sourceTree = "<group>"; };
@@ -82,14 +82,14 @@
 		343312067F18025235207CA4CC5057EB /* SMAPIHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SMAPIHandler.m; path = SendMan/Classes/SMAPIHandler.m; sourceTree = "<group>"; };
 		36CA4AFBF4D8FEAA8B100744768FFE2F /* SendMan-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SendMan-umbrella.h"; sourceTree = "<group>"; };
 		3D184CAC976206BC54F86842F6BDB9C5 /* Pods-SendMan_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SendMan_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		436CF97E8CDCFBCDC4AA5EC8AAFD68C3 /* SSMDKEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SSMDKEvent.h; sourceTree = "<group>"; };
+		436CF97E8CDCFBCDC4AA5EC8AAFD68C3 /* SMSDKEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SMSDKEvent.h; sourceTree = "<group>"; };
 		4775B7E1599FFD9EEFA7E2353890A3D3 /* Pods-SendMan2_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SendMan2_Example-dummy.m"; sourceTree = "<group>"; };
 		4EC3C2A48A8C6549585E788415A681B1 /* SendMan.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SendMan.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		4F340F9A44CC3B78BC5C1F450948B638 /* SMDataCollector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SMDataCollector.h; path = SendMan/Classes/SMDataCollector.h; sourceTree = "<group>"; };
 		5076EEDEB9ED223FB2705BC47C06140E /* SendMan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SendMan.framework; path = SendMan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55004C44AEBF889D73149624900EDA7E /* JSONModel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = JSONModel.modulemap; sourceTree = "<group>"; };
 		5A6C97198B65DBE8EBC0DD011EF8D3B3 /* JSONKeyMapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
-		5EC046AA9C0B3D2346676D49B31409B6 /* SSMession.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SSMession.m; sourceTree = "<group>"; };
+		5EC046AA9C0B3D2346676D49B31409B6 /* SMSession.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMSession.m; sourceTree = "<group>"; };
 		612021B6C62CC6593AE44B032DB8A6B5 /* Pods-SendMan2_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SendMan2_Example-umbrella.h"; sourceTree = "<group>"; };
 		647A87B4FE4D8BDB48480BE2DB79A424 /* SMDataEnricher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SMDataEnricher.h; path = SendMan/Classes/SMDataEnricher.h; sourceTree = "<group>"; };
 		6A2AA82D65BC7B1D99C3B254C922AEB7 /* Pods-SendMan_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SendMan_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -106,7 +106,7 @@
 		99FB08E89D4A032DB340A4421D40C1CB /* SMPropertyValue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMPropertyValue.m; sourceTree = "<group>"; };
 		9AF6D6DDFAC10B2B40F297260224BA98 /* Pods-SendMan_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SendMan_Tests-dummy.m"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9F840E1A2EF1F03D1E0B4A6BE7C59E6F /* SSMession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SSMession.h; sourceTree = "<group>"; };
+		9F840E1A2EF1F03D1E0B4A6BE7C59E6F /* SMSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SMSession.h; sourceTree = "<group>"; };
 		A1F36C4B3F56E9090FD07C755F9B0D5B /* Pods-SendMan_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SendMan_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A28C43E3563ABA44CAF95008CC8BFC63 /* SMPropertyValue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SMPropertyValue.h; sourceTree = "<group>"; };
 		A387193F04E90B9BE04EDBF72441AE51 /* SMConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SMConfig.h; path = SendMan/Classes/SMConfig.h; sourceTree = "<group>"; };
@@ -285,10 +285,10 @@
 				7FF96844082E0BA9A22C4BD9B489EF9B /* SMData.m */,
 				A28C43E3563ABA44CAF95008CC8BFC63 /* SMPropertyValue.h */,
 				99FB08E89D4A032DB340A4421D40C1CB /* SMPropertyValue.m */,
-				436CF97E8CDCFBCDC4AA5EC8AAFD68C3 /* SSMDKEvent.h */,
-				1BB96AD2F7D4EA1D6622F42A1422F33E /* SSMDKEvent.m */,
-				9F840E1A2EF1F03D1E0B4A6BE7C59E6F /* SSMession.h */,
-				5EC046AA9C0B3D2346676D49B31409B6 /* SSMession.m */,
+				436CF97E8CDCFBCDC4AA5EC8AAFD68C3 /* SMSDKEvent.h */,
+				1BB96AD2F7D4EA1D6622F42A1422F33E /* SMSDKEvent.m */,
+				9F840E1A2EF1F03D1E0B4A6BE7C59E6F /* SMSession.h */,
+				5EC046AA9C0B3D2346676D49B31409B6 /* SMSession.m */,
 			);
 			name = Models;
 			path = SendMan/Classes/Models;
@@ -372,8 +372,8 @@
 				FD3B0F07109AD953F5E8F1873D242F83 /* SMDataCollector.h in Headers */,
 				DE60B89ACF775F93452C0FDEE71EA4CC /* SMDataEnricher.h in Headers */,
 				5490440E3FD69F3C3D00B63143E4D0E0 /* SMPropertyValue.h in Headers */,
-				D910407C0A60FDF725D25F45CFA73DBC /* SSMDKEvent.h in Headers */,
-				F201A2E9FA1B784BA0F69A39D12AB5FA /* SSMession.h in Headers */,
+				D910407C0A60FDF725D25F45CFA73DBC /* SMSDKEvent.h in Headers */,
+				F201A2E9FA1B784BA0F69A39D12AB5FA /* SMSession.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -525,8 +525,8 @@
 				32903D3C20526DF96E0ACF44A72E1D05 /* SMDataCollector.m in Sources */,
 				CD2A99EECC7FC961038980FB72AE6AE6 /* SMDataEnricher.m in Sources */,
 				C9CB71C760EA1B90E29BA6ADBF390B96 /* SMPropertyValue.m in Sources */,
-				56C9318869253D0A737E86388CD2477B /* SSMDKEvent.m in Sources */,
-				1EA03117FA65594A86C602B7792DF0A8 /* SSMession.m in Sources */,
+				56C9318869253D0A737E86388CD2477B /* SMSDKEvent.m in Sources */,
+				1EA03117FA65594A86C602B7792DF0A8 /* SMSession.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

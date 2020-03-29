@@ -26,7 +26,7 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
 @property (strong, nonatomic, nullable) SMMutableProperties *customProperties;
 @property (strong, nonatomic, nullable) SMMutableProperties *sdkProperties;
 @property (strong, nonatomic, nullable) NSMutableArray<SMCustomEvent *> <SMCustomEvent> *customEvents;
-@property (strong, nonatomic, nullable) NSMutableArray<SSMDKEvent *> <SSMDKEvent> *sdkEvents;
+@property (strong, nonatomic, nullable) NSMutableArray<SMSDKEvent *> <SMSDKEvent> *sdkEvents;
 
 @end
 
@@ -49,7 +49,7 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
         self.customProperties = [SMMutableProperties new];
         self.sdkProperties = [SMMutableProperties new];
         self.customEvents = [NSMutableArray<SMCustomEvent> new];
-        self.sdkEvents = [NSMutableArray<SSMDKEvent> new];
+        self.sdkEvents = [NSMutableArray<SMSDKEvent> new];
         [self pollForNewData:2 withSessionPersistency:NO];
         [self pollForNewData:60 withSessionPersistency:YES];
     }
@@ -128,7 +128,7 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
 }
 
 + (void)didOpenMessage:(NSString *)messageId atState:(UIApplicationState)appState {
-    SSMDKEvent *event = [SSMDKEvent new];
+    SMSDKEvent *event = [SMSDKEvent new];
     event.key = appState == UIApplicationStateActive ? @"Foreground Message Received" : @"App launched";
     event.appState = [self appStateStringFromState:appState];
     event.timestamp = [SMDataCollector now];
@@ -143,7 +143,7 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
 }
 
 + (void)didOpenApp {
-    SSMDKEvent *event = [SSMDKEvent new];
+    SMSDKEvent *event = [SMSDKEvent new];
     event.key = @"App launched";
     event.appState = [self appStateStringFromState:-1];
     event.timestamp = [SMDataCollector now];
@@ -180,7 +180,7 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
     SMData *data = [SMData new];
     data.externalUserId = self.msUserId;
 
-    data.currentSession = [SSMession new];
+    data.currentSession = [SMSession new];
     data.currentSession.sessionId = self.sessionId;
     data.currentSession.start = self.sessionIdStartTimestamp;
     data.currentSession.end = [SMDataCollector now];
@@ -197,9 +197,9 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
     data.customEvents = self.customEvents;
     self.customEvents = [[NSMutableArray<SMCustomEvent> alloc] init];
 
-    NSMutableArray<SSMDKEvent *> <SSMDKEvent> *currentSDKEvents = self.sdkEvents;
+    NSMutableArray<SMSDKEvent *> <SMSDKEvent> *currentSDKEvents = self.sdkEvents;
     data.sdkEvents = self.sdkEvents;
-    self.sdkEvents = [[NSMutableArray<SSMDKEvent> alloc] init];
+    self.sdkEvents = [[NSMutableArray<SMSDKEvent> alloc] init];
 
     [SMAPIHandler sendDataWithJson:[data toDictionary] andConfig:self.config forUrl:@"user/data" responseHandler:^(NSHTTPURLResponse *httpResponse) {
         if(httpResponse.statusCode != 204) {
@@ -218,7 +218,7 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
             }
             self.customEvents = currentCustomEvents;
             
-            for (SSMDKEvent* sdkEvents in self.sdkEvents) {
+            for (SMSDKEvent* sdkEvents in self.sdkEvents) {
                 [currentSDKEvents addObject:sdkEvents];
             }
             self.sdkEvents = currentSDKEvents;

@@ -1,11 +1,11 @@
 //
-//  SSMDKEvent.m
+//  SMSDKEvent.m
 //  SendMan
 //
 //  Created by Avishay Sheba Harari on 23/02/2020.
 //
 
-#import "SSMDKEvent.h"
+#import "SMSDKEvent.h"
 
-@implementation SSMDKEvent
+@implementation SMSDKEvent
 @end
