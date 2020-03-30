@@ -7,21 +7,16 @@
 
 @import UIKit;
 #import "SMConfig.h"
+#import "SMSDKEvent.h"
 
 @interface SMDataCollector : NSObject
 
-+ (void)setAppConfig:(SMConfig *_Nonnull)config;
-+ (void)setUserId:(NSString *_Nonnull)userId;
-+ (void)setAPNToken:(NSString *_Nonnull)token;
-
 + (void)setUserProperties:(NSDictionary *_Nonnull)properties;
-+ (void)addUserEvent:(NSString *_Nonnull)eventName;
-+ (void)addUserEvent:(NSString *_Nonnull)eventName stringValue:(NSString *_Nullable)value;
-+ (void)addUserEvent:(NSString *_Nonnull)eventName numberValue:(NSNumber *_Nonnull)value;
-+ (void)addUserEvent:(NSString *_Nonnull)eventName booleanValue:(BOOL)value;
 + (void)addUserEvents:(NSDictionary *_Nonnull)events;
++ (void)addSdkEvent:(SMSDKEvent *_Nonnull)event;
 
-+ (void)didOpenMessage:(NSString *_Nonnull)messageId atState:(UIApplicationState)appState;
-+ (void)didOpenApp;
++ (NSMutableArray<SMSDKEvent *> *_Nullable)getSdkEvents;
+
++ (void)startSession;
 
 @end

@@ -21,11 +21,16 @@
 #import "SMPropertyValue.h"
 #import "SMSDKEvent.h"
 #import "SMSession.h"
+#import "Sendman.h"
 #import "SMAPIHandler.h"
 #import "SMAuthHandler.h"
 #import "SMConfig.h"
 #import "SMDataCollector.h"
 #import "SMDataEnricher.h"
+#import "SMMessagesHandler.h"
+#import "SMUtils.h"
+#import "SMNotificationsViewController.h"
+#import "SMNotificationTableViewCell.h"
 
 FOUNDATION_EXPORT double SendManVersionNumber;
 FOUNDATION_EXPORT const unsigned char SendManVersionString[];

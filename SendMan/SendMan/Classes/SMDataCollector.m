@@ -10,15 +10,13 @@
 #import "SMDataEnricher.h"
 #import "SMAPIHandler.h"
 #import "SMData.h"
-
-NSString *const SMAPNTokenKey = @"SMAPNToken";
+#import "SMUtils.h"
+#import "Sendman.h"
 
 typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMPropertyValue> SMMutableProperties;
 
 @interface SMDataCollector ()
 
-@property (strong, nonatomic, nullable) SMConfig *config;
-@property (strong, nonatomic, nullable) NSString *msUserId;
 @property (strong, nonatomic, nullable) NSString *sessionId;
 @property (strong, nonatomic, nullable) NSNumber *sessionIdStartTimestamp;
 
@@ -35,12 +33,12 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
 # pragma mark - Constructor and Singletong Access
 
 + (id)sharedManager {
-    static SMDataCollector *sharedMyManager = nil;
+    static SMDataCollector *sharedManager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        sharedMyManager = [[self alloc] init];
+        sharedManager = [[self alloc] init];
     });
-    return sharedMyManager;
+    return sharedManager;
 }
 
 - (instancetype)init {
@@ -65,27 +63,17 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
     });
 }
 
-# pragma mark - Data collection
-
-+ (void)setAppConfig:(SMConfig *)config {
++ (void)startSession {
     SMDataCollector *manager = [SMDataCollector sharedManager];
-    manager.config = config;
-}
-
-+ (void)setUserId:(NSString *)userId {
-    SMDataCollector *manager = [SMDataCollector sharedManager];
-    manager.msUserId = userId;
     manager.sessionId = [[NSUUID UUID] UUIDString];
-    manager.sessionIdStartTimestamp = [SMDataCollector now];
+    manager.sessionIdStartTimestamp = [SMUtils now];
     [self setProperties:[[SMDataEnricher sharedManager] getUserEnrichedData] inState:manager.sdkProperties];
 }
 
-+ (void)setAPNToken:(NSString *)token {
-    [SMDataCollector setUserProperties:@{SMAPNTokenKey: token}];
-}
+# pragma mark - Data collection
 
 + (void)setProperties:(NSDictionary *)properties inState:(SMMutableProperties *)stateProperties {
-    NSNumber *now = [SMDataCollector now];
+    NSNumber *now = [SMUtils now];
     for (NSString* key in properties) {
         SMPropertyValue *propertyValue = [SMPropertyValue new];
         propertyValue.value = properties[key];
@@ -99,25 +87,9 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
     [self setProperties:properties inState:manager.customProperties];
 }
 
-+ (void)addUserEvent:(NSString *)eventName {
-    [SMDataCollector addUserEvent:eventName stringValue:@""];
-}
-
-+ (void)addUserEvent:(NSString *)eventName stringValue:(NSString *)value {
-    [SMDataCollector addUserEvents:@{eventName: value}];
-}
-
-+ (void)addUserEvent:(NSString *)eventName numberValue:(NSNumber *)value {
-    [SMDataCollector addUserEvents:@{eventName: value}];
-}
-
-+ (void)addUserEvent:(NSString *)eventName booleanValue:(BOOL)value {
-    [SMDataCollector addUserEvents:@{eventName: value == YES ? @"YES" : @"NO"}];
-}
-
 + (void)addUserEvents:(NSDictionary *)events {
     SMDataCollector *manager = [SMDataCollector sharedManager];
-    NSNumber *now = [SMDataCollector now];
+    NSNumber *now = [SMUtils now];
     for (NSString* eventName in events) {
         SMCustomEvent *event = [SMCustomEvent new];
         event.key = eventName;
@@ -127,63 +99,33 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
     }
 }
 
-+ (void)didOpenMessage:(NSString *)messageId atState:(UIApplicationState)appState {
-    SMSDKEvent *event = [SMSDKEvent new];
-    event.key = appState == UIApplicationStateActive ? @"Foreground Message Received" : @"App launched";
-    event.appState = [self appStateStringFromState:appState];
-    event.timestamp = [SMDataCollector now];
-    event.messageId = messageId;
-
-    SMDataCollector *manager = [SMDataCollector sharedManager];
-    if ([[manager.sdkEvents filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"messageId == %@", messageId]] firstObject]) {
-        NSLog(@"Message already handled previously");
-    } else {
-        [manager.sdkEvents addObject:event];
-    }
-}
-
-+ (void)didOpenApp {
-    SMSDKEvent *event = [SMSDKEvent new];
-    event.key = @"App launched";
-    event.appState = [self appStateStringFromState:-1];
-    event.timestamp = [SMDataCollector now];
-
++ (void)addSdkEvent:(SMSDKEvent *)event {
     SMDataCollector *manager = [SMDataCollector sharedManager];
     [manager.sdkEvents addObject:event];
 }
 
-+ (NSString *)appStateStringFromState:(UIApplicationState)state {
-    switch (state) {
-        case UIApplicationStateActive:
-            return @"Active";
-        case UIApplicationStateInactive:
-            return @"Inactive";
-        case UIApplicationStateBackground:
-            return @"Background";
-        default:
-            return @"Killed";
-    }
-}
-
-+ (NSNumber *)now {
-    return [NSNumber numberWithLongLong:(long long)([[NSDate date] timeIntervalSince1970] * 1000.0)];
++ (NSMutableArray<SMSDKEvent *> *)getSdkEvents {
+    SMDataCollector *manager = [SMDataCollector sharedManager];
+    return manager.sdkEvents;
 }
 
 - (void)sendData:(BOOL)presistSession {
     
-    if (!self.config || (!presistSession && ([self.customProperties count] == 0 && [self.sdkProperties count] == 0 && [self.customEvents count] == 0 && [self.sdkEvents count] == 0))) {
+    SMConfig *config = [Sendman getConfig];
+    
+    if (!config || (!presistSession && ([self.customProperties count] == 0 && [self.sdkProperties count] == 0 && [self.customEvents count] == 0 && [self.sdkEvents count] == 0))) {
         return;
     }
     
     NSLog(@"Preparing to send data");
 
     SMData *data = [SMData new];
-    data.externalUserId = self.msUserId;
+    data.externalUserId = [Sendman getUserId];
 
     data.currentSession = [SMSession new];
     data.currentSession.sessionId = self.sessionId;
     data.currentSession.start = self.sessionIdStartTimestamp;
-    data.currentSession.end = [SMDataCollector now];
+    data.currentSession.end = [SMUtils now];
 
     SMMutableProperties *currentCustomProperties = self.customProperties;
     data.customProperties = self.customProperties;
@@ -201,7 +143,7 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
     data.sdkEvents = self.sdkEvents;
     self.sdkEvents = [[NSMutableArray<SMSDKEvent> alloc] init];
 
-    [SMAPIHandler sendDataWithJson:[data toDictionary] andConfig:self.config forUrl:@"user/data" responseHandler:^(NSHTTPURLResponse *httpResponse) {
+    [SMAPIHandler sendDataWithJson:[data toDictionary] andConfig:config forUrl:@"user/data" responseHandler:^(NSHTTPURLResponse *httpResponse) {
         if(httpResponse.statusCode != 204) {
             for (NSString* key in self.customProperties) {
                 [currentCustomProperties setObject:self.customProperties[key] forKey:key];

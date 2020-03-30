@@ -8,19 +8,19 @@
 
 #import "SMAppDelegate.h"
 #import <UserNotifications/UserNotifications.h>
-#import <SendMan/SMDataCollector.h>
+#import <SendMan/Sendman.h>
 
 @implementation SMAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     SMConfig *config = [[SMConfig alloc] init];
-    config.appKey = @"05befe3d2da63a02e99dd765aa388fb9889ae9d6";
-    config.appSecret = @"e821dc813c4dc8096307aee9b8011065bd066245";
+    config.appKey = @"d3b532bc03863709c219bb4abe81901e4da40159";
+    config.appSecret = @"032d8ea194b263cf1d892af9cb231775e7e17588";
 
-    [SMDataCollector setAppConfig:config];
-    [SMDataCollector setUserId:@"123"];
-    [SMDataCollector setUserProperties:@{@"email": @"email@email.com", @"Native App": @"YES"}];
+    [Sendman setAppConfig:config];
+    [Sendman setUserId:@"123"];
+    [Sendman setUserProperties:@{@"email": @"email@email.com", @"Native App": @"YES"}];
 
     [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge)
                                                                         completionHandler:^(BOOL granted, NSError * _Nullable error) {
@@ -37,9 +37,9 @@
     [UNUserNotificationCenter currentNotificationCenter].delegate = self;
 
     if (launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey]) {
-        [SMDataCollector didOpenMessage:launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey][@"messageId"] atState:-1];
+        [Sendman didOpenMessage:launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey][@"messageId"] atState:-1];
     } else {
-        [SMDataCollector didOpenApp];
+        [Sendman didOpenApp];
     }
 
     // Override point for customization after application launch.
@@ -57,7 +57,7 @@
     // Should create some other token by copying this string
     NSLog(@"The registered device token is: %@", token);
 
-    [SMDataCollector setAPNToken:token];
+    [Sendman setAPNToken:token];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {}
@@ -111,7 +111,7 @@
     // [Active, contentAvailable] -> called first
     NSLog(@"willPresentNotification called in state %@ with userInfo: %@", [SMAppDelegate applicationState], [SMAppDelegate jsonDict:notification.request.content.userInfo]);
     if (notification.request.content.userInfo) {
-        [SMDataCollector didOpenMessage:notification.request.content.userInfo[@"messageId"] atState:[[UIApplication sharedApplication] applicationState]];
+        [Sendman didOpenMessage:notification.request.content.userInfo[@"messageId"] atState:[[UIApplication sharedApplication] applicationState]];
     }
     completionHandler(UNNotificationPresentationOptionAlert);
 }
@@ -120,7 +120,7 @@
     NSLog(@"didReceiveNotificationResponse called in state %@ with action %@ and userInfo: %@", [SMAppDelegate applicationState], response.actionIdentifier, [SMAppDelegate jsonDict:response.notification.request.content.userInfo]);
     completionHandler();
     if (response.notification.request.content.userInfo) {
-        [SMDataCollector didOpenMessage:response.notification.request.content.userInfo[@"messageId"] atState:[[UIApplication sharedApplication] applicationState]];
+        [Sendman didOpenMessage:response.notification.request.content.userInfo[@"messageId"] atState:[[UIApplication sharedApplication] applicationState]];
     }
 
     // [Inactive, [contentAvailable]] -> called on click on default action when was in background

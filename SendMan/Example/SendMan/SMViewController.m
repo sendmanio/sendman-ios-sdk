@@ -7,7 +7,7 @@
 //
 
 #import "SMViewController.h"
-#import <SendMan/SMDataCollector.h>
+#import <SendMan/Sendman.h>
 
 @interface SMViewController ()
 
@@ -21,29 +21,29 @@
 	// Do any additional setup after loading the view, typically from a nib.
 }
 - (IBAction)quicheDismiss:(id)sender {
-    [SMDataCollector addUserEvent:@"Screen dismissed" stringValue:@"Broccoli Quiche"];
+    [Sendman addUserEvent:@"Screen dismissed" stringValue:@"Broccoli Quiche"];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)risottoDismiss:(id)sender {
-    [SMDataCollector addUserEvent:@"Screen dismissed" stringValue:@"Risotto"];
+    [Sendman addUserEvent:@"Screen dismissed" stringValue:@"Risotto"];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (IBAction)recipesDismiss:(id)sender {
-    [SMDataCollector addUserEvent:@"Screen dismissed" stringValue:@"Recipes"];
+    [Sendman addUserEvent:@"Screen dismissed" stringValue:@"Recipes"];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (IBAction)risottoSelected:(id)sender {
-    [SMDataCollector addUserEvent:@"Recipe clicked" numberValue:[NSNumber numberWithInt:1]];
+    [Sendman addUserEvent:@"Recipe clicked" numberValue:[NSNumber numberWithInt:1]];
 }
 
 - (IBAction)quicheSelected:(id)sender {
-    [SMDataCollector addUserEvent:@"Recipe clicked" numberValue:[NSNumber numberWithInt:2]];
+    [Sendman addUserEvent:@"Recipe clicked" numberValue:[NSNumber numberWithInt:2]];
 }
 
 - (IBAction)flowStarted:(id)sender {
-    [SMDataCollector addUserEvent:@"Recipe clicked"];
+    [Sendman addUserEvent:@"Recipe clicked"];
 }
 
 - (void)didReceiveMemoryWarning
