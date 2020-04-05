@@ -40,11 +40,23 @@
                                     <segue destination="Ibr-We-ycn" kind="show" id="RWP-FO-iCf"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyP-ZO-BxW">
+                                <rect key="frame" x="329" y="20" width="30" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="|||">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="navigationToNotificationsPage:" destination="whP-gf-Uak" eventType="touchUpInside" id="y4k-Rr-YUj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="jPG-Ff-WgP" secondAttribute="trailing" constant="-20" id="6fa-bJ-HdH"/>
+                            <constraint firstItem="cyP-ZO-BxW" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" constant="20" id="A0T-wx-nij"/>
                             <constraint firstItem="jPG-Ff-WgP" firstAttribute="top" secondItem="TpU-gO-2f1" secondAttribute="top" constant="-20" id="Avd-HD-cis"/>
+                            <constraint firstItem="cyP-ZO-BxW" firstAttribute="trailing" secondItem="TpU-gO-2f1" secondAttribute="trailingMargin" id="NzA-DM-Zjw"/>
                             <constraint firstAttribute="bottom" secondItem="jPG-Ff-WgP" secondAttribute="bottom" constant="-20" id="PH3-Sy-J18"/>
                             <constraint firstItem="jPG-Ff-WgP" firstAttribute="leading" secondItem="TpU-gO-2f1" secondAttribute="leading" constant="-20" id="Rrm-p9-nRE"/>
                             <constraint firstItem="6tC-xI-WpF" firstAttribute="top" secondItem="uEw-UM-LJ8" secondAttribute="bottom" constant="100" id="ZeE-PB-LaA"/>
@@ -54,7 +66,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tc2-Qw-aMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="305" y="433"/>
+            <point key="canvasLocation" x="304.80000000000001" y="432.23388305847078"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="bdI-fU-m5U">
@@ -399,8 +411,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="background" width="2000" height="3000"/>
-        <image name="quiche" width="6016" height="4016"/>
-        <image name="risotto" width="3500" height="2336"/>
+        <image name="background" width="1000" height="1500"/>
+        <image name="quiche" width="1000" height="668"/>
+        <image name="risotto" width="1000" height="667"/>
     </resources>
 </document>

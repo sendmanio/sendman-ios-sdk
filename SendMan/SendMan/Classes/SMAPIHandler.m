@@ -10,33 +10,57 @@
 
 @implementation SMAPIHandler
 
-+ (void)sendDataWithJson:(NSDictionary *)json andConfig:(SMConfig *)config forUrl:(NSString *)url responseHandler:(void (^)(NSHTTPURLResponse *httpResponse))responseHandler {
-    // TODO: URL
-    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:4200/%@", url]];
-    NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:requestURL];
-
-    [urlRequest setHTTPMethod:@"POST"];
++ (void)sendDataWithJson:(NSDictionary *)json forUrl:(NSString *)url responseHandler:(void (^)(NSHTTPURLResponse *httpResponse))responseHandler {
+    NSMutableURLRequest *urlRequest = [SMAPIHandler createURLRequest:url forMethodType:@"POST"];
 
     NSError *error;
     NSData* jsonData = [NSJSONSerialization dataWithJSONObject:json options:NSJSONWritingPrettyPrinted error:&error];
-
     [urlRequest setHTTPBody:jsonData];
-    
-    [SMAuthHandler addAuthHeaderToRequest:urlRequest withConfig:config];
-    
-    [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
 
     NSURLSession *session = [NSURLSession sharedSession];
     
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+            return;
+        }
+        
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
         responseHandler(httpResponse);
-
-        if (error) {
-            NSLog(@"There was an error with sending data!");
-        }
     }];
     [dataTask resume];
+}
+
++ (void)getDataForUrl:(NSString *)url responseHandler:(void (^)(NSHTTPURLResponse *httpResponse, NSDictionary *jsonData ))responseHandler {
+    NSMutableURLRequest *urlRequest = [SMAPIHandler createURLRequest:url forMethodType:@"GET"];
+
+    NSURLSession *session = [NSURLSession sharedSession];
+    
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error) {
+            NSLog(@"%@", error.localizedDescription);
+            return;
+        }
+        
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+        NSDictionary *jsonData = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+        responseHandler(httpResponse, jsonData);
+
+
+    }];
+    [dataTask resume];
+}
+
++(NSMutableURLRequest *)createURLRequest:(NSString *)path forMethodType:(NSString *)methodType{
+    // TODO: URL
+    NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"http://localhost:4200/%@", path]];
+    NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:requestURL];
+
+    [urlRequest setHTTPMethod:methodType];
+    [SMAuthHandler addAuthHeaderToRequest:urlRequest];
+    [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    
+    return urlRequest;
 }
 
 @end

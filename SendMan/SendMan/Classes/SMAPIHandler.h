@@ -12,6 +12,6 @@
 
 @interface SMAPIHandler : NSObject
 
-+ (void)sendDataWithJson:(NSDictionary *)json andConfig:(SMConfig *)config forUrl:(NSString *)url responseHandler:(void (^)(NSHTTPURLResponse *httpResponse))responseHandler;
-
++ (void)sendDataWithJson:(NSDictionary *)json forUrl:(NSString *)url responseHandler:(void (^)(NSHTTPURLResponse *httpResponse))responseHandler;
++ (void)getDataForUrl:(NSString *)url responseHandler:(void (^)(NSHTTPURLResponse *httpResponse, NSDictionary *jsonData ))responseHandler;
 @end

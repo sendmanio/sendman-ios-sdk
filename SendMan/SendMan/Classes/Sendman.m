@@ -9,6 +9,8 @@
 #import "SMUtils.h"
 #import "SMDataCollector.h"
 #import "SMMessagesHandler.h"
+#import "SMCategoriesHandler.h"
+#import "SMNotificationsViewController.h"
 
 NSString *const SMAPNTokenKey = @"SMAPNToken";
 
@@ -16,6 +18,7 @@ NSString *const SMAPNTokenKey = @"SMAPNToken";
 
 @property (strong, nonatomic, nullable) SMConfig *config;
 @property (strong, nonatomic, nullable) NSString *msUserId;
+@property (strong, nonatomic, nullable) NSArray *categories;
 
 @end
 
@@ -44,6 +47,11 @@ NSString *const SMAPNTokenKey = @"SMAPNToken";
     return sendman.msUserId;
 }
 
++ (NSArray *)getCategories {
+    Sendman *sendman = [Sendman instance];
+    return sendman.categories;
+}
+
 # pragma mark - Global parameters
 
 + (void)setAppConfig:(SMConfig *)config {
@@ -55,11 +63,31 @@ NSString *const SMAPNTokenKey = @"SMAPNToken";
     Sendman *sendman = [Sendman instance];
     sendman.msUserId = userId;
     [SMDataCollector startSession];
+    [SMCategoriesHandler getCategories];
 }
 
 + (void)setAPNToken:(NSString *)token {
     [SMDataCollector setUserProperties:@{SMAPNTokenKey: token}];
 }
+
++ (UIViewController *)getCategoriesUIViewController {
+    NSBundle *bundle = [NSBundle bundleForClass:SMNotificationsViewController.self];
+    return [[UIStoryboard storyboardWithName:@"SMNotifications" bundle:bundle] instantiateViewControllerWithIdentifier:@"SMNotifications"];
+}
+
++ (void)setUserCategories:(NSArray *)categories {
+    Sendman *sendman = [Sendman instance];
+    sendman.categories = categories;
+}
+
+//TODO - only update when leaving the app
++ (void)updateUserCategories:(NSArray *)categories {
+    Sendman *sendman = [Sendman instance];
+    sendman.categories = categories;
+    [SMCategoriesHandler updateCategories:categories];
+}
+
+
 
 + (void)setUserProperties:(NSDictionary *)properties {
     [SMDataCollector setUserProperties:properties];

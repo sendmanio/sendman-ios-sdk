@@ -8,6 +8,7 @@
 
 #import "SMViewController.h"
 #import <SendMan/Sendman.h>
+#import <SendMan/SMNotificationsViewController.h>
 
 @interface SMViewController ()
 
@@ -44,6 +45,9 @@
 
 - (IBAction)flowStarted:(id)sender {
     [Sendman addUserEvent:@"Recipe clicked"];
+}
+- (IBAction)navigationToNotificationsPage:(id)sender {
+    [self presentViewController:[Sendman getCategoriesUIViewController] animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning

@@ -10,6 +10,6 @@
 
 @interface SMAuthHandler : NSObject
 
-+ (void)addAuthHeaderToRequest:(NSMutableURLRequest *)request withConfig:(SMConfig *)config;
++ (void)addAuthHeaderToRequest:(NSMutableURLRequest *)request;
 
 @end

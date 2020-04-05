@@ -19,6 +19,11 @@
 + (void)setUserId:(NSString *_Nonnull)userId;
 + (void)setAPNToken:(NSString *_Nonnull)token;
 
++ (UIViewController *_Nonnull)getCategoriesUIViewController;
++ (void)setUserCategories:(NSArray *_Nonnull)categories;
++ (void)updateUserCategories:(NSArray *_Nonnull)categories;
++ (NSArray * _Nullable)getCategories;
+
 + (void)setUserProperties:(NSDictionary *_Nonnull)properties;
 + (void)addUserEvent:(NSString *_Nonnull)eventName;
 + (void)addUserEvent:(NSString *_Nonnull)eventName stringValue:(NSString *_Nullable)value;
@@ -27,6 +32,8 @@
 
 + (void)didOpenMessage:(NSString *_Nonnull)messageId atState:(UIApplicationState)appState;
 + (void)didOpenApp;
+
+
 
 @end
 

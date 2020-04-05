@@ -111,9 +111,7 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
 
 - (void)sendData:(BOOL)presistSession {
     
-    SMConfig *config = [Sendman getConfig];
-    
-    if (!config || (!presistSession && ([self.customProperties count] == 0 && [self.sdkProperties count] == 0 && [self.customEvents count] == 0 && [self.sdkEvents count] == 0))) {
+    if (![Sendman getConfig] || (!presistSession && ([self.customProperties count] == 0 && [self.sdkProperties count] == 0 && [self.customEvents count] == 0 && [self.sdkEvents count] == 0))) {
         return;
     }
     
@@ -143,7 +141,7 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
     data.sdkEvents = self.sdkEvents;
     self.sdkEvents = [[NSMutableArray<SMSDKEvent> alloc] init];
 
-    [SMAPIHandler sendDataWithJson:[data toDictionary] andConfig:config forUrl:@"user/data" responseHandler:^(NSHTTPURLResponse *httpResponse) {
+    [SMAPIHandler sendDataWithJson:[data toDictionary] forUrl:@"user/data" responseHandler:^(NSHTTPURLResponse *httpResponse) {
         if(httpResponse.statusCode != 204) {
             for (NSString* key in self.customProperties) {
                 [currentCustomProperties setObject:self.customProperties[key] forKey:key];
