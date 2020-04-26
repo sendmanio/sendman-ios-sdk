@@ -11,6 +11,8 @@
 
 @import UIKit;
 
+#define CategoriesRetrievedNotification @"CategoriesRetrievedNotification"
+
 @interface Sendman : NSObject
 
 + (SMConfig * _Nullable)getConfig;

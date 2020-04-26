@@ -77,10 +77,12 @@ NSString *const SMAPNTokenKey = @"SMAPNToken";
 
 + (void)setUserCategories:(NSArray *)categories {
     Sendman *sendman = [Sendman instance];
-    sendman.categories = categories;
+    if (![sendman.categories isEqualToArray:categories]) {
+        sendman.categories = categories;
+        [[NSNotificationCenter defaultCenter] postNotificationName:CategoriesRetrievedNotification object:nil];
+    }
 }
 
-//TODO - only update when leaving the app
 + (void)updateUserCategories:(NSArray *)categories {
     Sendman *sendman = [Sendman instance];
     sendman.categories = categories;
