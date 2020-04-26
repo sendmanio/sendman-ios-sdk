@@ -70,7 +70,7 @@ NSString *const SMAPNTokenKey = @"SMAPNToken";
     [SMDataCollector setUserProperties:@{SMAPNTokenKey: token}];
 }
 
-+ (UIViewController *)getCategoriesUIViewController {
++ (SMNotificationsViewController *)getCategoriesUIViewController {
     NSBundle *bundle = [NSBundle bundleForClass:SMNotificationsViewController.self];
     return [[UIStoryboard storyboardWithName:@"SMNotifications" bundle:bundle] instantiateViewControllerWithIdentifier:@"SMNotifications"];
 }

@@ -3,7 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -135,7 +135,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="g1L-yr-wtD" firstAttribute="leading" secondItem="8vI-cI-6eb" secondAttribute="leading" id="2MD-im-LWS"/>
                             <constraint firstAttribute="trailing" secondItem="g1L-yr-wtD" secondAttribute="trailing" id="5bM-0m-knr"/>
@@ -144,6 +144,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundView" destination="8vI-cI-6eb" id="G20-gW-WfC"/>
                         <outlet property="tableView" destination="g1L-yr-wtD" id="4HS-7g-zkQ"/>
                     </connections>
                 </viewController>

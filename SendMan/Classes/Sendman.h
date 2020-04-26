@@ -7,6 +7,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SMConfig.h"
+#import "SMNotificationsViewController.h"
 
 @import UIKit;
 
@@ -19,7 +20,7 @@
 + (void)setUserId:(NSString *_Nonnull)userId;
 + (void)setAPNToken:(NSString *_Nonnull)token;
 
-+ (UIViewController *_Nonnull)getCategoriesUIViewController;
++ (SMNotificationsViewController *_Nonnull)getCategoriesUIViewController;
 + (void)setUserCategories:(NSArray *_Nonnull)categories;
 + (void)updateUserCategories:(NSArray *_Nonnull)categories;
 + (NSArray * _Nullable)getCategories;

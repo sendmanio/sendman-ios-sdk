@@ -20,6 +20,7 @@
 
 @interface SMNotificationsViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UIView *backgroundView;
 
 @end
 
@@ -27,12 +28,25 @@
 
 NSArray *tableData;
 
+- (id)initWithCoder:(NSCoder *)decoder {
+    self = [super initWithCoder:decoder];
+    if (self) {
+        self.backgroundView.backgroundColor = SM_NOTIFICATION_GREY_COLOR;
+        self.backgroundColor = SM_NOTIFICATION_GREY_COLOR;
+        self.switchBackgroundColor = SM_NOTIFICATION_GREY_COLOR;
+        self.switchOnTintColor = [UIColor systemGreenColor];
+        self.switchThumbColor = [UIColor whiteColor];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    self.tableView.backgroundColor = SM_NOTIFICATION_GREY_COLOR;
+    self.tableView.backgroundColor = self.backgroundColor;
+    self.backgroundView.backgroundColor = self.backgroundColor;
     
     tableData = [Sendman getCategories];
     
@@ -68,7 +82,10 @@ NSArray *tableData;
     
     [cell setData:category forIndexPath:indexPath];
     
-    //    [cell.categorySwitch setOnTintColor:[UIColor systemBlueColor]];
+    [cell.categorySwitch setOnTintColor:self.switchOnTintColor];
+    [cell.categorySwitch setThumbTintColor:self.switchThumbColor];
+    [cell.categorySwitch setBackgroundColor:self.switchBackgroundColor];
+    cell.categorySwitch.layer.cornerRadius = 16;
     
     return cell;
 }
@@ -87,7 +104,7 @@ NSArray *tableData;
     NSDictionary *categoryGroup = [tableData objectAtIndex:section];
     sectionCell.title.text = [[categoryGroup objectForKey:@"name"] uppercaseString];
     
-    sectionCell.contentView.backgroundColor = SM_NOTIFICATION_GREY_COLOR;
+    sectionCell.contentView.backgroundColor = self.backgroundColor;
     return sectionCell.contentView;
 }
 
@@ -97,7 +114,7 @@ NSArray *tableData;
     NSDictionary *categoryGroup = [tableData objectAtIndex:section];
     sectionCell.subtitle.text = [categoryGroup objectForKey:@"description"];
     
-    sectionCell.contentView.backgroundColor = SM_NOTIFICATION_GREY_COLOR;
+    sectionCell.contentView.backgroundColor = self.backgroundColor;
     return sectionCell.contentView;
 }
 
