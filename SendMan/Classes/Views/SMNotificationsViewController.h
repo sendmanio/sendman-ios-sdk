@@ -16,6 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic, nonnull) UIColor *switchBackgroundColor;
 @property (strong, nonatomic, nonnull) UIColor *switchOnTintColor;
 @property (strong, nonatomic, nonnull) UIColor *switchThumbColor;
+@property (strong, nonatomic, nonnull) UIColor *titleColor;
+@property (strong, nonatomic, nonnull) UIColor *descriptionColor;
+@property (strong, nonatomic, nonnull) UIColor *textColor;
 
 @end
 

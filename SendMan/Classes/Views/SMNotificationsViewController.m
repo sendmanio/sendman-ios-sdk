@@ -17,6 +17,7 @@
 #define SM_NOTIFICATION_FOOTER_IDENTIFIER @"SMNotificationsFooterCell"
 
 #define SM_NOTIFICATION_GREY_COLOR [UIColor colorWithRed:0.94 green:0.94 blue:0.96 alpha:1.00]; //#F0F0F6
+#define SM_NOTIFICATION_GREY_TEXT_COLOR [UIColor colorWithRed: 0.44 green: 0.44 blue: 0.46 alpha: 1.00]; //#707075
 
 
 @interface SMNotificationsViewController ()
@@ -37,6 +38,9 @@ NSArray *tableData;
         self.switchBackgroundColor = SM_NOTIFICATION_GREY_COLOR;
         self.switchOnTintColor = [UIColor systemGreenColor];
         self.switchThumbColor = [UIColor whiteColor];
+        self.titleColor = SM_NOTIFICATION_GREY_TEXT_COLOR;
+        self.descriptionColor = SM_NOTIFICATION_GREY_TEXT_COLOR;
+        self.textColor = [UIColor blackColor];
     }
     return self;
 }
@@ -71,8 +75,12 @@ NSArray *tableData;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSInteger numRows = [[tableData objectAtIndex:section][@"categories"] count];
-    return numRows > 0 ? numRows : 1;
+    NSDictionary *categoryGroup = [tableData objectAtIndex:section];
+    BOOL isGroup = [categoryGroup[@"defaultValue"] isKindOfClass:[NSNull class]];
+    if (isGroup) {
+        return [categoryGroup[@"categories"] count];
+    }
+    return 1;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -95,10 +103,13 @@ NSArray *tableData;
     
     [cell setData:category forIndexPath:indexPath];
     
-    [cell.categorySwitch setOnTintColor:self.switchOnTintColor];
-    [cell.categorySwitch setThumbTintColor:self.switchThumbColor];
-    [cell.categorySwitch setBackgroundColor:self.switchBackgroundColor];
+    cell.categoryName.textColor = self.textColor;
+    cell.categoryDescription.textColor = self.descriptionColor;
+    cell.categorySwitch.onTintColor = self.switchOnTintColor;
+    cell.categorySwitch.thumbTintColor = self.switchThumbColor;
+    cell.categorySwitch.backgroundColor = self.switchBackgroundColor;
     cell.categorySwitch.layer.cornerRadius = 16;
+    
     
     return cell;
 }
@@ -116,6 +127,7 @@ NSArray *tableData;
     
     NSDictionary *categoryGroup = [tableData objectAtIndex:section];
     sectionCell.title.text = [[categoryGroup objectForKey:@"name"] uppercaseString];
+    sectionCell.title.textColor = self.titleColor;
     
     sectionCell.contentView.backgroundColor = self.backgroundColor;
     return sectionCell.contentView;
@@ -126,6 +138,7 @@ NSArray *tableData;
     
     NSDictionary *categoryGroup = [tableData objectAtIndex:section];
     sectionCell.subtitle.text = [categoryGroup objectForKey:@"description"];
+    sectionCell.subtitle.textColor = self.descriptionColor;
     
     sectionCell.contentView.backgroundColor = self.backgroundColor;
     return sectionCell.contentView;
