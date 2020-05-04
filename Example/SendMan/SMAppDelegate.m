@@ -36,8 +36,9 @@
     // TODO: merge this with subscription above
     [UNUserNotificationCenter currentNotificationCenter].delegate = self;
 
-    if (launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey]) {
-        [Sendman didOpenMessage:launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey][@"messageId"] atState:-1];
+    NSDictionary *pushNotification = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
+    if (pushNotification) {
+        [Sendman didOpenMessage:pushNotification[@"messageId"] forActivity:pushNotification[@"activityId"] atState:-1];
     } else {
         [Sendman didOpenApp];
     }
@@ -110,8 +111,9 @@
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
     // [Active, contentAvailable] -> called first
     NSLog(@"willPresentNotification called in state %@ with userInfo: %@", [SMAppDelegate applicationState], [SMAppDelegate jsonDict:notification.request.content.userInfo]);
-    if (notification.request.content.userInfo) {
-        [Sendman didOpenMessage:notification.request.content.userInfo[@"messageId"] atState:[[UIApplication sharedApplication] applicationState]];
+    NSDictionary *pushNotification = notification.request.content.userInfo;
+    if (pushNotification) {
+        [Sendman didOpenMessage:pushNotification[@"messageId"] forActivity:pushNotification[@"activityId"] atState:[[UIApplication sharedApplication] applicationState]];
     }
     completionHandler(UNNotificationPresentationOptionAlert);
 }
@@ -119,8 +121,9 @@
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
     NSLog(@"didReceiveNotificationResponse called in state %@ with action %@ and userInfo: %@", [SMAppDelegate applicationState], response.actionIdentifier, [SMAppDelegate jsonDict:response.notification.request.content.userInfo]);
     completionHandler();
-    if (response.notification.request.content.userInfo) {
-        [Sendman didOpenMessage:response.notification.request.content.userInfo[@"messageId"] atState:[[UIApplication sharedApplication] applicationState]];
+    NSDictionary *pushNotification = response.notification.request.content.userInfo;
+    if (pushNotification) {
+        [Sendman didOpenMessage:pushNotification[@"messageId"] forActivity:pushNotification[@"activityId"] atState:[[UIApplication sharedApplication] applicationState]];
     }
 
     // [Inactive, [contentAvailable]] -> called on click on default action when was in background

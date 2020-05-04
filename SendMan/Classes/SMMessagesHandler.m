@@ -25,15 +25,16 @@
 
 # pragma mark - Data collection
 
-+ (void)didOpenMessage:(NSString *)messageId atState:(UIApplicationState)appState {
++ (void)didOpenMessage:(NSString *_Nonnull)messageId forActivity:(NSString *_Nonnull)activityId atState:(UIApplicationState)appState {
     SMSDKEvent *event = [SMSDKEvent new];
     event.key = appState == UIApplicationStateActive ? @"Foreground Message Received" : @"App launched";
     event.appState = [self appStateStringFromState:appState];
     event.timestamp = [SMUtils now];
     event.messageId = messageId;
+    event.activityId = activityId;
 
-    if ([[[SMDataCollector getSdkEvents] filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"messageId == %@", messageId]] firstObject]) {
-        NSLog(@"Message already handled previously");
+    if ([[[SMDataCollector getSdkEvents] filteredArrayUsingPredicate:[NSPredicate predicateWithFormat:@"activityId == %@", activityId]] firstObject]) {
+        NSLog(@"Activity already handled previously");
     } else {
         [SMDataCollector addSdkEvent:event];
     }

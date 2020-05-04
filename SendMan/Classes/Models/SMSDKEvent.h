@@ -13,6 +13,7 @@
 
 @property (nonatomic) NSString *key;
 @property (nonatomic) NSString <Optional> *messageId;
+@property (nonatomic) NSString <Optional> *activityId;
 @property (nonatomic) NSNumber *timestamp;
 @property (nonatomic) NSString *appState;
 

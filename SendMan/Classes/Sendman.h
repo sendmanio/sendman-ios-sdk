@@ -33,7 +33,7 @@
 + (void)addUserEvent:(NSString *_Nonnull)eventName numberValue:(NSNumber *_Nonnull)value;
 + (void)addUserEvent:(NSString *_Nonnull)eventName booleanValue:(BOOL)value;
 
-+ (void)didOpenMessage:(NSString *_Nonnull)messageId atState:(UIApplicationState)appState;
++ (void)didOpenMessage:(NSString *_Nonnull)messageId forActivity:(NSString *_Nonnull)activityId atState:(UIApplicationState)appState;
 + (void)didOpenApp;
 
 

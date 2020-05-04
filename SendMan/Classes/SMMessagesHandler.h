@@ -10,7 +10,7 @@
 
 @interface SMMessagesHandler : NSObject
 
-+ (void)didOpenMessage:(NSString *_Nonnull)messageId atState:(UIApplicationState)appState;
++ (void)didOpenMessage:(NSString *_Nonnull)messageId forActivity:(NSString *_Nonnull)activityId atState:(UIApplicationState)appState;
 + (void)didOpenApp;
 
 @end

@@ -111,8 +111,8 @@ NSString *const SMAPNTokenKey = @"SMAPNToken";
     [SMDataCollector addUserEvents:@{eventName: value == YES ? @"YES" : @"NO"}];
 }
 
-+ (void)didOpenMessage:(NSString *_Nonnull)messageId atState:(UIApplicationState)appState {
-    [SMMessagesHandler didOpenMessage:messageId atState:appState];
++ (void)didOpenMessage:(NSString *_Nonnull)messageId forActivity:(NSString *_Nonnull)activityId atState:(UIApplicationState)appState {
+    [SMMessagesHandler didOpenMessage:messageId forActivity:activityId atState:appState];
 }
 
 + (void)didOpenApp {
