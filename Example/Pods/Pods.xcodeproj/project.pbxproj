@@ -49,7 +49,6 @@
 		A9393592BB70DA19EA058CC5A9426A9C /* SMNotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2340FB08BD152A973E6E12CA95EE1108 /* SMNotificationsViewController.m */; };
 		A9BDFCBA1723DC0AB2D383CDC278BE13 /* Pods-SendMan2_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 397F9A63D3A153D26D4768480B7929BF /* Pods-SendMan2_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B254FA083DDCBF38F3004DEA1257A468 /* SMNotifications.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = 0B0F0CA759171BA4E2AC87215AAE9A98 /* SMNotifications.storyboard */; };
-		B2A679550416C705B0EA2D51FB4E2104 /* JSONModel.modulemap in Sources */ = {isa = PBXBuildFile; fileRef = ADF3AA3E3F421EEDD58A135EDD82BB24 /* JSONModel.modulemap */; };
 		BE1ABF33C79B4852FD23EB98663A81D8 /* SMCategoriesHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 82B861E8B3AD348B16F3AD4A677FE908 /* SMCategoriesHandler.m */; };
 		BECE6310160C7B358FEF58E5E8EB9455 /* SMDataCollector.h in Headers */ = {isa = PBXBuildFile; fileRef = 1A7C9FB954F95D0F75E6150579EEA7E8 /* SMDataCollector.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9CD3B5842FED2127BD499958150813C /* SMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A46B15DA7C6E3E8FC6B561482FC2E2C /* SMUtils.m */; };
@@ -98,10 +97,10 @@
 		1F02476EA4225844B0918EC56393C77F /* JSONModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JSONModel.m; sourceTree = "<group>"; };
 		21A71DF3E94E879392F93D7284837007 /* Pods-SendMan_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SendMan_Tests-dummy.m"; sourceTree = "<group>"; };
 		2340FB08BD152A973E6E12CA95EE1108 /* SMNotificationsViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMNotificationsViewController.m; sourceTree = "<group>"; };
-		29E569795EAA7A156C946767ECA19EA5 /* Pods_SendMan2_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SendMan2_Example.framework; path = "Pods-SendMan2_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		29E569795EAA7A156C946767ECA19EA5 /* Pods_SendMan2_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SendMan2_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D28C63E6CA52AD04F35F0764B81B0FE /* JSONKeyMapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
 		2DEE0C3FB9DC945DBDBE7F97B3385293 /* JSONModelClassProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JSONModelClassProperty.h; sourceTree = "<group>"; };
-		31F79D540B9110D36D09F56B72C1E9FA /* Pods_SendMan_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SendMan_Tests.framework; path = "Pods-SendMan_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		31F79D540B9110D36D09F56B72C1E9FA /* Pods_SendMan_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SendMan_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3439953DC4CF22B9DD0FE5A3B19B455C /* SMNotificationsHeaderCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMNotificationsHeaderCell.m; sourceTree = "<group>"; };
 		397F9A63D3A153D26D4768480B7929BF /* Pods-SendMan2_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SendMan2_Example-umbrella.h"; sourceTree = "<group>"; };
 		3A656580D4BF8EF99252F83702F37768 /* SMSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SMSession.h; sourceTree = "<group>"; };
@@ -119,7 +118,7 @@
 		68213F44BAC3C3429B1DD0F35FB22DBC /* Sendman.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Sendman.h; path = SendMan/Classes/Sendman.h; sourceTree = "<group>"; };
 		6C6C5C6D5148E30E5AC186552CE31177 /* SMAPIHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SMAPIHandler.m; path = SendMan/Classes/SMAPIHandler.m; sourceTree = "<group>"; };
 		6EDF3E70E18C29A694AB9F297967E07F /* SendMan-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SendMan-dummy.m"; sourceTree = "<group>"; };
-		7071221584F466C123992288E4118F64 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		7071221584F466C123992288E4118F64 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		727FAED1E2FFB09294B35E3FC66D8211 /* Pods-SendMan2_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SendMan2_Example.modulemap"; sourceTree = "<group>"; };
 		73E0E3F155D64473AF35649985B7FE4B /* SMPropertyValue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMPropertyValue.m; sourceTree = "<group>"; };
 		7601814CD4B17C409E54361D57612C54 /* JSONModelClassProperty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JSONModelClassProperty.m; sourceTree = "<group>"; };
@@ -140,15 +139,15 @@
 		9928B9C09997816DB7723920F48BCCCB /* SMAPIHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SMAPIHandler.h; path = SendMan/Classes/SMAPIHandler.h; sourceTree = "<group>"; };
 		9AD7F7B2FD0271A000FCD221B7247089 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		9C035F8621DF8BD79F2E6AD81B97A9D9 /* SMNotificationTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMNotificationTableViewCell.m; sourceTree = "<group>"; };
-		9CE6ECC97CA88A4FE83FF12964ADEE8E /* SendMan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SendMan.framework; path = SendMan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9CE6ECC97CA88A4FE83FF12964ADEE8E /* SendMan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SendMan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2232C3371ACA3806EFC9DBF56D6C195 /* SMConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SMConfig.m; path = SendMan/Classes/SMConfig.m; sourceTree = "<group>"; };
-		A38FF61C71733211E6DDB19385503404 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A3A05DD86863230A8A50758B5157C7D0 /* SendMan.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SendMan.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A38FF61C71733211E6DDB19385503404 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A3A05DD86863230A8A50758B5157C7D0 /* SendMan.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SendMan.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A56B730A70CE2DFB91D809E78450A385 /* Pods-SendMan2_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SendMan2_Example-dummy.m"; sourceTree = "<group>"; };
 		A9F09B93A05F3692911CE2CBC69C18D4 /* SMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SMUtils.h; path = SendMan/Classes/SMUtils.h; sourceTree = "<group>"; };
 		ADF3AA3E3F421EEDD58A135EDD82BB24 /* JSONModel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = JSONModel.modulemap; sourceTree = "<group>"; };
 		AE4A092BE56BE05F95C1FC3381438A3C /* Pods-SendMan2_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SendMan2_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		BC9A79A844B77039EDB06485B74678D0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		BC9A79A844B77039EDB06485B74678D0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		BE8DBB75B13B975F4E966C73EBE60259 /* Pods-SendMan2_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SendMan2_Example-Info.plist"; sourceTree = "<group>"; };
 		C45F3D1C61AD3D535D2E4CE88331BCB1 /* SMData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SMData.h; sourceTree = "<group>"; };
 		C519A4B809B39B16EB2BE1AE48FD13CD /* JSONKeyMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JSONKeyMapper.h; sourceTree = "<group>"; };
@@ -197,14 +196,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E5E9D54892ECAEC5CA16507C4A150EC8 /* Pod */ = {
+		058649560431D4590E016E867F14031C /* JSONModelTransformations */ = {
 			isa = PBXGroup;
 			children = (
-				7071221584F466C123992288E4118F64 /* LICENSE */,
-				BC9A79A844B77039EDB06485B74678D0 /* README.md */,
-				A3A05DD86863230A8A50758B5157C7D0 /* SendMan.podspec */,
+				C519A4B809B39B16EB2BE1AE48FD13CD /* JSONKeyMapper.h */,
+				2D28C63E6CA52AD04F35F0764B81B0FE /* JSONKeyMapper.m */,
+				78686E3015B32F909F5A1BE38A39B149 /* JSONValueTransformer.h */,
+				8F8C7661AA58627708F65EF8455910B4 /* JSONValueTransformer.m */,
 			);
-			name = Pod;
+			path = JSONModelTransformations;
 			sourceTree = "<group>";
 		};
 		12FC267446BCBA2244A4D0923BBDBDB8 /* Views */ = {
@@ -225,20 +225,43 @@
 			path = SendMan/Classes/Views;
 			sourceTree = "<group>";
 		};
-		69BC13CBC6044FB64AEBF97DD4A2E695 /* Pods-SendMan_Tests */ = {
+		27E772C472EE5BD87EA005C1E920FEC6 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				80C5FC73BC0F14733F26E0E550200D65 /* Pods-SendMan_Tests-Info.plist */,
-				3BB38BFA77156ED5EC4D775E973C538A /* Pods-SendMan_Tests-acknowledgements.markdown */,
-				4B631CC4E5E81D76D9FAB7C3DA637856 /* Pods-SendMan_Tests-acknowledgements.plist */,
-				21A71DF3E94E879392F93D7284837007 /* Pods-SendMan_Tests-dummy.m */,
-				E50743653B6A277E1073DCDBEE952335 /* Pods-SendMan_Tests-umbrella.h */,
-				DA44A171BA4644D493E9182F866F3508 /* Pods-SendMan_Tests.debug.xcconfig */,
-				0AE0163F1EDC698CBA5292C8669A3A6D /* Pods-SendMan_Tests.modulemap */,
-				93746C7B4E4CD10E0DF081A12693BE6F /* Pods-SendMan_Tests.release.xcconfig */,
+				3F4972945AE13F7E3210C205C85717CD /* Pods-SendMan2_Example */,
+				69BC13CBC6044FB64AEBF97DD4A2E695 /* Pods-SendMan_Tests */,
 			);
-			name = "Pods-SendMan_Tests";
-			path = "Target Support Files/Pods-SendMan_Tests";
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		3F4972945AE13F7E3210C205C85717CD /* Pods-SendMan2_Example */ = {
+			isa = PBXGroup;
+			children = (
+				BE8DBB75B13B975F4E966C73EBE60259 /* Pods-SendMan2_Example-Info.plist */,
+				CB63418A6B10BC1587BC633EE1ACA125 /* Pods-SendMan2_Example-acknowledgements.markdown */,
+				AE4A092BE56BE05F95C1FC3381438A3C /* Pods-SendMan2_Example-acknowledgements.plist */,
+				A56B730A70CE2DFB91D809E78450A385 /* Pods-SendMan2_Example-dummy.m */,
+				D42BCB8E2810FBF163AF8290E855FAE8 /* Pods-SendMan2_Example-frameworks.sh */,
+				397F9A63D3A153D26D4768480B7929BF /* Pods-SendMan2_Example-umbrella.h */,
+				81549B041F5DB2AE5CB9A7E50D5BB642 /* Pods-SendMan2_Example.debug.xcconfig */,
+				727FAED1E2FFB09294B35E3FC66D8211 /* Pods-SendMan2_Example.modulemap */,
+				7DFCDFFC50CB659EBFBED2641859EA90 /* Pods-SendMan2_Example.release.xcconfig */,
+			);
+			name = "Pods-SendMan2_Example";
+			path = "Target Support Files/Pods-SendMan2_Example";
+			sourceTree = "<group>";
+		};
+		48A96CAE74C6734AAFE1853E1400D23A /* JSONModel */ = {
+			isa = PBXGroup;
+			children = (
+				152ACB8F616AD0A06ABCD37BD1898BC8 /* JSONModel.h */,
+				1F02476EA4225844B0918EC56393C77F /* JSONModel.m */,
+				2DEE0C3FB9DC945DBDBE7F97B3385293 /* JSONModelClassProperty.h */,
+				7601814CD4B17C409E54361D57612C54 /* JSONModelClassProperty.m */,
+				9445E2BFFCFF5C91322A4EC30BD54B18 /* JSONModelError.h */,
+				7D4369B29B7F24869AD049D43D0C18E3 /* JSONModelError.m */,
+			);
+			path = JSONModel;
 			sourceTree = "<group>";
 		};
 		4BE0F2C6F9CEA1F33A2A0186CEBF2570 /* Models */ = {
@@ -257,49 +280,6 @@
 			);
 			name = Models;
 			path = SendMan/Classes/Models;
-			sourceTree = "<group>";
-		};
-		6D1EB8A38E8CBA4A4B0D3C897A545D0A /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				4D0EC4ECCDE741B828712BCF2D24DC02 /* SendMan */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		27E772C472EE5BD87EA005C1E920FEC6 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				3F4972945AE13F7E3210C205C85717CD /* Pods-SendMan2_Example */,
-				69BC13CBC6044FB64AEBF97DD4A2E695 /* Pods-SendMan_Tests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		B368EE7B3598590BEF2A5413AF5EAB7E /* JSONModel */ = {
-			isa = PBXGroup;
-			children = (
-				48A96CAE74C6734AAFE1853E1400D23A /* JSONModel */,
-				058649560431D4590E016E867F14031C /* JSONModelTransformations */,
-				ADF3AA3E3F421EEDD58A135EDD82BB24 /* JSONModel.modulemap */,
-				FB1BAB30B00E2D2CBD127326E8928A4E /* JSONModelLib.h */,
-			);
-			name = JSONModel;
-			path = SendMan/Classes/JSONModel;
-			sourceTree = "<group>";
-		};
-		48A96CAE74C6734AAFE1853E1400D23A /* JSONModel */ = {
-			isa = PBXGroup;
-			children = (
-				152ACB8F616AD0A06ABCD37BD1898BC8 /* JSONModel.h */,
-				1F02476EA4225844B0918EC56393C77F /* JSONModel.m */,
-				2DEE0C3FB9DC945DBDBE7F97B3385293 /* JSONModelClassProperty.h */,
-				7601814CD4B17C409E54361D57612C54 /* JSONModelClassProperty.m */,
-				9445E2BFFCFF5C91322A4EC30BD54B18 /* JSONModelError.h */,
-				7D4369B29B7F24869AD049D43D0C18E3 /* JSONModelError.m */,
-			);
-			name = JSONModel;
-			path = JSONModel;
 			sourceTree = "<group>";
 		};
 		4D0EC4ECCDE741B828712BCF2D24DC02 /* SendMan */ = {
@@ -333,26 +313,39 @@
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		F11F3D9AADDE75DD48B2D75FDE6D0F2A /* Products */ = {
+		5DECD2D2DDBCF1DF25E1166EAF85634C = {
 			isa = PBXGroup;
 			children = (
-				29E569795EAA7A156C946767ECA19EA5 /* Pods_SendMan2_Example.framework */,
-				31F79D540B9110D36D09F56B72C1E9FA /* Pods_SendMan_Tests.framework */,
-				9CE6ECC97CA88A4FE83FF12964ADEE8E /* SendMan.framework */,
+				6D1EB8A38E8CBA4A4B0D3C897A545D0A /* Development Pods */,
+				DC48BCE815EC154A59BCA69936CF7135 /* Frameworks */,
+				A38FF61C71733211E6DDB19385503404 /* Podfile */,
+				F11F3D9AADDE75DD48B2D75FDE6D0F2A /* Products */,
+				27E772C472EE5BD87EA005C1E920FEC6 /* Targets Support Files */,
 			);
-			name = Products;
 			sourceTree = "<group>";
 		};
-		058649560431D4590E016E867F14031C /* JSONModelTransformations */ = {
+		69BC13CBC6044FB64AEBF97DD4A2E695 /* Pods-SendMan_Tests */ = {
 			isa = PBXGroup;
 			children = (
-				C519A4B809B39B16EB2BE1AE48FD13CD /* JSONKeyMapper.h */,
-				2D28C63E6CA52AD04F35F0764B81B0FE /* JSONKeyMapper.m */,
-				78686E3015B32F909F5A1BE38A39B149 /* JSONValueTransformer.h */,
-				8F8C7661AA58627708F65EF8455910B4 /* JSONValueTransformer.m */,
+				80C5FC73BC0F14733F26E0E550200D65 /* Pods-SendMan_Tests-Info.plist */,
+				3BB38BFA77156ED5EC4D775E973C538A /* Pods-SendMan_Tests-acknowledgements.markdown */,
+				4B631CC4E5E81D76D9FAB7C3DA637856 /* Pods-SendMan_Tests-acknowledgements.plist */,
+				21A71DF3E94E879392F93D7284837007 /* Pods-SendMan_Tests-dummy.m */,
+				E50743653B6A277E1073DCDBEE952335 /* Pods-SendMan_Tests-umbrella.h */,
+				DA44A171BA4644D493E9182F866F3508 /* Pods-SendMan_Tests.debug.xcconfig */,
+				0AE0163F1EDC698CBA5292C8669A3A6D /* Pods-SendMan_Tests.modulemap */,
+				93746C7B4E4CD10E0DF081A12693BE6F /* Pods-SendMan_Tests.release.xcconfig */,
 			);
-			name = JSONModelTransformations;
-			path = JSONModelTransformations;
+			name = "Pods-SendMan_Tests";
+			path = "Target Support Files/Pods-SendMan_Tests";
+			sourceTree = "<group>";
+		};
+		6D1EB8A38E8CBA4A4B0D3C897A545D0A /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4D0EC4ECCDE741B828712BCF2D24DC02 /* SendMan */,
+			);
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		813CEF8D18BED832D7DCA5504EF14634 /* Support Files */ = {
@@ -377,15 +370,16 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		5DECD2D2DDBCF1DF25E1166EAF85634C = {
+		B368EE7B3598590BEF2A5413AF5EAB7E /* JSONModel */ = {
 			isa = PBXGroup;
 			children = (
-				6D1EB8A38E8CBA4A4B0D3C897A545D0A /* Development Pods */,
-				DC48BCE815EC154A59BCA69936CF7135 /* Frameworks */,
-				A38FF61C71733211E6DDB19385503404 /* Podfile */,
-				F11F3D9AADDE75DD48B2D75FDE6D0F2A /* Products */,
-				27E772C472EE5BD87EA005C1E920FEC6 /* Targets Support Files */,
+				48A96CAE74C6734AAFE1853E1400D23A /* JSONModel */,
+				058649560431D4590E016E867F14031C /* JSONModelTransformations */,
+				ADF3AA3E3F421EEDD58A135EDD82BB24 /* JSONModel.modulemap */,
+				FB1BAB30B00E2D2CBD127326E8928A4E /* JSONModelLib.h */,
 			);
+			name = JSONModel;
+			path = SendMan/Classes/JSONModel;
 			sourceTree = "<group>";
 		};
 		DC48BCE815EC154A59BCA69936CF7135 /* Frameworks */ = {
@@ -396,21 +390,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3F4972945AE13F7E3210C205C85717CD /* Pods-SendMan2_Example */ = {
+		E5E9D54892ECAEC5CA16507C4A150EC8 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				BE8DBB75B13B975F4E966C73EBE60259 /* Pods-SendMan2_Example-Info.plist */,
-				CB63418A6B10BC1587BC633EE1ACA125 /* Pods-SendMan2_Example-acknowledgements.markdown */,
-				AE4A092BE56BE05F95C1FC3381438A3C /* Pods-SendMan2_Example-acknowledgements.plist */,
-				A56B730A70CE2DFB91D809E78450A385 /* Pods-SendMan2_Example-dummy.m */,
-				D42BCB8E2810FBF163AF8290E855FAE8 /* Pods-SendMan2_Example-frameworks.sh */,
-				397F9A63D3A153D26D4768480B7929BF /* Pods-SendMan2_Example-umbrella.h */,
-				81549B041F5DB2AE5CB9A7E50D5BB642 /* Pods-SendMan2_Example.debug.xcconfig */,
-				727FAED1E2FFB09294B35E3FC66D8211 /* Pods-SendMan2_Example.modulemap */,
-				7DFCDFFC50CB659EBFBED2641859EA90 /* Pods-SendMan2_Example.release.xcconfig */,
+				7071221584F466C123992288E4118F64 /* LICENSE */,
+				BC9A79A844B77039EDB06485B74678D0 /* README.md */,
+				A3A05DD86863230A8A50758B5157C7D0 /* SendMan.podspec */,
 			);
-			name = "Pods-SendMan2_Example";
-			path = "Target Support Files/Pods-SendMan2_Example";
+			name = Pod;
+			sourceTree = "<group>";
+		};
+		F11F3D9AADDE75DD48B2D75FDE6D0F2A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				29E569795EAA7A156C946767ECA19EA5 /* Pods_SendMan2_Example.framework */,
+				31F79D540B9110D36D09F56B72C1E9FA /* Pods_SendMan_Tests.framework */,
+				9CE6ECC97CA88A4FE83FF12964ADEE8E /* SendMan.framework */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -468,6 +465,25 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		3A42EECE188A3D304E19CC9B78AB0B35 /* Pods-SendMan_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F0241646A0009DAED82A07C203AAD889 /* Build configuration list for PBXNativeTarget "Pods-SendMan_Tests" */;
+			buildPhases = (
+				012E8FADBBA7B5B818619AB7904D8884 /* Headers */,
+				B07F35D22011649A816EBDA5DEF8B372 /* Sources */,
+				4950FA96314F7D7C2C8D4B9F0BE853F7 /* Frameworks */,
+				C3394E96AA12F50D0A5D20AE479500D6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E0EC80D90329E486587A04978214612B /* PBXTargetDependency */,
+			);
+			name = "Pods-SendMan_Tests";
+			productName = "Pods-SendMan_Tests";
+			productReference = 31F79D540B9110D36D09F56B72C1E9FA /* Pods_SendMan_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		6DDAF911E93758DBDB5F6379F4104492 /* Pods-SendMan2_Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 19355CD0FD67CC6E801C67E6E8E70168 /* Build configuration list for PBXNativeTarget "Pods-SendMan2_Example" */;
@@ -503,25 +519,6 @@
 			name = SendMan;
 			productName = SendMan;
 			productReference = 9CE6ECC97CA88A4FE83FF12964ADEE8E /* SendMan.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		3A42EECE188A3D304E19CC9B78AB0B35 /* Pods-SendMan_Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F0241646A0009DAED82A07C203AAD889 /* Build configuration list for PBXNativeTarget "Pods-SendMan_Tests" */;
-			buildPhases = (
-				012E8FADBBA7B5B818619AB7904D8884 /* Headers */,
-				B07F35D22011649A816EBDA5DEF8B372 /* Sources */,
-				4950FA96314F7D7C2C8D4B9F0BE853F7 /* Frameworks */,
-				C3394E96AA12F50D0A5D20AE479500D6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				E0EC80D90329E486587A04978214612B /* PBXTargetDependency */,
-			);
-			name = "Pods-SendMan_Tests";
-			productName = "Pods-SendMan_Tests";
-			productReference = 31F79D540B9110D36D09F56B72C1E9FA /* Pods_SendMan_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -561,14 +558,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C3394E96AA12F50D0A5D20AE479500D6 /* Resources */ = {
+		B801C64F3921C2FE8513739F2125771E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B801C64F3921C2FE8513739F2125771E /* Resources */ = {
+		C3394E96AA12F50D0A5D20AE479500D6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -584,7 +581,6 @@
 			files = (
 				15017106DC3C248602F33D30A1FAF77E /* JSONKeyMapper.m in Sources */,
 				6EF69A0D22B090B0E010E09B34C3443E /* JSONModel.m in Sources */,
-				B2A679550416C705B0EA2D51FB4E2104 /* JSONModel.modulemap in Sources */,
 				02A05E07DFD7612E4B7142DC9007DE81 /* JSONModelClassProperty.m in Sources */,
 				48E4E58BDE3D9F2D15680AFF3F50186C /* JSONModelError.m in Sources */,
 				8747D13275BF32ECB3E874FD811C548E /* JSONValueTransformer.m in Sources */,
@@ -611,19 +607,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B2C55D1DD173B7B4F63556DC62E88BAF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7CE27CD2CA0A0E71D0E1A48E43DD4A7D /* Pods-SendMan2_Example-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B07F35D22011649A816EBDA5DEF8B372 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				E19E23CF77706B7C8AE5A2551143291E /* Pods-SendMan_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B2C55D1DD173B7B4F63556DC62E88BAF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CE27CD2CA0A0E71D0E1A48E43DD4A7D /* Pods-SendMan2_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,7 +641,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		E4ABE1972E61516B39AB38A8431DEDDE /* Release */ = {
+		0796FF03D0EABE481E4D44E1FA611A3B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8A14E8F660E9D5868E74EB87BF2283D4 /* SendMan.xcconfig */;
 			buildSettings = {
@@ -670,6 +666,39 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		1BD240B3AEA509628A7D8BC21029E18D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 93746C7B4E4CD10E0DF081A12693BE6F /* Pods-SendMan_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-SendMan_Tests/Pods-SendMan_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SendMan_Tests/Pods-SendMan_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -730,16 +759,15 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		1BD240B3AEA509628A7D8BC21029E18D /* Release */ = {
+		549DB12B0F8D0CEA7A2E9844EE2F5495 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93746C7B4E4CD10E0DF081A12693BE6F /* Pods-SendMan_Tests.release.xcconfig */;
+			baseConfigurationReference = 7DFCDFFC50CB659EBFBED2641859EA90 /* Pods-SendMan2_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
@@ -751,12 +779,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SendMan_Tests/Pods-SendMan_Tests-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-SendMan2_Example/Pods-SendMan2_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SendMan_Tests/Pods-SendMan_Tests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-SendMan2_Example/Pods-SendMan2_Example.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -771,10 +799,11 @@
 			};
 			name = Release;
 		};
-		0796FF03D0EABE481E4D44E1FA611A3B /* Debug */ = {
+		5EE3FC5CA617EA6C445B44A39C20E2C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A14E8F660E9D5868E74EB87BF2283D4 /* SendMan.xcconfig */;
+			baseConfigurationReference = 81549B041F5DB2AE5CB9A7E50D5BB642 /* Pods-SendMan2_Example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -784,18 +813,19 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SendMan/SendMan-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SendMan/SendMan-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-SendMan2_Example/Pods-SendMan2_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SendMan/SendMan.modulemap";
-				PRODUCT_MODULE_NAME = SendMan;
-				PRODUCT_NAME = SendMan;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SendMan2_Example/Pods-SendMan2_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -866,73 +896,6 @@
 			};
 			name = Debug;
 		};
-		549DB12B0F8D0CEA7A2E9844EE2F5495 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7DFCDFFC50CB659EBFBED2641859EA90 /* Pods-SendMan2_Example.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SendMan2_Example/Pods-SendMan2_Example-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SendMan2_Example/Pods-SendMan2_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		5EE3FC5CA617EA6C445B44A39C20E2C7 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 81549B041F5DB2AE5CB9A7E50D5BB642 /* Pods-SendMan2_Example.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SendMan2_Example/Pods-SendMan2_Example-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SendMan2_Example/Pods-SendMan2_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		C41BAA3908D986B461767186D73A8078 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DA44A171BA4644D493E9182F866F3508 /* Pods-SendMan_Tests.debug.xcconfig */;
@@ -966,9 +929,50 @@
 			};
 			name = Debug;
 		};
+		E4ABE1972E61516B39AB38A8431DEDDE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A14E8F660E9D5868E74EB87BF2283D4 /* SendMan.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SendMan/SendMan-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SendMan/SendMan-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SendMan/SendMan.modulemap";
+				PRODUCT_MODULE_NAME = SendMan;
+				PRODUCT_NAME = SendMan;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		19355CD0FD67CC6E801C67E6E8E70168 /* Build configuration list for PBXNativeTarget "Pods-SendMan2_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5EE3FC5CA617EA6C445B44A39C20E2C7 /* Debug */,
+				549DB12B0F8D0CEA7A2E9844EE2F5495 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4B9699F4D21DE0E2A3B1F55790F1506C /* Build configuration list for PBXNativeTarget "SendMan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -992,15 +996,6 @@
 			buildConfigurations = (
 				78F0498F2AF1B86F8B7B7477CD49552F /* Debug */,
 				29915A707A12A2C46DAA846C396CAB6F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		19355CD0FD67CC6E801C67E6E8E70168 /* Build configuration list for PBXNativeTarget "Pods-SendMan2_Example" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5EE3FC5CA617EA6C445B44A39C20E2C7 /* Debug */,
-				549DB12B0F8D0CEA7A2E9844EE2F5495 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
