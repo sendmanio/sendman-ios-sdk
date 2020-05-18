@@ -87,6 +87,11 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
     [self setProperties:properties inState:manager.customProperties];
 }
 
++ (void)setSdkProperties:(NSDictionary *)properties {
+    SMDataCollector *manager = [SMDataCollector sharedManager];
+    [self setProperties:properties inState:manager.sdkProperties];
+}
+
 + (void)addUserEvents:(NSDictionary *)events {
     SMDataCollector *manager = [SMDataCollector sharedManager];
     NSNumber *now = [SMUtils now];
@@ -101,12 +106,12 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
 
 + (void)addSdkEvent:(SMSDKEvent *)event {
     SMDataCollector *manager = [SMDataCollector sharedManager];
-    [manager.sdkEvents addObject:event];
-}
-
-+ (NSMutableArray<SMSDKEvent *> *)getSdkEvents {
-    SMDataCollector *manager = [SMDataCollector sharedManager];
-    return manager.sdkEvents;
+    event.timestamp = [SMUtils now];
+    [[UNUserNotificationCenter currentNotificationCenter] getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
+        BOOL isRegistered = settings.authorizationStatus == UNAuthorizationStatusAuthorized;
+        event.notificationsRegistrationState = isRegistered == YES ? @"On" : @"Off";
+        [manager.sdkEvents addObject:event];
+    }];
 }
 
 - (void)sendData:(BOOL)presistSession {

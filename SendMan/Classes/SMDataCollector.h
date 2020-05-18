@@ -9,13 +9,14 @@
 #import "SMConfig.h"
 #import "SMSDKEvent.h"
 
+#define SMNotificationsRegistrationStateKey @"SMNotificationsRegistrationState"
+
 @interface SMDataCollector : NSObject
 
 + (void)setUserProperties:(NSDictionary *_Nonnull)properties;
++ (void)setSdkProperties:(NSDictionary *_Nonnull)properties;
 + (void)addUserEvents:(NSDictionary *_Nonnull)events;
 + (void)addSdkEvent:(SMSDKEvent *_Nonnull)event;
-
-+ (NSMutableArray<SMSDKEvent *> *_Nullable)getSdkEvents;
 
 + (void)startSession;
 

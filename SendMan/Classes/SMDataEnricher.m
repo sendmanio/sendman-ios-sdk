@@ -45,10 +45,8 @@ NSString *const SMDeviceModelKey = @"SMDeviceModel";
     self.enrichedData = [[NSMutableDictionary alloc] init];
     
     NSLocale *currentLocale = [NSLocale currentLocale];
-    if (@available(iOS 10.0, *)) {
-        self.enrichedData[SMCountryCodeKey] = currentLocale.countryCode;
-        self.enrichedData[SMLanguageCodeKey] = currentLocale.languageCode;
-    }
+    self.enrichedData[SMCountryCodeKey] = currentLocale.countryCode;
+    self.enrichedData[SMLanguageCodeKey] = currentLocale.languageCode;
     
     UIDevice *currentDevice = [UIDevice currentDevice];
     self.enrichedData[SMDeviceNameKey] = currentDevice.name;

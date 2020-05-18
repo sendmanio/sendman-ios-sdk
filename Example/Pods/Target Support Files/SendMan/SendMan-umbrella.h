@@ -28,7 +28,7 @@
 #import "SMConfig.h"
 #import "SMDataCollector.h"
 #import "SMDataEnricher.h"
-#import "SMMessagesHandler.h"
+#import "SMLifecycleHandler.h"
 #import "SMUtils.h"
 #import "SMNotificationCellDelegate.h"
 #import "SMNotificationsFooterCell.h"

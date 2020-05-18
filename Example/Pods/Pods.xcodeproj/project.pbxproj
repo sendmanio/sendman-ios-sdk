@@ -25,7 +25,7 @@
 		515DE95B68537731C6851416F391CCC0 /* SMSDKEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = C61DBAEE930D1AC982CE496B360E9C20 /* SMSDKEvent.m */; };
 		621CBA3A17DC2CB441959963FCED8C02 /* SMNotificationTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 47B51A81254804BAA0121360330DD34F /* SMNotificationTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		65434A643CA66E62DEBE011D3EA550CA /* SendMan-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EDF3E70E18C29A694AB9F297967E07F /* SendMan-dummy.m */; };
-		691F1827B05C65363A2027DDF61B9A70 /* SMMessagesHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB4FE275DB607965D17E61FD610DF60 /* SMMessagesHandler.m */; };
+		691F1827B05C65363A2027DDF61B9A70 /* SMLifecycleHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CB4FE275DB607965D17E61FD610DF60 /* SMLifecycleHandler.m */; };
 		6D441931409495F320442EFCDC6CB78B /* Sendman.h in Headers */ = {isa = PBXBuildFile; fileRef = 68213F44BAC3C3429B1DD0F35FB22DBC /* Sendman.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6DB06299CA30795D0F80A4C11B7462B6 /* SMSession.m in Sources */ = {isa = PBXBuildFile; fileRef = E9AB9C50B7D7D234704CA8699FC8905B /* SMSession.m */; };
 		6EF69A0D22B090B0E010E09B34C3443E /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F02476EA4225844B0918EC56393C77F /* JSONModel.m */; };
@@ -36,7 +36,7 @@
 		792D3148346F6B69AA3753C12433B06D /* JSONModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 152ACB8F616AD0A06ABCD37BD1898BC8 /* JSONModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7CE27CD2CA0A0E71D0E1A48E43DD4A7D /* Pods-SendMan2_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A56B730A70CE2DFB91D809E78450A385 /* Pods-SendMan2_Example-dummy.m */; };
 		7CE4209A947C91D58F340DA4AF9E460E /* SMNotificationsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DBB6E520294E9F50E06E2350179EFF2 /* SMNotificationsViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7D64F2E2525C2D4C165AB8595C11A508 /* SMMessagesHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 8216A1D2B0D7559FFD17CF62388873C8 /* SMMessagesHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7D64F2E2525C2D4C165AB8595C11A508 /* SMLifecycleHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 8216A1D2B0D7559FFD17CF62388873C8 /* SMLifecycleHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7DA87A4B293BD388EAD42862AD748B16 /* SMDataCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FA6874E5517EE58D9B85AA703C37E22 /* SMDataCollector.m */; };
 		8090404A427D04137152F9CDE2832C36 /* SMNotificationsFooterCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 420DDE70CFDFCCE0852DA51D38F4B7FF /* SMNotificationsFooterCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8747D13275BF32ECB3E874FD811C548E /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F8C7661AA58627708F65EF8455910B4 /* JSONValueTransformer.m */; };
@@ -124,12 +124,12 @@
 		7601814CD4B17C409E54361D57612C54 /* JSONModelClassProperty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JSONModelClassProperty.m; sourceTree = "<group>"; };
 		76DF0D0293F7ADD4C2523F9C4381F352 /* SMConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SMConfig.h; path = SendMan/Classes/SMConfig.h; sourceTree = "<group>"; };
 		78686E3015B32F909F5A1BE38A39B149 /* JSONValueTransformer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
-		7CB4FE275DB607965D17E61FD610DF60 /* SMMessagesHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SMMessagesHandler.m; path = SendMan/Classes/SMMessagesHandler.m; sourceTree = "<group>"; };
+		7CB4FE275DB607965D17E61FD610DF60 /* SMLifecycleHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SMLifecycleHandler.m; path = SendMan/Classes/SMLifecycleHandler.m; sourceTree = "<group>"; };
 		7D4369B29B7F24869AD049D43D0C18E3 /* JSONModelError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JSONModelError.m; sourceTree = "<group>"; };
 		7DFCDFFC50CB659EBFBED2641859EA90 /* Pods-SendMan2_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SendMan2_Example.release.xcconfig"; sourceTree = "<group>"; };
 		80C5FC73BC0F14733F26E0E550200D65 /* Pods-SendMan_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SendMan_Tests-Info.plist"; sourceTree = "<group>"; };
 		81549B041F5DB2AE5CB9A7E50D5BB642 /* Pods-SendMan2_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SendMan2_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		8216A1D2B0D7559FFD17CF62388873C8 /* SMMessagesHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SMMessagesHandler.h; path = SendMan/Classes/SMMessagesHandler.h; sourceTree = "<group>"; };
+		8216A1D2B0D7559FFD17CF62388873C8 /* SMLifecycleHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SMLifecycleHandler.h; path = SendMan/Classes/SMLifecycleHandler.h; sourceTree = "<group>"; };
 		82B861E8B3AD348B16F3AD4A677FE908 /* SMCategoriesHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SMCategoriesHandler.m; path = SendMan/Classes/SMCategoriesHandler.m; sourceTree = "<group>"; };
 		8A14E8F660E9D5868E74EB87BF2283D4 /* SendMan.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SendMan.xcconfig; sourceTree = "<group>"; };
 		8F8C7661AA58627708F65EF8455910B4 /* JSONValueTransformer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
@@ -302,8 +302,8 @@
 				5FA6874E5517EE58D9B85AA703C37E22 /* SMDataCollector.m */,
 				112F35EC92033A4E269A0AB8E8CB8D90 /* SMDataEnricher.h */,
 				FBCCA1578024E19FA0A86998740B4B32 /* SMDataEnricher.m */,
-				8216A1D2B0D7559FFD17CF62388873C8 /* SMMessagesHandler.h */,
-				7CB4FE275DB607965D17E61FD610DF60 /* SMMessagesHandler.m */,
+				8216A1D2B0D7559FFD17CF62388873C8 /* SMLifecycleHandler.h */,
+				7CB4FE275DB607965D17E61FD610DF60 /* SMLifecycleHandler.m */,
 				A9F09B93A05F3692911CE2CBC69C18D4 /* SMUtils.h */,
 				5A46B15DA7C6E3E8FC6B561482FC2E2C /* SMUtils.m */,
 				68213F44BAC3C3429B1DD0F35FB22DBC /* Sendman.h */,
@@ -447,7 +447,7 @@
 				FC76A71230DE7549DFAEAF5E2EB68252 /* SMData.h in Headers */,
 				BECE6310160C7B358FEF58E5E8EB9455 /* SMDataCollector.h in Headers */,
 				3DB2E75F1BDBC2F98620B6B4BEED17F0 /* SMDataEnricher.h in Headers */,
-				7D64F2E2525C2D4C165AB8595C11A508 /* SMMessagesHandler.h in Headers */,
+				7D64F2E2525C2D4C165AB8595C11A508 /* SMLifecycleHandler.h in Headers */,
 				CBAAA0D83260E322348D7051D78F05A1 /* SMNotificationCellDelegate.h in Headers */,
 				621CBA3A17DC2CB441959963FCED8C02 /* SMNotificationTableViewCell.h in Headers */,
 				8090404A427D04137152F9CDE2832C36 /* SMNotificationsFooterCell.h in Headers */,
@@ -592,7 +592,7 @@
 				3EAFC00080D5896F32369F2FC9B1DD26 /* SMData.m in Sources */,
 				7DA87A4B293BD388EAD42862AD748B16 /* SMDataCollector.m in Sources */,
 				FB41556D8BBB6869A84A46BAF4E7A370 /* SMDataEnricher.m in Sources */,
-				691F1827B05C65363A2027DDF61B9A70 /* SMMessagesHandler.m in Sources */,
+				691F1827B05C65363A2027DDF61B9A70 /* SMLifecycleHandler.m in Sources */,
 				A00B6201C73DBC38BE3AFA1965008E4B /* SMNotificationTableViewCell.m in Sources */,
 				B254FA083DDCBF38F3004DEA1257A468 /* SMNotifications.storyboard in Sources */,
 				FE0FD9CC6D4CAD200A72434368349664 /* SMNotificationsFooterCell.m in Sources */,
@@ -657,7 +657,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SendMan/SendMan-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SendMan/SendMan-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SendMan/SendMan.modulemap";
 				PRODUCT_MODULE_NAME = SendMan;
@@ -688,7 +688,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-SendMan_Tests/Pods-SendMan_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-SendMan_Tests/Pods-SendMan_Tests.modulemap";
@@ -754,7 +754,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -781,7 +781,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-SendMan2_Example/Pods-SendMan2_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-SendMan2_Example/Pods-SendMan2_Example.modulemap";
@@ -815,7 +815,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-SendMan2_Example/Pods-SendMan2_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-SendMan2_Example/Pods-SendMan2_Example.modulemap";
@@ -883,7 +883,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -912,7 +912,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-SendMan_Tests/Pods-SendMan_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-SendMan_Tests/Pods-SendMan_Tests.modulemap";
@@ -945,7 +945,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/SendMan/SendMan-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/SendMan/SendMan-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/SendMan/SendMan.modulemap";
 				PRODUCT_MODULE_NAME = SendMan;

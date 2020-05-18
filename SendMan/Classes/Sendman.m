@@ -8,7 +8,7 @@
 #import "Sendman.h"
 #import "SMUtils.h"
 #import "SMDataCollector.h"
-#import "SMMessagesHandler.h"
+#import "SMLifecycleHandler.h"
 #import "SMCategoriesHandler.h"
 #import "SMNotificationsViewController.h"
 
@@ -111,12 +111,33 @@ NSString *const SMAPNTokenKey = @"SMAPNToken";
     [SMDataCollector addUserEvents:@{eventName: value == YES ? @"YES" : @"NO"}];
 }
 
-+ (void)didOpenMessage:(NSString *_Nonnull)messageId forActivity:(NSString *_Nonnull)activityId atState:(UIApplicationState)appState {
-    [SMMessagesHandler didOpenMessage:messageId forActivity:activityId atState:appState];
++ (void)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    SMLifecycleHandler *manager = [SMLifecycleHandler sharedManager];
+    [manager application:application didFinishLaunchingWithOptions:launchOptions];
 }
 
-+ (void)didOpenApp {
-    [SMMessagesHandler didOpenApp];
++ (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    [[SMLifecycleHandler sharedManager] application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+}
+
++ (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    [[SMLifecycleHandler sharedManager] application:application didFailToRegisterForRemoteNotificationsWithError:error];
+}
+
++ (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler {
+    [[SMLifecycleHandler sharedManager] application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
+}
+
++ (void)userNotificationCenter:(UNUserNotificationCenter *)center openSettingsForNotification:(UNNotification *)notification {
+    [[SMLifecycleHandler sharedManager] userNotificationCenter:center openSettingsForNotification:notification];
+}
+
++ (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
+    [[SMLifecycleHandler sharedManager] userNotificationCenter:center willPresentNotification:notification withCompletionHandler:completionHandler];
+}
+
++ (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
+    [[SMLifecycleHandler sharedManager] userNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
 }
 
 @end
