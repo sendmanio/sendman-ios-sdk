@@ -24,5 +24,7 @@
 - (void)userNotificationCenter:(UNUserNotificationCenter *_Nonnull)center willPresentNotification:(UNNotification *_Nullable)notification withCompletionHandler:(void (^_Nullable)(UNNotificationPresentationOptions))completionHandler;
 - (void)userNotificationCenter:(UNUserNotificationCenter *_Nonnull)center didReceiveNotificationResponse:(UNNotificationResponse *_Nullable)response withCompletionHandler:(void (^_Nullable)(void))completionHandler;
 
+- (void)registerForRemoteNotifications;
+
 @end
 

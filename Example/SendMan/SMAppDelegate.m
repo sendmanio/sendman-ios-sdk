@@ -25,17 +25,7 @@
     [Sendman setUserProperties:@{@"email": @"email@email.com", @"Native App": @"YES"}];
 
     [UNUserNotificationCenter currentNotificationCenter].delegate = self;
-    [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge)
-                                                                        completionHandler:^(BOOL granted, NSError * _Nullable error) {
-        NSLog(@"Push notification permission granted: %d", granted);
-        // ?
-        // TODO: should check if authorized
-        dispatch_async(dispatch_get_main_queue(), ^(){
-            if (granted) {
-                [[UIApplication sharedApplication] registerForRemoteNotifications];
-            }
-        });
-    }];
+    [Sendman registerForRemoteNotifications];
 
     [Sendman application:application didFinishLaunchingWithOptions:launchOptions];
 
