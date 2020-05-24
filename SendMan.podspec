@@ -23,6 +23,10 @@ TODO: Add long description of the pod here.
 
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
 
+  s.homepage         = 'https://sendman.io'
+  s.authors           = { 'Sendman' => 'support@sendman.io' }
+  s.source           = { :git => 'https://github.com/sendmanio/sendman-ios-sdk.git', :tag => s.version.to_s }
+
   s.ios.deployment_target = '10.0'
 
   s.source_files = 'SendMan/Classes/**/*'
