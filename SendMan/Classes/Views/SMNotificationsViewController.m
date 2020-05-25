@@ -33,11 +33,11 @@ NSArray *tableData;
 - (id)initWithCoder:(NSCoder *)decoder {
     self = [super initWithCoder:decoder];
     if (self) {
-        self.backgroundView.backgroundColor = SM_NOTIFICATION_GREY_COLOR;
         self.backgroundColor = SM_NOTIFICATION_GREY_COLOR;
         self.switchBackgroundColor = SM_NOTIFICATION_GREY_COLOR;
         self.switchOnTintColor = [UIColor systemGreenColor];
         self.switchThumbColor = [UIColor whiteColor];
+        self.cellBackgroundColor = [UIColor whiteColor];
         self.titleColor = SM_NOTIFICATION_GREY_TEXT_COLOR;
         self.descriptionColor = SM_NOTIFICATION_GREY_TEXT_COLOR;
         self.textColor = [UIColor blackColor];
@@ -103,6 +103,7 @@ NSArray *tableData;
     
     [cell setData:category forIndexPath:indexPath];
     
+    cell.backgroundColor = self.cellBackgroundColor;
     cell.categoryName.textColor = self.textColor;
     cell.categoryDescription.textColor = self.descriptionColor;
     cell.categorySwitch.onTintColor = self.switchOnTintColor;
