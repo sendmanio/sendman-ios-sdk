@@ -26,7 +26,7 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedManager = [[self alloc] init];
-        [[NSNotificationCenter defaultCenter] addObserver:sharedManager selector:@selector(checkNotificationRegistrationState) name: UIApplicationWillEnterForegroundNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:sharedManager selector:@selector(applicationWillEnterForeground) name:UIApplicationWillEnterForegroundNotification object:nil];
     });
     return sharedManager;
 }
@@ -43,17 +43,25 @@
 # pragma mark - Data collection
 
 - (void)didOpenMessage:(NSString *)messageId forActivity:(NSString *)activityId atState:(UIApplicationState)appState {
+    [self didOpenMessage:messageId forActivity:activityId atState:appState withOnSuccess:nil];
+}
+
+- (void)didOpenMessage:(NSString *)messageId forActivity:(NSString *)activityId atState:(UIApplicationState)appState withOnSuccess:(void (^)(void))onSuccess {
     if ([self.lastMessageActivities containsObject:activityId]) {
         NSLog(@"Activity already handled previously");
     } else {
-        [self saveLastMessageActivity:activityId];
-        
-        SMSDKEvent *event = [SMSDKEvent new];
-        event.key = appState == UIApplicationStateActive ? @"Foreground Message Received" : @"Background Message Opened";
-        event.appState = [self appStateStringFromState:appState];
-        event.messageId = messageId;
-        event.activityId = activityId;
-        [SMDataCollector addSdkEvent:event];
+        [[UNUserNotificationCenter currentNotificationCenter] getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
+            [self saveLastMessageActivity:activityId];
+
+            SMSDKEvent *event = [SMSDKEvent new];
+            event.key = [self eventNameByAppState:appState andAuthorizationStatus:settings.authorizationStatus];
+            event.appState = [self appStateStringFromState:appState];
+            event.messageId = messageId;
+            event.activityId = activityId;
+            [SMDataCollector addSdkEvent:event];
+
+            if (onSuccess) onSuccess();
+        }];
     }
 }
 
@@ -77,19 +85,28 @@
     }
 }
 
+- (void)applicationWillEnterForeground {
+    SMSDKEvent *event = [SMSDKEvent new];
+    event.key = @"App entered foreground";
+    event.appState = [self appStateStringFromState:UIApplicationStateBackground];
+    [SMDataCollector addSdkEvent:event];
+
+    [self checkNotificationRegistrationState];
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
+}
+
 - (void)checkNotificationRegistrationState {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [[UNUserNotificationCenter currentNotificationCenter] getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
-        BOOL isRegistered = settings.authorizationStatus == UNAuthorizationStatusAuthorized;
-        BOOL prevRegistrationState = [userDefaults boolForKey:SMNotificationsRegistrationStateKey];
-        if (isRegistered != prevRegistrationState) {
-            [userDefaults setBool:isRegistered forKey:SMNotificationsRegistrationStateKey];
-            NSString *isRegisteredValue = isRegistered == YES ? @"On" : @"Off";
+        NSString *regisrationState = [SMDataCollector getRegistrationStateFromStatus:settings.authorizationStatus];
+        NSString *prevRegistrationState = [userDefaults stringForKey:SMNotificationsRegistrationStateKey];
+        if (![regisrationState isEqualToString:prevRegistrationState]) {
+            [userDefaults setObject:regisrationState forKey:SMNotificationsRegistrationStateKey];
             SMSDKEvent *event = [SMSDKEvent new];
             event.key = @"Notification Registration State Updated";
-            event.value = isRegisteredValue;
+            event.value = regisrationState;
             [SMDataCollector addSdkEvent:event];
-            [SMDataCollector setSdkProperties:@{SMNotificationsRegistrationStateKey:isRegisteredValue}];
+            [SMDataCollector setSdkProperties:@{SMNotificationsRegistrationStateKey:regisrationState}];
         }
     }];
 }
@@ -99,9 +116,13 @@
     [self checkNotificationRegistrationState];
     NSDictionary *pushNotification = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
     if (pushNotification) {
-        [self didOpenMessage:pushNotification[@"messageId"] forActivity:pushNotification[@"activityId"] atState:-1];
+        [self didOpenMessage:pushNotification[@"messageId"] forActivity:pushNotification[@"activityId"] atState:-1 withOnSuccess:^{
+            [self didOpenApp];
+        }];
+    } else {
+        [self didOpenApp];
     }
-    [self didOpenApp];
+    [[UIApplication sharedApplication] registerForRemoteNotifications];
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
@@ -130,14 +151,10 @@
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center openSettingsForNotification:(UNNotification *)notification {}
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
-    [[UNUserNotificationCenter currentNotificationCenter] getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
-        if (settings.authorizationStatus == UNAuthorizationStatusAuthorized) {
-            NSDictionary *pushNotification = notification.request.content.userInfo;
-            if (pushNotification) {
-                [self didOpenMessage:pushNotification[@"messageId"] forActivity:pushNotification[@"activityId"] atState:[[UIApplication sharedApplication] applicationState]];
-            }
-        }
-    }];
+    NSDictionary *pushNotification = notification.request.content.userInfo;
+    if (pushNotification) {
+        [self didOpenMessage:pushNotification[@"messageId"] forActivity:pushNotification[@"activityId"] atState:[[UIApplication sharedApplication] applicationState]];
+    }
 }
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
@@ -147,7 +164,7 @@
     }
 }
 
-- (void)registerForRemoteNotifications:(void (^)(BOOL granted))success  {
+- (void)registerForRemoteNotifications:(void (^)(BOOL granted))success {
     [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge)
                                                                         completionHandler:^(BOOL granted, NSError * _Nullable error) {
         NSLog(@"Push notification permission granted: %d", granted);
@@ -160,6 +177,16 @@
             if (success) success(granted);
         });
     }];
+}
+
+- (NSString *)eventNameByAppState:(UIApplicationState)state andAuthorizationStatus:(UNAuthorizationStatus)status {
+    if (status == UNAuthorizationStatusDenied) {
+        return @"Blocked Message Received";
+    } else if (status == UNAuthorizationStatusNotDetermined) {
+        return @"Pre-Authorization Message Received";
+    }
+
+    return state == UIApplicationStateActive ? @"Foreground Message Received" : @"Background Message Opened";
 }
 
 @end

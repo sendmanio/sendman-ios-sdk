@@ -108,10 +108,22 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
     SMDataCollector *manager = [SMDataCollector sharedManager];
     event.timestamp = [SMUtils now];
     [[UNUserNotificationCenter currentNotificationCenter] getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
-        BOOL isRegistered = settings.authorizationStatus == UNAuthorizationStatusAuthorized;
-        event.notificationsRegistrationState = isRegistered == YES ? @"On" : @"Off";
+        event.notificationsRegistrationState = [self getRegistrationStateFromStatus:settings.authorizationStatus];
         [manager.sdkEvents addObject:event];
     }];
+}
+
++ (NSString *)getRegistrationStateFromStatus:(UNAuthorizationStatus)status {
+    switch (status) {
+        case UNAuthorizationStatusAuthorized:
+            return @"On";
+        case UNAuthorizationStatusNotDetermined:
+            return @"Not requested";
+        case UNAuthorizationStatusDenied:
+            return @"Off";
+        default:
+            return @"Uknknown";
+    }
 }
 
 - (void)sendData:(BOOL)presistSession {

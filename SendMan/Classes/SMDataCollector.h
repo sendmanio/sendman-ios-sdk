@@ -6,6 +6,7 @@
 //
 
 @import UIKit;
+@import UserNotifications;
 #import "SMConfig.h"
 #import "SMSDKEvent.h"
 
@@ -17,6 +18,8 @@
 + (void)setSdkProperties:(NSDictionary *_Nonnull)properties;
 + (void)addUserEvents:(NSDictionary *_Nonnull)events;
 + (void)addSdkEvent:(SMSDKEvent *_Nonnull)event;
+
++ (NSString *_Nonnull)getRegistrationStateFromStatus:(UNAuthorizationStatus)status;
 
 + (void)startSession;
 
