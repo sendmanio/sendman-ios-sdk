@@ -42,7 +42,7 @@
 
 # pragma mark - Data collection
 
-- (void)didOpenMessage:(NSString *_Nonnull)messageId forActivity:(NSString *_Nonnull)activityId atState:(UIApplicationState)appState {
+- (void)didOpenMessage:(NSString *)messageId forActivity:(NSString *)activityId atState:(UIApplicationState)appState {
     if ([self.lastMessageActivities containsObject:activityId]) {
         NSLog(@"Activity already handled previously");
     } else {
@@ -147,7 +147,7 @@
     }
 }
 
-- (void)registerForRemoteNotifications {
+- (void)registerForRemoteNotifications:(void (^)(BOOL granted))success  {
     [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge)
                                                                         completionHandler:^(BOOL granted, NSError * _Nullable error) {
         NSLog(@"Push notification permission granted: %d", granted);
@@ -157,6 +157,7 @@
             if (granted) {
                 [[UIApplication sharedApplication] registerForRemoteNotifications];
             }
+            if (success) success(granted);
         });
     }];
 }

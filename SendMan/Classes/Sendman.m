@@ -140,8 +140,8 @@ NSString *const SMAPNTokenKey = @"SMAPNToken";
     [[SMLifecycleHandler sharedManager] userNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
 }
 
-+ (void)registerForRemoteNotifications {
-    [[SMLifecycleHandler sharedManager] registerForRemoteNotifications];
++ (void)registerForRemoteNotifications:(void (^)(BOOL granted))success {
+    [[SMLifecycleHandler sharedManager] registerForRemoteNotifications:success];
 }
 
 @end
