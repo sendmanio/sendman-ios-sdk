@@ -68,9 +68,9 @@ NSArray *tableData;
 }
 
 - (void)categoriesRetrieved {
-    tableData = [Sendman getCategories];
     dispatch_async(dispatch_get_main_queue(), ^{
-         [self.tableView reloadData];
+        tableData = [Sendman getCategories];
+        [self.tableView reloadData];
     });
 }
 
