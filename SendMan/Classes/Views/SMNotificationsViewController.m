@@ -11,6 +11,7 @@
 #import "SMNotificationsFooterCell.h"
 #import "Sendman.h"
 #import "SMCategoriesHandler.h"
+#import "SMDataCollector.h"
 
 #define SM_NOTIFICATION_CELL_IDENTIFIER @"SMNotificationTableViewCell"
 #define SM_NOTIFICATION_HEADER_IDENTIFIER @"SMNotificationsHeaderCell"
@@ -58,6 +59,7 @@ NSArray *tableData;
 
 - (void)viewWillAppear:(BOOL)animated {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(categoriesRetrieved) name:CategoriesRetrievedNotification object:nil];
+    [SMDataCollector addSdkEventWithName:@"User viewed categories" andValue:nil];
     [SMCategoriesHandler getCategories];
 }
 
@@ -155,7 +157,9 @@ NSArray *tableData;
         category = [categories objectAtIndex:indexPath.row];
     }
     
-    NSNumber *newValue = [[category objectForKey:@"value"] boolValue] ? @NO : @YES;
+    BOOL oldValue = [[category objectForKey:@"value"] boolValue];
+    NSNumber *newValue = oldValue ? @NO : @YES;
+    [SMDataCollector addSdkEventWithName:oldValue ? @"Category toggled off" : @"Category toggled on" andValue:[category objectForKey:@"id"]];
     [category setValue:newValue forKey:@"value"];
 }
 

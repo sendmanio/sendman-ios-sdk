@@ -11,6 +11,8 @@
 
 @interface SMSDKEvent : JSONModel
 
++ (instancetype)newWithName:(NSString *)name andValue:(NSObject *)value;
+
 @property (nonatomic) NSString *key;
 @property (nonatomic) NSObject <Optional> *value;
 @property (nonatomic) NSString <Optional> *messageId;

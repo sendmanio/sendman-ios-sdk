@@ -113,6 +113,11 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
     }];
 }
 
++ (void)addSdkEventWithName:(NSString *)name andValue:(NSObject *)value {
+    SMSDKEvent *event = [SMSDKEvent newWithName:name andValue:value];
+    [SMDataCollector addSdkEvent:event];
+}
+
 + (NSString *)getRegistrationStateFromStatus:(UNAuthorizationStatus)status {
     switch (status) {
         case UNAuthorizationStatusAuthorized:

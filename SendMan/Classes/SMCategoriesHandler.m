@@ -9,6 +9,7 @@
 #import "SMCategoriesHandler.h"
 #import "SMAPIHandler.h"
 #import "Sendman.h"
+#import "SMDataCollector.h"
 
 
 @interface SMCategoriesHandler ()
@@ -48,6 +49,8 @@
     [SMAPIHandler sendDataWithJson:@{@"categories": categories} forUrl:[NSString stringWithFormat:@"categories/user/%@", [Sendman getUserId]] responseHandler:^(NSHTTPURLResponse *httpResponse) {
         if(httpResponse.statusCode != 200) {
             NSLog(@"Failed to update categories");
+        } else {
+            [SMDataCollector addSdkEventWithName:@"User categories saved" andValue:nil];
         }
     }];
 }

@@ -18,6 +18,7 @@
 + (void)setSdkProperties:(NSDictionary *_Nonnull)properties;
 + (void)addUserEvents:(NSDictionary *_Nonnull)events;
 + (void)addSdkEvent:(SMSDKEvent *_Nonnull)event;
++ (void)addSdkEventWithName:(NSString *_Nonnull)name andValue:(NSObject *_Nullable)value;
 
 + (NSString *_Nonnull)getRegistrationStateFromStatus:(UNAuthorizationStatus)status;
 
