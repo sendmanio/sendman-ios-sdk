@@ -12,7 +12,6 @@
 NSString *const SMCountryCodeKey = @"SMCountryCode";
 NSString *const SMLanguageCodeKey = @"SMLanguageCode";
 
-NSString *const SMDeviceNameKey = @"SMDeviceName";
 NSString *const SMDeviceSystemNameKey = @"SMDeviceSystemName";
 NSString *const SMDeviceSystemVersionKey = @"SMDeviceSystemVersion";
 NSString *const SMDeviceModelKey = @"SMDeviceModel";
@@ -49,7 +48,6 @@ NSString *const SMDeviceModelKey = @"SMDeviceModel";
     self.enrichedData[SMLanguageCodeKey] = currentLocale.languageCode;
     
     UIDevice *currentDevice = [UIDevice currentDevice];
-    self.enrichedData[SMDeviceNameKey] = currentDevice.name;
     self.enrichedData[SMDeviceSystemNameKey] = currentDevice.systemName;
     self.enrichedData[SMDeviceSystemVersionKey] = currentDevice.systemVersion;
     self.enrichedData[SMDeviceModelKey] = currentDevice.model;
