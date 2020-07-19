@@ -170,7 +170,8 @@
         NSLog(@"Push notification permission granted: %d", granted);
         // ?
         // TODO: should check if authorized
-        dispatch_async(dispatch_get_main_queue(), ^(){
+        dispatch_async(dispatch_get_main_queue(), ^() {
+            [self checkNotificationRegistrationState];
             if (granted) {
                 [[UIApplication sharedApplication] registerForRemoteNotifications];
             }
