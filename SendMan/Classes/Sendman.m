@@ -67,7 +67,7 @@ NSString *const SMAPNTokenKey = @"SMAPNToken";
 }
 
 + (void)setAPNToken:(NSString *)token {
-    [SMDataCollector setUserProperties:@{SMAPNTokenKey: token}];
+    [SMDataCollector setSdkProperties:@{SMAPNTokenKey: token}];
 }
 
 + (SMNotificationsViewController *)getCategoriesUIViewController {
