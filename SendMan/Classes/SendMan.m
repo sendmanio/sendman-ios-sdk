@@ -1,11 +1,11 @@
 //
-//  Sendman.m
+//  SendMan.m
 //  SendMan
 //
 //  Created by Anat Sheba Harari on 30/03/2020.
 //
 
-#import "Sendman.h"
+#import "SendMan.h"
 #import "SMUtils.h"
 #import "SMDataCollector.h"
 #import "SMLifecycleHandler.h"
@@ -14,7 +14,7 @@
 
 NSString *const SMAPNTokenKey = @"SMAPNToken";
 
-@interface Sendman ()
+@interface SendMan ()
 
 @property (strong, nonatomic, nullable) SMConfig *config;
 @property (strong, nonatomic, nullable) NSString *msUserId;
@@ -22,12 +22,12 @@ NSString *const SMAPNTokenKey = @"SMAPNToken";
 
 @end
 
-@implementation Sendman
+@implementation SendMan
 
 # pragma mark - Constructor and Singletong Access
 
 + (id)instance {
-    static Sendman *instance = nil;
+    static SendMan *instance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         instance = [[self alloc] init];
@@ -38,29 +38,29 @@ NSString *const SMAPNTokenKey = @"SMAPNToken";
 # pragma mark - Getters
 
 + (SMConfig *)getConfig {
-    Sendman *sendman = [Sendman instance];
+    SendMan *sendman = [SendMan instance];
     return sendman.config;
 }
 
 + (NSString *)getUserId {
-    Sendman *sendman = [Sendman instance];
+    SendMan *sendman = [SendMan instance];
     return sendman.msUserId;
 }
 
 + (NSArray *)getCategories {
-    Sendman *sendman = [Sendman instance];
+    SendMan *sendman = [SendMan instance];
     return sendman.categories;
 }
 
 # pragma mark - Global parameters
 
 + (void)setAppConfig:(SMConfig *)config {
-    Sendman *sendman = [Sendman instance];
+    SendMan *sendman = [SendMan instance];
     sendman.config = config;
 }
 
 + (void)setUserId:(NSString *)userId {
-    Sendman *sendman = [Sendman instance];
+    SendMan *sendman = [SendMan instance];
     sendman.msUserId = userId;
     [SMDataCollector startSession];
     [SMCategoriesHandler getCategories];
@@ -76,7 +76,7 @@ NSString *const SMAPNTokenKey = @"SMAPNToken";
 }
 
 + (void)setUserCategories:(NSArray *)categories {
-    Sendman *sendman = [Sendman instance];
+    SendMan *sendman = [SendMan instance];
     if (![sendman.categories isEqualToArray:categories]) {
         sendman.categories = categories;
         [[NSNotificationCenter defaultCenter] postNotificationName:CategoriesRetrievedNotification object:nil];
@@ -84,7 +84,7 @@ NSString *const SMAPNTokenKey = @"SMAPNToken";
 }
 
 + (void)updateUserCategories:(NSArray *)categories {
-    Sendman *sendman = [Sendman instance];
+    SendMan *sendman = [SendMan instance];
     sendman.categories = categories;
     [SMCategoriesHandler updateCategories:categories];
 }

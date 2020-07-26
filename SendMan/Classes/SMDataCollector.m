@@ -11,7 +11,7 @@
 #import "SMAPIHandler.h"
 #import "SMData.h"
 #import "SMUtils.h"
-#import "Sendman.h"
+#import "SendMan.h"
 
 typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMPropertyValue> SMMutableProperties;
 
@@ -133,14 +133,14 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
 
 - (void)sendData:(BOOL)presistSession {
     
-    if (![Sendman getConfig] || (!presistSession && ([self.customProperties count] == 0 && [self.sdkProperties count] == 0 && [self.customEvents count] == 0 && [self.sdkEvents count] == 0))) {
+    if (![SendMan getConfig] || (!presistSession && ([self.customProperties count] == 0 && [self.sdkProperties count] == 0 && [self.customEvents count] == 0 && [self.sdkEvents count] == 0))) {
         return;
     }
     
     NSLog(@"Preparing to send data");
 
     SMData *data = [SMData new];
-    data.externalUserId = [Sendman getUserId];
+    data.externalUserId = [SendMan getUserId];
 
     data.currentSession = [SMSession new];
     data.currentSession.sessionId = self.sessionId;

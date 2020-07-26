@@ -6,12 +6,12 @@
 //
 
 #import "SMAuthHandler.h"
-#import "Sendman.h"
+#import "SendMan.h"
 
 @implementation SMAuthHandler
 
 + (void)addAuthHeaderToRequest:(NSMutableURLRequest *)request {
-    SMConfig *config = [Sendman getConfig];
+    SMConfig *config = [SendMan getConfig];
     NSString *authStr = [NSString stringWithFormat:@"%@:%@", config.appKey, config.appSecret];
     NSData *authData = [authStr dataUsingEncoding:NSUTF8StringEncoding];
     NSString *authValue = [NSString stringWithFormat:@"Basic %@", [[NSString alloc] initWithData:[authData base64EncodedDataWithOptions:NSDataBase64EncodingEndLineWithLineFeed] encoding:NSASCIIStringEncoding]];

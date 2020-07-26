@@ -10,4 +10,13 @@
 
 @implementation SMConfig
 
+- (instancetype)initWithKey:(NSString *)key andSecret:(NSString *)secret {
+    self = [super init];
+    if (self) {
+        self.appKey = key;
+        self.appSecret = secret;
+    }
+    return self;
+}
+
 @end

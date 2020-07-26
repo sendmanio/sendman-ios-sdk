@@ -9,7 +9,7 @@
 #import "SMNotificationTableViewCell.h"
 #import "SMNotificationsHeaderCell.h"
 #import "SMNotificationsFooterCell.h"
-#import "Sendman.h"
+#import "SendMan.h"
 #import "SMCategoriesHandler.h"
 #import "SMDataCollector.h"
 
@@ -54,7 +54,7 @@ NSArray *tableData;
     self.tableView.backgroundColor = self.backgroundColor;
     self.backgroundView.backgroundColor = self.backgroundColor;
     
-    tableData = [Sendman getCategories];
+    tableData = [SendMan getCategories];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -66,12 +66,12 @@ NSArray *tableData;
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [Sendman updateUserCategories:tableData];
+    [SendMan updateUserCategories:tableData];
 }
 
 - (void)categoriesRetrieved {
     dispatch_async(dispatch_get_main_queue(), ^{
-        tableData = [Sendman getCategories];
+        tableData = [SendMan getCategories];
         [self.tableView reloadData];
     });
 }

@@ -1,5 +1,5 @@
 //
-//  Sendman.h
+//  SendMan.h
 //  SendMan
 //
 //  Created by Anat Sheba Harari on 30/03/2020.
@@ -14,7 +14,7 @@
 
 #define CategoriesRetrievedNotification @"CategoriesRetrievedNotification"
 
-@interface Sendman : NSObject
+@interface SendMan : NSObject
 
 + (SMConfig * _Nullable)getConfig;
 + (NSString * _Nullable)getUserId;

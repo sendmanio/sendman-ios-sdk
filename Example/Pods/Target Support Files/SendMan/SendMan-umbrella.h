@@ -21,7 +21,7 @@
 #import "SMPropertyValue.h"
 #import "SMSDKEvent.h"
 #import "SMSession.h"
-#import "Sendman.h"
+#import "SendMan.h"
 #import "SMAPIHandler.h"
 #import "SMAuthHandler.h"
 #import "SMCategoriesHandler.h"

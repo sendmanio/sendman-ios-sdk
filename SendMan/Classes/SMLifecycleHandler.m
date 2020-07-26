@@ -9,7 +9,7 @@
 #import "SMSDKEvent.h"
 #import "SMUtils.h"
 #import "SMDataCollector.h"
-#import "Sendman.h"
+#import "SendMan.h"
 
 @interface SMLifecycleHandler ()
 
@@ -137,7 +137,7 @@
     // Should create some other token by copying this string
     NSLog(@"The registered device token is: %@", token);
     
-    [Sendman setAPNToken:token];
+    [SendMan setAPNToken:token];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {

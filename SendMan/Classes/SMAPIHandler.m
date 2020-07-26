@@ -7,7 +7,7 @@
 
 #import "SMAPIHandler.h"
 #import "SMAuthHandler.h"
-#import "Sendman.h"
+#import "SendMan.h"
 
 @implementation SMAPIHandler
 
@@ -54,8 +54,8 @@
 
 +(NSMutableURLRequest *)createURLRequest:(NSString *)path forMethodType:(NSString *)methodType{
     // TODO: URL
-    SMConfig *config = [Sendman getConfig];
-    NSString *serverUrl = config.serverUrl ? config.serverUrl : @"http://localhost:4200";
+    SMConfig *config = [SendMan getConfig];
+    NSString *serverUrl = config.serverUrl ? config.serverUrl : @"https://api.sendman.io/app-sdk";
     NSURL *requestURL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", serverUrl, path]];
     NSMutableURLRequest *urlRequest = [[NSMutableURLRequest alloc] initWithURL:requestURL];
 

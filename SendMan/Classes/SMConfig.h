@@ -7,6 +7,8 @@
 
 @interface SMConfig : NSObject
 
+- (instancetype)initWithKey:(NSString *)key andSecret:(NSString *)secret;
+
 @property (strong, nonatomic, nonnull) NSString *appKey;
 @property (strong, nonatomic, nonnull) NSString *appSecret;
 @property (strong, nonatomic, nonnull) NSString *serverUrl;

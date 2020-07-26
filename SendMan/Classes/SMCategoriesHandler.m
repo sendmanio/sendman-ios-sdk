@@ -8,7 +8,7 @@
 #import <Foundation/Foundation.h>
 #import "SMCategoriesHandler.h"
 #import "SMAPIHandler.h"
-#import "Sendman.h"
+#import "SendMan.h"
 #import "SMDataCollector.h"
 
 
@@ -35,10 +35,10 @@
 
 //TODO retries
 + (void)getCategories {
-    [SMAPIHandler getDataForUrl:[NSString stringWithFormat:@"categories/user/%@", [Sendman getUserId]] responseHandler:^(NSHTTPURLResponse *httpResponse, NSDictionary *jsonData) {
+    [SMAPIHandler getDataForUrl:[NSString stringWithFormat:@"categories/user/%@", [SendMan getUserId]] responseHandler:^(NSHTTPURLResponse *httpResponse, NSDictionary *jsonData) {
         if(httpResponse.statusCode == 200) {
             NSArray *categories = jsonData ? jsonData[@"categories"] : [[NSArray alloc] init];
-            [Sendman setUserCategories: categories];
+            [SendMan setUserCategories: categories];
         } else {
             NSLog(@"Failed to get categories");
         }
@@ -46,7 +46,7 @@
 }
 
 + (void)updateCategories:(NSArray *)categories {
-    [SMAPIHandler sendDataWithJson:@{@"categories": categories} forUrl:[NSString stringWithFormat:@"categories/user/%@", [Sendman getUserId]] responseHandler:^(NSHTTPURLResponse *httpResponse) {
+    [SMAPIHandler sendDataWithJson:@{@"categories": categories} forUrl:[NSString stringWithFormat:@"categories/user/%@", [SendMan getUserId]] responseHandler:^(NSHTTPURLResponse *httpResponse) {
         if(httpResponse.statusCode != 200) {
             NSLog(@"Failed to update categories");
         } else {
