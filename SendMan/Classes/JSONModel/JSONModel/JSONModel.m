@@ -1351,9 +1351,18 @@ static JSONKeyMapper* globalKeyMapper = nil;
 #pragma mark - NSCopying, NSCoding
 -(instancetype)copyWithZone:(NSZone *)zone
 {
-    return [NSKeyedUnarchiver unarchiveObjectWithData:
-        [NSKeyedArchiver archivedDataWithRootObject:self]
-     ];
+    if (@available(iOS 11, *)) {
+        NSError *error = nil;
+        return [NSKeyedUnarchiver unarchivedObjectOfClass:[self class]
+                                                 fromData:[NSKeyedArchiver archivedDataWithRootObject:self
+                                                                                requiringSecureCoding:NO
+                                                                                                error:&error]
+                                                    error:&error];
+    } else {
+        return [NSKeyedUnarchiver unarchiveObjectWithData:
+           [NSKeyedArchiver archivedDataWithRootObject:self]
+        ];
+    }
 }
 
 -(instancetype)initWithCoder:(NSCoder *)decoder
