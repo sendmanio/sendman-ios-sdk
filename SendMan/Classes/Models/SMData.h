@@ -15,7 +15,6 @@
 
 @interface SMData : JSONModel
 
-@property (nonatomic) NSString *userId;
 @property (nonatomic) NSString *externalUserId;
 @property (nonatomic) SMSession *currentSession;
 @property (nonatomic) NSDictionary<NSString *, SMPropertyValue *> <NSString, SMPropertyValue> *customProperties;

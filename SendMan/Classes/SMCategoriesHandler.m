@@ -13,15 +13,7 @@
 #import "SMLog.h"
 
 
-@interface SMCategoriesHandler ()
-
-@property (strong, nonatomic, nullable) NSMutableDictionary *enrichedData;
-
-@end
-
 @implementation SMCategoriesHandler
-
-@synthesize enrichedData = _enrichedData;
 
 # pragma mark - Constructor and Singletong Access
 

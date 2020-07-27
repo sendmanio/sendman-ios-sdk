@@ -68,7 +68,7 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
     SMDataCollector *manager = [SMDataCollector sharedManager];
     manager.sessionId = [[NSUUID UUID] UUIDString];
     manager.sessionIdStartTimestamp = [SMUtils now];
-    [self setProperties:[[SMDataEnricher sharedManager] getUserEnrichedData] inState:manager.sdkProperties];
+    [self setProperties:[SMDataEnricher getUserEnrichedData] inState:manager.sdkProperties];
 }
 
 # pragma mark - Data collection
@@ -134,7 +134,7 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
 
 - (void)sendData:(BOOL)presistSession {
     
-    if (![SendMan getConfig] || (!presistSession && ([self.customProperties count] == 0 && [self.sdkProperties count] == 0 && [self.customEvents count] == 0 && [self.sdkEvents count] == 0))) {
+    if (![SendMan getConfig] || !self.sessionId || (!presistSession && ([self.customProperties count] == 0 && [self.sdkProperties count] == 0 && [self.customEvents count] == 0 && [self.sdkEvents count] == 0))) {
         return;
     }
     
@@ -188,7 +188,7 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
 
             SENDMAN_ERROR(@"Error submitting peridical data to API");
         } else {
-            SENDMAN_LOG(@"Successfuly set properties: %@", [data toDictionary]);
+            SENDMAN_LOG(@"Successfully set properties: %@", [data toDictionary]);
         }
     }];
 }

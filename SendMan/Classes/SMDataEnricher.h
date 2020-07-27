@@ -9,8 +9,6 @@
 
 @interface SMDataEnricher : NSObject
 
-+ (id _Nonnull )sharedManager;
-
-- (NSDictionary *_Nonnull)getUserEnrichedData;
++ (NSDictionary *_Nonnull)getUserEnrichedData;
 
 @end
