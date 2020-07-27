@@ -1,6 +1,6 @@
 # SendMan
 
-[![CI Status](https://img.shields.io/travis/anatha/SendMan.svg?style=flat)](https://travis-ci.org/anatha/SendMan)
+[![CI Status](https://img.shields.io/travis/sendmanio/SendMan.svg?style=flat)](https://travis-ci.org/sendmanio/SendMan)
 [![Version](https://img.shields.io/cocoapods/v/SendMan.svg?style=flat)](https://cocoapods.org/pods/SendMan)
 [![License](https://img.shields.io/cocoapods/l/SendMan.svg?style=flat)](https://cocoapods.org/pods/SendMan)
 [![Platform](https://img.shields.io/cocoapods/p/SendMan.svg?style=flat)](https://cocoapods.org/pods/SendMan)
@@ -22,7 +22,7 @@ pod 'SendMan'
 
 ## Author
 
-anatha, harari.anat@gmail.com
+SendMan, hello@sendman.io
 
 ## License
 
