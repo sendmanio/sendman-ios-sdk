@@ -12,6 +12,7 @@
 #import "SMData.h"
 #import "SMUtils.h"
 #import "SendMan.h"
+#import "SMLog.h"
 
 typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMPropertyValue> SMMutableProperties;
 
@@ -137,7 +138,7 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
         return;
     }
     
-    NSLog(@"Preparing to send data");
+    SENDMAN_LOG(@"Preparing to submit periodical data to API");
 
     SMData *data = [SMData new];
     data.externalUserId = [SendMan getUserId];
@@ -185,9 +186,9 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
             }
             self.sdkEvents = currentSDKEvents;
 
-            NSLog(@"Error");
+            SENDMAN_ERROR(@"Error submitting peridical data to API");
         } else {
-            NSLog(@"Successfuly set properties: %@", [data toDictionary]);
+            SENDMAN_LOG(@"Successfuly set properties: %@", [data toDictionary]);
         }
     }];
 }

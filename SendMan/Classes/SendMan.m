@@ -70,6 +70,8 @@ NSString *const SMAPNTokenKey = @"SMAPNToken";
     [SMDataCollector setSdkProperties:@{SMAPNTokenKey: token}];
 }
 
+# pragma mark - Categories
+
 + (SMNotificationsViewController *)getCategoriesUIViewController {
     NSBundle *bundle = [NSBundle bundleForClass:SMNotificationsViewController.self];
     return [[UIStoryboard storyboardWithName:@"SMNotifications" bundle:bundle] instantiateViewControllerWithIdentifier:@"SMNotifications"];
@@ -89,11 +91,13 @@ NSString *const SMAPNTokenKey = @"SMAPNToken";
     [SMCategoriesHandler updateCategories:categories];
 }
 
-
+# pragma mark - User Properties
 
 + (void)setUserProperties:(NSDictionary *)properties {
     [SMDataCollector setUserProperties:properties];
 }
+
+# pragma mark - User Events
 
 + (void)addUserEvent:(NSString *)eventName {
     [SMDataCollector addUserEvents:@{eventName: @""}];
@@ -111,34 +115,33 @@ NSString *const SMAPNTokenKey = @"SMAPNToken";
     [SMDataCollector addUserEvents:@{eventName: value == YES ? @"YES" : @"NO"}];
 }
 
-+ (void)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    SMLifecycleHandler *manager = [SMLifecycleHandler sharedManager];
-    [manager application:application didFinishLaunchingWithOptions:launchOptions];
+# pragma mark - Integration Events
+
++ (void)applicationLaunchedWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *)launchOptions {
+    [[SMLifecycleHandler sharedManager] applicationLaunchedWithOptions:launchOptions];
 }
 
-+ (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    [[SMLifecycleHandler sharedManager] application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
++ (void)applicationRegisteredToRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    [[SMLifecycleHandler sharedManager] applicationRegisteredToRemoteNotificationsWithDeviceToken:deviceToken];
 }
 
-+ (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
-    [[SMLifecycleHandler sharedManager] application:application didFailToRegisterForRemoteNotificationsWithError:error];
++ (void)applicationFailedToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    [[SMLifecycleHandler sharedManager] applicationFailedToRegisterForRemoteNotificationsWithError:error];
 }
 
-+ (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler {
-    [[SMLifecycleHandler sharedManager] application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
++ (void)applicationReceivedRemoteNotificationWithInfo:(NSDictionary *)userInfo {
+    [[SMLifecycleHandler sharedManager] applicationReceivedRemoteNotificationWithInfo:userInfo];
 }
 
-+ (void)userNotificationCenter:(UNUserNotificationCenter *)center openSettingsForNotification:(UNNotification *)notification {
-    [[SMLifecycleHandler sharedManager] userNotificationCenter:center openSettingsForNotification:notification];
++ (void)applicationReceivedRemoteNotification:(UNNotification *)notification {
+    [[SMLifecycleHandler sharedManager] applicationReceivedRemoteNotification:notification];
 }
 
-+ (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
-    [[SMLifecycleHandler sharedManager] userNotificationCenter:center willPresentNotification:notification withCompletionHandler:completionHandler];
++ (void)applicationReceivedRemoteNotificationResponse:(UNNotificationResponse *)response {
+    [[SMLifecycleHandler sharedManager] applicationReceivedRemoteNotificationResponse:response];
 }
 
-+ (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
-    [[SMLifecycleHandler sharedManager] userNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
-}
+# pragma mark - Notification Registration (Optional)
 
 + (void)registerForRemoteNotifications:(void (^)(BOOL granted))success {
     [[SMLifecycleHandler sharedManager] registerForRemoteNotifications:success];

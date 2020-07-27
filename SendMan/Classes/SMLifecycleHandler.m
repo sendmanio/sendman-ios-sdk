@@ -10,6 +10,7 @@
 #import "SMUtils.h"
 #import "SMDataCollector.h"
 #import "SendMan.h"
+#import "SMLog.h"
 
 @interface SMLifecycleHandler ()
 
@@ -48,7 +49,7 @@
 
 - (void)didOpenMessage:(NSString *)messageId forActivity:(NSString *)activityId atState:(UIApplicationState)appState withOnSuccess:(void (^)(void))onSuccess {
     if ([self.lastMessageActivities containsObject:activityId]) {
-        NSLog(@"Activity already handled previously");
+        SENDMAN_LOG(@"Activity already handled previously");
     } else {
         [[UNUserNotificationCenter currentNotificationCenter] getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
             [self saveLastMessageActivity:activityId];
@@ -112,7 +113,7 @@
 }
 
 
-- (void)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+- (void)applicationLaunchedWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *)launchOptions {
     [self checkNotificationRegistrationState];
     NSDictionary *pushNotification = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
     if (pushNotification) {
@@ -125,7 +126,7 @@
     [[UIApplication sharedApplication] registerForRemoteNotifications];
 }
 
-- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+- (void)applicationRegisteredToRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     [self checkNotificationRegistrationState];
     
     const char *data = [deviceToken bytes];
@@ -135,41 +136,35 @@
         [token appendFormat:@"%02.2hhX", data[i]];
     }
     // Should create some other token by copying this string
-    NSLog(@"The registered device token is: %@", token);
+    SENDMAN_LOG(@"The registered device token is: %@", token);
     
     [SendMan setAPNToken:token];
 }
 
-- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+- (void)applicationFailedToRegisterForRemoteNotificationsWithError:(NSError *)error {
     SMSDKEvent *event = [SMSDKEvent new];
     event.key = @"Failed to register to push notifications";
     [SMDataCollector addSdkEvent:event];
 }
 
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler {}
-
-- (void)userNotificationCenter:(UNUserNotificationCenter *)center openSettingsForNotification:(UNNotification *)notification {}
-
-- (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
-    NSDictionary *pushNotification = notification.request.content.userInfo;
-    if (pushNotification) {
-        [self didOpenMessage:pushNotification[@"messageId"] forActivity:pushNotification[@"activityId"] atState:[[UIApplication sharedApplication] applicationState]];
+- (void)applicationReceivedRemoteNotificationWithInfo:(NSDictionary *)userInfo {
+    if (userInfo) {
+        [self didOpenMessage:userInfo[@"messageId"] forActivity:userInfo[@"activityId"] atState:[[UIApplication sharedApplication] applicationState]];
     }
 }
 
-- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
-    NSDictionary *pushNotification = response.notification.request.content.userInfo;
-    if (pushNotification) {
-        [self didOpenMessage:pushNotification[@"messageId"] forActivity:pushNotification[@"activityId"] atState:[[UIApplication sharedApplication] applicationState]];
-    }
+- (void)applicationReceivedRemoteNotification:(UNNotification *)notification {
+    [self applicationReceivedRemoteNotificationWithInfo:notification.request.content.userInfo];
+}
+
+- (void)applicationReceivedRemoteNotificationResponse:(UNNotificationResponse *)response {
+    [self applicationReceivedRemoteNotification:response.notification];
 }
 
 - (void)registerForRemoteNotifications:(void (^)(BOOL granted))success {
     [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge)
                                                                         completionHandler:^(BOOL granted, NSError * _Nullable error) {
-        NSLog(@"Push notification permission granted: %d", granted);
-        // ?
-        // TODO: should check if authorized
+        SENDMAN_LOG(@"Push notification permission granted: %@", granted ? @"✅" : @"❌");
         dispatch_async(dispatch_get_main_queue(), ^() {
             [self checkNotificationRegistrationState];
             if (granted) {

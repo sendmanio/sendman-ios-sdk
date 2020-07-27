@@ -10,6 +10,7 @@
 #import "SMAPIHandler.h"
 #import "SendMan.h"
 #import "SMDataCollector.h"
+#import "SMLog.h"
 
 
 @interface SMCategoriesHandler ()
@@ -36,19 +37,19 @@
 //TODO retries
 + (void)getCategories {
     [SMAPIHandler getDataForUrl:[NSString stringWithFormat:@"categories/user/%@", [SendMan getUserId]] responseHandler:^(NSHTTPURLResponse *httpResponse, NSDictionary *jsonData) {
-        if(httpResponse.statusCode == 200) {
+        if (httpResponse.statusCode == 200) {
             NSArray *categories = jsonData ? jsonData[@"categories"] : [[NSArray alloc] init];
             [SendMan setUserCategories: categories];
         } else {
-            NSLog(@"Failed to get categories");
+            SENDMAN_ERROR(@"Error getting categories data");
         }
     }];
 }
 
 + (void)updateCategories:(NSArray *)categories {
     [SMAPIHandler sendDataWithJson:@{@"categories": categories} forUrl:[NSString stringWithFormat:@"categories/user/%@", [SendMan getUserId]] responseHandler:^(NSHTTPURLResponse *httpResponse) {
-        if(httpResponse.statusCode != 200) {
-            NSLog(@"Failed to update categories");
+        if (httpResponse.statusCode != 200) {
+            SENDMAN_ERROR(@"Error updating category preferences");
         } else {
             [SMDataCollector addSdkEventWithName:@"User categories saved" andValue:nil];
         }

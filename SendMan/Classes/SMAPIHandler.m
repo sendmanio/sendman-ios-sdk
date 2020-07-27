@@ -8,6 +8,7 @@
 #import "SMAPIHandler.h"
 #import "SMAuthHandler.h"
 #import "SendMan.h"
+#import "SMLog.h"
 
 @implementation SMAPIHandler
 
@@ -22,7 +23,7 @@
     
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (error) {
-            NSLog(@"%@", error.localizedDescription);
+            SENDMAN_ERROR(@"Error posting data via API: %@", error.localizedDescription);
             return;
         }
         
@@ -39,7 +40,7 @@
     
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (error) {
-            NSLog(@"%@", error.localizedDescription);
+            SENDMAN_ERROR(@"Error getting data via API: %@", error.localizedDescription);
             return;
         }
         

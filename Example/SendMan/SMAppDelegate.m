@@ -24,41 +24,39 @@
     [UNUserNotificationCenter currentNotificationCenter].delegate = self;
     [SendMan registerForRemoteNotifications:nil];
 
-    [SendMan application:application didFinishLaunchingWithOptions:launchOptions];
+    [SendMan applicationLaunchedWithOptions:launchOptions];
 
     return YES;
 }
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    [SendMan application:application didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+    [SendMan applicationRegisteredToRemoteNotificationsWithDeviceToken:deviceToken];
 }
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
-    [SendMan application:application didFailToRegisterForRemoteNotificationsWithError:error];
+    [SendMan applicationFailedToRegisterForRemoteNotificationsWithError:error];
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler {
     NSLog(@"didReceiveRemoteNotification with completionHandler called in state %@ with userInfo: %@", [SMAppDelegate applicationState], [SMAppDelegate jsonDict:userInfo]);
-    [SendMan application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
+    [SendMan applicationReceivedRemoteNotificationWithInfo:userInfo];
     completionHandler(UIBackgroundFetchResultNoData);
 }
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center openSettingsForNotification:(UNNotification *)notification {
     NSLog(@"openSettingsForNotification called in state %@ with userInfo: %@", [SMAppDelegate applicationState], [SMAppDelegate jsonDict:notification.request.content.userInfo]);
-    [SendMan userNotificationCenter:center openSettingsForNotification:notification];
 }
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
-    // [Active, contentAvailable] -> called first
     NSLog(@"willPresentNotification called in state %@ with userInfo: %@", [SMAppDelegate applicationState], [SMAppDelegate jsonDict:notification.request.content.userInfo]);
-    [SendMan userNotificationCenter:center willPresentNotification:notification withCompletionHandler:completionHandler];
+    [SendMan applicationReceivedRemoteNotification:notification];
     completionHandler(UNNotificationPresentationOptionAlert);
 }
 
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)(void))completionHandler {
     NSLog(@"didReceiveNotificationResponse called in state %@ with action %@ and userInfo: %@", [SMAppDelegate applicationState], response.actionIdentifier, [SMAppDelegate jsonDict:response.notification.request.content.userInfo]);
     completionHandler();
-    [SendMan userNotificationCenter:center didReceiveNotificationResponse:response withCompletionHandler:completionHandler];
+    [SendMan applicationReceivedRemoteNotificationResponse:response];
 }
 
 + (NSString*) jsonDict:(NSDictionary *)d {

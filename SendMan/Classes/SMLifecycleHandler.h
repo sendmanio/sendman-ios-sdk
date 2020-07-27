@@ -13,13 +13,12 @@
 
 + (id _Nonnull )sharedManager;
 
-- (void)application:(UIApplication *_Nonnull)application didFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *_Nullable)launchOptions;
-- (void)application:(UIApplication *_Nonnull)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *_Nullable)deviceToken;
-- (void)application:(UIApplication *_Nonnull)application didFailToRegisterForRemoteNotificationsWithError:(NSError *_Nullable)error;
-- (void)application:(UIApplication *_Nonnull)application didReceiveRemoteNotification:(NSDictionary *_Nullable)userInfo fetchCompletionHandler:(void (^_Nullable)(UIBackgroundFetchResult result))completionHandler;
-- (void)userNotificationCenter:(UNUserNotificationCenter *_Nonnull)center openSettingsForNotification:(UNNotification *_Nullable)notification;
-- (void)userNotificationCenter:(UNUserNotificationCenter *_Nonnull)center willPresentNotification:(UNNotification *_Nullable)notification withCompletionHandler:(void (^_Nullable)(UNNotificationPresentationOptions))completionHandler;
-- (void)userNotificationCenter:(UNUserNotificationCenter *_Nonnull)center didReceiveNotificationResponse:(UNNotificationResponse *_Nullable)response withCompletionHandler:(void (^_Nullable)(void))completionHandler;
+- (void)applicationLaunchedWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *_Nullable)launchOptions;
+- (void)applicationRegisteredToRemoteNotificationsWithDeviceToken:(NSData *_Nullable)deviceToken;
+- (void)applicationFailedToRegisterForRemoteNotificationsWithError:(NSError *_Nullable)error;
+- (void)applicationReceivedRemoteNotificationWithInfo:(NSDictionary *_Nullable)userInfo;
+- (void)applicationReceivedRemoteNotification:(UNNotification *_Nullable)notification;
+- (void)applicationReceivedRemoteNotificationResponse:(UNNotificationResponse *_Nullable)response;
 
 - (void)registerForRemoteNotifications:(void (^_Nullable)(BOOL granted))success;
 

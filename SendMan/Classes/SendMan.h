@@ -16,33 +16,46 @@
 
 @interface SendMan : NSObject
 
+# pragma mark - Getters
+
 + (SMConfig * _Nullable)getConfig;
 + (NSString * _Nullable)getUserId;
+
+# pragma mark - Global parameters
 
 + (void)setAppConfig:(SMConfig *_Nonnull)config;
 + (void)setUserId:(NSString *_Nonnull)userId;
 + (void)setAPNToken:(NSString *_Nonnull)token;
+
+# pragma mark - Categories
 
 + (SMNotificationsViewController *_Nonnull)getCategoriesUIViewController;
 + (void)setUserCategories:(NSArray *_Nonnull)categories;
 + (void)updateUserCategories:(NSArray *_Nonnull)categories;
 + (NSArray * _Nullable)getCategories;
 
+# pragma mark - User Properties
+
 + (void)setUserProperties:(NSDictionary *_Nonnull)properties;
+
+# pragma mark - User Events
+
 + (void)addUserEvent:(NSString *_Nonnull)eventName;
 + (void)addUserEvent:(NSString *_Nonnull)eventName stringValue:(NSString *_Nullable)value;
 + (void)addUserEvent:(NSString *_Nonnull)eventName numberValue:(NSNumber *_Nonnull)value;
 + (void)addUserEvent:(NSString *_Nonnull)eventName booleanValue:(BOOL)value;
 
-+ (void)application:(UIApplication *_Nonnull)application didFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *_Nullable)launchOptions;
-+ (void)application:(UIApplication *_Nonnull)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *_Nullable)deviceToken;
-+ (void)application:(UIApplication *_Nonnull)application didFailToRegisterForRemoteNotificationsWithError:(NSError *_Nullable)error;
-+ (void)application:(UIApplication *_Nonnull)application didReceiveRemoteNotification:(NSDictionary *_Nullable)userInfo fetchCompletionHandler:(void (^_Nullable)(UIBackgroundFetchResult result))completionHandler;
-+ (void)userNotificationCenter:(UNUserNotificationCenter *_Nonnull)center openSettingsForNotification:(UNNotification *_Nullable)notification;
-+ (void)userNotificationCenter:(UNUserNotificationCenter *_Nonnull)center willPresentNotification:(UNNotification *_Nullable)notification withCompletionHandler:(void (^_Nullable)(UNNotificationPresentationOptions))completionHandler;
-+ (void)userNotificationCenter:(UNUserNotificationCenter *_Nonnull)center didReceiveNotificationResponse:(UNNotificationResponse *_Nullable)response withCompletionHandler:(void (^_Nullable)(void))completionHandler;
+# pragma mark - Integration Events
+
++ (void)applicationLaunchedWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *_Nullable)launchOptions;
++ (void)applicationRegisteredToRemoteNotificationsWithDeviceToken:(NSData *_Nullable)deviceToken;
++ (void)applicationFailedToRegisterForRemoteNotificationsWithError:(NSError *_Nullable)error;
++ (void)applicationReceivedRemoteNotificationWithInfo:(NSDictionary *_Nullable)userInfo;
++ (void)applicationReceivedRemoteNotification:(UNNotification *_Nullable)notification;
++ (void)applicationReceivedRemoteNotificationResponse:(UNNotificationResponse *_Nullable)response;
+
+# pragma mark - Notification Registration (Optional)
 
 + (void)registerForRemoteNotifications:(void (^_Nullable)(BOOL granted))success;
 
 @end
-
