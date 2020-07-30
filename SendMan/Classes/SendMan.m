@@ -133,28 +133,28 @@ NSString *const SMAPNTokenKey = @"SMAPNToken";
 
 # pragma mark - Integration Events
 
-+ (void)applicationLaunchedWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *)launchOptions {
-    [[SMLifecycleHandler sharedManager] applicationLaunchedWithOptions:launchOptions];
++ (void)applicationDidFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *)launchOptions {
+    [[SMLifecycleHandler sharedManager] applicationDidFinishLaunchingWithOptions:launchOptions];
 }
 
-+ (void)applicationRegisteredToRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    [[SMLifecycleHandler sharedManager] applicationRegisteredToRemoteNotificationsWithDeviceToken:deviceToken];
++ (void)applicationDidRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    [[SMLifecycleHandler sharedManager] applicationDidRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 }
 
-+ (void)applicationFailedToRegisterForRemoteNotificationsWithError:(NSError *)error {
-    [[SMLifecycleHandler sharedManager] applicationFailedToRegisterForRemoteNotificationsWithError:error];
++ (void)applicationDidFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    [[SMLifecycleHandler sharedManager] applicationDidFailToRegisterForRemoteNotificationsWithError:error];
 }
 
-+ (void)applicationReceivedRemoteNotificationWithInfo:(NSDictionary *)userInfo {
-    [[SMLifecycleHandler sharedManager] applicationReceivedRemoteNotificationWithInfo:userInfo];
++ (void)applicationDidReceiveRemoteNotificationWithInfo:(NSDictionary *)userInfo {
+    [[SMLifecycleHandler sharedManager] applicationDidReceiveRemoteNotificationWithInfo:userInfo];
 }
 
-+ (void)applicationReceivedRemoteNotification:(UNNotification *)notification {
-    [[SMLifecycleHandler sharedManager] applicationReceivedRemoteNotification:notification];
++ (void)userNotificationCenterWillPresentNotification:(UNNotification *)notification {
+    [[SMLifecycleHandler sharedManager] userNotificationCenterWillPresentNotification:notification];
 }
 
-+ (void)applicationReceivedRemoteNotificationResponse:(UNNotificationResponse *)response {
-    [[SMLifecycleHandler sharedManager] applicationReceivedRemoteNotificationResponse:response];
++ (void)userNotificationCenterDidReceiveNotificationResponse:(UNNotificationResponse *)response {
+    [[SMLifecycleHandler sharedManager] userNotificationCenterDidReceiveNotificationResponse:response];
 }
 
 # pragma mark - Notification Registration (Optional)

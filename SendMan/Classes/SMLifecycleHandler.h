@@ -29,12 +29,12 @@
 
 + (id _Nonnull )sharedManager;
 
-- (void)applicationLaunchedWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *_Nullable)launchOptions;
-- (void)applicationRegisteredToRemoteNotificationsWithDeviceToken:(NSData *_Nullable)deviceToken;
-- (void)applicationFailedToRegisterForRemoteNotificationsWithError:(NSError *_Nullable)error;
-- (void)applicationReceivedRemoteNotificationWithInfo:(NSDictionary *_Nullable)userInfo;
-- (void)applicationReceivedRemoteNotification:(UNNotification *_Nullable)notification;
-- (void)applicationReceivedRemoteNotificationResponse:(UNNotificationResponse *_Nullable)response;
+- (void)applicationDidFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *_Nullable)launchOptions;
+- (void)applicationDidRegisterForRemoteNotificationsWithDeviceToken:(NSData *_Nullable)deviceToken;
+- (void)applicationDidFailToRegisterForRemoteNotificationsWithError:(NSError *_Nullable)error;
+- (void)applicationDidReceiveRemoteNotificationWithInfo:(NSDictionary *_Nullable)userInfo;
+- (void)userNotificationCenterWillPresentNotification:(UNNotification *_Nullable)notification;
+- (void)userNotificationCenterDidReceiveNotificationResponse:(UNNotificationResponse *_Nullable)response;
 
 - (void)registerForRemoteNotifications:(void (^_Nullable)(BOOL granted))success;
 

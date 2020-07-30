@@ -129,7 +129,7 @@
 }
 
 
-- (void)applicationLaunchedWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *)launchOptions {
+- (void)applicationDidFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *)launchOptions {
     [self checkNotificationRegistrationState];
     NSDictionary *pushNotification = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
     if (pushNotification) {
@@ -142,7 +142,7 @@
     [[UIApplication sharedApplication] registerForRemoteNotifications];
 }
 
-- (void)applicationRegisteredToRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+- (void)applicationDidRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     [self checkNotificationRegistrationState];
     
     const char *data = [deviceToken bytes];
@@ -157,24 +157,24 @@
     [SendMan setAPNToken:token];
 }
 
-- (void)applicationFailedToRegisterForRemoteNotificationsWithError:(NSError *)error {
+- (void)applicationDidFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
     SMSDKEvent *event = [SMSDKEvent new];
     event.key = @"Failed to register to push notifications";
     [SMDataCollector addSdkEvent:event];
 }
 
-- (void)applicationReceivedRemoteNotificationWithInfo:(NSDictionary *)userInfo {
+- (void)applicationDidReceiveRemoteNotificationWithInfo:(NSDictionary *)userInfo {
     if (userInfo) {
         [self didOpenMessage:userInfo[@"messageId"] forActivity:userInfo[@"activityId"] atState:[[UIApplication sharedApplication] applicationState]];
     }
 }
 
-- (void)applicationReceivedRemoteNotification:(UNNotification *)notification {
-    [self applicationReceivedRemoteNotificationWithInfo:notification.request.content.userInfo];
+- (void)userNotificationCenterWillPresentNotification:(UNNotification *)notification {
+    [self applicationDidReceiveRemoteNotificationWithInfo:notification.request.content.userInfo];
 }
 
-- (void)applicationReceivedRemoteNotificationResponse:(UNNotificationResponse *)response {
-    [self applicationReceivedRemoteNotification:response.notification];
+- (void)userNotificationCenterDidReceiveNotificationResponse:(UNNotificationResponse *)response {
+    [self userNotificationCenterWillPresentNotification:response.notification];
 }
 
 - (void)registerForRemoteNotifications:(void (^)(BOOL granted))success {
