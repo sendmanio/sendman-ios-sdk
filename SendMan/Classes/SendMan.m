@@ -102,9 +102,11 @@ NSString *const SMAPNTokenKey = @"SMAPNToken";
 }
 
 + (void)updateUserCategories:(NSArray *)categories {
-    SendMan *sendman = [SendMan instance];
-    sendman.categories = categories;
-    [SMCategoriesHandler updateCategories:categories];
+    if (categories) {
+        SendMan *sendman = [SendMan instance];
+        sendman.categories = categories;
+        [SMCategoriesHandler updateCategories:categories];
+    }
 }
 
 # pragma mark - User Properties
