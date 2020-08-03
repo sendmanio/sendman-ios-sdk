@@ -23,10 +23,11 @@
 
 @import UIKit;
 #import "SMConfig.h"
+#import "SMCategory.h"
 
 @interface SMCategoriesHandler : NSObject
 
 + (void)getCategories;
-+ (void)updateCategories:(NSArray *)categories;
++ (void)updateCategories:(NSArray<SMCategory *> *)categories;
 
 @end

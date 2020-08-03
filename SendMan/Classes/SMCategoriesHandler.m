@@ -46,7 +46,11 @@
 + (void)getCategories {
     [SMAPIHandler getDataForUrl:[NSString stringWithFormat:@"categories/user/%@", [SendMan getUserId]] responseHandler:^(NSHTTPURLResponse *httpResponse, NSDictionary *jsonData) {
         if (httpResponse.statusCode == 200) {
-            NSArray *categories = jsonData ? jsonData[@"categories"] : [[NSArray alloc] init];
+            NSError *error;
+            NSArray<SMCategory *> *categories = jsonData ? [SMCategory arrayOfModelsFromDictionaries:jsonData[@"categories"] error:&error] : [[NSArray alloc] init];
+            if (error) {
+                SENDMAN_ERROR(@"Error getting categories data - bad JSON response %@", jsonData);
+            }
             [SendMan setUserCategories: categories];
         } else {
             SENDMAN_ERROR(@"Error getting categories data");
@@ -54,8 +58,10 @@
     }];
 }
 
-+ (void)updateCategories:(NSArray *)categories {
-    [SMAPIHandler sendDataWithJson:@{@"categories": categories} forUrl:[NSString stringWithFormat:@"categories/user/%@", [SendMan getUserId]] responseHandler:^(NSHTTPURLResponse *httpResponse) {
++ (void)updateCategories:(NSArray<SMCategory *> *)categories {
+    [SMAPIHandler sendDataWithJson:@{@"categories": [JSONModel arrayOfDictionariesFromModels:categories]}
+                            forUrl:[NSString stringWithFormat:@"categories/user/%@", [SendMan getUserId]]
+                   responseHandler:^(NSHTTPURLResponse *httpResponse) {
         if (httpResponse.statusCode != 200) {
             SENDMAN_ERROR(@"Error updating category preferences");
         } else {

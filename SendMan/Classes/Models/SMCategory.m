@@ -1,5 +1,5 @@
 //
-//  SMNotificationTableViewCell.h
+//  SMCategory.m
 //  Copyright © 2020 SendMan Inc. (https://sendman.io/)
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -21,22 +21,16 @@
 //  THE SOFTWARE.
 //
 
-#import <UIKit/UIKit.h>
-#import "SMNotificationCellDelegate.h"
+#import <Foundation/Foundation.h>
 #import "SMCategory.h"
 
-NS_ASSUME_NONNULL_BEGIN
+@implementation SMCategory
 
-@interface SMNotificationTableViewCell : UITableViewCell
-
--(void)setData:(SMCategory *)category forIndexPath:(NSIndexPath *)indexPath;
-
-@property (nonatomic, weak) id<SMNotificationCellDelegate> delegate;
-
-@property (weak, nonatomic) IBOutlet UILabel *categoryName;
-@property (weak, nonatomic) IBOutlet UILabel *categoryDescription;
-@property (weak, nonatomic) IBOutlet UISwitch *categorySwitch;
++ (JSONKeyMapper *)keyMapper
+{
+    return [[JSONKeyMapper alloc] initWithModelToJSONDictionary:@{
+        @"categoryDescription": @"description"
+    }];
+}
 
 @end
-
-NS_ASSUME_NONNULL_END

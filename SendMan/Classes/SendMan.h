@@ -25,6 +25,7 @@
 #import <UserNotifications/UserNotifications.h>
 #import "SMConfig.h"
 #import "SMNotificationsViewController.h"
+#import "SMCategory.h"
 
 @import UIKit;
 
@@ -46,8 +47,8 @@
 # pragma mark - Categories
 
 + (SMNotificationsViewController *_Nonnull)getCategoriesUIViewController;
-+ (void)setUserCategories:(NSArray *_Nonnull)categories;
-+ (void)updateUserCategories:(NSArray *_Nonnull)categories;
++ (void)setUserCategories:(NSArray<SMCategory *> *_Nonnull)categories;
++ (void)updateUserCategories:(NSArray<SMCategory *> *_Nonnull)categories;
 + (NSArray * _Nullable)getCategories;
 
 # pragma mark - User Properties

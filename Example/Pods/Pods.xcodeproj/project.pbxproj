@@ -17,6 +17,8 @@
 		1D4FD4C39093D1EFC4304FBC14FF16B7 /* SMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 416EF6BEB136060FA23D2E5171D8BBDF /* SMUtils.m */; };
 		235AC4D532344BED094D3D11BC1B95DC /* SMConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 297AC5E91CEAD44E9283D4732DB62F89 /* SMConfig.m */; };
 		251BD9DD9BB9FD0D2EC22A15DE8AE083 /* SMNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DAB6CF9E832E3637B42ACB2A4CC9ED /* SMNotificationTableViewCell.m */; };
+		28BEB2B724D83AEA00BE7A2F /* SMCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BEB2B424D8345300BE7A2F /* SMCategory.m */; };
+		28BEB2B824D83AED00BE7A2F /* SMCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 28BEB2B324D8345300BE7A2F /* SMCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3940325BF46C80F60973474F585979B2 /* SMAPIHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6815ACF6AACCDCA74976E61BA79824 /* SMAPIHandler.m */; };
 		4A75B2E4E9E21FAB32EAD2E805F3E272 /* SMCustomEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 967859AA48FEE05D914EC65CF0AF4783 /* SMCustomEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4BB8CE05198345F978D6106107D52831 /* SMDataEnricher.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506CB03F97C9888433C8300812D26C5 /* SMDataEnricher.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -93,6 +95,8 @@
 		1D24E1217FB6E36575F021DEA88E50FD /* Pods_SendMan_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SendMan_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D9A51D3799FE5E4831DFD9D95D8D862 /* SMData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMData.m; sourceTree = "<group>"; };
 		1E8C7B449D629B42BB8AC31DCD59425B /* SMData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SMData.h; sourceTree = "<group>"; };
+		28BEB2B324D8345300BE7A2F /* SMCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMCategory.h; sourceTree = "<group>"; };
+		28BEB2B424D8345300BE7A2F /* SMCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMCategory.m; sourceTree = "<group>"; };
 		297AC5E91CEAD44E9283D4732DB62F89 /* SMConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SMConfig.m; path = SendMan/Classes/SMConfig.m; sourceTree = "<group>"; };
 		2E51BA3D0C98F65BA624ABEC181C71A3 /* SMCustomEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMCustomEvent.m; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
@@ -328,6 +332,8 @@
 				5D53E82786A2AC30FEF7F69BB1BE2B19 /* SMSDKEvent.m */,
 				E4C65B83821E9B50A310A1F7175141B5 /* SMSession.h */,
 				7FCD2D7DF0DA69CBC6D157C1E06B8B57 /* SMSession.m */,
+				28BEB2B324D8345300BE7A2F /* SMCategory.h */,
+				28BEB2B424D8345300BE7A2F /* SMCategory.m */,
 			);
 			name = Models;
 			path = SendMan/Classes/Models;
@@ -439,6 +445,7 @@
 				F701F61F0AB537D8D54E6F3478E46D75 /* SMLifecycleHandler.h in Headers */,
 				F2B0BCAF2648193C76015B26B13DC8B2 /* SMNotificationCellDelegate.h in Headers */,
 				921FD8AF39A319DD23E825F7C0B2C1F7 /* SMNotificationsFooterCell.h in Headers */,
+				28BEB2B824D83AED00BE7A2F /* SMCategory.h in Headers */,
 				0EEEA3E2850CB4A4A954BFF7A7FB9EBD /* SMNotificationsHeaderCell.h in Headers */,
 				BF4A56E416094738C16E44DD1622CA18 /* SMNotificationsViewController.h in Headers */,
 				F521354062B3A664C33075F3725A223E /* SMNotificationTableViewCell.h in Headers */,
@@ -609,6 +616,7 @@
 				022787897A47310B25A1F0D58DAB743E /* SMNotificationsFooterCell.m in Sources */,
 				6EF86C741FB8DA85FC6EB03CE324295A /* SMNotificationsHeaderCell.m in Sources */,
 				A60A001E59A81B5685B4706E4F90E643 /* SMNotificationsViewController.m in Sources */,
+				28BEB2B724D83AEA00BE7A2F /* SMCategory.m in Sources */,
 				251BD9DD9BB9FD0D2EC22A15DE8AE083 /* SMNotificationTableViewCell.m in Sources */,
 				7F0EA95E38A9A3A6CFF8501EB57434A3 /* SMPropertyValue.m in Sources */,
 				FB50BBC88EE5C04AEB857C0FB6B11A1A /* SMSDKEvent.m in Sources */,

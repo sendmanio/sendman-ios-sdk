@@ -31,12 +31,12 @@
 
 @implementation SMNotificationTableViewCell
 
--(void)setData:(NSDictionary *)category forIndexPath:(NSIndexPath *)indexPath {
+-(void)setData:(SMCategory *)category forIndexPath:(NSIndexPath *)indexPath {
     self.indexPath = indexPath;
     
-    self.categoryName.text = [category objectForKey:@"name"];
-    self.categoryDescription.text = [category objectForKey:@"description"];
-    self.categorySwitch.on = [[category objectForKey:@"value"] boolValue];
+    self.categoryName.text = category.name;
+    self.categoryDescription.text = category.categoryDescription;
+    self.categorySwitch.on = [category.value boolValue];
 }
 
 - (IBAction)valueChanged:(id)sender {

@@ -34,7 +34,7 @@ NSString *const SMAPNTokenKey = @"SMAPNToken";
 
 @property (strong, nonatomic, nullable) SMConfig *config;
 @property (strong, nonatomic, nullable) NSString *msUserId;
-@property (strong, nonatomic, nullable) NSArray *categories;
+@property (strong, nonatomic, nullable) NSArray<SMCategory *> *categories;
 
 @end
 
@@ -93,7 +93,7 @@ NSString *const SMAPNTokenKey = @"SMAPNToken";
     return [[UIStoryboard storyboardWithName:@"SMNotifications" bundle:bundle] instantiateViewControllerWithIdentifier:@"SMNotifications"];
 }
 
-+ (void)setUserCategories:(NSArray *)categories {
++ (void)setUserCategories:(NSArray<SMCategory *> *)categories {
     SendMan *sendman = [SendMan instance];
     if (![sendman.categories isEqualToArray:categories]) {
         sendman.categories = categories;
@@ -101,7 +101,7 @@ NSString *const SMAPNTokenKey = @"SMAPNToken";
     }
 }
 
-+ (void)updateUserCategories:(NSArray *)categories {
++ (void)updateUserCategories:(NSArray<SMCategory *> *)categories {
     if (categories) {
         SendMan *sendman = [SendMan instance];
         sendman.categories = categories;

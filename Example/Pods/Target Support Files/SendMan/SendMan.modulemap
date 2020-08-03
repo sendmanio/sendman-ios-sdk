@@ -23,6 +23,7 @@ framework module SendMan {
           private header "SMData.h"
           private header "SMPropertyValue.h"
           private header "SMSDKEvent.h"
+          private header "SMCategory.h"
       }
   
 }

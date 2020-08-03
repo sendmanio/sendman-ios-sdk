@@ -28,6 +28,7 @@
 #import "SendMan.h"
 #import "SMCategoriesHandler.h"
 #import "SMDataCollector.h"
+#import "SMCategory.h"
 
 #define SM_NOTIFICATION_CELL_IDENTIFIER @"SMNotificationTableViewCell"
 #define SM_NOTIFICATION_HEADER_IDENTIFIER @"SMNotificationsHeaderCell"
@@ -93,10 +94,10 @@ NSArray *tableData;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSDictionary *categoryGroup = [tableData objectAtIndex:section];
-    BOOL isGroup = [categoryGroup[@"defaultValue"] isKindOfClass:[NSNull class]];
+    SMCategory *categoryGroup = [tableData objectAtIndex:section];
+    BOOL isGroup = categoryGroup.defaultValue == nil;
     if (isGroup) {
-        return [categoryGroup[@"categories"] count];
+        return [categoryGroup.categories count];
     }
     return 1;
 }
@@ -109,10 +110,10 @@ NSArray *tableData;
     SMNotificationTableViewCell *cell = (SMNotificationTableViewCell *)[tableView dequeueReusableCellWithIdentifier:SM_NOTIFICATION_CELL_IDENTIFIER];
     cell.delegate = self;
     
-    NSDictionary *categoryGroup = [tableData objectAtIndex:indexPath.section];
-    NSArray *categories = [categoryGroup objectForKey:@"categories"];
+    SMCategory *categoryGroup = [tableData objectAtIndex:indexPath.section];
+    NSArray<SMCategory *> *categories = categoryGroup.categories;
     
-    NSDictionary *category;
+    SMCategory *category;
     if (!categories) {
         category = categoryGroup;
     } else {
@@ -144,8 +145,8 @@ NSArray *tableData;
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
     SMNotificationsHeaderCell *sectionCell = [tableView dequeueReusableCellWithIdentifier:SM_NOTIFICATION_HEADER_IDENTIFIER];
     
-    NSDictionary *categoryGroup = [tableData objectAtIndex:section];
-    sectionCell.title.text = [[categoryGroup objectForKey:@"name"] uppercaseString];
+    SMCategory *categoryGroup = [tableData objectAtIndex:section];
+    sectionCell.title.text = [categoryGroup.name uppercaseString];
     sectionCell.title.textColor = self.titleColor;
     
     sectionCell.contentView.backgroundColor = self.backgroundColor;
@@ -155,8 +156,8 @@ NSArray *tableData;
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
     SMNotificationsFooterCell *sectionCell = [tableView dequeueReusableCellWithIdentifier:SM_NOTIFICATION_FOOTER_IDENTIFIER];
     
-    NSDictionary *categoryGroup = [tableData objectAtIndex:section];
-    sectionCell.subtitle.text = [categoryGroup objectForKey:@"description"];
+    SMCategory *categoryGroup = [tableData objectAtIndex:section];
+    sectionCell.subtitle.text = categoryGroup.categoryDescription;
     sectionCell.subtitle.textColor = self.descriptionColor;
     
     sectionCell.contentView.backgroundColor = self.backgroundColor;
@@ -164,24 +165,24 @@ NSArray *tableData;
 }
 
 - (void)categoryValueChangedForIndexPath:(NSIndexPath *)indexPath {
-    NSDictionary *categoryGroup = [tableData objectAtIndex:indexPath.section];
-    NSArray *categories = [categoryGroup objectForKey:@"categories"];
-    NSDictionary *category;
+    SMCategory *categoryGroup = [tableData objectAtIndex:indexPath.section];
+    NSArray<SMCategory *> *categories = categoryGroup.categories;
+    SMCategory *category;
     if (!categories) {
         category = categoryGroup;
     } else {
         category = [categories objectAtIndex:indexPath.row];
     }
     
-    BOOL oldValue = [[category objectForKey:@"value"] boolValue];
+    BOOL oldValue = [category.value boolValue];
     NSNumber *newValue = oldValue ? @NO : @YES;
-    [SMDataCollector addSdkEventWithName:oldValue ? @"Category toggled off" : @"Category toggled on" andValue:[category objectForKey:@"id"]];
-    [category setValue:newValue forKey:@"value"];
+    [SMDataCollector addSdkEventWithName:oldValue ? @"Category toggled off" : @"Category toggled on" andValue:category.id];
+    category.value = newValue;
 }
 
 - (CGFloat) calcHeaderFooterHeightForSection:(NSInteger)section {
-    NSDictionary *categoryGroup = [tableData objectAtIndex:section];
-    if ([categoryGroup objectForKey:@"categories"] == nil) {
+    SMCategory *categoryGroup = [tableData objectAtIndex:section];
+    if (categoryGroup.categories == nil) {
         return 0;
     }
     return UITableViewAutomaticDimension;
