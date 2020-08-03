@@ -12,15 +12,12 @@
 		0D7C9FB14A7C0219F0A59C8E5729F3E6 /* SMPropertyValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 0106C89BE76BD49F971CE0610FE94865 /* SMPropertyValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0EEEA3E2850CB4A4A954BFF7A7FB9EBD /* SMNotificationsHeaderCell.h in Headers */ = {isa = PBXBuildFile; fileRef = C99627546C349C36C89BE28815964B07 /* SMNotificationsHeaderCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0F09A383D5CC9A7277BC326059E08C8D /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9E5A6A7A1A6A6E8554813CE0ABFF3D /* JSONKeyMapper.m */; };
-		11CCEE838EB761C0C8F84BC379D0BB29 /* SendMan-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AE7BFAB865DD75B790F428875A2F3BB1 /* SendMan-dummy.m */; };
 		14D9A9AE3114C5A53A951989EDBA552A /* Pods-SendMan_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B179086DA5534F114FD7F8E1C97D60A /* Pods-SendMan_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		15AF755B8C1737D7A8982762884BE8DB /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B71FDEA84866F54B877A701010357D /* JSONModelClassProperty.m */; };
 		1D4FD4C39093D1EFC4304FBC14FF16B7 /* SMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 416EF6BEB136060FA23D2E5171D8BBDF /* SMUtils.m */; };
 		235AC4D532344BED094D3D11BC1B95DC /* SMConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 297AC5E91CEAD44E9283D4732DB62F89 /* SMConfig.m */; };
 		251BD9DD9BB9FD0D2EC22A15DE8AE083 /* SMNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DAB6CF9E832E3637B42ACB2A4CC9ED /* SMNotificationTableViewCell.m */; };
-		304118F74AAC1D6B75D31736D88C2FAD /* JSONModel.modulemap in Sources */ = {isa = PBXBuildFile; fileRef = F2E804AD5EF96689FAAE05E2EAC20F52 /* JSONModel.modulemap */; };
 		3940325BF46C80F60973474F585979B2 /* SMAPIHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6815ACF6AACCDCA74976E61BA79824 /* SMAPIHandler.m */; };
-		3C1AE3A18416F4C68C5608D366E5FA64 /* JSONModelLib.h in Headers */ = {isa = PBXBuildFile; fileRef = B3AE2730CBDE67A2430A8077334CEF7A /* JSONModelLib.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4A75B2E4E9E21FAB32EAD2E805F3E272 /* SMCustomEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 967859AA48FEE05D914EC65CF0AF4783 /* SMCustomEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4BB8CE05198345F978D6106107D52831 /* SMDataEnricher.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506CB03F97C9888433C8300812D26C5 /* SMDataEnricher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4DC65AC98E02DD7A46638AA76609CC74 /* JSONKeyMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = F9A58CF8FAEE1CDB114804DA21AD82E6 /* JSONKeyMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -145,10 +142,8 @@
 		A4C34A6898E1C573A51073680941A3C3 /* SendMan-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SendMan-Info.plist"; sourceTree = "<group>"; };
 		A7458C373B014CEDA7DB2796BA80DBEF /* SMPropertyValue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMPropertyValue.m; sourceTree = "<group>"; };
 		AE3E103EA8FAD09A077F5368EBA004E7 /* Pods-SendMan_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SendMan_Tests-Info.plist"; sourceTree = "<group>"; };
-		AE7BFAB865DD75B790F428875A2F3BB1 /* SendMan-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SendMan-dummy.m"; sourceTree = "<group>"; };
 		B1BE781824AF0C4828FFEAB58797FAF8 /* SMAuthHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SMAuthHandler.m; path = SendMan/Classes/SMAuthHandler.m; sourceTree = "<group>"; };
 		B3683AE58B791382FE70CDDE801D5FBF /* SMAuthHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SMAuthHandler.h; path = SendMan/Classes/SMAuthHandler.h; sourceTree = "<group>"; };
-		B3AE2730CBDE67A2430A8077334CEF7A /* JSONModelLib.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JSONModelLib.h; sourceTree = "<group>"; };
 		B40B0B9060E5D12D123446513BD48F22 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B730A9A81CE409BB5562EA89906B7415 /* Pods-SendMan_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SendMan_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		BD9E5A6A7A1A6A6E8554813CE0ABFF3D /* JSONKeyMapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
@@ -163,7 +158,6 @@
 		E4C65B83821E9B50A310A1F7175141B5 /* SMSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SMSession.h; sourceTree = "<group>"; };
 		E53C5E2D974F2895FB63C00B6488A026 /* JSONModelError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JSONModelError.m; sourceTree = "<group>"; };
 		EF5D577B6F834B431CC16EFE14982FFA /* Pods-SendMan_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SendMan_Tests.modulemap"; sourceTree = "<group>"; };
-		F2E804AD5EF96689FAAE05E2EAC20F52 /* JSONModel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = JSONModel.modulemap; sourceTree = "<group>"; };
 		F5B4DF2AD4F8D3D9F741D69B73E3DDA9 /* Pods-SendMan2_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SendMan2_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		F6DF961C4B5DB08915FA3EE55041D3FA /* SMDataCollector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SMDataCollector.m; path = SendMan/Classes/SMDataCollector.m; sourceTree = "<group>"; };
 		F9A58CF8FAEE1CDB114804DA21AD82E6 /* JSONKeyMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JSONKeyMapper.h; sourceTree = "<group>"; };
@@ -293,7 +287,6 @@
 			children = (
 				6949F464F2BC2F3943420746F7CBFA85 /* SendMan.modulemap */,
 				5B27B08820FAB21CB7010E8965847AFB /* SendMan.xcconfig */,
-				AE7BFAB865DD75B790F428875A2F3BB1 /* SendMan-dummy.m */,
 				A4C34A6898E1C573A51073680941A3C3 /* SendMan-Info.plist */,
 				95A01A39F80CFABBED0ED8F13832581C /* SendMan-prefix.pch */,
 				9B34953A6143AE9C3073460983613219 /* SendMan-umbrella.h */,
@@ -405,8 +398,6 @@
 		FF7EA10031DF3703968ED399C84FF850 /* JSONModel */ = {
 			isa = PBXGroup;
 			children = (
-				F2E804AD5EF96689FAAE05E2EAC20F52 /* JSONModel.modulemap */,
-				B3AE2730CBDE67A2430A8077334CEF7A /* JSONModelLib.h */,
 				736E4611284476B8508C69F2F158FCDA /* JSONModel */,
 				058D731AEEF23AE8B70AEDC910A1B499 /* JSONModelTransformations */,
 			);
@@ -434,7 +425,6 @@
 				7EE33FC20DDF635171A5FED353D1B773 /* JSONModel.h in Headers */,
 				81BCC5E87181A012B9A16E59857F5031 /* JSONModelClassProperty.h in Headers */,
 				62DB41D6CA6C1B0FF0A65821D4378292 /* JSONModelError.h in Headers */,
-				3C1AE3A18416F4C68C5608D366E5FA64 /* JSONModelLib.h in Headers */,
 				4FB7950963467834F2F944A539865D62 /* JSONValueTransformer.h in Headers */,
 				A45D72997F90EA6052BCC3C5CA572318 /* SendMan-umbrella.h in Headers */,
 				B624B34BF945BC21860C8C1AE08E2E9C /* SendMan.h in Headers */,
@@ -602,11 +592,9 @@
 			files = (
 				0F09A383D5CC9A7277BC326059E08C8D /* JSONKeyMapper.m in Sources */,
 				A71A43FFAFF57E424A3CF9A915BE23DE /* JSONModel.m in Sources */,
-				304118F74AAC1D6B75D31736D88C2FAD /* JSONModel.modulemap in Sources */,
 				15AF755B8C1737D7A8982762884BE8DB /* JSONModelClassProperty.m in Sources */,
 				B31F38B599AF67DFE0700F24EEE28FA8 /* JSONModelError.m in Sources */,
 				575346C3CF1C149D99C423DDBD91DA87 /* JSONValueTransformer.m in Sources */,
-				11CCEE838EB761C0C8F84BC379D0BB29 /* SendMan-dummy.m in Sources */,
 				830897252ADF4D3F819C3BB986B3796D /* SendMan.m in Sources */,
 				3940325BF46C80F60973474F585979B2 /* SMAPIHandler.m in Sources */,
 				628C3CFA19F8D42AFF0CB27DE001B207 /* SMAuthHandler.m in Sources */,
