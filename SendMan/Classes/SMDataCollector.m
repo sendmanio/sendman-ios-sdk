@@ -124,6 +124,7 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
 + (void)addSdkEvent:(SMSDKEvent *)event {
     SMDataCollector *manager = [SMDataCollector sharedManager];
     event.timestamp = [SMUtils now];
+    event.id = [[[NSUUID UUID] UUIDString] lowercaseString];
     [[UNUserNotificationCenter currentNotificationCenter] getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
         event.notificationsRegistrationState = [self getRegistrationStateFromStatus:settings.authorizationStatus];
         [manager.sdkEvents addObject:event];
