@@ -43,6 +43,7 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
 @property (strong, nonatomic, nullable) NSMutableArray<SMCustomEvent *> <SMCustomEvent> *customEvents;
 @property (strong, nonatomic, nullable) NSMutableArray<SMSDKEvent *> <SMSDKEvent> *sdkEvents;
 
+@property (nonatomic) BOOL sessionError;
 @end
 
 @implementation SMDataCollector
@@ -61,6 +62,8 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
 - (instancetype)init {
     self = [super init];
     if (self) {
+        self.sessionError = false;
+        
         self.customProperties = [SMMutableProperties new];
         self.sdkProperties = [SMMutableProperties new];
         self.customEvents = [NSMutableArray<SMCustomEvent> new];
@@ -75,8 +78,10 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
     dispatch_queue_t serverDelaySimulationThread = dispatch_queue_create("SendManDataPoller", nil);
     dispatch_async(serverDelaySimulationThread, ^{
         [self sendData:presistSession];
-        [NSThread sleepForTimeInterval:secondsInterval];
-        [self pollForNewData: secondsInterval withSessionPersistency:presistSession];
+        if (!self.sessionError) {
+            [NSThread sleepForTimeInterval:secondsInterval];
+            [self pollForNewData: secondsInterval withSessionPersistency:presistSession];
+        }
     });
 }
 
@@ -151,7 +156,7 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
 
 - (void)sendData:(BOOL)presistSession {
     
-    if (![SendMan getConfig] || !self.sessionId || (!presistSession && ([self.customProperties count] == 0 && [self.sdkProperties count] == 0 && [self.customEvents count] == 0 && [self.sdkEvents count] == 0))) {
+    if (self.sessionError || ![SendMan getConfig] || !self.sessionId || (!presistSession && ([self.customProperties count] == 0 && [self.sdkProperties count] == 0 && [self.customEvents count] == 0 && [self.sdkEvents count] == 0))) {
         return;
     }
     
@@ -203,7 +208,15 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
             }
             self.sdkEvents = currentSDKEvents;
 
-            SENDMAN_ERROR(@"Error submitting peridical data to API");
+            if (httpResponse.statusCode == 401) {
+                if (self.sessionError == false) {
+                    SENDMAN_ERROR(@"Wrong App Key or Secret - will stop sending data");
+                    self.sessionError = true;
+                }
+            } else {
+                SENDMAN_ERROR(@"Error submitting peridical data to API");
+            }
+            
         } else {
             SENDMAN_LOG(@"Successfully set properties: %@", [data toDictionary]);
         }
