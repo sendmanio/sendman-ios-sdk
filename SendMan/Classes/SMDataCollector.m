@@ -150,7 +150,7 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
         case UNAuthorizationStatusDenied:
             return @"Off";
         default:
-            return @"Uknknown";
+            return @"Unknown";
     }
 }
 
