@@ -26,8 +26,6 @@
 #import "SMConfig.h"
 #import "SMSDKEvent.h"
 
-#define SMNotificationsRegistrationStateKey @"SMNotificationsRegistrationState"
-
 @interface SMDataCollector : NSObject
 
 + (void)setUserProperties:(NSDictionary *_Nonnull)properties;

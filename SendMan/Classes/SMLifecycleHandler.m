@@ -108,29 +108,10 @@
     event.appState = [self appStateStringFromState:UIApplicationStateBackground];
     [SMDataCollector addSdkEvent:event];
 
-    [self checkNotificationRegistrationState];
     [[UIApplication sharedApplication] registerForRemoteNotifications];
 }
 
-- (void)checkNotificationRegistrationState {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [[UNUserNotificationCenter currentNotificationCenter] getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
-        NSString *regisrationState = [SMDataCollector getRegistrationStateFromStatus:settings.authorizationStatus];
-        NSString *prevRegistrationState = [userDefaults stringForKey:SMNotificationsRegistrationStateKey];
-        if (![regisrationState isEqualToString:prevRegistrationState]) {
-            [userDefaults setObject:regisrationState forKey:SMNotificationsRegistrationStateKey];
-            SMSDKEvent *event = [SMSDKEvent new];
-            event.key = @"Notification Registration State Updated";
-            event.value = regisrationState;
-            [SMDataCollector addSdkEvent:event];
-            [SMDataCollector setSdkProperties:@{SMNotificationsRegistrationStateKey:regisrationState}];
-        }
-    }];
-}
-
-
 - (void)applicationDidFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *)launchOptions {
-    [self checkNotificationRegistrationState];
     NSDictionary *pushNotification = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
     if (pushNotification) {
         [self didOpenMessage:pushNotification[@"messageId"] forActivity:pushNotification[@"activityId"] atState:-1 withOnSuccess:^{
@@ -143,7 +124,6 @@
 }
 
 - (void)applicationDidRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
-    [self checkNotificationRegistrationState];
     
     const char *data = [deviceToken bytes];
     NSMutableString *token = [NSMutableString string];
@@ -182,7 +162,9 @@
                                                                         completionHandler:^(BOOL granted, NSError * _Nullable error) {
         SENDMAN_LOG(@"Push notification permission granted: %@", granted ? @"✅" : @"❌");
         dispatch_async(dispatch_get_main_queue(), ^() {
-            [self checkNotificationRegistrationState];
+            SMSDKEvent *event = [SMSDKEvent new];
+            event.key = @"Push notification permissions popup displayed";
+            [SMDataCollector addSdkEvent:event];            
             if (granted) {
                 [[UIApplication sharedApplication] registerForRemoteNotifications];
             }
