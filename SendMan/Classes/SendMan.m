@@ -28,7 +28,8 @@
 #import "SMCategoriesHandler.h"
 #import "SMNotificationsViewController.h"
 
-NSString *const SMAPNTokenKey = @"SMAPNToken";
+NSString *const SMTokenKey = @"SMToken";
+NSString *const SMTokenTypeKey = @"SMTokenType";
 
 @interface SendMan ()
 
@@ -83,7 +84,7 @@ NSString *const SMAPNTokenKey = @"SMAPNToken";
 }
 
 + (void)setAPNToken:(NSString *)token {
-    [SMDataCollector setSdkProperties:@{SMAPNTokenKey: token}];
+    [SMDataCollector setSdkProperties:@{SMTokenKey: token, SMTokenTypeKey: @"apn"}];
 }
 
 # pragma mark - Categories
