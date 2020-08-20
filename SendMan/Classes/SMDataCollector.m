@@ -25,6 +25,7 @@
 #import "SMDataCollector.h"
 #import "SMDataEnricher.h"
 #import "SMAPIHandler.h"
+#import "SMSessionManager.h"
 #import "SMData.h"
 #import "SMUtils.h"
 #import "SendMan.h"
@@ -33,9 +34,6 @@
 typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMPropertyValue> SMMutableProperties;
 
 @interface SMDataCollector ()
-
-@property (strong, nonatomic, nullable) NSString *sessionId;
-@property (strong, nonatomic, nullable) NSNumber *sessionIdStartTimestamp;
 
 // TODO: separate user props/events from internal ones
 @property (strong, nonatomic, nullable) SMMutableProperties *customProperties;
@@ -87,8 +85,7 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
 
 + (void)startSession {
     SMDataCollector *manager = [SMDataCollector sharedManager];
-    manager.sessionId = [[NSUUID UUID] UUIDString];
-    manager.sessionIdStartTimestamp = [SMUtils now];
+    [[SMSessionManager sharedManager] getOrCreateSession];
     [self setProperties:[SMDataEnricher getUserEnrichedData] inState:manager.sdkProperties];
 }
 
@@ -156,7 +153,7 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
 
 - (void)sendData:(BOOL)presistSession {
     
-    if (self.sessionError || ![SendMan getConfig] || !self.sessionId || (!presistSession && ([self.customProperties count] == 0 && [self.sdkProperties count] == 0 && [self.customEvents count] == 0 && [self.sdkEvents count] == 0))) {
+    if (self.sessionError || ![SendMan getConfig] || ![SendMan getUserId] || (!presistSession && ([self.customProperties count] == 0 && [self.sdkProperties count] == 0 && [self.customEvents count] == 0 && [self.sdkEvents count] == 0))) {
         return;
     }
     
@@ -165,10 +162,7 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
     SMData *data = [SMData new];
     data.externalUserId = [SendMan getUserId];
 
-    data.currentSession = [SMSession new];
-    data.currentSession.sessionId = self.sessionId;
-    data.currentSession.start = self.sessionIdStartTimestamp;
-    data.currentSession.end = [SMUtils now];
+    data.currentSession = [[SMSessionManager sharedManager] getOrCreateSession];
 
     SMMutableProperties *currentCustomProperties = self.customProperties;
     data.customProperties = self.customProperties;

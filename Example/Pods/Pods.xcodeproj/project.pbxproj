@@ -29,6 +29,8 @@
 		524AFD31EC854052D9FD22D256EAFE78 /* SMAPIHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = D6D1E7BA82ADD81BC437663535C6677C /* SMAPIHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		575346C3CF1C149D99C423DDBD91DA87 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F0FB1F5DAB5B597B2F2183A6852163 /* JSONValueTransformer.m */; };
 		628C3CFA19F8D42AFF0CB27DE001B207 /* SMAuthHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B1BE781824AF0C4828FFEAB58797FAF8 /* SMAuthHandler.m */; };
+		62B4BE5424EEB85E00AE3A14 /* SMSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 62B4BE5224EEB85E00AE3A14 /* SMSessionManager.h */; };
+		62B4BE5524EEB85E00AE3A14 /* SMSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B4BE5324EEB85E00AE3A14 /* SMSessionManager.m */; };
 		62DB41D6CA6C1B0FF0A65821D4378292 /* JSONModelError.h in Headers */ = {isa = PBXBuildFile; fileRef = C2435669B9E901408C47A61D8A057F38 /* JSONModelError.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6872E8404F1EADE981B9111EAC67819E /* SMLifecycleHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C27C037CC69532B4D076EAF57942C /* SMLifecycleHandler.m */; };
 		6901982674E08EE1321179979A4C2D5B /* SMCustomEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E51BA3D0C98F65BA624ABEC181C71A3 /* SMCustomEvent.m */; };
@@ -117,6 +119,8 @@
 		5D53E82786A2AC30FEF7F69BB1BE2B19 /* SMSDKEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMSDKEvent.m; sourceTree = "<group>"; };
 		612021B6C62CC6593AE44B032DB8A6B5 /* Pods-SendMan2_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SendMan2_Example-umbrella.h"; sourceTree = "<group>"; };
 		61DEE29669AEDA23DAC1B013755CA2CA /* JSONModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
+		62B4BE5224EEB85E00AE3A14 /* SMSessionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SMSessionManager.h; path = SendMan/Classes/SMSessionManager.h; sourceTree = "<group>"; };
+		62B4BE5324EEB85E00AE3A14 /* SMSessionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SMSessionManager.m; path = SendMan/Classes/SMSessionManager.m; sourceTree = "<group>"; };
 		6506CB03F97C9888433C8300812D26C5 /* SMDataEnricher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SMDataEnricher.h; path = SendMan/Classes/SMDataEnricher.h; sourceTree = "<group>"; };
 		6949F464F2BC2F3943420746F7CBFA85 /* SendMan.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SendMan.modulemap; sourceTree = "<group>"; };
 		6A2AA82D65BC7B1D99C3B254C922AEB7 /* Pods-SendMan_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SendMan_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -252,6 +256,8 @@
 				85C6659D96AFC46EB22FF4DA3088519A /* SMLifecycleHandler.h */,
 				E00C27C037CC69532B4D076EAF57942C /* SMLifecycleHandler.m */,
 				28BEB2B924E192F500BE7A2F /* SMLog.h */,
+				62B4BE5224EEB85E00AE3A14 /* SMSessionManager.h */,
+				62B4BE5324EEB85E00AE3A14 /* SMSessionManager.m */,
 				083B340C4C4C7D48E58771E4E0F172AD /* SMUtils.h */,
 				416EF6BEB136060FA23D2E5171D8BBDF /* SMUtils.m */,
 				FF7EA10031DF3703968ED399C84FF850 /* JSONModel */,
@@ -439,6 +445,7 @@
 				E82BB78CCEB7BCA0750DE365471C821D /* SMConfig.h in Headers */,
 				4A75B2E4E9E21FAB32EAD2E805F3E272 /* SMCustomEvent.h in Headers */,
 				00C79DCD3F9BAA7A76E53918B4B4E8F9 /* SMData.h in Headers */,
+				62B4BE5424EEB85E00AE3A14 /* SMSessionManager.h in Headers */,
 				781C04C56DDACBF426458F94064DFFD9 /* SMDataCollector.h in Headers */,
 				4BB8CE05198345F978D6106107D52831 /* SMDataEnricher.h in Headers */,
 				F701F61F0AB537D8D54E6F3478E46D75 /* SMLifecycleHandler.h in Headers */,
@@ -621,6 +628,7 @@
 				7F0EA95E38A9A3A6CFF8501EB57434A3 /* SMPropertyValue.m in Sources */,
 				FB50BBC88EE5C04AEB857C0FB6B11A1A /* SMSDKEvent.m in Sources */,
 				F48E51B457866E635F72DD9F45577ADF /* SMSession.m in Sources */,
+				62B4BE5524EEB85E00AE3A14 /* SMSessionManager.m in Sources */,
 				1D4FD4C39093D1EFC4304FBC14FF16B7 /* SMUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
