@@ -94,14 +94,19 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
 + (void)setProperties:(NSDictionary *)properties inState:(SMMutableProperties *)stateProperties {
     NSNumber *now = [SMUtils now];
     for (NSString* key in properties) {
-        SMPropertyValue *propertyValue = [SMPropertyValue new];
-        propertyValue.value = properties[key];
-        propertyValue.timestamp = now;
-        [stateProperties setObject:propertyValue forKey:key];
+        id value = properties[key];
+        if (value != nil && ([value isKindOfClass:[NSNumber class]] || [value isKindOfClass:[NSString class]])) {
+            SMPropertyValue *propertyValue = [SMPropertyValue new];
+            propertyValue.value = properties[key];
+            propertyValue.timestamp = now;
+            [stateProperties setObject:propertyValue forKey:key];
+        } else {
+            SENDMAN_ERROR(@"Discarding property \"%@\" due to unsupported type. Supported types are NSNumber (numbers & booleans) and NSString. Provided type: %@", key, [value class]);
+        }
     }
 }
 
-+ (void)setUserProperties:(NSDictionary *)properties {
++ (void)setUserProperties:(NSDictionary<NSString *, id> *)properties {
     SMDataCollector *manager = [SMDataCollector sharedManager];
     [self setProperties:properties inState:manager.customProperties];
 }

@@ -28,7 +28,7 @@
 
 @interface SMDataCollector : NSObject
 
-+ (void)setUserProperties:(NSDictionary *_Nonnull)properties;
++ (void)setUserProperties:(NSDictionary<NSString *, id> *_Nonnull)properties;
 + (void)setSdkProperties:(NSDictionary *_Nonnull)properties;
 + (void)addUserEvents:(NSDictionary *_Nonnull)events;
 + (void)addSdkEvent:(SMSDKEvent *_Nonnull)event;

@@ -112,7 +112,7 @@ NSString *const SMTokenTypeKey = @"SMTokenType";
 
 # pragma mark - User Properties
 
-+ (void)setUserProperties:(NSDictionary *)properties {
++ (void)setUserProperties:(NSDictionary<NSString *, id> *)properties {
     [SMDataCollector setUserProperties:properties];
 }
 

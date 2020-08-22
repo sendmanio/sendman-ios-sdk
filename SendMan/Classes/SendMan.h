@@ -53,7 +53,7 @@
 
 # pragma mark - User Properties
 
-+ (void)setUserProperties:(NSDictionary *_Nonnull)properties;
++ (void)setUserProperties:(NSDictionary<NSString *, id> *_Nonnull)properties;
 
 # pragma mark - User Events
 
