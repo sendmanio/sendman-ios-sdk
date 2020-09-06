@@ -55,13 +55,6 @@
 
 + (void)setUserProperties:(NSDictionary<NSString *, id> *_Nonnull)properties;
 
-# pragma mark - User Events
-
-+ (void)addUserEvent:(NSString *_Nonnull)eventName;
-+ (void)addUserEvent:(NSString *_Nonnull)eventName stringValue:(NSString *_Nullable)value;
-+ (void)addUserEvent:(NSString *_Nonnull)eventName numberValue:(NSNumber *_Nonnull)value;
-+ (void)addUserEvent:(NSString *_Nonnull)eventName booleanValue:(BOOL)value;
-
 # pragma mark - Integration Events
 
 + (void)applicationDidFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *_Nullable)launchOptions;

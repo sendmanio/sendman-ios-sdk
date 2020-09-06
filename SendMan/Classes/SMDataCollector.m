@@ -38,7 +38,6 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
 // TODO: separate user props/events from internal ones
 @property (strong, nonatomic, nullable) SMMutableProperties *customProperties;
 @property (strong, nonatomic, nullable) SMMutableProperties *sdkProperties;
-@property (strong, nonatomic, nullable) NSMutableArray<SMCustomEvent *> <SMCustomEvent> *customEvents;
 @property (strong, nonatomic, nullable) NSMutableArray<SMSDKEvent *> <SMSDKEvent> *sdkEvents;
 
 @property (nonatomic) BOOL sessionError;
@@ -64,7 +63,6 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
         
         self.customProperties = [SMMutableProperties new];
         self.sdkProperties = [SMMutableProperties new];
-        self.customEvents = [NSMutableArray<SMCustomEvent> new];
         self.sdkEvents = [NSMutableArray<SMSDKEvent> new];
         [self pollForNewData:2 withSessionPersistency:NO];
         [self pollForNewData:60 withSessionPersistency:YES];
@@ -116,18 +114,6 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
     [self setProperties:properties inState:manager.sdkProperties];
 }
 
-+ (void)addUserEvents:(NSDictionary *)events {
-    SMDataCollector *manager = [SMDataCollector sharedManager];
-    NSNumber *now = [SMUtils now];
-    for (NSString* eventName in events) {
-        SMCustomEvent *event = [SMCustomEvent new];
-        event.key = eventName;
-        event.value = events[eventName];
-        event.timestamp = now;
-        [manager.customEvents addObject:event];
-    }
-}
-
 + (void)addSdkEvent:(SMSDKEvent *)event {
     SMDataCollector *manager = [SMDataCollector sharedManager];
     event.timestamp = [SMUtils now];
@@ -158,7 +144,7 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
 
 - (void)sendData:(BOOL)presistSession {
     
-    if (self.sessionError || ![SendMan getConfig] || ![SendMan getUserId] || (!presistSession && ([self.customProperties count] == 0 && [self.sdkProperties count] == 0 && [self.customEvents count] == 0 && [self.sdkEvents count] == 0))) {
+    if (self.sessionError || ![SendMan getConfig] || ![SendMan getUserId] || (!presistSession && ([self.customProperties count] == 0 && [self.sdkProperties count] == 0 && [self.sdkEvents count] == 0))) {
         return;
     }
     
@@ -177,10 +163,6 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
     data.sdkProperties = self.sdkProperties;
     self.sdkProperties = [SMMutableProperties new];
 
-    NSMutableArray<SMCustomEvent *> <SMCustomEvent> *currentCustomEvents = self.customEvents;
-    data.customEvents = self.customEvents;
-    self.customEvents = [[NSMutableArray<SMCustomEvent> alloc] init];
-
     NSMutableArray<SMSDKEvent *> <SMSDKEvent> *currentSDKEvents = self.sdkEvents;
     data.sdkEvents = self.sdkEvents;
     self.sdkEvents = [[NSMutableArray<SMSDKEvent> alloc] init];
@@ -196,11 +178,6 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
                 [currentSDKProperties setObject:self.sdkProperties[key] forKey:key];
             }
             self.sdkProperties = currentSDKProperties;
-
-            for (SMCustomEvent* customEvent in self.customEvents) {
-                [currentCustomEvents addObject:customEvent];
-            }
-            self.customEvents = currentCustomEvents;
             
             for (SMSDKEvent* sdkEvents in self.sdkEvents) {
                 [currentSDKEvents addObject:sdkEvents];

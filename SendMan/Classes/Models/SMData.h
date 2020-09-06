@@ -22,7 +22,6 @@
 //
 
 #import "JSONModel.h"
-#import "SMCustomEvent.h"
 #import "SMPropertyValue.h"
 #import "SMSDKEvent.h"
 #import "SMSession.h"
@@ -35,7 +34,6 @@
 @property (nonatomic) SMSession *currentSession;
 @property (nonatomic) NSDictionary<NSString *, SMPropertyValue *> <NSString, SMPropertyValue> *customProperties;
 @property (nonatomic) NSDictionary<NSString *, SMPropertyValue *> <NSString, SMPropertyValue> *sdkProperties;
-@property (nonatomic) NSArray<SMCustomEvent *> <SMCustomEvent> *customEvents;
 @property (nonatomic) NSArray<SMSDKEvent *> <SMSDKEvent> *sdkEvents;
 
 @end

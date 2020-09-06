@@ -116,24 +116,6 @@ NSString *const SMTokenTypeKey = @"SMTokenType";
     [SMDataCollector setUserProperties:properties];
 }
 
-# pragma mark - User Events
-
-+ (void)addUserEvent:(NSString *)eventName {
-    [SMDataCollector addUserEvents:@{eventName: @""}];
-}
-
-+ (void)addUserEvent:(NSString *)eventName stringValue:(NSString *)value {
-    [SMDataCollector addUserEvents:@{eventName: value}];
-}
-
-+ (void)addUserEvent:(NSString *)eventName numberValue:(NSNumber *)value {
-    [SMDataCollector addUserEvents:@{eventName: value}];
-}
-
-+ (void)addUserEvent:(NSString *)eventName booleanValue:(BOOL)value {
-    [SMDataCollector addUserEvents:@{eventName: value == YES ? @"YES" : @"NO"}];
-}
-
 # pragma mark - Integration Events
 
 + (void)applicationDidFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *)launchOptions {

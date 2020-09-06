@@ -19,7 +19,6 @@ framework module SendMan {
           private header "JSONModelError.h"
           private header "JSONKeyMapper.h"
           private header "JSONValueTransformer.h"
-          private header "SMCustomEvent.h"
           private header "SMData.h"
           private header "SMPropertyValue.h"
           private header "SMSDKEvent.h"
