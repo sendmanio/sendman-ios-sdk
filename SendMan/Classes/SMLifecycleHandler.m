@@ -114,7 +114,7 @@
 - (void)applicationDidFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *)launchOptions {
     NSDictionary *pushNotification = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
     if (pushNotification) {
-        [self didOpenMessage:pushNotification[@"messageId"] forActivity:pushNotification[@"activityId"] atState:-1 withOnSuccess:^{
+        [self didOpenMessage:pushNotification[@"smMessageId"] forActivity:pushNotification[@"smActivityId"] atState:-1 withOnSuccess:^{
             [self didOpenApp];
         }];
     } else {
@@ -145,7 +145,7 @@
 
 - (void)applicationDidReceiveRemoteNotificationWithInfo:(NSDictionary *)userInfo {
     if (userInfo) {
-        [self didOpenMessage:userInfo[@"messageId"] forActivity:userInfo[@"activityId"] atState:[[UIApplication sharedApplication] applicationState]];
+        [self didOpenMessage:userInfo[@"smMessageId"] forActivity:userInfo[@"smActivityId"] atState:[[UIApplication sharedApplication] applicationState]];
     }
 }
 
