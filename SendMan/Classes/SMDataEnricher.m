@@ -27,10 +27,14 @@
 
 NSString *const SMCountryCodeKey = @"SMCountryCode";
 NSString *const SMLanguageCodeKey = @"SMLanguageCode";
+NSString *const SMTimezoneKey = @"SMTimezone";
 
 NSString *const SMDeviceSystemNameKey = @"SMDeviceSystemName";
 NSString *const SMDeviceSystemVersionKey = @"SMDeviceSystemVersion";
 NSString *const SMDeviceModelKey = @"SMDeviceModel";
+
+NSString *const SMSDKVersionKey = @"SMSDKVersion";
+NSString *const SMSDKVersionValue = @"0.0.1";
 
 @implementation SMDataEnricher
 
@@ -48,6 +52,11 @@ NSString *const SMDeviceModelKey = @"SMDeviceModel";
     enrichedData[SMDeviceSystemNameKey] = currentDevice.systemName;
     enrichedData[SMDeviceSystemVersionKey] = currentDevice.systemVersion;
     enrichedData[SMDeviceModelKey] = currentDevice.model;
+
+    NSTimeZone *currentTimeZone = [NSTimeZone localTimeZone];
+    enrichedData[SMTimezoneKey] = [currentTimeZone name];
+
+    enrichedData[SMSDKVersionKey] = SMSDKVersionValue;
 
     return enrichedData;
     
