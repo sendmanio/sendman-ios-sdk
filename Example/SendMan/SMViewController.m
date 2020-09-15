@@ -47,9 +47,13 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)risottoSelected:(id)sender {}
+- (IBAction)risottoSelected:(id)sender {
+    [SendMan setUserProperties:@{ @"Last Viewed Recipe": @"Risotto" }];
+}
 
-- (IBAction)quicheSelected:(id)sender {}
+- (IBAction)quicheSelected:(id)sender {
+    [SendMan setUserProperties:@{ @"Last Viewed Recipe": @"Quiche" }];
+}
 
 - (IBAction)flowStarted:(id)sender {}
 
