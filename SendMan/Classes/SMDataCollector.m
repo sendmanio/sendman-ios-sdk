@@ -32,16 +32,11 @@
 #import "SMLog.h"
 
 typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMPropertyValue> SMMutableProperties;
-typedef NSMutableDictionary<NSString *, id> <NSString, NSObject> SMMutablePropertyValueCache;
 
 @interface SMDataCollector ()
 
 @property (strong, nonatomic, nullable) SMMutableProperties *customProperties;
 @property (strong, nonatomic, nullable) SMMutableProperties *sdkProperties;
-
-@property (strong, nonatomic, nullable) SMMutablePropertyValueCache *customPropertiesCache;
-@property (strong, nonatomic, nullable) SMMutablePropertyValueCache *sdkPropertiesCache;
-
 @property (strong, nonatomic, nullable) NSMutableArray<SMSDKEvent *> <SMSDKEvent> *sdkEvents;
 
 @property (nonatomic) BOOL sessionError;
@@ -66,9 +61,7 @@ typedef NSMutableDictionary<NSString *, id> <NSString, NSObject> SMMutableProper
         self.sessionError = false;
         
         self.customProperties = [SMMutableProperties new];
-        self.customPropertiesCache = [SMMutablePropertyValueCache new];
         self.sdkProperties = [SMMutableProperties new];
-        self.sdkPropertiesCache = [SMMutablePropertyValueCache new];
         self.sdkEvents = [NSMutableArray<SMSDKEvent> new];
         [self pollForNewData:2 withSessionPersistency:NO];
         [self pollForNewData:60 withSessionPersistency:YES];
@@ -90,49 +83,34 @@ typedef NSMutableDictionary<NSString *, id> <NSString, NSObject> SMMutableProper
 + (void)startSession {
     SMDataCollector *manager = [SMDataCollector sharedManager];
     [[SMSessionManager sharedManager] getOrCreateSession];
-    [self setProperties:[SMDataEnricher getUserEnrichedData] inState:manager.sdkProperties usingCache:manager.sdkPropertiesCache];
+    [self setProperties:[SMDataEnricher getUserEnrichedData] inState:manager.sdkProperties];
 }
 
 # pragma mark - Data collection
 
-+ (void)setProperties:(NSDictionary *)properties inState:(SMMutableProperties *)stateProperties usingCache:(SMMutablePropertyValueCache *)propertiesCache {
++ (void)setProperties:(NSDictionary *)properties inState:(SMMutableProperties *)stateProperties {
     NSNumber *now = [SMUtils now];
     for (NSString* key in properties) {
         id value = properties[key];
         if (value != nil && ([value isKindOfClass:[NSNumber class]] || [value isKindOfClass:[NSString class]])) {
-            if ([self isValue:value cachedIn:propertiesCache underKey:key]) {
-                SENDMAN_LOG(@"Property \"%@\" was already reported with this value, skipping adding it to the properties to report.", key);
-            } else {
-                SMPropertyValue *propertyValue = [SMPropertyValue new];
-                propertyValue.value = value;
-                propertyValue.timestamp = now;
-                stateProperties[key] = propertyValue;
-
-                propertiesCache[key] = value;
-            }
+            SMPropertyValue *propertyValue = [SMPropertyValue new];
+            propertyValue.value = properties[key];
+            propertyValue.timestamp = now;
+            [stateProperties setObject:propertyValue forKey:key];
         } else {
             SENDMAN_ERROR(@"Discarding property \"%@\" due to unsupported type. Supported types are NSNumber (numbers & booleans) and NSString. Provided type: %@", key, [value class]);
         }
     }
 }
 
-+ (BOOL)isValue:(id)value cachedIn:(SMMutablePropertyValueCache *)propertiesCache underKey:(NSString *)key {
-    id previousValue = propertiesCache[key];
-
-    if (previousValue && [previousValue isKindOfClass:[NSString class]] && [value isKindOfClass:[NSString class]] && [value isEqualToString:previousValue]) return YES;
-    if (previousValue && [previousValue isKindOfClass:[NSNumber class]] && [value isKindOfClass:[NSNumber class]] && [value isEqualToNumber:previousValue]) return YES;
-
-    return NO;
-}
-
 + (void)setUserProperties:(NSDictionary<NSString *, id> *)properties {
     SMDataCollector *manager = [SMDataCollector sharedManager];
-    [self setProperties:properties inState:manager.customProperties usingCache:manager.customPropertiesCache];
+    [self setProperties:properties inState:manager.customProperties];
 }
 
 + (void)setSdkProperties:(NSDictionary<NSString *, id> *)properties {
     SMDataCollector *manager = [SMDataCollector sharedManager];
-    [self setProperties:properties inState:manager.sdkProperties usingCache:manager.sdkPropertiesCache];
+    [self setProperties:properties inState:manager.sdkProperties];
 }
 
 + (void)addSdkEvent:(SMSDKEvent *)event {
