@@ -71,6 +71,11 @@ NSArray *tableData;
     self.tableView.backgroundColor = self.backgroundColor;
     self.backgroundView.backgroundColor = self.backgroundColor;
     
+    self.tableView.sectionHeaderHeight =  UITableViewAutomaticDimension;
+    self.tableView.estimatedSectionHeaderHeight = 25;
+    self.tableView.sectionFooterHeight =  UITableViewAutomaticDimension;
+    self.tableView.estimatedSectionFooterHeight = 25;
+
     tableData = [SendMan getCategories];
 }
 
