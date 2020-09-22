@@ -27,10 +27,15 @@
 @implementation SMConfig
 
 - (instancetype)initWithKey:(NSString *)key andSecret:(NSString *)secret {
+    return [self initWithKey:key andSecret:secret autoGenerateUsers:NO];
+}
+
+- (instancetype _Nonnull)initWithKey:(NSString *_Nonnull)key andSecret:(NSString *_Nonnull)secret autoGenerateUsers:(BOOL)autoGenerateUsers {
     self = [super init];
     if (self) {
         self.appKey = key;
         self.appSecret = secret;
+        self.autoGenerateUsers = autoGenerateUsers;
     }
     return self;
 }

@@ -31,6 +31,8 @@
 
 #define CategoriesRetrievedNotification @"CategoriesRetrievedNotification"
 
+#define kSMAutoUserId @"kSMAutoUserId"
+
 @interface SendMan : NSObject
 
 # pragma mark - Getters

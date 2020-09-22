@@ -24,9 +24,11 @@
 @interface SMConfig : NSObject
 
 - (instancetype _Nonnull)initWithKey:(NSString *_Nonnull)key andSecret:(NSString *_Nonnull)secret;
+- (instancetype _Nonnull)initWithKey:(NSString *_Nonnull)key andSecret:(NSString *_Nonnull)secret autoGenerateUsers:(BOOL)autoGenerateUsers;
 
 @property (strong, nonatomic, nonnull) NSString *appKey;
 @property (strong, nonatomic, nonnull) NSString *appSecret;
 @property (strong, nonatomic, nonnull) NSString *serverUrl;
+@property (nonatomic) BOOL autoGenerateUsers;
 
 @end

@@ -27,6 +27,7 @@
 #import "SMLifecycleHandler.h"
 #import "SMCategoriesHandler.h"
 #import "SMNotificationsViewController.h"
+#import "SMLog.h"
 
 NSString *const SMTokenKey = @"SMToken";
 NSString *const SMTokenTypeKey = @"SMTokenType";
@@ -74,14 +75,34 @@ NSString *const SMTokenTypeKey = @"SMTokenType";
 + (void)setAppConfig:(SMConfig *)config {
     SendMan *sendman = [SendMan instance];
     sendman.config = config;
+    
+    if (config.autoGenerateUsers) {
+        NSString *autoUserId = [[NSUserDefaults standardUserDefaults] stringForKey:kSMAutoUserId];
+        if (!autoUserId) {
+            autoUserId = [[[NSUUID UUID] UUIDString] lowercaseString];
+            [[NSUserDefaults standardUserDefaults] setObject:autoUserId forKey:kSMAutoUserId];
+            [[NSUserDefaults standardUserDefaults] synchronize];
+        }
+        [SendMan setUserIdNoValidations:autoUserId];
+    }
 }
 
 + (void)setUserId:(NSString *)userId {
+    if ([SendMan getConfig].autoGenerateUsers) {
+        SENDMAN_ERROR(@"Cannot set userId on autoGenerateUsers mode");
+    } else {
+        [SendMan setUserIdNoValidations:userId];
+    }
+    
+}
+
++ (void)setUserIdNoValidations:(NSString *)userId {
     SendMan *sendman = [SendMan instance];
     sendman.msUserId = userId;
     [SMDataCollector startSession];
     [SMCategoriesHandler getCategories];
 }
+
 
 + (void)setAPNToken:(NSString *)token {
     [SMDataCollector setSdkProperties:@{SMTokenKey: token, SMTokenTypeKey: @"apn"}];

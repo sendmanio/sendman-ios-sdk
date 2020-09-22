@@ -150,38 +150,52 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
     SENDMAN_LOG(@"Preparing to submit periodical data to API");
 
     SMData *data = [SMData new];
-    data.externalUserId = [SendMan getUserId];
+
+    NSString *userId = [SendMan getUserId];
+    NSString *autoUserId = [[NSUserDefaults standardUserDefaults] stringForKey:kSMAutoUserId];
+    if (autoUserId && ![autoUserId isEqualToString:userId]) {
+        data.autoUserId = autoUserId;
+    }
+    data.externalUserId = userId;
 
     data.currentSession = [[SMSessionManager sharedManager] getOrCreateSession];
 
-    SMMutableProperties *currentCustomProperties = self.customProperties;
-    data.customProperties = self.customProperties;
-    self.customProperties = [SMMutableProperties new];
+    SMMutableProperties *currentCustomProperties = [self.customProperties copy];
+    data.customProperties = currentCustomProperties;
+    [self.customProperties removeAllObjects];
 
-    SMMutableProperties *currentSDKProperties = self.sdkProperties;
-    data.sdkProperties = self.sdkProperties;
-    self.sdkProperties = [SMMutableProperties new];
+    SMMutableProperties *currentSDKProperties = [self.sdkProperties copy];
+    data.sdkProperties = currentSDKProperties;
+    [self.sdkProperties removeAllObjects];
 
-    NSMutableArray<SMSDKEvent *> <SMSDKEvent> *currentSDKEvents = self.sdkEvents;
-    data.sdkEvents = self.sdkEvents;
-    self.sdkEvents = [[NSMutableArray<SMSDKEvent> alloc] init];
+    NSMutableArray<SMSDKEvent *> <SMSDKEvent> *currentSDKEvents = [self.sdkEvents copy];
+    data.sdkEvents = currentSDKEvents;
+    [self.sdkEvents removeAllObjects];
 
-    [SMAPIHandler sendDataWithJson:[data toDictionary] forUrl:@"user/data" responseHandler:^(NSHTTPURLResponse *httpResponse) {
-        if(httpResponse.statusCode != 204) {
+    NSDictionary *dataDict = [data toDictionary];
+    
+    [SMAPIHandler sendDataWithJson:dataDict forUrl:@"user/data" responseHandler:^(NSHTTPURLResponse *httpResponse) {
+        if(httpResponse.statusCode == 204) {
+            if (data.autoUserId) { // This means auto Id was just overridden in the backend by an actual externalUserId
+                [[NSUserDefaults standardUserDefaults] removeObjectForKey:kSMAutoUserId];
+                [[NSUserDefaults standardUserDefaults] synchronize];
+            }
+            SENDMAN_LOG(@"Successfully set properties: %@", dataDict);
+        } else {
             for (NSString* key in self.customProperties) {
                 [currentCustomProperties setObject:self.customProperties[key] forKey:key];
             }
-            self.customProperties = currentCustomProperties;
+            [self.customProperties setDictionary:currentCustomProperties];
             
             for (NSString* key in self.sdkProperties) {
                 [currentSDKProperties setObject:self.sdkProperties[key] forKey:key];
             }
-            self.sdkProperties = currentSDKProperties;
+            [self.sdkProperties setDictionary:currentSDKProperties];
             
             for (SMSDKEvent* sdkEvents in self.sdkEvents) {
                 [currentSDKEvents addObject:sdkEvents];
             }
-            self.sdkEvents = currentSDKEvents;
+            [self.sdkEvents setArray:currentSDKEvents];
 
             if (httpResponse.statusCode == 401) {
                 if (self.sessionError == false) {
@@ -191,9 +205,6 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
             } else {
                 SENDMAN_ERROR(@"Error submitting peridical data to API");
             }
-            
-        } else {
-            SENDMAN_LOG(@"Successfully set properties: %@", [data toDictionary]);
         }
     }];
 }
