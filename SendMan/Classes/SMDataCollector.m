@@ -203,7 +203,7 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
                     self.sessionError = true;
                 }
             } else {
-                SENDMAN_ERROR(@"Error submitting peridical data to API");
+                SENDMAN_ERROR(@"Error submitting periodical data to API");
             }
         }
     }];
