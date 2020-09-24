@@ -158,18 +158,28 @@
 }
 
 - (void)registerForRemoteNotifications:(void (^)(BOOL granted))success {
-    [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge)
-                                                                        completionHandler:^(BOOL granted, NSError * _Nullable error) {
-        SENDMAN_LOG(@"Push notification permission granted: %@", granted ? @"✅" : @"❌");
-        dispatch_async(dispatch_get_main_queue(), ^() {
-            SMSDKEvent *event = [SMSDKEvent new];
-            event.key = @"Push notification permissions popup displayed";
-            [SMDataCollector addSdkEvent:event];            
-            if (granted) {
-                [[UIApplication sharedApplication] registerForRemoteNotifications];
-            }
-            if (success) success(granted);
-        });
+    [[UNUserNotificationCenter currentNotificationCenter] getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
+        BOOL oneTimeAppleAuhtorizationDialogWasShown = settings.authorizationStatus == UNAuthorizationStatusNotDetermined;
+        if (oneTimeAppleAuhtorizationDialogWasShown) {
+            SENDMAN_LOG(@"Requesting push notification permissions for the first time.");
+        }
+
+        [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge)
+                                                                            completionHandler:^(BOOL granted, NSError * _Nullable error) {
+            SENDMAN_LOG(@"Push notification permission granted: %@", granted ? @"✅" : @"❌");
+            dispatch_async(dispatch_get_main_queue(), ^() {
+                if (oneTimeAppleAuhtorizationDialogWasShown) {
+                    SMSDKEvent *event = [SMSDKEvent new];
+                    event.key = @"Push notification permissions popup displayed";
+                    [SMDataCollector addSdkEvent:event];
+                }
+
+                if (granted) {
+                    [[UIApplication sharedApplication] registerForRemoteNotifications];
+                }
+                if (success) success(granted);
+            });
+        }];
     }];
 }
 
