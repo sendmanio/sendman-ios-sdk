@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1160"
+   LastUpgradeVersion = "1200"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BDF26C039B46E394B4F2A1BF6624C638"
+               BlueprintIdentifier = "8A7C277CFBD2A35035594BE4BCFD6748"
                BuildableName = "SendMan.framework"
                BlueprintName = "SendMan"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -50,7 +50,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BDF26C039B46E394B4F2A1BF6624C638"
+            BlueprintIdentifier = "8A7C277CFBD2A35035594BE4BCFD6748"
             BuildableName = "SendMan.framework"
             BlueprintName = "SendMan"
             ReferencedContainer = "container:Pods.xcodeproj">
