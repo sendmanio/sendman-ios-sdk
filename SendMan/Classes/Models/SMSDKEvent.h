@@ -32,7 +32,7 @@
 @property (nonatomic) NSString *id;
 @property (nonatomic) NSString *key;
 @property (nonatomic) NSObject <Optional> *value;
-@property (nonatomic) NSString <Optional> *messageId;
+@property (nonatomic) NSString <Optional> *templateId;
 @property (nonatomic) NSString <Optional> *activityId;
 @property (nonatomic) NSNumber *timestamp;
 @property (nonatomic) NSString *notificationsRegistrationState;

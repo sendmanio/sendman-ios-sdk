@@ -30,7 +30,7 @@
 
 @interface SMLifecycleHandler ()
 
-@property (strong, nonatomic, nullable) NSMutableArray *lastMessageActivities;
+@property (strong, nonatomic, nullable) NSMutableArray *lastNotificationActivities;
 
 @end
 
@@ -49,31 +49,32 @@
 }
 
 # pragma mark - Cache
-- (void)saveLastMessageActivity:(NSString *)activityId {
-    if (!self.lastMessageActivities) {
-        self.lastMessageActivities = [[NSMutableArray alloc] init];
+
+- (void)saveLastNotificationActivity:(NSString *)activityId {
+    if (!self.lastNotificationActivities) {
+        self.lastNotificationActivities = [[NSMutableArray alloc] init];
     }
-    [self.lastMessageActivities addObject:activityId];
-    self.lastMessageActivities = [NSMutableArray arrayWithArray:[self.lastMessageActivities subarrayWithRange:NSMakeRange(0, MIN([self.lastMessageActivities count], 100))]];
+    [self.lastNotificationActivities addObject:activityId];
+    self.lastNotificationActivities = [NSMutableArray arrayWithArray:[self.lastNotificationActivities subarrayWithRange:NSMakeRange(0, MIN([self.lastNotificationActivities count], 100))]];
 }
 
 # pragma mark - Data collection
 
-- (void)didOpenMessage:(NSString *)messageId forActivity:(NSString *)activityId atState:(UIApplicationState)appState {
-    [self didOpenMessage:messageId forActivity:activityId atState:appState withOnSuccess:nil];
+- (void)didOpenNotification:(NSString *)templateId forActivity:(NSString *)activityId atState:(UIApplicationState)appState {
+    [self didOpenNotification:templateId forActivity:activityId atState:appState withOnSuccess:nil];
 }
 
-- (void)didOpenMessage:(NSString *)messageId forActivity:(NSString *)activityId atState:(UIApplicationState)appState withOnSuccess:(void (^)(void))onSuccess {
-    if ([self.lastMessageActivities containsObject:activityId]) {
+- (void)didOpenNotification:(NSString *)templateId forActivity:(NSString *)activityId atState:(UIApplicationState)appState withOnSuccess:(void (^)(void))onSuccess {
+    if ([self.lastNotificationActivities containsObject:activityId]) {
         SENDMAN_LOG(@"Activity already handled previously");
     } else {
         [[UNUserNotificationCenter currentNotificationCenter] getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
-            [self saveLastMessageActivity:activityId];
+            [self saveLastNotificationActivity:activityId];
 
             SMSDKEvent *event = [SMSDKEvent new];
             event.key = [self eventNameByAppState:appState andAuthorizationStatus:settings.authorizationStatus];
             event.appState = [self appStateStringFromState:appState];
-            event.messageId = messageId;
+            event.templateId = templateId;
             event.activityId = activityId;
             [SMDataCollector addSdkEvent:event];
 
@@ -114,7 +115,7 @@
 - (void)applicationDidFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *)launchOptions {
     NSDictionary *pushNotification = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
     if (pushNotification) {
-        [self didOpenMessage:pushNotification[@"smMessageId"] forActivity:pushNotification[@"smActivityId"] atState:-1 withOnSuccess:^{
+        [self didOpenNotification:pushNotification[@"smTemplateId"] forActivity:pushNotification[@"smActivityId"] atState:-1 withOnSuccess:^{
             [self didOpenApp];
         }];
     } else {
@@ -145,7 +146,7 @@
 
 - (void)applicationDidReceiveRemoteNotificationWithInfo:(NSDictionary *)userInfo {
     if (userInfo) {
-        [self didOpenMessage:userInfo[@"smMessageId"] forActivity:userInfo[@"smActivityId"] atState:[[UIApplication sharedApplication] applicationState]];
+        [self didOpenNotification:userInfo[@"smTemplateId"] forActivity:userInfo[@"smActivityId"] atState:[[UIApplication sharedApplication] applicationState]];
     }
 }
 
@@ -185,12 +186,12 @@
 
 - (NSString *)eventNameByAppState:(UIApplicationState)state andAuthorizationStatus:(UNAuthorizationStatus)status {
     if (status == UNAuthorizationStatusDenied) {
-        return @"Blocked Message Received";
+        return @"Blocked Notification Received";
     } else if (status == UNAuthorizationStatusNotDetermined) {
-        return @"Pre-Authorization Message Received";
+        return @"Pre-Authorization Notification Received";
     }
 
-    return state == UIApplicationStateActive ? @"Foreground Message Received" : @"Background Message Opened";
+    return state == UIApplicationStateActive ? @"Foreground Notification Received" : @"Background Notification Opened";
 }
 
 @end
