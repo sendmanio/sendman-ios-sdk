@@ -7,460 +7,412 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00C79DCD3F9BAA7A76E53918B4B4E8F9 /* SMData.h in Headers */ = {isa = PBXBuildFile; fileRef = 1E8C7B449D629B42BB8AC31DCD59425B /* SMData.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		022787897A47310B25A1F0D58DAB743E /* SMNotificationsFooterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 98B912A6616024B677C744D11C8D6FE8 /* SMNotificationsFooterCell.m */; };
-		0D7C9FB14A7C0219F0A59C8E5729F3E6 /* SMPropertyValue.h in Headers */ = {isa = PBXBuildFile; fileRef = 0106C89BE76BD49F971CE0610FE94865 /* SMPropertyValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0EEEA3E2850CB4A4A954BFF7A7FB9EBD /* SMNotificationsHeaderCell.h in Headers */ = {isa = PBXBuildFile; fileRef = C99627546C349C36C89BE28815964B07 /* SMNotificationsHeaderCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0F09A383D5CC9A7277BC326059E08C8D /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9E5A6A7A1A6A6E8554813CE0ABFF3D /* JSONKeyMapper.m */; };
-		14D9A9AE3114C5A53A951989EDBA552A /* Pods-SendMan_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B179086DA5534F114FD7F8E1C97D60A /* Pods-SendMan_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		15AF755B8C1737D7A8982762884BE8DB /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 49B71FDEA84866F54B877A701010357D /* JSONModelClassProperty.m */; };
-		1D4FD4C39093D1EFC4304FBC14FF16B7 /* SMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 416EF6BEB136060FA23D2E5171D8BBDF /* SMUtils.m */; };
-		235AC4D532344BED094D3D11BC1B95DC /* SMConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 297AC5E91CEAD44E9283D4732DB62F89 /* SMConfig.m */; };
-		251BD9DD9BB9FD0D2EC22A15DE8AE083 /* SMNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 89DAB6CF9E832E3637B42ACB2A4CC9ED /* SMNotificationTableViewCell.m */; };
-		28BEB2B724D83AEA00BE7A2F /* SMCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 28BEB2B424D8345300BE7A2F /* SMCategory.m */; };
-		28BEB2B824D83AED00BE7A2F /* SMCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = 28BEB2B324D8345300BE7A2F /* SMCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		28BEB2BA24E192F500BE7A2F /* SMLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 28BEB2B924E192F500BE7A2F /* SMLog.h */; };
-		3940325BF46C80F60973474F585979B2 /* SMAPIHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E6815ACF6AACCDCA74976E61BA79824 /* SMAPIHandler.m */; };
-		4BB8CE05198345F978D6106107D52831 /* SMDataEnricher.h in Headers */ = {isa = PBXBuildFile; fileRef = 6506CB03F97C9888433C8300812D26C5 /* SMDataEnricher.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4DC65AC98E02DD7A46638AA76609CC74 /* JSONKeyMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = F9A58CF8FAEE1CDB114804DA21AD82E6 /* JSONKeyMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4FB7950963467834F2F944A539865D62 /* JSONValueTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = CE556C7A49F278206542F6856556490A /* JSONValueTransformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5111E03216C5627CEE85BB6A4142000B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		524AFD31EC854052D9FD22D256EAFE78 /* SMAPIHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = D6D1E7BA82ADD81BC437663535C6677C /* SMAPIHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		575346C3CF1C149D99C423DDBD91DA87 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 46F0FB1F5DAB5B597B2F2183A6852163 /* JSONValueTransformer.m */; };
-		628C3CFA19F8D42AFF0CB27DE001B207 /* SMAuthHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B1BE781824AF0C4828FFEAB58797FAF8 /* SMAuthHandler.m */; };
-		62B4BE5424EEB85E00AE3A14 /* SMSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 62B4BE5224EEB85E00AE3A14 /* SMSessionManager.h */; };
-		62B4BE5524EEB85E00AE3A14 /* SMSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 62B4BE5324EEB85E00AE3A14 /* SMSessionManager.m */; };
-		62DB41D6CA6C1B0FF0A65821D4378292 /* JSONModelError.h in Headers */ = {isa = PBXBuildFile; fileRef = C2435669B9E901408C47A61D8A057F38 /* JSONModelError.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6872E8404F1EADE981B9111EAC67819E /* SMLifecycleHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = E00C27C037CC69532B4D076EAF57942C /* SMLifecycleHandler.m */; };
-		6BD0CC41EC782D5638A5D996240926B7 /* Pods-SendMan_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AF6D6DDFAC10B2B40F297260224BA98 /* Pods-SendMan_Tests-dummy.m */; };
-		6EF86C741FB8DA85FC6EB03CE324295A /* SMNotificationsHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B88F789A2C5445B21F4C7DB7F7289A3 /* SMNotificationsHeaderCell.m */; };
-		70934C3329CEE0661ED8C1CF8936D753 /* Pods-SendMan2_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 612021B6C62CC6593AE44B032DB8A6B5 /* Pods-SendMan2_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		781C04C56DDACBF426458F94064DFFD9 /* SMDataCollector.h in Headers */ = {isa = PBXBuildFile; fileRef = 73E102F941A207776A48CF99CF98B9A6 /* SMDataCollector.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7EA7CA1317ECD882201877DE4FB07BF4 /* SMSDKEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = FDA9E0A53C9A3F04899EE43A3B999160 /* SMSDKEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7EE33FC20DDF635171A5FED353D1B773 /* JSONModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 61DEE29669AEDA23DAC1B013755CA2CA /* JSONModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7F0EA95E38A9A3A6CFF8501EB57434A3 /* SMPropertyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = A7458C373B014CEDA7DB2796BA80DBEF /* SMPropertyValue.m */; };
-		81BCC5E87181A012B9A16E59857F5031 /* JSONModelClassProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 89A156AF8691E04ABAC3A6675520034A /* JSONModelClassProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		830897252ADF4D3F819C3BB986B3796D /* SendMan.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A59F0D5060E92E9B72A1C23E44DA940 /* SendMan.m */; };
-		921FD8AF39A319DD23E825F7C0B2C1F7 /* SMNotificationsFooterCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 124F432E5D7C3723C3561A09AB2A2F58 /* SMNotificationsFooterCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		96C93363728E6B30C5BCA3B8F9B2D32B /* SMNotifications.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = DE7BB9CB4DE98DEFB70316024E9EB9D6 /* SMNotifications.storyboard */; };
-		A45D72997F90EA6052BCC3C5CA572318 /* SendMan-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9B34953A6143AE9C3073460983613219 /* SendMan-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A60A001E59A81B5685B4706E4F90E643 /* SMNotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B588429BBB93952D889847A9F84FCAF /* SMNotificationsViewController.m */; };
-		A71A43FFAFF57E424A3CF9A915BE23DE /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 38CECABCDD7B5E04B1DD68213CA50B8C /* JSONModel.m */; };
-		A7589ECDC4254B9B1787E09848BEDD4F /* SMDataCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = F6DF961C4B5DB08915FA3EE55041D3FA /* SMDataCollector.m */; };
-		AC8425A1FF5896D17FA7B61AE0DB2496 /* SMDataEnricher.m in Sources */ = {isa = PBXBuildFile; fileRef = 86578232F8C8D462A3822D81CE3E2AC6 /* SMDataEnricher.m */; };
-		B0A44600F105ADFBBA83C0080B029A1E /* SMSession.h in Headers */ = {isa = PBXBuildFile; fileRef = E4C65B83821E9B50A310A1F7175141B5 /* SMSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B31F38B599AF67DFE0700F24EEE28FA8 /* JSONModelError.m in Sources */ = {isa = PBXBuildFile; fileRef = E53C5E2D974F2895FB63C00B6488A026 /* JSONModelError.m */; };
-		B624B34BF945BC21860C8C1AE08E2E9C /* SendMan.h in Headers */ = {isa = PBXBuildFile; fileRef = 124FF151BC8C8E7562F695CF0A812A4B /* SendMan.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B650BCB6268568D68B096212004C6855 /* SMCategoriesHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BC1E58F754B8E5FA4F6C2C0AB0ED69B /* SMCategoriesHandler.m */; };
-		B80022EE5FBF8E2A82CB1FF055037609 /* SMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 083B340C4C4C7D48E58771E4E0F172AD /* SMUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BF4A56E416094738C16E44DD1622CA18 /* SMNotificationsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FF47815BFA80EA2442EA07FCA3CB4DC /* SMNotificationsViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CA4800434B3DA14935A7A5F96DACCA77 /* SMCategoriesHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 980D34A2F132E1B3D9CC06BB62AE155A /* SMCategoriesHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D30582FB2662E2C32E140D4B3A3287C3 /* SMAuthHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = B3683AE58B791382FE70CDDE801D5FBF /* SMAuthHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DC29112B98E2BA11AA002B9DD840DC82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		E228D4998E1D6A9058D67BD247B24B40 /* Pods-SendMan2_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4775B7E1599FFD9EEFA7E2353890A3D3 /* Pods-SendMan2_Example-dummy.m */; };
-		E82BB78CCEB7BCA0750DE365471C821D /* SMConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 53C8126AC97EF145746000B0199CAEBD /* SMConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F2B0BCAF2648193C76015B26B13DC8B2 /* SMNotificationCellDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = A4683D0F9C7C834A7F2DFAF332821C2B /* SMNotificationCellDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F48E51B457866E635F72DD9F45577ADF /* SMSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 7FCD2D7DF0DA69CBC6D157C1E06B8B57 /* SMSession.m */; };
-		F521354062B3A664C33075F3725A223E /* SMNotificationTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = A1EBF0AAB2B323F5C6FAF910E632134B /* SMNotificationTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F701F61F0AB537D8D54E6F3478E46D75 /* SMLifecycleHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 85C6659D96AFC46EB22FF4DA3088519A /* SMLifecycleHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F7F1D618C327AAC3247477D590BAB91D /* SMData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D9A51D3799FE5E4831DFD9D95D8D862 /* SMData.m */; };
-		FB50BBC88EE5C04AEB857C0FB6B11A1A /* SMSDKEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D53E82786A2AC30FEF7F69BB1BE2B19 /* SMSDKEvent.m */; };
-		FE2337E75020C03E89CC581AF8A1ACB7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		00B817B857BE5484C27FAFDB3C454584 /* Pods-SendMan2_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F4A6E0E044D278DFFE0424DE0E46047B /* Pods-SendMan2_Example-dummy.m */; };
+		0146F14B7551D099F41C297891610330 /* JSONModelError.m in Sources */ = {isa = PBXBuildFile; fileRef = B737A7AB7AD226FB2CCC020C84EAC48E /* JSONModelError.m */; };
+		024598FE0C6D4391E70170869E999D01 /* JSONValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = FD5DE719F79892440FA9E0C9FDB4137F /* JSONValueTransformer.m */; };
+		0281CA5D7DB900BDE200F2C33E3331F7 /* SMDataEnricher.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E619B940DCE5A097C67AB07A369911F /* SMDataEnricher.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		05251149E2D41312B5D001CC06C8A2CF /* JSONModelClassProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = C6318C1D9C029818BF6BC02815EEA0C5 /* JSONModelClassProperty.m */; };
+		0C5F60D78FE88B3153AFA0B5FFECA2A9 /* JSONValueTransformer.h in Headers */ = {isa = PBXBuildFile; fileRef = D21AAE2845115FBD69860BCB57BB110E /* JSONValueTransformer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0DD5C79232959FF6D9CC2E8FE2CAB5F9 /* SMAPIHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = AE04C68C5012E8E4A0E175306AFEAD40 /* SMAPIHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		171C78D42D87C9370CC5DE2D009AE6F1 /* SMPropertyValue.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BDC10C083F0CFBB02CD1BB29578C680 /* SMPropertyValue.m */; };
+		1EB8CB5D45F69A97C3CE25D34EFA613F /* SMDataEnricher.m in Sources */ = {isa = PBXBuildFile; fileRef = FE3069AA08793A1ED7A98BB764771462 /* SMDataEnricher.m */; };
+		23CC388D2FDDEC581B2D3CCB91CDDFEF /* SMCategoriesHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = 7025C3C70C21F27AD6A1DBC080695902 /* SMCategoriesHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2541670A359723B4D3ABDB89D6AAE1D1 /* SMAuthHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = A503E5452E7107D9751AF7FB63DF76B7 /* SMAuthHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26908AA000178FA55377C4A7713CC114 /* SMAPIHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = F977FD0D4FA8A429595CE120BC4B46FB /* SMAPIHandler.m */; };
+		27B551AB340E02E6F5EC839DD13A5F7F /* SMNotificationsFooterCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 0201443C29A78B1002A7CCD7418AA896 /* SMNotificationsFooterCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2DCB2044CA974E6EE6CEE71EB6F1ADF5 /* SMNotifications.storyboard in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5D277CC687485DAD5D509B46F2808 /* SMNotifications.storyboard */; };
+		2F92E10BAE18C6D5B7B6355A9F07FD95 /* SMNotificationTableViewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 045267F30443C1D428E844C72F8921B7 /* SMNotificationTableViewCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		319CD2CD7EA38AACB44ED43B5FC72F5C /* SMLog.h in Headers */ = {isa = PBXBuildFile; fileRef = 1C801B52D3194B8AE64C44072F080405 /* SMLog.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		46E47506D7987ECE19E3E09A8E7F46EB /* SMNotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE0CD673D775E2BBC10A72F4A0A1FE7 /* SMNotificationsViewController.m */; };
+		4722505EF6CF0228632BB1F24BFC3753 /* SMSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 3294240F77E957F4F13D888E8076755F /* SMSession.m */; };
+		4B1034EA0F530B3AA4600A14258B5E7C /* SMSession.h in Headers */ = {isa = PBXBuildFile; fileRef = EC36EF5A92E9076D31A109A2B6312078 /* SMSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5112B82200BD443E0593B9C0ECE457BC /* SMNotificationCellDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = C6439120612C252539D833A6EC3810A9 /* SMNotificationCellDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		611F2ADAEB7CC877D2FC5332FBA87D3A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		641CC6E120786E6B16608EB83949640D /* SMLifecycleHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = F24789566EBE54DE2AE488BBA5AE1B24 /* SMLifecycleHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		66231C0A9A796C13D5F8AE0FACE926D7 /* SMConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E582207796A151F6BFCED0AB19D1A49 /* SMConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		693A8D03A34E64F26B60CE9CFA1BDCB2 /* SendMan.h in Headers */ = {isa = PBXBuildFile; fileRef = 404BB092D5BDA1FF3B72E900731114FD /* SendMan.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6991E324AD034E6A8B3053FD7EC964AF /* SMPropertyValue.h in Headers */ = {isa = PBXBuildFile; fileRef = FBF45391D97544BA329A692B4BC22646 /* SMPropertyValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6ECF413492A3BDBF1DD82346409D2A16 /* JSONModelError.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D29B2E9CE5EBD23CC79F49E76E8E20 /* JSONModelError.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6F6E5DEA402C4388EA06EA8CE6F1C9E5 /* SMSDKEvent.h in Headers */ = {isa = PBXBuildFile; fileRef = 444515AA95563C771AEF95095FC2D889 /* SMSDKEvent.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7741DBFA4045D323B620FC40EF62628F /* SMNotificationsViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 532CF447D42C19A87C59A52EE8584DB3 /* SMNotificationsViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7FAF3343E6BBEF97D9782879934FC145 /* SMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C8226C8098BC1D0943A0CB5395D4E77 /* SMUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		80A7F99350F2FBA475A67472AFC23784 /* SMSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9123A83F18176262E54FFB7447A3C490 /* SMSessionManager.m */; };
+		82B4B6F5CAD11245DF9238DD25A40325 /* SendMan-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 180745F430ADCD59E5F719C8A1A6A5AE /* SendMan-dummy.m */; };
+		8A143708B7B91DF71473AA79237D71A4 /* SMData.h in Headers */ = {isa = PBXBuildFile; fileRef = A82D27A35B1B832B3E8ECB84FAAD222F /* SMData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		92978E6FBCECDBC950AC78FDBA523D9C /* JSONModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 77B81D226FC7301CF0A0FD75B3B47995 /* JSONModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		94B6A06693F0D71570FF7CC525EFA193 /* JSONModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 096992AE76F40F2B949637BB4C9B07E4 /* JSONModel.m */; };
+		99A20D3CE9BCD6BCD5510BEF2A3AEAE0 /* SMCategoriesHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7903066B3226DA4946F4872BA9F6BA4E /* SMCategoriesHandler.m */; };
+		9CC64696000C67F17DEBE5A78C552CF4 /* SMNotificationsHeaderCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 6E7F05F36078A2BA01158633F10425AB /* SMNotificationsHeaderCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A3A729D17EEA3D4F8846B8FEEDE46208 /* SMSDKEvent.m in Sources */ = {isa = PBXBuildFile; fileRef = DC99C96196C409BBDAAA17B743AA1289 /* SMSDKEvent.m */; };
+		A54A5C326E568E16035AB60D423DC299 /* Pods-SendMan2_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 679C0BE75585D31381556C7415A7326B /* Pods-SendMan2_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A995A278EB3E361C5749A2DE792FEF5E /* SMCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = E48F6D87528E53A89BDE203EF2BD9FD5 /* SMCategory.m */; };
+		AFEF2006DAE64579F01CE4025725505F /* JSONKeyMapper.h in Headers */ = {isa = PBXBuildFile; fileRef = C0F0B2C377AF4932C08A0267F6457513 /* JSONKeyMapper.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B73E3C963A566EFFEE7B37E6247EC51C /* SendMan.m in Sources */ = {isa = PBXBuildFile; fileRef = F3F5A4F37AFC396A88CCB7CB17C58C56 /* SendMan.m */; };
+		BA919364DE701716A9A5561D6B0154D8 /* SMNotificationsHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7EB1869DF3005F557B47314DBADAA12 /* SMNotificationsHeaderCell.m */; };
+		BAB5FC1B3E2D72BB21F94CB9C0E4CFBB /* SMCategory.h in Headers */ = {isa = PBXBuildFile; fileRef = C667991EFAEFFF03D4EE33B5825AE6EF /* SMCategory.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BC4EAC8FCD7BA08D47E5BD98807E4F3C /* SMDataCollector.h in Headers */ = {isa = PBXBuildFile; fileRef = 91F1237F213E320545B3108D82DAE32D /* SMDataCollector.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C655894747EBE1E33688F57222099624 /* SMConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = D6BB4995F72D711C3C2E13C65410935E /* SMConfig.m */; };
+		CD6D3FCDB2490FDA809F41418C8C9E0B /* SMData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D86E1BCB29B40F7B82A8E782D9E3A16 /* SMData.m */; };
+		D2176820B9D5658750E5A5B7471CDDE5 /* SMAuthHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A41603AF407BABA2602F6731E31F675 /* SMAuthHandler.m */; };
+		E805FD3204EEC35D7A0D1E14583A2C0D /* SendMan-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EBD396A0E62E9FADA9BD511D80AB50C /* SendMan-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E973CC30122E831A8D7E5C8EEF6AB610 /* SMDataCollector.m in Sources */ = {isa = PBXBuildFile; fileRef = 151AF1ECBE8DC046B7A8AEAC9D99BB76 /* SMDataCollector.m */; };
+		EB2E6930933AC310B861C2EE81E214DE /* SMSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = C77D4185BE190DF06EAE979DAF4C0C18 /* SMSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EB724CD817C830F1AEAC16AACB73CAFB /* SMUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3019526E3158DA28EC92E4228797A8 /* SMUtils.m */; };
+		ED6C7D304C9781186AED4ECE3B3AC6FF /* SMNotificationsFooterCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C724AFE1F94DA469E987D140EFB4A3E /* SMNotificationsFooterCell.m */; };
+		EDE2DA887956889686C9F8DC79916642 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		F4709F44853FA3F030A181668994C62C /* SMNotificationTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EA5FB2831AE790D523EE1ECBE70B08A /* SMNotificationTableViewCell.m */; };
+		F6937101B2608DDA383B5C5860493A39 /* SMLifecycleHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 6806CF21BF8E8315362D8985BCFD1202 /* SMLifecycleHandler.m */; };
+		F98C7961D025A844779257634968D3E9 /* JSONModelClassProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 2AA34F85D9E2C73D1AD3A2188CB98105 /* JSONModelClassProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FAF4E13E6B10B1EB26657173AEA30C97 /* JSONKeyMapper.m in Sources */ = {isa = PBXBuildFile; fileRef = D9AAFB4E97DF0631B0A3103BF8BC73B7 /* JSONKeyMapper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C04477A3ABAF7B1B159EF9066AE907B2 /* PBXContainerItemProxy */ = {
+		029D70B0F85F8D3225539CB8222FBDF4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 8A7C277CFBD2A35035594BE4BCFD6748;
 			remoteInfo = SendMan;
 		};
-		CDA7DD9308672E37951D612B01B17241 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 203DB0988F3D40EC39405CF4910E41DC;
-			remoteInfo = "Pods-SendMan2_Example";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0106C89BE76BD49F971CE0610FE94865 /* SMPropertyValue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SMPropertyValue.h; sourceTree = "<group>"; };
-		083B340C4C4C7D48E58771E4E0F172AD /* SMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SMUtils.h; path = SendMan/Classes/SMUtils.h; sourceTree = "<group>"; };
-		0B179086DA5534F114FD7F8E1C97D60A /* Pods-SendMan_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SendMan_Tests-umbrella.h"; sourceTree = "<group>"; };
-		0BC1E58F754B8E5FA4F6C2C0AB0ED69B /* SMCategoriesHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SMCategoriesHandler.m; path = SendMan/Classes/SMCategoriesHandler.m; sourceTree = "<group>"; };
-		124F432E5D7C3723C3561A09AB2A2F58 /* SMNotificationsFooterCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SMNotificationsFooterCell.h; sourceTree = "<group>"; };
-		124FF151BC8C8E7562F695CF0A812A4B /* SendMan.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SendMan.h; path = SendMan/Classes/SendMan.h; sourceTree = "<group>"; };
-		1D24E1217FB6E36575F021DEA88E50FD /* Pods_SendMan_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SendMan_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D9A51D3799FE5E4831DFD9D95D8D862 /* SMData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMData.m; sourceTree = "<group>"; };
-		1E8C7B449D629B42BB8AC31DCD59425B /* SMData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SMData.h; sourceTree = "<group>"; };
-		28BEB2B324D8345300BE7A2F /* SMCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMCategory.h; sourceTree = "<group>"; };
-		28BEB2B424D8345300BE7A2F /* SMCategory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMCategory.m; sourceTree = "<group>"; };
-		28BEB2B924E192F500BE7A2F /* SMLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SMLog.h; path = SendMan/Classes/SMLog.h; sourceTree = "<group>"; };
-		297AC5E91CEAD44E9283D4732DB62F89 /* SMConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SMConfig.m; path = SendMan/Classes/SMConfig.m; sourceTree = "<group>"; };
-		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		337F7D2C4052E4E34B22197B985EB4B5 /* Pods-SendMan2_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SendMan2_Example.release.xcconfig"; sourceTree = "<group>"; };
-		38CECABCDD7B5E04B1DD68213CA50B8C /* JSONModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JSONModel.m; sourceTree = "<group>"; };
-		3C9422942E5A8252C750DE54108E5416 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		3D184CAC976206BC54F86842F6BDB9C5 /* Pods-SendMan_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SendMan_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		416EF6BEB136060FA23D2E5171D8BBDF /* SMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SMUtils.m; path = SendMan/Classes/SMUtils.m; sourceTree = "<group>"; };
-		46F0FB1F5DAB5B597B2F2183A6852163 /* JSONValueTransformer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
-		4775B7E1599FFD9EEFA7E2353890A3D3 /* Pods-SendMan2_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SendMan2_Example-dummy.m"; sourceTree = "<group>"; };
-		49B71FDEA84866F54B877A701010357D /* JSONModelClassProperty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JSONModelClassProperty.m; sourceTree = "<group>"; };
-		4E6815ACF6AACCDCA74976E61BA79824 /* SMAPIHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SMAPIHandler.m; path = SendMan/Classes/SMAPIHandler.m; sourceTree = "<group>"; };
-		4F2A69996E60B5B28B7E3583D8227109 /* SendMan.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SendMan.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		0201443C29A78B1002A7CCD7418AA896 /* SMNotificationsFooterCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SMNotificationsFooterCell.h; sourceTree = "<group>"; };
+		045267F30443C1D428E844C72F8921B7 /* SMNotificationTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SMNotificationTableViewCell.h; sourceTree = "<group>"; };
+		096992AE76F40F2B949637BB4C9B07E4 /* JSONModel.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JSONModel.m; sourceTree = "<group>"; };
+		0C724AFE1F94DA469E987D140EFB4A3E /* SMNotificationsFooterCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMNotificationsFooterCell.m; sourceTree = "<group>"; };
+		151AF1ECBE8DC046B7A8AEAC9D99BB76 /* SMDataCollector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SMDataCollector.m; path = SendMan/Classes/SMDataCollector.m; sourceTree = "<group>"; };
+		180745F430ADCD59E5F719C8A1A6A5AE /* SendMan-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SendMan-dummy.m"; sourceTree = "<group>"; };
+		1C801B52D3194B8AE64C44072F080405 /* SMLog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SMLog.h; path = SendMan/Classes/SMLog.h; sourceTree = "<group>"; };
+		1D86E1BCB29B40F7B82A8E782D9E3A16 /* SMData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMData.m; sourceTree = "<group>"; };
+		1EA5FB2831AE790D523EE1ECBE70B08A /* SMNotificationTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMNotificationTableViewCell.m; sourceTree = "<group>"; };
+		250C31C47ACCF8503DEC1A492010AC6D /* SendMan.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SendMan.modulemap; sourceTree = "<group>"; };
+		2AA34F85D9E2C73D1AD3A2188CB98105 /* JSONModelClassProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JSONModelClassProperty.h; sourceTree = "<group>"; };
+		3294240F77E957F4F13D888E8076755F /* SMSession.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMSession.m; sourceTree = "<group>"; };
+		3AE5D277CC687485DAD5D509B46F2808 /* SMNotifications.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = SMNotifications.storyboard; sourceTree = "<group>"; };
+		3BDC10C083F0CFBB02CD1BB29578C680 /* SMPropertyValue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMPropertyValue.m; sourceTree = "<group>"; };
+		3C8226C8098BC1D0943A0CB5395D4E77 /* SMUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SMUtils.h; path = SendMan/Classes/SMUtils.h; sourceTree = "<group>"; };
+		404BB092D5BDA1FF3B72E900731114FD /* SendMan.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SendMan.h; path = SendMan/Classes/SendMan.h; sourceTree = "<group>"; };
+		444515AA95563C771AEF95095FC2D889 /* SMSDKEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SMSDKEvent.h; sourceTree = "<group>"; };
 		5076EEDEB9ED223FB2705BC47C06140E /* SendMan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SendMan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		53C8126AC97EF145746000B0199CAEBD /* SMConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SMConfig.h; path = SendMan/Classes/SMConfig.h; sourceTree = "<group>"; };
-		5B27B08820FAB21CB7010E8965847AFB /* SendMan.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SendMan.xcconfig; sourceTree = "<group>"; };
-		5D53E82786A2AC30FEF7F69BB1BE2B19 /* SMSDKEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMSDKEvent.m; sourceTree = "<group>"; };
-		612021B6C62CC6593AE44B032DB8A6B5 /* Pods-SendMan2_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SendMan2_Example-umbrella.h"; sourceTree = "<group>"; };
-		61DEE29669AEDA23DAC1B013755CA2CA /* JSONModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
-		62B4BE5224EEB85E00AE3A14 /* SMSessionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SMSessionManager.h; path = SendMan/Classes/SMSessionManager.h; sourceTree = "<group>"; };
-		62B4BE5324EEB85E00AE3A14 /* SMSessionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = SMSessionManager.m; path = SendMan/Classes/SMSessionManager.m; sourceTree = "<group>"; };
-		6506CB03F97C9888433C8300812D26C5 /* SMDataEnricher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SMDataEnricher.h; path = SendMan/Classes/SMDataEnricher.h; sourceTree = "<group>"; };
-		6949F464F2BC2F3943420746F7CBFA85 /* SendMan.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SendMan.modulemap; sourceTree = "<group>"; };
-		6A2AA82D65BC7B1D99C3B254C922AEB7 /* Pods-SendMan_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SendMan_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		73E102F941A207776A48CF99CF98B9A6 /* SMDataCollector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SMDataCollector.h; path = SendMan/Classes/SMDataCollector.h; sourceTree = "<group>"; };
-		7A59F0D5060E92E9B72A1C23E44DA940 /* SendMan.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SendMan.m; path = SendMan/Classes/SendMan.m; sourceTree = "<group>"; };
-		7F457FAE25933D9339FC0DBDAD9D83A6 /* Pods-SendMan2_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SendMan2_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		7FCD2D7DF0DA69CBC6D157C1E06B8B57 /* SMSession.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMSession.m; sourceTree = "<group>"; };
-		85C6659D96AFC46EB22FF4DA3088519A /* SMLifecycleHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SMLifecycleHandler.h; path = SendMan/Classes/SMLifecycleHandler.h; sourceTree = "<group>"; };
-		86578232F8C8D462A3822D81CE3E2AC6 /* SMDataEnricher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SMDataEnricher.m; path = SendMan/Classes/SMDataEnricher.m; sourceTree = "<group>"; };
-		89A156AF8691E04ABAC3A6675520034A /* JSONModelClassProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JSONModelClassProperty.h; sourceTree = "<group>"; };
-		89DAB6CF9E832E3637B42ACB2A4CC9ED /* SMNotificationTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMNotificationTableViewCell.m; sourceTree = "<group>"; };
-		8B88F789A2C5445B21F4C7DB7F7289A3 /* SMNotificationsHeaderCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMNotificationsHeaderCell.m; sourceTree = "<group>"; };
-		8F87210A600FFF5711DF008145BC0BD4 /* Pods-SendMan2_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SendMan2_Example.modulemap"; sourceTree = "<group>"; };
-		95A01A39F80CFABBED0ED8F13832581C /* SendMan-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SendMan-prefix.pch"; sourceTree = "<group>"; };
-		980D34A2F132E1B3D9CC06BB62AE155A /* SMCategoriesHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SMCategoriesHandler.h; path = SendMan/Classes/SMCategoriesHandler.h; sourceTree = "<group>"; };
-		98B912A6616024B677C744D11C8D6FE8 /* SMNotificationsFooterCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMNotificationsFooterCell.m; sourceTree = "<group>"; };
-		992DB8799E363873A4A99365A0EA4C93 /* Pods-SendMan2_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SendMan2_Example-frameworks.sh"; sourceTree = "<group>"; };
-		9AF6D6DDFAC10B2B40F297260224BA98 /* Pods-SendMan_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SendMan_Tests-dummy.m"; sourceTree = "<group>"; };
-		9B34953A6143AE9C3073460983613219 /* SendMan-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SendMan-umbrella.h"; sourceTree = "<group>"; };
-		9B588429BBB93952D889847A9F84FCAF /* SMNotificationsViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMNotificationsViewController.m; sourceTree = "<group>"; };
+		532CF447D42C19A87C59A52EE8584DB3 /* SMNotificationsViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SMNotificationsViewController.h; sourceTree = "<group>"; };
+		5417A2F2937D484FE7F722A4CCB92915 /* SendMan.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SendMan.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		576EA9AA27FC18AB6FC8CD7B0DB5D644 /* Pods-SendMan2_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SendMan2_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		5C92C29EAD80B7B3AB15A03B912F56F7 /* SendMan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SendMan.release.xcconfig; sourceTree = "<group>"; };
+		63D29B2E9CE5EBD23CC79F49E76E8E20 /* JSONModelError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JSONModelError.h; sourceTree = "<group>"; };
+		679C0BE75585D31381556C7415A7326B /* Pods-SendMan2_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SendMan2_Example-umbrella.h"; sourceTree = "<group>"; };
+		6806CF21BF8E8315362D8985BCFD1202 /* SMLifecycleHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SMLifecycleHandler.m; path = SendMan/Classes/SMLifecycleHandler.m; sourceTree = "<group>"; };
+		6A3019526E3158DA28EC92E4228797A8 /* SMUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SMUtils.m; path = SendMan/Classes/SMUtils.m; sourceTree = "<group>"; };
+		6E7F05F36078A2BA01158633F10425AB /* SMNotificationsHeaderCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SMNotificationsHeaderCell.h; sourceTree = "<group>"; };
+		6EE0CD673D775E2BBC10A72F4A0A1FE7 /* SMNotificationsViewController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMNotificationsViewController.m; sourceTree = "<group>"; };
+		7025C3C70C21F27AD6A1DBC080695902 /* SMCategoriesHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SMCategoriesHandler.h; path = SendMan/Classes/SMCategoriesHandler.h; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		765B652B0001D9AA7B0817F6D05D47BA /* Pods-SendMan2_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SendMan2_Example-Info.plist"; sourceTree = "<group>"; };
+		77B81D226FC7301CF0A0FD75B3B47995 /* JSONModel.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JSONModel.h; sourceTree = "<group>"; };
+		77D756C1A8FEAC4B4398F7591B3C9B6D /* SendMan-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SendMan-prefix.pch"; sourceTree = "<group>"; };
+		7903066B3226DA4946F4872BA9F6BA4E /* SMCategoriesHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SMCategoriesHandler.m; path = SendMan/Classes/SMCategoriesHandler.m; sourceTree = "<group>"; };
+		7A41603AF407BABA2602F6731E31F675 /* SMAuthHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SMAuthHandler.m; path = SendMan/Classes/SMAuthHandler.m; sourceTree = "<group>"; };
+		7D7B262D1E9D5865B9F4D1B578FAC0AE /* SendMan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SendMan.debug.xcconfig; sourceTree = "<group>"; };
+		849886B066053D4FEBDFF55C4B88F47C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		8E582207796A151F6BFCED0AB19D1A49 /* SMConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SMConfig.h; path = SendMan/Classes/SMConfig.h; sourceTree = "<group>"; };
+		8E619B940DCE5A097C67AB07A369911F /* SMDataEnricher.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SMDataEnricher.h; path = SendMan/Classes/SMDataEnricher.h; sourceTree = "<group>"; };
+		8EBD396A0E62E9FADA9BD511D80AB50C /* SendMan-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SendMan-umbrella.h"; sourceTree = "<group>"; };
+		9123A83F18176262E54FFB7447A3C490 /* SMSessionManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SMSessionManager.m; path = SendMan/Classes/SMSessionManager.m; sourceTree = "<group>"; };
+		91F1237F213E320545B3108D82DAE32D /* SMDataCollector.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SMDataCollector.h; path = SendMan/Classes/SMDataCollector.h; sourceTree = "<group>"; };
+		9C13A57B63A6C871C2D6D8BF298272AA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9FF47815BFA80EA2442EA07FCA3CB4DC /* SMNotificationsViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SMNotificationsViewController.h; sourceTree = "<group>"; };
-		A1EBF0AAB2B323F5C6FAF910E632134B /* SMNotificationTableViewCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SMNotificationTableViewCell.h; sourceTree = "<group>"; };
-		A1F36C4B3F56E9090FD07C755F9B0D5B /* Pods-SendMan_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SendMan_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		A4683D0F9C7C834A7F2DFAF332821C2B /* SMNotificationCellDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SMNotificationCellDelegate.h; sourceTree = "<group>"; };
-		A4C34A6898E1C573A51073680941A3C3 /* SendMan-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SendMan-Info.plist"; sourceTree = "<group>"; };
-		A7458C373B014CEDA7DB2796BA80DBEF /* SMPropertyValue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMPropertyValue.m; sourceTree = "<group>"; };
-		AE3E103EA8FAD09A077F5368EBA004E7 /* Pods-SendMan_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SendMan_Tests-Info.plist"; sourceTree = "<group>"; };
-		B1BE781824AF0C4828FFEAB58797FAF8 /* SMAuthHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SMAuthHandler.m; path = SendMan/Classes/SMAuthHandler.m; sourceTree = "<group>"; };
-		B3683AE58B791382FE70CDDE801D5FBF /* SMAuthHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SMAuthHandler.h; path = SendMan/Classes/SMAuthHandler.h; sourceTree = "<group>"; };
-		B40B0B9060E5D12D123446513BD48F22 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		B730A9A81CE409BB5562EA89906B7415 /* Pods-SendMan_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SendMan_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		BD9E5A6A7A1A6A6E8554813CE0ABFF3D /* JSONKeyMapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
-		C1AD1495D5466D27B337935858BF68C2 /* Pods-SendMan2_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SendMan2_Example-Info.plist"; sourceTree = "<group>"; };
-		C2435669B9E901408C47A61D8A057F38 /* JSONModelError.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JSONModelError.h; sourceTree = "<group>"; };
-		C99627546C349C36C89BE28815964B07 /* SMNotificationsHeaderCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SMNotificationsHeaderCell.h; sourceTree = "<group>"; };
-		CE556C7A49F278206542F6856556490A /* JSONValueTransformer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
-		D6D1E7BA82ADD81BC437663535C6677C /* SMAPIHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SMAPIHandler.h; path = SendMan/Classes/SMAPIHandler.h; sourceTree = "<group>"; };
-		DE7BB9CB4DE98DEFB70316024E9EB9D6 /* SMNotifications.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = SMNotifications.storyboard; sourceTree = "<group>"; };
-		E00C27C037CC69532B4D076EAF57942C /* SMLifecycleHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SMLifecycleHandler.m; path = SendMan/Classes/SMLifecycleHandler.m; sourceTree = "<group>"; };
-		E10F14B5132273821A6BCFA8F37DF5A0 /* Pods-SendMan2_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SendMan2_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E4C65B83821E9B50A310A1F7175141B5 /* SMSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SMSession.h; sourceTree = "<group>"; };
-		E53C5E2D974F2895FB63C00B6488A026 /* JSONModelError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JSONModelError.m; sourceTree = "<group>"; };
-		EF5D577B6F834B431CC16EFE14982FFA /* Pods-SendMan_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SendMan_Tests.modulemap"; sourceTree = "<group>"; };
-		F5B4DF2AD4F8D3D9F741D69B73E3DDA9 /* Pods-SendMan2_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SendMan2_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		F6DF961C4B5DB08915FA3EE55041D3FA /* SMDataCollector.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SMDataCollector.m; path = SendMan/Classes/SMDataCollector.m; sourceTree = "<group>"; };
-		F9A58CF8FAEE1CDB114804DA21AD82E6 /* JSONKeyMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JSONKeyMapper.h; sourceTree = "<group>"; };
+		A503E5452E7107D9751AF7FB63DF76B7 /* SMAuthHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SMAuthHandler.h; path = SendMan/Classes/SMAuthHandler.h; sourceTree = "<group>"; };
+		A82D27A35B1B832B3E8ECB84FAAD222F /* SMData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SMData.h; sourceTree = "<group>"; };
+		AE04C68C5012E8E4A0E175306AFEAD40 /* SMAPIHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SMAPIHandler.h; path = SendMan/Classes/SMAPIHandler.h; sourceTree = "<group>"; };
+		AFFED595144BF31A72039A097A1EA997 /* Pods-SendMan2_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SendMan2_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		B345E9415822DD6DA9DE42B7E947EF5A /* Pods-SendMan2_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SendMan2_Example.modulemap"; sourceTree = "<group>"; };
+		B737A7AB7AD226FB2CCC020C84EAC48E /* JSONModelError.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JSONModelError.m; sourceTree = "<group>"; };
+		B86C0EB3FF7B4511529B2F415F84C893 /* Pods-SendMan2_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SendMan2_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		BD88274AB3B62842B3D8ED9B9FD4F012 /* SendMan-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SendMan-Info.plist"; sourceTree = "<group>"; };
+		C0F0B2C377AF4932C08A0267F6457513 /* JSONKeyMapper.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JSONKeyMapper.h; sourceTree = "<group>"; };
+		C6318C1D9C029818BF6BC02815EEA0C5 /* JSONModelClassProperty.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JSONModelClassProperty.m; sourceTree = "<group>"; };
+		C63EFD9F2AFDB37B4F3B1F60A969E2F8 /* Pods-SendMan2_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SendMan2_Example.release.xcconfig"; sourceTree = "<group>"; };
+		C6439120612C252539D833A6EC3810A9 /* SMNotificationCellDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SMNotificationCellDelegate.h; sourceTree = "<group>"; };
+		C667991EFAEFFF03D4EE33B5825AE6EF /* SMCategory.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SMCategory.h; sourceTree = "<group>"; };
+		C77D4185BE190DF06EAE979DAF4C0C18 /* SMSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SMSessionManager.h; path = SendMan/Classes/SMSessionManager.h; sourceTree = "<group>"; };
+		D21AAE2845115FBD69860BCB57BB110E /* JSONValueTransformer.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JSONValueTransformer.h; sourceTree = "<group>"; };
+		D6BB4995F72D711C3C2E13C65410935E /* SMConfig.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SMConfig.m; path = SendMan/Classes/SMConfig.m; sourceTree = "<group>"; };
+		D9AAFB4E97DF0631B0A3103BF8BC73B7 /* JSONKeyMapper.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JSONKeyMapper.m; sourceTree = "<group>"; };
+		DC99C96196C409BBDAAA17B743AA1289 /* SMSDKEvent.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMSDKEvent.m; sourceTree = "<group>"; };
+		E48F6D87528E53A89BDE203EF2BD9FD5 /* SMCategory.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMCategory.m; sourceTree = "<group>"; };
+		E7EB1869DF3005F557B47314DBADAA12 /* SMNotificationsHeaderCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMNotificationsHeaderCell.m; sourceTree = "<group>"; };
+		EC36EF5A92E9076D31A109A2B6312078 /* SMSession.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SMSession.h; sourceTree = "<group>"; };
+		F05D72C93BC78FDF2027712DF5AAC724 /* Pods-SendMan2_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SendMan2_Example-frameworks.sh"; sourceTree = "<group>"; };
+		F24789566EBE54DE2AE488BBA5AE1B24 /* SMLifecycleHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SMLifecycleHandler.h; path = SendMan/Classes/SMLifecycleHandler.h; sourceTree = "<group>"; };
+		F3F5A4F37AFC396A88CCB7CB17C58C56 /* SendMan.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SendMan.m; path = SendMan/Classes/SendMan.m; sourceTree = "<group>"; };
+		F4A6E0E044D278DFFE0424DE0E46047B /* Pods-SendMan2_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SendMan2_Example-dummy.m"; sourceTree = "<group>"; };
+		F977FD0D4FA8A429595CE120BC4B46FB /* SMAPIHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SMAPIHandler.m; path = SendMan/Classes/SMAPIHandler.m; sourceTree = "<group>"; };
+		FBF45391D97544BA329A692B4BC22646 /* SMPropertyValue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SMPropertyValue.h; sourceTree = "<group>"; };
 		FC270BBC20FABA62D31BDB6511580732 /* Pods_SendMan2_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SendMan2_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		FDA9E0A53C9A3F04899EE43A3B999160 /* SMSDKEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SMSDKEvent.h; sourceTree = "<group>"; };
+		FD5DE719F79892440FA9E0C9FDB4137F /* JSONValueTransformer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
+		FE3069AA08793A1ED7A98BB764771462 /* SMDataEnricher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SMDataEnricher.m; path = SendMan/Classes/SMDataEnricher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		941CE822FDF9FB672E949AC7F1BA74F0 /* Frameworks */ = {
+		4B948EA79EAD24EBAAFA1D9CDF997FEA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC29112B98E2BA11AA002B9DD840DC82 /* Foundation.framework in Frameworks */,
+				EDE2DA887956889686C9F8DC79916642 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9E3BF8EE6AE578AF3ABC1E0CD1DCA779 /* Frameworks */ = {
+		75D3D8F057AB46AB42AA6D082AB5DB6F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5111E03216C5627CEE85BB6A4142000B /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A02AA4683C1DA50E0FEC37C7D16315AA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FE2337E75020C03E89CC581AF8A1ACB7 /* Foundation.framework in Frameworks */,
+				611F2ADAEB7CC877D2FC5332FBA87D3A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		058D731AEEF23AE8B70AEDC910A1B499 /* JSONModelTransformations */ = {
+		28FB3C08F1170931F77C4851DF59EC0E /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				F9A58CF8FAEE1CDB114804DA21AD82E6 /* JSONKeyMapper.h */,
-				BD9E5A6A7A1A6A6E8554813CE0ABFF3D /* JSONKeyMapper.m */,
-				CE556C7A49F278206542F6856556490A /* JSONValueTransformer.h */,
-				46F0FB1F5DAB5B597B2F2183A6852163 /* JSONValueTransformer.m */,
-			);
-			path = JSONModelTransformations;
-			sourceTree = "<group>";
-		};
-		1A4F4AFDAC07E5896D0F0FFC2027349F /* Pods-SendMan_Tests */ = {
-			isa = PBXGroup;
-			children = (
-				EF5D577B6F834B431CC16EFE14982FFA /* Pods-SendMan_Tests.modulemap */,
-				3D184CAC976206BC54F86842F6BDB9C5 /* Pods-SendMan_Tests-acknowledgements.markdown */,
-				B730A9A81CE409BB5562EA89906B7415 /* Pods-SendMan_Tests-acknowledgements.plist */,
-				9AF6D6DDFAC10B2B40F297260224BA98 /* Pods-SendMan_Tests-dummy.m */,
-				AE3E103EA8FAD09A077F5368EBA004E7 /* Pods-SendMan_Tests-Info.plist */,
-				0B179086DA5534F114FD7F8E1C97D60A /* Pods-SendMan_Tests-umbrella.h */,
-				6A2AA82D65BC7B1D99C3B254C922AEB7 /* Pods-SendMan_Tests.debug.xcconfig */,
-				A1F36C4B3F56E9090FD07C755F9B0D5B /* Pods-SendMan_Tests.release.xcconfig */,
-			);
-			name = "Pods-SendMan_Tests";
-			path = "Target Support Files/Pods-SendMan_Tests";
-			sourceTree = "<group>";
-		};
-		3AC8EE45E8CC8249BC81B4C5C15E46A8 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				43CB56692E935BEB93851F0C9A2D2AAC /* SendMan */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		43CB56692E935BEB93851F0C9A2D2AAC /* SendMan */ = {
-			isa = PBXGroup;
-			children = (
-				124FF151BC8C8E7562F695CF0A812A4B /* SendMan.h */,
-				7A59F0D5060E92E9B72A1C23E44DA940 /* SendMan.m */,
-				D6D1E7BA82ADD81BC437663535C6677C /* SMAPIHandler.h */,
-				4E6815ACF6AACCDCA74976E61BA79824 /* SMAPIHandler.m */,
-				B3683AE58B791382FE70CDDE801D5FBF /* SMAuthHandler.h */,
-				B1BE781824AF0C4828FFEAB58797FAF8 /* SMAuthHandler.m */,
-				980D34A2F132E1B3D9CC06BB62AE155A /* SMCategoriesHandler.h */,
-				0BC1E58F754B8E5FA4F6C2C0AB0ED69B /* SMCategoriesHandler.m */,
-				53C8126AC97EF145746000B0199CAEBD /* SMConfig.h */,
-				297AC5E91CEAD44E9283D4732DB62F89 /* SMConfig.m */,
-				73E102F941A207776A48CF99CF98B9A6 /* SMDataCollector.h */,
-				F6DF961C4B5DB08915FA3EE55041D3FA /* SMDataCollector.m */,
-				6506CB03F97C9888433C8300812D26C5 /* SMDataEnricher.h */,
-				86578232F8C8D462A3822D81CE3E2AC6 /* SMDataEnricher.m */,
-				85C6659D96AFC46EB22FF4DA3088519A /* SMLifecycleHandler.h */,
-				E00C27C037CC69532B4D076EAF57942C /* SMLifecycleHandler.m */,
-				28BEB2B924E192F500BE7A2F /* SMLog.h */,
-				62B4BE5224EEB85E00AE3A14 /* SMSessionManager.h */,
-				62B4BE5324EEB85E00AE3A14 /* SMSessionManager.m */,
-				083B340C4C4C7D48E58771E4E0F172AD /* SMUtils.h */,
-				416EF6BEB136060FA23D2E5171D8BBDF /* SMUtils.m */,
-				FF7EA10031DF3703968ED399C84FF850 /* JSONModel */,
-				BD89C6DDA6A03A6A6644960A354DBBA9 /* Models */,
-				AB78E16C94B1C96C7D1C5A87E2CB769B /* Pod */,
-				8403C7F26EB77EFCCC53E9F8C529C814 /* Support Files */,
-				DE161E9CFE6AC3B7190554BEC0004A12 /* Views */,
-			);
-			name = SendMan;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		548540AE9742F2A888164B2CFB33029D /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				DB6C110FFECD53BFF59523296236E2BE /* Pods-SendMan2_Example */,
-				1A4F4AFDAC07E5896D0F0FFC2027349F /* Pods-SendMan_Tests */,
+				640AFEF5FDC1A615C2F5AA05A36E3066 /* Pods-SendMan2_Example */,
 			);
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		736E4611284476B8508C69F2F158FCDA /* JSONModel */ = {
+		36E7BA3969B18E90ED8129C1D19971F4 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				61DEE29669AEDA23DAC1B013755CA2CA /* JSONModel.h */,
-				38CECABCDD7B5E04B1DD68213CA50B8C /* JSONModel.m */,
-				89A156AF8691E04ABAC3A6675520034A /* JSONModelClassProperty.h */,
-				49B71FDEA84866F54B877A701010357D /* JSONModelClassProperty.m */,
-				C2435669B9E901408C47A61D8A057F38 /* JSONModelError.h */,
-				E53C5E2D974F2895FB63C00B6488A026 /* JSONModelError.m */,
-			);
-			path = JSONModel;
-			sourceTree = "<group>";
-		};
-		8403C7F26EB77EFCCC53E9F8C529C814 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				6949F464F2BC2F3943420746F7CBFA85 /* SendMan.modulemap */,
-				5B27B08820FAB21CB7010E8965847AFB /* SendMan.xcconfig */,
-				A4C34A6898E1C573A51073680941A3C3 /* SendMan-Info.plist */,
-				95A01A39F80CFABBED0ED8F13832581C /* SendMan-prefix.pch */,
-				9B34953A6143AE9C3073460983613219 /* SendMan-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/SendMan";
-			sourceTree = "<group>";
-		};
-		A8B77CC4AE9E6AE5CFA6920DC4C63079 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				FC270BBC20FABA62D31BDB6511580732 /* Pods_SendMan2_Example.framework */,
-				1D24E1217FB6E36575F021DEA88E50FD /* Pods_SendMan_Tests.framework */,
-				5076EEDEB9ED223FB2705BC47C06140E /* SendMan.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		AB78E16C94B1C96C7D1C5A87E2CB769B /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				3C9422942E5A8252C750DE54108E5416 /* LICENSE */,
-				B40B0B9060E5D12D123446513BD48F22 /* README.md */,
-				4F2A69996E60B5B28B7E3583D8227109 /* SendMan.podspec */,
+				849886B066053D4FEBDFF55C4B88F47C /* LICENSE */,
+				9C13A57B63A6C871C2D6D8BF298272AA /* README.md */,
+				5417A2F2937D484FE7F722A4CCB92915 /* SendMan.podspec */,
 			);
 			name = Pod;
 			sourceTree = "<group>";
 		};
-		BD89C6DDA6A03A6A6644960A354DBBA9 /* Models */ = {
+		3C63C547E412CA43523AF41D3C109DB7 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				1E8C7B449D629B42BB8AC31DCD59425B /* SMData.h */,
-				1D9A51D3799FE5E4831DFD9D95D8D862 /* SMData.m */,
-				0106C89BE76BD49F971CE0610FE94865 /* SMPropertyValue.h */,
-				A7458C373B014CEDA7DB2796BA80DBEF /* SMPropertyValue.m */,
-				FDA9E0A53C9A3F04899EE43A3B999160 /* SMSDKEvent.h */,
-				5D53E82786A2AC30FEF7F69BB1BE2B19 /* SMSDKEvent.m */,
-				E4C65B83821E9B50A310A1F7175141B5 /* SMSession.h */,
-				7FCD2D7DF0DA69CBC6D157C1E06B8B57 /* SMSession.m */,
-				28BEB2B324D8345300BE7A2F /* SMCategory.h */,
-				28BEB2B424D8345300BE7A2F /* SMCategory.m */,
+				F26025AF45311E49B5FE37B9DE050039 /* SendMan */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		5A582621B612B9390A2D216CC13EEF5E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C667991EFAEFFF03D4EE33B5825AE6EF /* SMCategory.h */,
+				E48F6D87528E53A89BDE203EF2BD9FD5 /* SMCategory.m */,
+				A82D27A35B1B832B3E8ECB84FAAD222F /* SMData.h */,
+				1D86E1BCB29B40F7B82A8E782D9E3A16 /* SMData.m */,
+				FBF45391D97544BA329A692B4BC22646 /* SMPropertyValue.h */,
+				3BDC10C083F0CFBB02CD1BB29578C680 /* SMPropertyValue.m */,
+				444515AA95563C771AEF95095FC2D889 /* SMSDKEvent.h */,
+				DC99C96196C409BBDAAA17B743AA1289 /* SMSDKEvent.m */,
+				EC36EF5A92E9076D31A109A2B6312078 /* SMSession.h */,
+				3294240F77E957F4F13D888E8076755F /* SMSession.m */,
 			);
 			name = Models;
 			path = SendMan/Classes/Models;
 			sourceTree = "<group>";
 		};
-		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
+		640AFEF5FDC1A615C2F5AA05A36E3066 /* Pods-SendMan2_Example */ = {
 			isa = PBXGroup;
 			children = (
-				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
+				B345E9415822DD6DA9DE42B7E947EF5A /* Pods-SendMan2_Example.modulemap */,
+				576EA9AA27FC18AB6FC8CD7B0DB5D644 /* Pods-SendMan2_Example-acknowledgements.markdown */,
+				B86C0EB3FF7B4511529B2F415F84C893 /* Pods-SendMan2_Example-acknowledgements.plist */,
+				F4A6E0E044D278DFFE0424DE0E46047B /* Pods-SendMan2_Example-dummy.m */,
+				F05D72C93BC78FDF2027712DF5AAC724 /* Pods-SendMan2_Example-frameworks.sh */,
+				765B652B0001D9AA7B0817F6D05D47BA /* Pods-SendMan2_Example-Info.plist */,
+				679C0BE75585D31381556C7415A7326B /* Pods-SendMan2_Example-umbrella.h */,
+				AFFED595144BF31A72039A097A1EA997 /* Pods-SendMan2_Example.debug.xcconfig */,
+				C63EFD9F2AFDB37B4F3B1F60A969E2F8 /* Pods-SendMan2_Example.release.xcconfig */,
 			);
-			name = iOS;
+			name = "Pods-SendMan2_Example";
+			path = "Target Support Files/Pods-SendMan2_Example";
+			sourceTree = "<group>";
+		};
+		AA46F4592B7189AFC7512DD629BFA679 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C6439120612C252539D833A6EC3810A9 /* SMNotificationCellDelegate.h */,
+				3AE5D277CC687485DAD5D509B46F2808 /* SMNotifications.storyboard */,
+				0201443C29A78B1002A7CCD7418AA896 /* SMNotificationsFooterCell.h */,
+				0C724AFE1F94DA469E987D140EFB4A3E /* SMNotificationsFooterCell.m */,
+				6E7F05F36078A2BA01158633F10425AB /* SMNotificationsHeaderCell.h */,
+				E7EB1869DF3005F557B47314DBADAA12 /* SMNotificationsHeaderCell.m */,
+				532CF447D42C19A87C59A52EE8584DB3 /* SMNotificationsViewController.h */,
+				6EE0CD673D775E2BBC10A72F4A0A1FE7 /* SMNotificationsViewController.m */,
+				045267F30443C1D428E844C72F8921B7 /* SMNotificationTableViewCell.h */,
+				1EA5FB2831AE790D523EE1ECBE70B08A /* SMNotificationTableViewCell.m */,
+			);
+			name = Views;
+			path = SendMan/Classes/Views;
+			sourceTree = "<group>";
+		};
+		BACFAA4E1FD82EAEA1ECB7773149E820 /* JSONModel */ = {
+			isa = PBXGroup;
+			children = (
+				C1481837BD31D22D54B98A7F010D50A4 /* JSONModel */,
+				C44193E5F83A3789FC5CD4E146403EFD /* JSONModelTransformations */,
+			);
+			name = JSONModel;
+			path = SendMan/Classes/JSONModel;
+			sourceTree = "<group>";
+		};
+		C1481837BD31D22D54B98A7F010D50A4 /* JSONModel */ = {
+			isa = PBXGroup;
+			children = (
+				77B81D226FC7301CF0A0FD75B3B47995 /* JSONModel.h */,
+				096992AE76F40F2B949637BB4C9B07E4 /* JSONModel.m */,
+				2AA34F85D9E2C73D1AD3A2188CB98105 /* JSONModelClassProperty.h */,
+				C6318C1D9C029818BF6BC02815EEA0C5 /* JSONModelClassProperty.m */,
+				63D29B2E9CE5EBD23CC79F49E76E8E20 /* JSONModelError.h */,
+				B737A7AB7AD226FB2CCC020C84EAC48E /* JSONModelError.m */,
+			);
+			path = JSONModel;
+			sourceTree = "<group>";
+		};
+		C44193E5F83A3789FC5CD4E146403EFD /* JSONModelTransformations */ = {
+			isa = PBXGroup;
+			children = (
+				C0F0B2C377AF4932C08A0267F6457513 /* JSONKeyMapper.h */,
+				D9AAFB4E97DF0631B0A3103BF8BC73B7 /* JSONKeyMapper.m */,
+				D21AAE2845115FBD69860BCB57BB110E /* JSONValueTransformer.h */,
+				FD5DE719F79892440FA9E0C9FDB4137F /* JSONValueTransformer.m */,
+			);
+			path = JSONModelTransformations;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				3AC8EE45E8CC8249BC81B4C5C15E46A8 /* Development Pods */,
+				3C63C547E412CA43523AF41D3C109DB7 /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				A8B77CC4AE9E6AE5CFA6920DC4C63079 /* Products */,
-				548540AE9742F2A888164B2CFB33029D /* Targets Support Files */,
+				E60110788D85EE059853A5E2D603308A /* Products */,
+				28FB3C08F1170931F77C4851DF59EC0E /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
 		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DB6C110FFECD53BFF59523296236E2BE /* Pods-SendMan2_Example */ = {
+		E60110788D85EE059853A5E2D603308A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8F87210A600FFF5711DF008145BC0BD4 /* Pods-SendMan2_Example.modulemap */,
-				E10F14B5132273821A6BCFA8F37DF5A0 /* Pods-SendMan2_Example-acknowledgements.markdown */,
-				F5B4DF2AD4F8D3D9F741D69B73E3DDA9 /* Pods-SendMan2_Example-acknowledgements.plist */,
-				4775B7E1599FFD9EEFA7E2353890A3D3 /* Pods-SendMan2_Example-dummy.m */,
-				992DB8799E363873A4A99365A0EA4C93 /* Pods-SendMan2_Example-frameworks.sh */,
-				C1AD1495D5466D27B337935858BF68C2 /* Pods-SendMan2_Example-Info.plist */,
-				612021B6C62CC6593AE44B032DB8A6B5 /* Pods-SendMan2_Example-umbrella.h */,
-				7F457FAE25933D9339FC0DBDAD9D83A6 /* Pods-SendMan2_Example.debug.xcconfig */,
-				337F7D2C4052E4E34B22197B985EB4B5 /* Pods-SendMan2_Example.release.xcconfig */,
+				FC270BBC20FABA62D31BDB6511580732 /* Pods_SendMan2_Example.framework */,
+				5076EEDEB9ED223FB2705BC47C06140E /* SendMan.framework */,
 			);
-			name = "Pods-SendMan2_Example";
-			path = "Target Support Files/Pods-SendMan2_Example";
+			name = Products;
 			sourceTree = "<group>";
 		};
-		DE161E9CFE6AC3B7190554BEC0004A12 /* Views */ = {
+		E70C65609944A85FB0C97EB1E7B39828 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				A4683D0F9C7C834A7F2DFAF332821C2B /* SMNotificationCellDelegate.h */,
-				DE7BB9CB4DE98DEFB70316024E9EB9D6 /* SMNotifications.storyboard */,
-				124F432E5D7C3723C3561A09AB2A2F58 /* SMNotificationsFooterCell.h */,
-				98B912A6616024B677C744D11C8D6FE8 /* SMNotificationsFooterCell.m */,
-				C99627546C349C36C89BE28815964B07 /* SMNotificationsHeaderCell.h */,
-				8B88F789A2C5445B21F4C7DB7F7289A3 /* SMNotificationsHeaderCell.m */,
-				9FF47815BFA80EA2442EA07FCA3CB4DC /* SMNotificationsViewController.h */,
-				9B588429BBB93952D889847A9F84FCAF /* SMNotificationsViewController.m */,
-				A1EBF0AAB2B323F5C6FAF910E632134B /* SMNotificationTableViewCell.h */,
-				89DAB6CF9E832E3637B42ACB2A4CC9ED /* SMNotificationTableViewCell.m */,
+				250C31C47ACCF8503DEC1A492010AC6D /* SendMan.modulemap */,
+				180745F430ADCD59E5F719C8A1A6A5AE /* SendMan-dummy.m */,
+				BD88274AB3B62842B3D8ED9B9FD4F012 /* SendMan-Info.plist */,
+				77D756C1A8FEAC4B4398F7591B3C9B6D /* SendMan-prefix.pch */,
+				8EBD396A0E62E9FADA9BD511D80AB50C /* SendMan-umbrella.h */,
+				7D7B262D1E9D5865B9F4D1B578FAC0AE /* SendMan.debug.xcconfig */,
+				5C92C29EAD80B7B3AB15A03B912F56F7 /* SendMan.release.xcconfig */,
 			);
-			name = Views;
-			path = SendMan/Classes/Views;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/SendMan";
 			sourceTree = "<group>";
 		};
-		FF7EA10031DF3703968ED399C84FF850 /* JSONModel */ = {
+		F26025AF45311E49B5FE37B9DE050039 /* SendMan */ = {
 			isa = PBXGroup;
 			children = (
-				736E4611284476B8508C69F2F158FCDA /* JSONModel */,
-				058D731AEEF23AE8B70AEDC910A1B499 /* JSONModelTransformations */,
+				404BB092D5BDA1FF3B72E900731114FD /* SendMan.h */,
+				F3F5A4F37AFC396A88CCB7CB17C58C56 /* SendMan.m */,
+				AE04C68C5012E8E4A0E175306AFEAD40 /* SMAPIHandler.h */,
+				F977FD0D4FA8A429595CE120BC4B46FB /* SMAPIHandler.m */,
+				A503E5452E7107D9751AF7FB63DF76B7 /* SMAuthHandler.h */,
+				7A41603AF407BABA2602F6731E31F675 /* SMAuthHandler.m */,
+				7025C3C70C21F27AD6A1DBC080695902 /* SMCategoriesHandler.h */,
+				7903066B3226DA4946F4872BA9F6BA4E /* SMCategoriesHandler.m */,
+				8E582207796A151F6BFCED0AB19D1A49 /* SMConfig.h */,
+				D6BB4995F72D711C3C2E13C65410935E /* SMConfig.m */,
+				91F1237F213E320545B3108D82DAE32D /* SMDataCollector.h */,
+				151AF1ECBE8DC046B7A8AEAC9D99BB76 /* SMDataCollector.m */,
+				8E619B940DCE5A097C67AB07A369911F /* SMDataEnricher.h */,
+				FE3069AA08793A1ED7A98BB764771462 /* SMDataEnricher.m */,
+				F24789566EBE54DE2AE488BBA5AE1B24 /* SMLifecycleHandler.h */,
+				6806CF21BF8E8315362D8985BCFD1202 /* SMLifecycleHandler.m */,
+				1C801B52D3194B8AE64C44072F080405 /* SMLog.h */,
+				C77D4185BE190DF06EAE979DAF4C0C18 /* SMSessionManager.h */,
+				9123A83F18176262E54FFB7447A3C490 /* SMSessionManager.m */,
+				3C8226C8098BC1D0943A0CB5395D4E77 /* SMUtils.h */,
+				6A3019526E3158DA28EC92E4228797A8 /* SMUtils.m */,
+				BACFAA4E1FD82EAEA1ECB7773149E820 /* JSONModel */,
+				5A582621B612B9390A2D216CC13EEF5E /* Models */,
+				36E7BA3969B18E90ED8129C1D19971F4 /* Pod */,
+				E70C65609944A85FB0C97EB1E7B39828 /* Support Files */,
+				AA46F4592B7189AFC7512DD629BFA679 /* Views */,
 			);
-			name = JSONModel;
-			path = SendMan/Classes/JSONModel;
+			name = SendMan;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		BDD558A55FC2FA74D7F1940E1531CD52 /* Headers */ = {
+		06967CB8B4E71697BF78291D2B3CFA8F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14D9A9AE3114C5A53A951989EDBA552A /* Pods-SendMan_Tests-umbrella.h in Headers */,
+				AFEF2006DAE64579F01CE4025725505F /* JSONKeyMapper.h in Headers */,
+				92978E6FBCECDBC950AC78FDBA523D9C /* JSONModel.h in Headers */,
+				F98C7961D025A844779257634968D3E9 /* JSONModelClassProperty.h in Headers */,
+				6ECF413492A3BDBF1DD82346409D2A16 /* JSONModelError.h in Headers */,
+				0C5F60D78FE88B3153AFA0B5FFECA2A9 /* JSONValueTransformer.h in Headers */,
+				E805FD3204EEC35D7A0D1E14583A2C0D /* SendMan-umbrella.h in Headers */,
+				693A8D03A34E64F26B60CE9CFA1BDCB2 /* SendMan.h in Headers */,
+				0DD5C79232959FF6D9CC2E8FE2CAB5F9 /* SMAPIHandler.h in Headers */,
+				2541670A359723B4D3ABDB89D6AAE1D1 /* SMAuthHandler.h in Headers */,
+				23CC388D2FDDEC581B2D3CCB91CDDFEF /* SMCategoriesHandler.h in Headers */,
+				BAB5FC1B3E2D72BB21F94CB9C0E4CFBB /* SMCategory.h in Headers */,
+				66231C0A9A796C13D5F8AE0FACE926D7 /* SMConfig.h in Headers */,
+				8A143708B7B91DF71473AA79237D71A4 /* SMData.h in Headers */,
+				BC4EAC8FCD7BA08D47E5BD98807E4F3C /* SMDataCollector.h in Headers */,
+				0281CA5D7DB900BDE200F2C33E3331F7 /* SMDataEnricher.h in Headers */,
+				641CC6E120786E6B16608EB83949640D /* SMLifecycleHandler.h in Headers */,
+				319CD2CD7EA38AACB44ED43B5FC72F5C /* SMLog.h in Headers */,
+				5112B82200BD443E0593B9C0ECE457BC /* SMNotificationCellDelegate.h in Headers */,
+				27B551AB340E02E6F5EC839DD13A5F7F /* SMNotificationsFooterCell.h in Headers */,
+				9CC64696000C67F17DEBE5A78C552CF4 /* SMNotificationsHeaderCell.h in Headers */,
+				7741DBFA4045D323B620FC40EF62628F /* SMNotificationsViewController.h in Headers */,
+				2F92E10BAE18C6D5B7B6355A9F07FD95 /* SMNotificationTableViewCell.h in Headers */,
+				6991E324AD034E6A8B3053FD7EC964AF /* SMPropertyValue.h in Headers */,
+				6F6E5DEA402C4388EA06EA8CE6F1C9E5 /* SMSDKEvent.h in Headers */,
+				4B1034EA0F530B3AA4600A14258B5E7C /* SMSession.h in Headers */,
+				EB2E6930933AC310B861C2EE81E214DE /* SMSessionManager.h in Headers */,
+				7FAF3343E6BBEF97D9782879934FC145 /* SMUtils.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		D1BB36E5B42E7556B9E1836168956068 /* Headers */ = {
+		0A0C7963222409F58EA09D7674F4E8B2 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4DC65AC98E02DD7A46638AA76609CC74 /* JSONKeyMapper.h in Headers */,
-				7EE33FC20DDF635171A5FED353D1B773 /* JSONModel.h in Headers */,
-				81BCC5E87181A012B9A16E59857F5031 /* JSONModelClassProperty.h in Headers */,
-				62DB41D6CA6C1B0FF0A65821D4378292 /* JSONModelError.h in Headers */,
-				4FB7950963467834F2F944A539865D62 /* JSONValueTransformer.h in Headers */,
-				A45D72997F90EA6052BCC3C5CA572318 /* SendMan-umbrella.h in Headers */,
-				B624B34BF945BC21860C8C1AE08E2E9C /* SendMan.h in Headers */,
-				524AFD31EC854052D9FD22D256EAFE78 /* SMAPIHandler.h in Headers */,
-				D30582FB2662E2C32E140D4B3A3287C3 /* SMAuthHandler.h in Headers */,
-				CA4800434B3DA14935A7A5F96DACCA77 /* SMCategoriesHandler.h in Headers */,
-				E82BB78CCEB7BCA0750DE365471C821D /* SMConfig.h in Headers */,
-				00C79DCD3F9BAA7A76E53918B4B4E8F9 /* SMData.h in Headers */,
-				62B4BE5424EEB85E00AE3A14 /* SMSessionManager.h in Headers */,
-				781C04C56DDACBF426458F94064DFFD9 /* SMDataCollector.h in Headers */,
-				4BB8CE05198345F978D6106107D52831 /* SMDataEnricher.h in Headers */,
-				F701F61F0AB537D8D54E6F3478E46D75 /* SMLifecycleHandler.h in Headers */,
-				F2B0BCAF2648193C76015B26B13DC8B2 /* SMNotificationCellDelegate.h in Headers */,
-				921FD8AF39A319DD23E825F7C0B2C1F7 /* SMNotificationsFooterCell.h in Headers */,
-				28BEB2B824D83AED00BE7A2F /* SMCategory.h in Headers */,
-				0EEEA3E2850CB4A4A954BFF7A7FB9EBD /* SMNotificationsHeaderCell.h in Headers */,
-				BF4A56E416094738C16E44DD1622CA18 /* SMNotificationsViewController.h in Headers */,
-				F521354062B3A664C33075F3725A223E /* SMNotificationTableViewCell.h in Headers */,
-				0D7C9FB14A7C0219F0A59C8E5729F3E6 /* SMPropertyValue.h in Headers */,
-				7EA7CA1317ECD882201877DE4FB07BF4 /* SMSDKEvent.h in Headers */,
-				B0A44600F105ADFBBA83C0080B029A1E /* SMSession.h in Headers */,
-				B80022EE5FBF8E2A82CB1FF055037609 /* SMUtils.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DFF7A128C135A3271FB8B61FF2E7AA27 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				70934C3329CEE0661ED8C1CF8936D753 /* Pods-SendMan2_Example-umbrella.h in Headers */,
-				28BEB2BA24E192F500BE7A2F /* SMLog.h in Headers */,
+				A54A5C326E568E16035AB60D423DC299 /* Pods-SendMan2_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,17 +421,17 @@
 /* Begin PBXNativeTarget section */
 		203DB0988F3D40EC39405CF4910E41DC /* Pods-SendMan2_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FFA254EA17629C2F90C5C2B5C2E1DBA0 /* Build configuration list for PBXNativeTarget "Pods-SendMan2_Example" */;
+			buildConfigurationList = DF79AEE0D03C6C8051857F5164AD1E9F /* Build configuration list for PBXNativeTarget "Pods-SendMan2_Example" */;
 			buildPhases = (
-				DFF7A128C135A3271FB8B61FF2E7AA27 /* Headers */,
-				A64A84525D86920D2B543DB9791F5422 /* Sources */,
-				9E3BF8EE6AE578AF3ABC1E0CD1DCA779 /* Frameworks */,
-				64051270B31D57BE7EAF1ED977C749F1 /* Resources */,
+				0A0C7963222409F58EA09D7674F4E8B2 /* Headers */,
+				E9977E0D5640415EB9BB35D24625131C /* Sources */,
+				75D3D8F057AB46AB42AA6D082AB5DB6F /* Frameworks */,
+				E9757B981ED85EAC5F329CF9D6232130 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				6CEFEA6A55313C2CE19CB64B8021D74D /* PBXTargetDependency */,
+				22F35701591D473BBD9710AEAD800C86 /* PBXTargetDependency */,
 			);
 			name = "Pods-SendMan2_Example";
 			productName = "Pods-SendMan2_Example";
@@ -488,12 +440,12 @@
 		};
 		8A7C277CFBD2A35035594BE4BCFD6748 /* SendMan */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1BB65E13254BE2576964E531D7D77578 /* Build configuration list for PBXNativeTarget "SendMan" */;
+			buildConfigurationList = 1705301D119C6876FB8A6473AB89432D /* Build configuration list for PBXNativeTarget "SendMan" */;
 			buildPhases = (
-				D1BB36E5B42E7556B9E1836168956068 /* Headers */,
-				ED109A7A250DB6217923B5B4B441CFAF /* Sources */,
-				A02AA4683C1DA50E0FEC37C7D16315AA /* Frameworks */,
-				B173F4E64AC32E011476A178F8F6DCA1 /* Resources */,
+				06967CB8B4E71697BF78291D2B3CFA8F /* Headers */,
+				F775BDCE19D17533EEC97BFAD024F36D /* Sources */,
+				4B948EA79EAD24EBAAFA1D9CDF997FEA /* Frameworks */,
+				7290F8523A5996EB41C321BAE12D8E1F /* Resources */,
 			);
 			buildRules = (
 			);
@@ -502,25 +454,6 @@
 			name = SendMan;
 			productName = SendMan;
 			productReference = 5076EEDEB9ED223FB2705BC47C06140E /* SendMan.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		B56FDCDAFD8FF7298A88654956B45385 /* Pods-SendMan_Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 2AE4EA19636EB0DBB5994CB5AFD13809 /* Build configuration list for PBXNativeTarget "Pods-SendMan_Tests" */;
-			buildPhases = (
-				BDD558A55FC2FA74D7F1940E1531CD52 /* Headers */,
-				DAFB1C4D9346C5273CA789B00E131A1C /* Sources */,
-				941CE822FDF9FB672E949AC7F1BA74F0 /* Frameworks */,
-				AE07F3194139ACC78FB00202969FBAB9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				35A03CB3075639A8A5189D9C5FD5F506 /* PBXTargetDependency */,
-			);
-			name = "Pods-SendMan_Tests";
-			productName = "Pods-SendMan_Tests";
-			productReference = 1D24E1217FB6E36575F021DEA88E50FD /* Pods_SendMan_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -541,33 +474,25 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = A8B77CC4AE9E6AE5CFA6920DC4C63079 /* Products */;
+			productRefGroup = E60110788D85EE059853A5E2D603308A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				203DB0988F3D40EC39405CF4910E41DC /* Pods-SendMan2_Example */,
-				B56FDCDAFD8FF7298A88654956B45385 /* Pods-SendMan_Tests */,
 				8A7C277CFBD2A35035594BE4BCFD6748 /* SendMan */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		64051270B31D57BE7EAF1ED977C749F1 /* Resources */ = {
+		7290F8523A5996EB41C321BAE12D8E1F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AE07F3194139ACC78FB00202969FBAB9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B173F4E64AC32E011476A178F8F6DCA1 /* Resources */ = {
+		E9757B981ED85EAC5F329CF9D6232130 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -577,79 +502,65 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		A64A84525D86920D2B543DB9791F5422 /* Sources */ = {
+		E9977E0D5640415EB9BB35D24625131C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E228D4998E1D6A9058D67BD247B24B40 /* Pods-SendMan2_Example-dummy.m in Sources */,
+				00B817B857BE5484C27FAFDB3C454584 /* Pods-SendMan2_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DAFB1C4D9346C5273CA789B00E131A1C /* Sources */ = {
+		F775BDCE19D17533EEC97BFAD024F36D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6BD0CC41EC782D5638A5D996240926B7 /* Pods-SendMan_Tests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		ED109A7A250DB6217923B5B4B441CFAF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0F09A383D5CC9A7277BC326059E08C8D /* JSONKeyMapper.m in Sources */,
-				A71A43FFAFF57E424A3CF9A915BE23DE /* JSONModel.m in Sources */,
-				15AF755B8C1737D7A8982762884BE8DB /* JSONModelClassProperty.m in Sources */,
-				B31F38B599AF67DFE0700F24EEE28FA8 /* JSONModelError.m in Sources */,
-				575346C3CF1C149D99C423DDBD91DA87 /* JSONValueTransformer.m in Sources */,
-				830897252ADF4D3F819C3BB986B3796D /* SendMan.m in Sources */,
-				3940325BF46C80F60973474F585979B2 /* SMAPIHandler.m in Sources */,
-				628C3CFA19F8D42AFF0CB27DE001B207 /* SMAuthHandler.m in Sources */,
-				B650BCB6268568D68B096212004C6855 /* SMCategoriesHandler.m in Sources */,
-				235AC4D532344BED094D3D11BC1B95DC /* SMConfig.m in Sources */,
-				F7F1D618C327AAC3247477D590BAB91D /* SMData.m in Sources */,
-				A7589ECDC4254B9B1787E09848BEDD4F /* SMDataCollector.m in Sources */,
-				AC8425A1FF5896D17FA7B61AE0DB2496 /* SMDataEnricher.m in Sources */,
-				6872E8404F1EADE981B9111EAC67819E /* SMLifecycleHandler.m in Sources */,
-				96C93363728E6B30C5BCA3B8F9B2D32B /* SMNotifications.storyboard in Sources */,
-				022787897A47310B25A1F0D58DAB743E /* SMNotificationsFooterCell.m in Sources */,
-				6EF86C741FB8DA85FC6EB03CE324295A /* SMNotificationsHeaderCell.m in Sources */,
-				A60A001E59A81B5685B4706E4F90E643 /* SMNotificationsViewController.m in Sources */,
-				28BEB2B724D83AEA00BE7A2F /* SMCategory.m in Sources */,
-				251BD9DD9BB9FD0D2EC22A15DE8AE083 /* SMNotificationTableViewCell.m in Sources */,
-				7F0EA95E38A9A3A6CFF8501EB57434A3 /* SMPropertyValue.m in Sources */,
-				FB50BBC88EE5C04AEB857C0FB6B11A1A /* SMSDKEvent.m in Sources */,
-				F48E51B457866E635F72DD9F45577ADF /* SMSession.m in Sources */,
-				62B4BE5524EEB85E00AE3A14 /* SMSessionManager.m in Sources */,
-				1D4FD4C39093D1EFC4304FBC14FF16B7 /* SMUtils.m in Sources */,
+				FAF4E13E6B10B1EB26657173AEA30C97 /* JSONKeyMapper.m in Sources */,
+				94B6A06693F0D71570FF7CC525EFA193 /* JSONModel.m in Sources */,
+				05251149E2D41312B5D001CC06C8A2CF /* JSONModelClassProperty.m in Sources */,
+				0146F14B7551D099F41C297891610330 /* JSONModelError.m in Sources */,
+				024598FE0C6D4391E70170869E999D01 /* JSONValueTransformer.m in Sources */,
+				82B4B6F5CAD11245DF9238DD25A40325 /* SendMan-dummy.m in Sources */,
+				B73E3C963A566EFFEE7B37E6247EC51C /* SendMan.m in Sources */,
+				26908AA000178FA55377C4A7713CC114 /* SMAPIHandler.m in Sources */,
+				D2176820B9D5658750E5A5B7471CDDE5 /* SMAuthHandler.m in Sources */,
+				99A20D3CE9BCD6BCD5510BEF2A3AEAE0 /* SMCategoriesHandler.m in Sources */,
+				A995A278EB3E361C5749A2DE792FEF5E /* SMCategory.m in Sources */,
+				C655894747EBE1E33688F57222099624 /* SMConfig.m in Sources */,
+				CD6D3FCDB2490FDA809F41418C8C9E0B /* SMData.m in Sources */,
+				E973CC30122E831A8D7E5C8EEF6AB610 /* SMDataCollector.m in Sources */,
+				1EB8CB5D45F69A97C3CE25D34EFA613F /* SMDataEnricher.m in Sources */,
+				F6937101B2608DDA383B5C5860493A39 /* SMLifecycleHandler.m in Sources */,
+				2DCB2044CA974E6EE6CEE71EB6F1ADF5 /* SMNotifications.storyboard in Sources */,
+				ED6C7D304C9781186AED4ECE3B3AC6FF /* SMNotificationsFooterCell.m in Sources */,
+				BA919364DE701716A9A5561D6B0154D8 /* SMNotificationsHeaderCell.m in Sources */,
+				46E47506D7987ECE19E3E09A8E7F46EB /* SMNotificationsViewController.m in Sources */,
+				F4709F44853FA3F030A181668994C62C /* SMNotificationTableViewCell.m in Sources */,
+				171C78D42D87C9370CC5DE2D009AE6F1 /* SMPropertyValue.m in Sources */,
+				A3A729D17EEA3D4F8846B8FEEDE46208 /* SMSDKEvent.m in Sources */,
+				4722505EF6CF0228632BB1F24BFC3753 /* SMSession.m in Sources */,
+				80A7F99350F2FBA475A67472AFC23784 /* SMSessionManager.m in Sources */,
+				EB724CD817C830F1AEAC16AACB73CAFB /* SMUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		35A03CB3075639A8A5189D9C5FD5F506 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-SendMan2_Example";
-			target = 203DB0988F3D40EC39405CF4910E41DC /* Pods-SendMan2_Example */;
-			targetProxy = CDA7DD9308672E37951D612B01B17241 /* PBXContainerItemProxy */;
-		};
-		6CEFEA6A55313C2CE19CB64B8021D74D /* PBXTargetDependency */ = {
+		22F35701591D473BBD9710AEAD800C86 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SendMan;
 			target = 8A7C277CFBD2A35035594BE4BCFD6748 /* SendMan */;
-			targetProxy = C04477A3ABAF7B1B159EF9066AE907B2 /* PBXContainerItemProxy */;
+			targetProxy = 029D70B0F85F8D3225539CB8222FBDF4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		02640EB7393489D4E26E73F1744AB005 /* Debug */ = {
+		179F53D1FDFFC68614EE97DBCAA5B0BF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6A2AA82D65BC7B1D99C3B254C922AEB7 /* Pods-SendMan_Tests.debug.xcconfig */;
+			baseConfigurationReference = AFFED595144BF31A72039A097A1EA997 /* Pods-SendMan2_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -658,12 +569,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SendMan_Tests/Pods-SendMan_Tests-Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-SendMan2_Example/Pods-SendMan2_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SendMan_Tests/Pods-SendMan_Tests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-SendMan2_Example/Pods-SendMan2_Example.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -677,7 +588,7 @@
 			};
 			name = Debug;
 		};
-		196DFA3E4A09A28224918543529A1885 /* Debug */ = {
+		97C3C8A5E885AE355D9CC0F2A10ED20C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -729,7 +640,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -742,142 +653,7 @@
 			};
 			name = Debug;
 		};
-		1F5F5BDBD782B95B1616787F0FB940CF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A1F36C4B3F56E9090FD07C755F9B0D5B /* Pods-SendMan_Tests.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SendMan_Tests/Pods-SendMan_Tests-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SendMan_Tests/Pods-SendMan_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		34C33B4638F7B123EA3F165409EE7C1F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 337F7D2C4052E4E34B22197B985EB4B5 /* Pods-SendMan2_Example.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-SendMan2_Example/Pods-SendMan2_Example-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-SendMan2_Example/Pods-SendMan2_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		3D8CE416BF2F3373CDFBC9695EC26096 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B27B08820FAB21CB7010E8965847AFB /* SendMan.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SendMan/SendMan-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SendMan/SendMan-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SendMan/SendMan.modulemap";
-				PRODUCT_MODULE_NAME = SendMan;
-				PRODUCT_NAME = SendMan;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		8169712BB37612FBDD5FA3B5A651AB2A /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B27B08820FAB21CB7010E8965847AFB /* SendMan.xcconfig */;
-			buildSettings = {
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SendMan/SendMan-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SendMan/SendMan-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SendMan/SendMan.modulemap";
-				PRODUCT_MODULE_NAME = SendMan;
-				PRODUCT_NAME = SendMan;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */ = {
+		9DFA7D08415265C89B4959C7F4554A76 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -926,7 +702,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -937,13 +713,12 @@
 			};
 			name = Release;
 		};
-		C909486F4FDE305369993DB9A67E835A /* Debug */ = {
+		A7119BE7B8EC00FC3DEC61241AA10B27 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7F457FAE25933D9339FC0DBDAD9D83A6 /* Pods-SendMan2_Example.debug.xcconfig */;
+			baseConfigurationReference = C63EFD9F2AFDB37B4F3B1F60A969E2F8 /* Pods-SendMan2_Example.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -954,7 +729,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = "Target Support Files/Pods-SendMan2_Example/Pods-SendMan2_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-SendMan2_Example/Pods-SendMan2_Example.modulemap";
@@ -966,28 +741,83 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D7646A49F0F92CDA4722609D12D23112 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D7B262D1E9D5865B9F4D1B578FAC0AE /* SendMan.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SendMan/SendMan-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SendMan/SendMan-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SendMan/SendMan.modulemap";
+				PRODUCT_MODULE_NAME = SendMan;
+				PRODUCT_NAME = SendMan;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
+		F0F0550C8A8666F2276AC0DC9501DDA5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C92C29EAD80B7B3AB15A03B912F56F7 /* SendMan.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SendMan/SendMan-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SendMan/SendMan-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SendMan/SendMan.modulemap";
+				PRODUCT_MODULE_NAME = SendMan;
+				PRODUCT_NAME = SendMan;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1BB65E13254BE2576964E531D7D77578 /* Build configuration list for PBXNativeTarget "SendMan" */ = {
+		1705301D119C6876FB8A6473AB89432D /* Build configuration list for PBXNativeTarget "SendMan" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8169712BB37612FBDD5FA3B5A651AB2A /* Debug */,
-				3D8CE416BF2F3373CDFBC9695EC26096 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		2AE4EA19636EB0DBB5994CB5AFD13809 /* Build configuration list for PBXNativeTarget "Pods-SendMan_Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				02640EB7393489D4E26E73F1744AB005 /* Debug */,
-				1F5F5BDBD782B95B1616787F0FB940CF /* Release */,
+				D7646A49F0F92CDA4722609D12D23112 /* Debug */,
+				F0F0550C8A8666F2276AC0DC9501DDA5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -995,17 +825,17 @@
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				196DFA3E4A09A28224918543529A1885 /* Debug */,
-				B01D14FDC83DCF9D4BE53066BEA96D05 /* Release */,
+				97C3C8A5E885AE355D9CC0F2A10ED20C /* Debug */,
+				9DFA7D08415265C89B4959C7F4554A76 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FFA254EA17629C2F90C5C2B5C2E1DBA0 /* Build configuration list for PBXNativeTarget "Pods-SendMan2_Example" */ = {
+		DF79AEE0D03C6C8051857F5164AD1E9F /* Build configuration list for PBXNativeTarget "Pods-SendMan2_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C909486F4FDE305369993DB9A67E835A /* Debug */,
-				34C33B4638F7B123EA3F165409EE7C1F /* Release */,
+				179F53D1FDFFC68614EE97DBCAA5B0BF /* Debug */,
+				A7119BE7B8EC00FC3DEC61241AA10B27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

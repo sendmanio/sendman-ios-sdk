@@ -1,28 +1,6 @@
 framework module SendMan {
   umbrella header "SendMan-umbrella.h"
-    
-      explicit module Private {
-          private header "SMSession.h"
-          private header "SMNotificationTableViewCell.h"
-          private header "SMNotificationCellDelegate.h"
-          private header "SMNotificationsFooterCell.h"
-          private header "SMNotificationsHeaderCell.h"
-          private header "SMUtils.h"
-          private header "SMDataCollector.h"
-          private header "SMDataEnricher.h"
-          private header "SMLifecycleHandler.h"
-          private header "SMAPIHandler.h"
-          private header "SMAuthHandler.h"
-          private header "SMCategoriesHandler.h"
-          private header "JSONModel.h"
-          private header "JSONModelClassProperty.h"
-          private header "JSONModelError.h"
-          private header "JSONKeyMapper.h"
-          private header "JSONValueTransformer.h"
-          private header "SMData.h"
-          private header "SMPropertyValue.h"
-          private header "SMSDKEvent.h"
-          private header "SMCategory.h"
-      }
-  
+
+  export *
+  module * { export * }
 }
