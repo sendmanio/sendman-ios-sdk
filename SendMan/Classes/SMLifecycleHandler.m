@@ -114,7 +114,7 @@
 
 - (void)applicationDidFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *)launchOptions {
     NSDictionary *pushNotification = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
-    if (pushNotification) {
+    if ([self shouldHandleNotification:pushNotification]) {
         [self didOpenNotification:pushNotification[@"smTemplateId"] forActivity:pushNotification[@"smActivityId"] atState:-1 withOnSuccess:^{
             [self didOpenApp];
         }];
@@ -144,8 +144,15 @@
     [SMDataCollector addSdkEvent:event];
 }
 
+- (BOOL)shouldHandleNotification:(NSDictionary *)userInfo {
+    if (userInfo && userInfo[@"smTemplateId"] && userInfo[@"smActivityId"]) return YES;
+
+    SENDMAN_LOG(@"Discarding notification since it did not originate from SendMan.");
+    return NO;
+}
+
 - (void)applicationDidReceiveRemoteNotificationWithInfo:(NSDictionary *)userInfo {
-    if (userInfo) {
+    if ([self shouldHandleNotification:userInfo]) {
         [self didOpenNotification:userInfo[@"smTemplateId"] forActivity:userInfo[@"smActivityId"] atState:[[UIApplication sharedApplication] applicationState]];
     }
 }
