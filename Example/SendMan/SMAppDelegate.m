@@ -52,12 +52,6 @@
     [SendMan applicationDidFailToRegisterForRemoteNotificationsWithError:error];
 }
 
-- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult result))completionHandler {
-    NSLog(@"didReceiveRemoteNotification with completionHandler called in state %@ with userInfo: %@", [SMAppDelegate applicationState], [SMAppDelegate jsonDict:userInfo]);
-    [SendMan applicationDidReceiveRemoteNotificationWithInfo:userInfo];
-    completionHandler(UIBackgroundFetchResultNoData);
-}
-
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler {
     NSLog(@"willPresentNotification called in state %@ with userInfo: %@", [SMAppDelegate applicationState], [SMAppDelegate jsonDict:notification.request.content.userInfo]);
     [SendMan userNotificationCenterWillPresentNotification:notification];

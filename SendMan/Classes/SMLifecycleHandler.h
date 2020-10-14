@@ -32,7 +32,6 @@
 - (void)applicationDidFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *_Nullable)launchOptions;
 - (void)applicationDidRegisterForRemoteNotificationsWithDeviceToken:(NSData *_Nullable)deviceToken;
 - (void)applicationDidFailToRegisterForRemoteNotificationsWithError:(NSError *_Nullable)error;
-- (void)applicationDidReceiveRemoteNotificationWithInfo:(NSDictionary *_Nullable)userInfo;
 - (void)userNotificationCenterWillPresentNotification:(UNNotification *_Nullable)notification;
 - (void)userNotificationCenterDidReceiveNotificationResponse:(UNNotificationResponse *_Nullable)response;
 

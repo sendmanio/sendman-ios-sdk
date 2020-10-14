@@ -151,10 +151,6 @@ NSString *const SMTokenTypeKey = @"SMTokenType";
     [[SMLifecycleHandler sharedManager] applicationDidFailToRegisterForRemoteNotificationsWithError:error];
 }
 
-+ (void)applicationDidReceiveRemoteNotificationWithInfo:(NSDictionary *)userInfo {
-    [[SMLifecycleHandler sharedManager] applicationDidReceiveRemoteNotificationWithInfo:userInfo];
-}
-
 + (void)userNotificationCenterWillPresentNotification:(UNNotification *)notification {
     [[SMLifecycleHandler sharedManager] userNotificationCenterWillPresentNotification:notification];
 }
