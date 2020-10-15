@@ -40,6 +40,7 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
 @property (strong, nonatomic, nullable) NSMutableArray<SMSDKEvent *> <SMSDKEvent> *sdkEvents;
 
 @property (nonatomic) BOOL sessionError;
+@property (nonatomic) BOOL checkActiveUser;
 @end
 
 @implementation SMDataCollector
@@ -58,7 +59,8 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
 - (instancetype)init {
     self = [super init];
     if (self) {
-        self.sessionError = false;
+        self.sessionError = NO;
+        self.checkActiveUser = YES;
         
         self.customProperties = [SMMutableProperties new];
         self.sdkProperties = [SMMutableProperties new];
@@ -150,6 +152,7 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
     SENDMAN_LOG(@"Preparing to submit periodical data to API");
 
     SMData *data = [SMData new];
+    if (self.checkActiveUser) data.checkActiveUser = YES;
 
     NSString *userId = [SendMan getUserId];
     NSString *autoUserId = [[NSUserDefaults standardUserDefaults] stringForKey:kSMAutoUserId];
@@ -175,11 +178,12 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
     NSDictionary *dataDict = [data toDictionary];
     
     [SMAPIHandler sendDataWithJson:dataDict forUrl:@"user/data" responseHandler:^(NSHTTPURLResponse *httpResponse) {
-        if(httpResponse.statusCode == 204) {
+        if (httpResponse.statusCode == 204) {
             if (data.autoUserId) { // This means auto Id was just overridden in the backend by an actual externalUserId
                 [[NSUserDefaults standardUserDefaults] removeObjectForKey:kSMAutoUserId];
                 [[NSUserDefaults standardUserDefaults] synchronize];
             }
+            self.checkActiveUser = NO;
             SENDMAN_LOG(@"Successfully set properties: %@", dataDict);
         } else {
             for (NSString* key in self.customProperties) {

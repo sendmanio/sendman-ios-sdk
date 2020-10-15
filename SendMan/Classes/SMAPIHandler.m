@@ -26,10 +26,13 @@
 #import "SendMan.h"
 #import "SMLog.h"
 
+static BOOL preventFurtherServerCalls = NO;
+
 @implementation SMAPIHandler
 
 + (void)sendDataWithJson:(NSDictionary *)json forUrl:(NSString *)url responseHandler:(void (^)(NSHTTPURLResponse *httpResponse))responseHandler {
     NSMutableURLRequest *urlRequest = [SMAPIHandler createURLRequest:url forMethodType:@"POST"];
+    if (!urlRequest) return;
 
     NSError *error;
     NSData* jsonData = [NSJSONSerialization dataWithJSONObject:json options:NSJSONWritingPrettyPrinted error:&error];
@@ -44,6 +47,10 @@
         }
         
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+        if (httpResponse.statusCode == 403) {
+            preventFurtherServerCalls = YES;
+        }
+
         responseHandler(httpResponse);
     }];
     [dataTask resume];
@@ -51,6 +58,7 @@
 
 + (void)getDataForUrl:(NSString *)url responseHandler:(void (^)(NSHTTPURLResponse *httpResponse, NSDictionary *jsonData ))responseHandler {
     NSMutableURLRequest *urlRequest = [SMAPIHandler createURLRequest:url forMethodType:@"GET"];
+    if (!urlRequest) return;
 
     NSURLSession *session = [NSURLSession sharedSession];
     
@@ -69,7 +77,12 @@
     [dataTask resume];
 }
 
-+(NSMutableURLRequest *)createURLRequest:(NSString *)path forMethodType:(NSString *)methodType{
++ (NSMutableURLRequest *)createURLRequest:(NSString *)path forMethodType:(NSString *)methodType {
+    if (preventFurtherServerCalls) {
+        SENDMAN_LOG(@"%@ Request for URL \"%@\" ignored after previous 403 response from server.", methodType, path);
+        return nil;
+    }
+
     // TODO: URL
     SMConfig *config = [SendMan getConfig];
     NSString *serverUrl = config.serverUrl ? config.serverUrl : @"https://api.sendman.io/app-sdk";

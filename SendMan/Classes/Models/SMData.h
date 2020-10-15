@@ -36,5 +36,6 @@
 @property (nonatomic) NSDictionary<NSString *, SMPropertyValue *> <NSString, SMPropertyValue> *customProperties;
 @property (nonatomic) NSDictionary<NSString *, SMPropertyValue *> <NSString, SMPropertyValue> *sdkProperties;
 @property (nonatomic) NSArray<SMSDKEvent *> <SMSDKEvent> *sdkEvents;
+@property (nonatomic) BOOL checkActiveUser;
 
 @end
