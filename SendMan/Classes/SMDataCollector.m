@@ -163,15 +163,15 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
 
     data.currentSession = [[SMSessionManager sharedManager] getOrCreateSession];
 
-    SMMutableProperties *currentCustomProperties = [self.customProperties copy];
+    SMMutableProperties *currentCustomProperties = [self.customProperties mutableCopy];
     data.customProperties = currentCustomProperties;
     [self.customProperties removeAllObjects];
 
-    SMMutableProperties *currentSDKProperties = [self.sdkProperties copy];
+    SMMutableProperties *currentSDKProperties = [self.sdkProperties mutableCopy];
     data.sdkProperties = currentSDKProperties;
     [self.sdkProperties removeAllObjects];
 
-    NSMutableArray<SMSDKEvent *> <SMSDKEvent> *currentSDKEvents = [self.sdkEvents copy];
+    NSMutableArray<SMSDKEvent *> <SMSDKEvent> *currentSDKEvents = [self.sdkEvents mutableCopy];
     data.sdkEvents = currentSDKEvents;
     [self.sdkEvents removeAllObjects];
 
