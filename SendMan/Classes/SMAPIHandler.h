@@ -22,7 +22,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SMConfig.h"
+#import <SMConfig.h>
 
 @import UIKit;
 

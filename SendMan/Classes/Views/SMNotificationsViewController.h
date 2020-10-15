@@ -22,7 +22,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SMNotificationCellDelegate.h"
+#import <SMNotificationCellDelegate.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

@@ -21,7 +21,7 @@
 //  THE SOFTWARE.
 //
 
-#import "JSONModel.h"
+#import <JSONModel.h>
 
 @protocol SMSDKEvent;
 

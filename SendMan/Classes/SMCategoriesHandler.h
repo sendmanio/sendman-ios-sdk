@@ -22,8 +22,8 @@
 //
 
 @import UIKit;
-#import "SMConfig.h"
-#import "SMCategory.h"
+#import <SMConfig.h>
+#import <SMCategory.h>
 
 @interface SMCategoriesHandler : NSObject
 
