@@ -23,7 +23,7 @@
 
 @import UIKit;
 #import <UserNotifications/UserNotifications.h>
-#import <SMConfig.h>
+#import "SMConfig.h"
 
 @interface SMLifecycleHandler : NSObject
 

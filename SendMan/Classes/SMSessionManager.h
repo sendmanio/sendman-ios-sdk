@@ -23,7 +23,7 @@
 
 
 #import <Foundation/Foundation.h>
-#import <SMSession.h>
+#import "SMSession.h"
 
 @interface SMSessionManager : NSObject
 

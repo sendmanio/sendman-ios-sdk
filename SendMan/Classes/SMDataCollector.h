@@ -23,8 +23,8 @@
 
 @import UIKit;
 @import UserNotifications;
-#import <SMConfig.h>
-#import <SMSDKEvent.h>
+#import "SMConfig.h"
+#import "SMSDKEvent.h"
 
 @interface SMDataCollector : NSObject
 

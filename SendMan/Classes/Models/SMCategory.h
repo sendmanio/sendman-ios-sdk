@@ -22,7 +22,7 @@
 //
 
 
-#import <JSONModel.h>
+#import "JSONModel.h"
 
 
 @protocol NSString;

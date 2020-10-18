@@ -23,9 +23,9 @@
 
 #import <Foundation/Foundation.h>
 #import <UserNotifications/UserNotifications.h>
-#import <SMConfig.h>
-#import <SMNotificationsViewController.h>
-#import <SMCategory.h>
+#import "SMConfig.h"
+#import "SMNotificationsViewController.h"
+#import "SMCategory.h"
 
 @import UIKit;
 

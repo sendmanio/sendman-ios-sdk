@@ -27,7 +27,7 @@
 #define SMLOG(fmt, ...) NSLog(@"[SendMan] %@", [NSString stringWithFormat:(fmt), ##__VA_ARGS__])
 
 #ifndef SENDMAN_DEBUG
-#define SENDMAN_DEBUG 1
+#define SENDMAN_DEBUG 0
 #endif
 
 #ifndef SENDMAN_LOG

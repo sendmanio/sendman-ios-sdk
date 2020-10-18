@@ -21,10 +21,10 @@
 //  THE SOFTWARE.
 //
 
-#import <JSONModel.h>
-#import <SMPropertyValue.h>
-#import <SMSDKEvent.h>
-#import <SMSession.h>
+#import "JSONModel.h"
+#import "SMPropertyValue.h"
+#import "SMSDKEvent.h"
+#import "SMSession.h"
 
 @protocol NSString;
 
