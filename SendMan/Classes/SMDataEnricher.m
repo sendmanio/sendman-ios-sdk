@@ -34,7 +34,7 @@ NSString *const SMDeviceSystemVersionKey = @"SMDeviceSystemVersion";
 NSString *const SMDeviceModelKey = @"SMDeviceModel";
 
 NSString *const SMSDKVersionKey = @"SMSDKVersion";
-NSString *const SMSDKVersionValue = @"0.0.1";
+NSString *const SMSDKVersionValue = @"1.0.0";
 
 @implementation SMDataEnricher
 
