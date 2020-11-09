@@ -136,9 +136,9 @@ NSString *const SMTokenTypeKey = @"SMTokenType";
 + (void)startSessionIfInitialized {
     SendMan *sendman = [SendMan instance];
     if (!sendman.sdkInitialized && sendman.config && sendman.smUserId) {
+        sendman.sdkInitialized = YES;
         [SMDataCollector startSession];
         [SMCategoriesHandler getCategories];
-        sendman.sdkInitialized = YES;
     }
 }
 
