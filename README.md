@@ -17,14 +17,14 @@ SendMan is available through [CocoaPods](https://cocoapods.org) or [Carthage](ht
 In order to install it through CocoaPods, simply add the following line to your Podfile:
 
 ```ruby
-pod 'SendMan', '~> 1.0.1'
+pod 'SendMan', '~> 1.0.2'
 ```
 
 ### Carthage
 
 In order to install it through Carthage, add the following line to your Cartfile, and install it as you would any other Carthage dependency:
 ```
-github "sendmanio/sendman-ios-sdk" ~> 1.0.1
+github "sendmanio/sendman-ios-sdk" ~> 1.0.2
 ```
 
 ## Integration
