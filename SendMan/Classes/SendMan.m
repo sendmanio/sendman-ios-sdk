@@ -35,8 +35,9 @@ NSString *const SMTokenTypeKey = @"SMTokenType";
 @interface SendMan ()
 
 @property (strong, nonatomic, nullable) SMConfig *config;
-@property (strong, nonatomic, nullable) NSString *msUserId;
+@property (strong, nonatomic, nullable) NSString *smUserId;
 @property (strong, nonatomic, nullable) NSArray<SMCategory *> *categories;
+@property (nonatomic) BOOL sdkInitialized;
 
 @end
 
@@ -49,6 +50,7 @@ NSString *const SMTokenTypeKey = @"SMTokenType";
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         instance = [[self alloc] init];
+        instance.sdkInitialized = NO;
     });
     return instance;
 }
@@ -62,12 +64,17 @@ NSString *const SMTokenTypeKey = @"SMTokenType";
 
 + (NSString *)getUserId {
     SendMan *sendman = [SendMan instance];
-    return sendman.msUserId;
+    return sendman.smUserId;
 }
 
 + (NSArray *)getCategories {
     SendMan *sendman = [SendMan instance];
     return sendman.categories;
+}
+
++ (BOOL)isSdkInitialized {
+    SendMan *sendman = [SendMan instance];
+    return sendman.sdkInitialized;
 }
 
 # pragma mark - Global parameters
@@ -85,6 +92,8 @@ NSString *const SMTokenTypeKey = @"SMTokenType";
         }
         [SendMan setUserIdNoValidations:autoUserId];
     }
+
+    [self startSessionIfInitialized];
 }
 
 + (void)setUserId:(NSString *)userId {
@@ -98,14 +107,22 @@ NSString *const SMTokenTypeKey = @"SMTokenType";
 
 + (void)setUserIdNoValidations:(NSString *)userId {
     SendMan *sendman = [SendMan instance];
-    sendman.msUserId = userId;
-    [SMDataCollector startSession];
-    [SMCategoriesHandler getCategories];
+    sendman.smUserId = userId;
+    [self startSessionIfInitialized];
 }
 
 
 + (void)setAPNToken:(NSString *)token {
     [SMDataCollector setSdkProperties:@{SMTokenKey: token, SMTokenTypeKey: @"apn"}];
+}
+
++ (void)startSessionIfInitialized {
+    SendMan *sendman = [SendMan instance];
+    if (!sendman.sdkInitialized && sendman.config && sendman.smUserId) {
+        [SMDataCollector startSession];
+        [SMCategoriesHandler getCategories];
+        sendman.sdkInitialized = YES;
+    }
 }
 
 # pragma mark - Categories

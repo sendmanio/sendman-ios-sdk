@@ -39,6 +39,7 @@
 
 + (SMConfig * _Nullable)getConfig;
 + (NSString * _Nullable)getUserId;
++ (BOOL)isSdkInitialized;
 
 # pragma mark - Global parameters
 

@@ -41,6 +41,9 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
 
 @property (nonatomic) BOOL sessionError;
 @property (nonatomic) BOOL checkActiveUser;
+
+@property (nonatomic) NSInteger exponentialNetworkFailureBackOff;
+
 @end
 
 @implementation SMDataCollector
@@ -52,6 +55,7 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedManager = [[self alloc] init];
+        sharedManager.exponentialNetworkFailureBackOff = 1;
     });
     return sharedManager;
 }
@@ -76,8 +80,8 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
     dispatch_async(serverDelaySimulationThread, ^{
         [self sendData:presistSession];
         if (!self.sessionError) {
-            [NSThread sleepForTimeInterval:secondsInterval];
-            [self pollForNewData: secondsInterval withSessionPersistency:presistSession];
+            [NSThread sleepForTimeInterval:secondsInterval * self.exponentialNetworkFailureBackOff];
+            [self pollForNewData:secondsInterval withSessionPersistency:presistSession];
         }
     });
 }
@@ -177,15 +181,23 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
 
     NSDictionary *dataDict = [data toDictionary];
     
-    [SMAPIHandler sendDataWithJson:dataDict forUrl:@"user/data" responseHandler:^(NSHTTPURLResponse *httpResponse) {
-        if (httpResponse.statusCode == 204) {
+    [SMAPIHandler sendDataWithJson:dataDict forUrl:@"user/data" withResponseHandler:^(NSHTTPURLResponse *httpResponse, NSError *error) {
+        if (!error && httpResponse.statusCode == 204) {
             if (data.autoUserId) { // This means auto Id was just overridden in the backend by an actual externalUserId
                 [[NSUserDefaults standardUserDefaults] removeObjectForKey:kSMAutoUserId];
                 [[NSUserDefaults standardUserDefaults] synchronize];
             }
             self.checkActiveUser = NO;
             SENDMAN_LOG(@"Successfully set properties: %@", dataDict);
+            self.exponentialNetworkFailureBackOff = 1;
         } else {
+            if (error.code == NSURLErrorCannotConnectToHost || error.code == NSURLErrorCannotFindHost) {
+                self.exponentialNetworkFailureBackOff = self.exponentialNetworkFailureBackOff * 2;
+                SENDMAN_ERROR(@"A networking error has occurred while submitting data to the server, setting retry time to %ld", (long)self.exponentialNetworkFailureBackOff);
+            } else if (error != nil) {
+                SENDMAN_ERROR(@"An unknown error has occurred while submitting data to the server.");
+            }
+
             for (NSString* key in self.customProperties) {
                 [currentCustomProperties setObject:self.customProperties[key] forKey:key];
             }

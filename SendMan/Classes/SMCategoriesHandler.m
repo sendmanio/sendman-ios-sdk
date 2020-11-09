@@ -44,12 +44,20 @@
 
 //TODO retries
 + (void)getCategories {
+    if (![SendMan isSdkInitialized]) {
+        SENDMAN_LOG(@"Cannot get categories if SDK is not initialized");
+        return;
+    }
+
+    SENDMAN_LOG(@"Getting user categories");
     [SMAPIHandler getDataForUrl:[NSString stringWithFormat:@"categories/user/%@", [SendMan getUserId]] responseHandler:^(NSHTTPURLResponse *httpResponse, NSDictionary *jsonData) {
         if (httpResponse.statusCode == 200) {
             NSError *error;
             NSArray<SMCategory *> *categories = jsonData ? [SMCategory arrayOfModelsFromDictionaries:jsonData[@"categories"] error:&error] : [[NSArray alloc] init];
             if (error) {
                 SENDMAN_ERROR(@"Error getting categories data - bad JSON response %@", jsonData);
+            } else {
+                SENDMAN_LOG(@"Succesfully received user categories");
             }
             [SendMan setUserCategories: categories];
         } else {
@@ -59,12 +67,19 @@
 }
 
 + (void)updateCategories:(NSArray<SMCategory *> *)categories {
+    if (![SendMan isSdkInitialized]) {
+        SENDMAN_LOG(@"Cannot update categories if SDK is not initialized");
+        return;
+    }
+
+    SENDMAN_LOG(@"About to update user categories");
     [SMAPIHandler sendDataWithJson:@{@"categories": [JSONModel arrayOfDictionariesFromModels:categories]}
                             forUrl:[NSString stringWithFormat:@"categories/user/%@", [SendMan getUserId]]
-                   responseHandler:^(NSHTTPURLResponse *httpResponse) {
-        if (httpResponse.statusCode != 200) {
+               withResponseHandler:^(NSHTTPURLResponse *httpResponse, NSError *error) {
+        if (error != nil || httpResponse.statusCode != 200) {
             SENDMAN_ERROR(@"Error updating category preferences");
         } else {
+            SENDMAN_LOG(@"User categories successfully received");
             [SMDataCollector addSdkEventWithName:@"User categories saved" andValue:nil];
         }
     }];

@@ -30,7 +30,7 @@ static BOOL preventFurtherServerCalls = NO;
 
 @implementation SMAPIHandler
 
-+ (void)sendDataWithJson:(NSDictionary *)json forUrl:(NSString *)url responseHandler:(void (^)(NSHTTPURLResponse *httpResponse))responseHandler {
++ (void)sendDataWithJson:(NSDictionary *)json forUrl:(NSString *)url withResponseHandler:(void (^)(NSHTTPURLResponse *httpResponse, NSError *error))responseHandler {
     NSMutableURLRequest *urlRequest = [SMAPIHandler createURLRequest:url forMethodType:@"POST"];
     if (!urlRequest) return;
 
@@ -43,6 +43,7 @@ static BOOL preventFurtherServerCalls = NO;
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:urlRequest completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (error) {
             SENDMAN_ERROR(@"Error posting data via API: %@", error.localizedDescription);
+            responseHandler(nil, error);
             return;
         }
         
@@ -51,7 +52,7 @@ static BOOL preventFurtherServerCalls = NO;
             preventFurtherServerCalls = YES;
         }
 
-        responseHandler(httpResponse);
+        responseHandler(httpResponse, nil);
     }];
     [dataTask resume];
 }
