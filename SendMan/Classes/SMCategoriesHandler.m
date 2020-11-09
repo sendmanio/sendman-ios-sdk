@@ -79,7 +79,7 @@
         if (error != nil || httpResponse.statusCode != 200) {
             SENDMAN_ERROR(@"Error updating category preferences");
         } else {
-            SENDMAN_LOG(@"User categories successfully received");
+            SENDMAN_LOG(@"Successfully updated categories");
             [SMDataCollector addSdkEventWithName:@"User categories saved" andValue:nil];
         }
     }];
