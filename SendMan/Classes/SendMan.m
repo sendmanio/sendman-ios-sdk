@@ -98,13 +98,17 @@ NSString *const SMTokenTypeKey = @"SMTokenType";
     sendman.config = config;
     
     if (config.autoGenerateUsers) {
-        NSString *autoUserId = [[NSUserDefaults standardUserDefaults] stringForKey:kSMAutoUserId];
-        if (!autoUserId) {
-            autoUserId = [[[NSUUID UUID] UUIDString] lowercaseString];
-            [[NSUserDefaults standardUserDefaults] setObject:autoUserId forKey:kSMAutoUserId];
-            [[NSUserDefaults standardUserDefaults] synchronize];
+        if (!sendman.smUserId) {
+            NSString *autoUserId = [[NSUserDefaults standardUserDefaults] stringForKey:kSMAutoUserId];
+            if (!autoUserId) {
+                autoUserId = [[[NSUUID UUID] UUIDString] lowercaseString];
+                [[NSUserDefaults standardUserDefaults] setObject:autoUserId forKey:kSMAutoUserId];
+                [[NSUserDefaults standardUserDefaults] synchronize];
+            }
+            [SendMan setUserIdNoValidations:autoUserId];
+        } else {
+            SENDMAN_ERROR(@"Ignoring autoGenerateUsers because the userId has already been explicitly set.");
         }
-        [SendMan setUserIdNoValidations:autoUserId];
     }
 
     [self startSessionIfInitialized];
@@ -116,7 +120,6 @@ NSString *const SMTokenTypeKey = @"SMTokenType";
     } else {
         [SendMan setUserIdNoValidations:userId];
     }
-    
 }
 
 + (void)setUserIdNoValidations:(NSString *)userId {
