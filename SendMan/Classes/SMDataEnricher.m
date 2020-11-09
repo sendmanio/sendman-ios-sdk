@@ -24,6 +24,7 @@
 #import <Foundation/Foundation.h>
 #import "SMDataEnricher.h"
 #import "SMDataCollector.h"
+#import "SendMan.h"
 
 NSString *const SMCountryCodeKey = @"SMCountryCode";
 NSString *const SMLanguageCodeKey = @"SMLanguageCode";
@@ -34,7 +35,6 @@ NSString *const SMDeviceSystemVersionKey = @"SMDeviceSystemVersion";
 NSString *const SMDeviceModelKey = @"SMDeviceModel";
 
 NSString *const SMSDKVersionKey = @"SMSDKVersion";
-NSString *const SMSDKVersionValue = @"1.0.1";
 
 @implementation SMDataEnricher
 
@@ -56,7 +56,7 @@ NSString *const SMSDKVersionValue = @"1.0.1";
     NSTimeZone *currentTimeZone = [NSTimeZone localTimeZone];
     enrichedData[SMTimezoneKey] = [currentTimeZone name];
 
-    enrichedData[SMSDKVersionKey] = SMSDKVersionValue;
+    enrichedData[SMSDKVersionKey] = [SendMan getSDKVersion];
 
     return enrichedData;
     

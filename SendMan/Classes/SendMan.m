@@ -77,6 +77,20 @@ NSString *const SMTokenTypeKey = @"SMTokenType";
     return sendman.sdkInitialized;
 }
 
++ (NSString *)getSDKVersion {
+    NSString *version;
+    NSBundle *bundle = [NSBundle bundleForClass:self];
+    if (bundle) {
+        version = [bundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
+    }
+
+    if (!version) {
+        SENDMAN_ERROR(@"Could not read version information from bundle.");
+    }
+
+    return version;
+}
+
 # pragma mark - Global parameters
 
 + (void)setAppConfig:(SMConfig *)config {

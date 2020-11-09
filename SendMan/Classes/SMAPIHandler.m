@@ -28,6 +28,8 @@
 
 static BOOL preventFurtherServerCalls = NO;
 
+NSString *const SMSDKVersionHeader = @"SMSDKVersion";
+
 @implementation SMAPIHandler
 
 + (void)sendDataWithJson:(NSDictionary *)json forUrl:(NSString *)url withResponseHandler:(void (^)(NSHTTPURLResponse *httpResponse, NSError *error))responseHandler {
@@ -94,6 +96,11 @@ static BOOL preventFurtherServerCalls = NO;
     [SMAuthHandler addAuthHeaderToRequest:urlRequest];
     [urlRequest setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     
+    NSString *sdkVersion = [SendMan getSDKVersion];
+    if (sdkVersion) {
+        [urlRequest setValue:sdkVersion forHTTPHeaderField:SMSDKVersionHeader];
+    }
+
     return urlRequest;
 }
 
