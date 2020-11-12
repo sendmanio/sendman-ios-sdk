@@ -40,13 +40,14 @@
 + (SMConfig * _Nullable)getConfig;
 + (NSString * _Nullable)getUserId;
 + (BOOL)isSdkInitialized;
-+ (NSString *)getSDKVersion;
++ (NSString * _Nonnull)getSDKVersion;
 
 # pragma mark - Global parameters
 
 + (void)setAppConfig:(SMConfig *_Nonnull)config;
 + (void)setUserId:(NSString *_Nonnull)userId;
 + (void)setAPNToken:(NSString *_Nonnull)token;
++ (void)disableSdk;
 
 # pragma mark - Categories
 

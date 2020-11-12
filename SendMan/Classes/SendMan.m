@@ -38,6 +38,7 @@ NSString *const SMTokenTypeKey = @"SMTokenType";
 @property (strong, nonatomic, nullable) NSString *smUserId;
 @property (strong, nonatomic, nullable) NSArray<SMCategory *> *categories;
 @property (nonatomic) BOOL sdkInitialized;
+@property (nonatomic) BOOL sdkDisabled;
 
 @end
 
@@ -51,6 +52,7 @@ NSString *const SMTokenTypeKey = @"SMTokenType";
     dispatch_once(&onceToken, ^{
         instance = [[self alloc] init];
         instance.sdkInitialized = NO;
+        instance.sdkDisabled = NO;
     });
     return instance;
 }
@@ -77,6 +79,11 @@ NSString *const SMTokenTypeKey = @"SMTokenType";
     return sendman.sdkInitialized;
 }
 
++ (BOOL)isSdkDisabled {
+    SendMan *sendman = [SendMan instance];
+    return sendman.sdkDisabled;
+}
+
 + (NSString *)getSDKVersion {
     NSString *version;
     NSBundle *bundle = [NSBundle bundleForClass:self];
@@ -95,6 +102,11 @@ NSString *const SMTokenTypeKey = @"SMTokenType";
 
 + (void)setAppConfig:(SMConfig *)config {
     SendMan *sendman = [SendMan instance];
+    if ([SendMan isSdkDisabled]) {
+        SENDMAN_LOG(@"SendMan SDK Disabled: Skipping setAppConfig.");
+        return;
+    }
+
     sendman.config = config;
     
     if (config.autoGenerateUsers) {
@@ -115,6 +127,11 @@ NSString *const SMTokenTypeKey = @"SMTokenType";
 }
 
 + (void)setUserId:(NSString *)userId {
+    if ([SendMan isSdkDisabled]) {
+        SENDMAN_LOG(@"SendMan SDK Disabled: Skipping setUserId.");
+        return;
+    }
+
     if ([SendMan getConfig].autoGenerateUsers) {
         SENDMAN_ERROR(@"Cannot set userId on autoGenerateUsers mode");
     } else {
@@ -130,7 +147,17 @@ NSString *const SMTokenTypeKey = @"SMTokenType";
 
 
 + (void)setAPNToken:(NSString *)token {
+    if ([SendMan isSdkDisabled]) {
+        SENDMAN_LOG(@"SendMan SDK Disabled: Skipping setAPNToken.");
+        return;
+    }
+
     [SMDataCollector setSdkProperties:@{SMTokenKey: token, SMTokenTypeKey: @"apn"}];
+}
+
++ (void)disableSdk {
+    SendMan *sendman = [SendMan instance];
+    sendman.sdkDisabled = YES;
 }
 
 + (void)startSessionIfInitialized {
@@ -168,34 +195,69 @@ NSString *const SMTokenTypeKey = @"SMTokenType";
 # pragma mark - User Properties
 
 + (void)setUserProperties:(NSDictionary<NSString *, id> *)properties {
+    if ([SendMan isSdkDisabled]) {
+        SENDMAN_LOG(@"SendMan SDK Disabled: Skipping setUserProperties.");
+        return;
+    }
+
     [SMDataCollector setUserProperties:properties];
 }
 
 # pragma mark - Integration Events
 
 + (void)applicationDidFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *)launchOptions {
+    if ([SendMan isSdkDisabled]) {
+        SENDMAN_LOG(@"SendMan SDK Disabled: Skipping applicationDidFinishLaunchingWithOptions.");
+        return;
+    }
+
     [[SMLifecycleHandler sharedManager] applicationDidFinishLaunchingWithOptions:launchOptions];
 }
 
 + (void)applicationDidRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
+    if ([SendMan isSdkDisabled]) {
+        SENDMAN_LOG(@"SendMan SDK Disabled: Skipping applicationDidRegisterForRemoteNotificationsWithDeviceToken.");
+        return;
+    }
+
     [[SMLifecycleHandler sharedManager] applicationDidRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
 }
 
 + (void)applicationDidFailToRegisterForRemoteNotificationsWithError:(NSError *)error {
+    if ([SendMan isSdkDisabled]) {
+        SENDMAN_LOG(@"SendMan SDK Disabled: Skipping applicationDidFailToRegisterForRemoteNotificationsWithError.");
+        return;
+    }
+
     [[SMLifecycleHandler sharedManager] applicationDidFailToRegisterForRemoteNotificationsWithError:error];
 }
 
 + (void)userNotificationCenterWillPresentNotification:(UNNotification *)notification {
+    if ([SendMan isSdkDisabled]) {
+        SENDMAN_LOG(@"SendMan SDK Disabled: Skipping userNotificationCenterWillPresentNotification.");
+        return;
+    }
+
     [[SMLifecycleHandler sharedManager] userNotificationCenterWillPresentNotification:notification];
 }
 
 + (void)userNotificationCenterDidReceiveNotificationResponse:(UNNotificationResponse *)response {
+    if ([SendMan isSdkDisabled]) {
+        SENDMAN_LOG(@"SendMan SDK Disabled: Skipping userNotificationCenterDidReceiveNotificationResponse.");
+        return;
+    }
+
     [[SMLifecycleHandler sharedManager] userNotificationCenterDidReceiveNotificationResponse:response];
 }
 
 # pragma mark - Notification Registration (Optional)
 
 + (void)registerForRemoteNotifications:(void (^)(BOOL granted))success {
+    if ([SendMan isSdkDisabled]) {
+        SENDMAN_LOG(@"SendMan SDK Disabled: Skipping registerForRemoteNotifications.");
+        return;
+    }
+
     [[SMLifecycleHandler sharedManager] registerForRemoteNotifications:success];
 }
 
