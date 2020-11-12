@@ -23,7 +23,6 @@
 
 /* Begin PBXFileReference section */
 		266193BAA1420692B6965BDC /* Pods_SendMan2_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SendMan2_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		597B48DF94249DC4BD7D00E8 /* Pods-SendMan_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SendMan_Example.release.xcconfig"; path = "Target Support Files/Pods-SendMan_Example/Pods-SendMan_Example.release.xcconfig"; sourceTree = "<group>"; };
 		6003F58A195388D20070C39A /* SendMan2_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SendMan2_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -37,11 +36,6 @@
 		6003F5A5195388D20070C39A /* SMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMViewController.h; sourceTree = "<group>"; };
 		6003F5A6195388D20070C39A /* SMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
-		6003F5B9195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
-		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		628E5EBF23B8D3660042DBAD /* SendMan2_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SendMan2_Example.entitlements; sourceTree = "<group>"; };
 		62CA78CF24029BE300BCAAC9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		656896E790CCED51FE61B175 /* SendMan.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SendMan.podspec; path = ../SendMan.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -50,10 +44,6 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8DB969D07B062EB425EC904A /* Pods-SendMan2_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SendMan2_Example.debug.xcconfig"; path = "Target Support Files/Pods-SendMan2_Example/Pods-SendMan2_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		9E63EA8B277BF16F4C42254E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		CA476921317C5DD5D4789114 /* Pods-SendMan_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SendMan_Example.debug.xcconfig"; path = "Target Support Files/Pods-SendMan_Example/Pods-SendMan_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		DD48F457208ED4C720D50D37 /* Pods-SendMan_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SendMan_Tests.debug.xcconfig"; path = "Target Support Files/Pods-SendMan_Tests/Pods-SendMan_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		E4869F8BEDBC974D19452922 /* Pods-SendMan_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SendMan_Tests.release.xcconfig"; path = "Target Support Files/Pods-SendMan_Tests/Pods-SendMan_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		EE93FFE7A50992B3FF69DF5D /* Pods_SendMan_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SendMan_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9338398090EBEB46C4BAA25 /* Pods-SendMan2_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SendMan2_Example.release.xcconfig"; path = "Target Support Files/Pods-SendMan2_Example/Pods-SendMan2_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -76,10 +66,6 @@
 		0228A5C2FEA3D6AA0C354FEA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				CA476921317C5DD5D4789114 /* Pods-SendMan_Example.debug.xcconfig */,
-				597B48DF94249DC4BD7D00E8 /* Pods-SendMan_Example.release.xcconfig */,
-				DD48F457208ED4C720D50D37 /* Pods-SendMan_Tests.debug.xcconfig */,
-				E4869F8BEDBC974D19452922 /* Pods-SendMan_Tests.release.xcconfig */,
 				8DB969D07B062EB425EC904A /* Pods-SendMan2_Example.debug.xcconfig */,
 				F9338398090EBEB46C4BAA25 /* Pods-SendMan2_Example.release.xcconfig */,
 			);
@@ -92,7 +78,6 @@
 				628E5EBF23B8D3660042DBAD /* SendMan2_Example.entitlements */,
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for SendMan */,
-				6003F5B5195388D20070C39A /* Tests */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
 				0228A5C2FEA3D6AA0C354FEA /* Pods */,
@@ -114,8 +99,6 @@
 				6003F58D195388D20070C39A /* Foundation.framework */,
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
-				6003F5AF195388D20070C39A /* XCTest.framework */,
-				EE93FFE7A50992B3FF69DF5D /* Pods_SendMan_Tests.framework */,
 				266193BAA1420692B6965BDC /* Pods_SendMan2_Example.framework */,
 			);
 			name = Frameworks;
@@ -144,25 +127,6 @@
 				6003F596195388D20070C39A /* InfoPlist.strings */,
 				6003F599195388D20070C39A /* main.m */,
 				6003F59B195388D20070C39A /* SendMan-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		6003F5B5195388D20070C39A /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				6003F5BB195388D20070C39A /* Tests.m */,
-				6003F5B6195388D20070C39A /* Supporting Files */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
-		6003F5B6195388D20070C39A /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				6003F5B7195388D20070C39A /* Tests-Info.plist */,
-				6003F5B8195388D20070C39A /* InfoPlist.strings */,
-				606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -307,14 +271,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				6003F597195388D20070C39A /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		6003F5B8195388D20070C39A /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6003F5B9195388D20070C39A /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

@@ -25,11 +25,9 @@
 		46E47506D7987ECE19E3E09A8E7F46EB /* SMNotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6EE0CD673D775E2BBC10A72F4A0A1FE7 /* SMNotificationsViewController.m */; };
 		4722505EF6CF0228632BB1F24BFC3753 /* SMSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 3294240F77E957F4F13D888E8076755F /* SMSession.m */; };
 		4B1034EA0F530B3AA4600A14258B5E7C /* SMSession.h in Headers */ = {isa = PBXBuildFile; fileRef = EC36EF5A92E9076D31A109A2B6312078 /* SMSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5111E03216C5627CEE85BB6A4142000B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		5112B82200BD443E0593B9C0ECE457BC /* SMNotificationCellDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = C6439120612C252539D833A6EC3810A9 /* SMNotificationCellDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		641CC6E120786E6B16608EB83949640D /* SMLifecycleHandler.h in Headers */ = {isa = PBXBuildFile; fileRef = F24789566EBE54DE2AE488BBA5AE1B24 /* SMLifecycleHandler.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		66231C0A9A796C13D5F8AE0FACE926D7 /* SMConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E582207796A151F6BFCED0AB19D1A49 /* SMConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		689FFC499D05A43C824DC4BDF2FA484F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		693A8D03A34E64F26B60CE9CFA1BDCB2 /* SendMan.h in Headers */ = {isa = PBXBuildFile; fileRef = 404BB092D5BDA1FF3B72E900731114FD /* SendMan.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6991E324AD034E6A8B3053FD7EC964AF /* SMPropertyValue.h in Headers */ = {isa = PBXBuildFile; fileRef = FBF45391D97544BA329A692B4BC22646 /* SMPropertyValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6ECF413492A3BDBF1DD82346409D2A16 /* JSONModelError.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D29B2E9CE5EBD23CC79F49E76E8E20 /* JSONModelError.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -88,7 +86,6 @@
 		1EA5FB2831AE790D523EE1ECBE70B08A /* SMNotificationTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMNotificationTableViewCell.m; sourceTree = "<group>"; };
 		250C31C47ACCF8503DEC1A492010AC6D /* SendMan.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SendMan.modulemap; sourceTree = "<group>"; };
 		2AA34F85D9E2C73D1AD3A2188CB98105 /* JSONModelClassProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = JSONModelClassProperty.h; sourceTree = "<group>"; };
-		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		3294240F77E957F4F13D888E8076755F /* SMSession.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMSession.m; sourceTree = "<group>"; };
 		3AE5D277CC687485DAD5D509B46F2808 /* SMNotifications.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; path = SMNotifications.storyboard; sourceTree = "<group>"; };
 		3BDC10C083F0CFBB02CD1BB29578C680 /* SMPropertyValue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMPropertyValue.m; sourceTree = "<group>"; };
@@ -158,7 +155,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				689FFC499D05A43C824DC4BDF2FA484F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,7 +162,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5111E03216C5627CEE85BB6A4142000B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,14 +257,6 @@
 			path = SendMan/Classes/JSONModel;
 			sourceTree = "<group>";
 		};
-		C0834CEBB1379A84116EF29F93051C60 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
 		C1481837BD31D22D54B98A7F010D50A4 /* JSONModel */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,18 +286,9 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				3C63C547E412CA43523AF41D3C109DB7 /* Development Pods */,
-				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				E60110788D85EE059853A5E2D603308A /* Products */,
 				28FB3C08F1170931F77C4851DF59EC0E /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		E60110788D85EE059853A5E2D603308A /* Products */ = {
