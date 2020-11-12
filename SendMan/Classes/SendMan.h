@@ -66,6 +66,6 @@
 
 # pragma mark - Notification Registration (Optional)
 
-+ (void)registerForRemoteNotifications:(void (^_Nullable)(BOOL granted))success;
++ (void)requestPushAuthorization:(void (^_Nullable)(BOOL granted))success;
 
 @end

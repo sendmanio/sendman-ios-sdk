@@ -165,7 +165,7 @@
     [self userNotificationCenterWillPresentNotification:response.notification];
 }
 
-- (void)registerForRemoteNotifications:(void (^)(BOOL granted))success {
+- (void)requestPushAuthorization:(void (^)(BOOL granted))success {
     [[UNUserNotificationCenter currentNotificationCenter] getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
         BOOL oneTimeAppleAuhtorizationDialogWasShown = settings.authorizationStatus == UNAuthorizationStatusNotDetermined;
         if (oneTimeAppleAuhtorizationDialogWasShown) {

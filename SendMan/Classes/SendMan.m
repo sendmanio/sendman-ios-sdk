@@ -235,13 +235,13 @@ NSString *const SMTokenTypeKey = @"SMTokenType";
 
 # pragma mark - Notification Registration (Optional)
 
-+ (void)registerForRemoteNotifications:(void (^)(BOOL granted))success {
++ (void)requestPushAuthorization:(void (^)(BOOL granted))success {
     if ([SendMan isSdkDisabled]) {
         SENDMAN_LOG(@"SendMan SDK Disabled: Skipping registerForRemoteNotifications.");
         return;
     }
 
-    [[SMLifecycleHandler sharedManager] registerForRemoteNotifications:success];
+    [[SMLifecycleHandler sharedManager] requestPushAuthorization:success];
 }
 
 @end

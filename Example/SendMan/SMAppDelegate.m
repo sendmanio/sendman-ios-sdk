@@ -37,7 +37,7 @@
     [SendMan setUserProperties:@{@"email": @"email@email.com", @"Native App": @"YES"}];
 
     [UNUserNotificationCenter currentNotificationCenter].delegate = self;
-    [SendMan registerForRemoteNotifications:nil];
+    [SendMan requestPushAuthorization:nil];
 
     [SendMan applicationDidFinishLaunchingWithOptions:launchOptions];
 

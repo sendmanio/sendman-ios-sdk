@@ -35,7 +35,7 @@
 - (void)userNotificationCenterWillPresentNotification:(UNNotification *_Nullable)notification;
 - (void)userNotificationCenterDidReceiveNotificationResponse:(UNNotificationResponse *_Nullable)response;
 
-- (void)registerForRemoteNotifications:(void (^_Nullable)(BOOL granted))success;
+- (void)requestPushAuthorization:(void (^_Nullable)(BOOL granted))success;
 
 @end
 
