@@ -29,8 +29,6 @@
 
 @import UIKit;
 
-#define CategoriesRetrievedNotification @"CategoriesRetrievedNotification"
-
 #define kSMAutoUserId @"kSMAutoUserId"
 
 @interface SendMan : NSObject
@@ -52,8 +50,6 @@
 # pragma mark - Categories
 
 + (SMNotificationsViewController *_Nonnull)getCategoriesUIViewController;
-+ (void)setUserCategories:(NSArray<SMCategory *> *_Nonnull)categories;
-+ (void)updateUserCategories:(NSArray<SMCategory *> *_Nonnull)categories;
 + (NSArray * _Nullable)getCategories;
 
 # pragma mark - User Properties

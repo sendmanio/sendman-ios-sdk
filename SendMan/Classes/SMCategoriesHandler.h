@@ -25,9 +25,14 @@
 #import "SMConfig.h"
 #import "SMCategory.h"
 
+#define CategoriesRetrievedNotification @"CategoriesRetrievedNotification"
+
 @interface SMCategoriesHandler : NSObject
 
+@property (strong, nonatomic, nullable) NSArray<SMCategory *> *categories;
+
++ (id)sharedManager;
 + (void)getCategories;
-+ (void)updateCategories:(NSArray<SMCategory *> *)categories;
++ (void)updateCategories:(NSArray<SMCategory *> *_Nullable)categories;
 
 @end

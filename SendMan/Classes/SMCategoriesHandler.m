@@ -59,7 +59,12 @@
             } else {
                 SENDMAN_LOG(@"Succesfully received user categories");
             }
-            [SendMan setUserCategories: categories];
+
+            SMCategoriesHandler *categoryHandler = [SMCategoriesHandler sharedManager];
+            if (![categoryHandler.categories isEqualToArray:categories]) {
+                categoryHandler.categories = categories;
+                [[NSNotificationCenter defaultCenter] postNotificationName:CategoriesRetrievedNotification object:nil];
+            }
         } else {
             SENDMAN_ERROR(@"Error getting categories data");
         }
@@ -67,6 +72,11 @@
 }
 
 + (void)updateCategories:(NSArray<SMCategory *> *)categories {
+    if (categories) {
+        SMCategoriesHandler *categoryHandler = [SMCategoriesHandler sharedManager];
+        categoryHandler.categories = categories;
+    }
+
     if (![SendMan isSdkInitialized]) {
         SENDMAN_LOG(@"Cannot update categories if SDK is not initialized");
         return;

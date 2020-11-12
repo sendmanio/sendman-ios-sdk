@@ -88,7 +88,7 @@ NSArray *tableData;
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [SendMan updateUserCategories:tableData];
+    [SMCategoriesHandler updateCategories:tableData];
 }
 
 - (void)categoriesRetrieved {

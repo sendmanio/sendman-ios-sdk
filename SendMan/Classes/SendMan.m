@@ -36,7 +36,6 @@ NSString *const SMTokenTypeKey = @"SMTokenType";
 
 @property (strong, nonatomic, nullable) SMConfig *config;
 @property (strong, nonatomic, nullable) NSString *smUserId;
-@property (strong, nonatomic, nullable) NSArray<SMCategory *> *categories;
 @property (nonatomic) BOOL sdkInitialized;
 @property (nonatomic) BOOL sdkDisabled;
 
@@ -70,8 +69,8 @@ NSString *const SMTokenTypeKey = @"SMTokenType";
 }
 
 + (NSArray *)getCategories {
-    SendMan *sendman = [SendMan instance];
-    return sendman.categories;
+    SMCategoriesHandler *categoryHandler = [SMCategoriesHandler sharedManager];
+    return categoryHandler.categories;
 }
 
 + (BOOL)isSdkInitialized {
@@ -174,22 +173,6 @@ NSString *const SMTokenTypeKey = @"SMTokenType";
 + (SMNotificationsViewController *)getCategoriesUIViewController {
     NSBundle *bundle = [NSBundle bundleForClass:SMNotificationsViewController.self];
     return [[UIStoryboard storyboardWithName:@"SMNotifications" bundle:bundle] instantiateViewControllerWithIdentifier:@"SMNotifications"];
-}
-
-+ (void)setUserCategories:(NSArray<SMCategory *> *)categories {
-    SendMan *sendman = [SendMan instance];
-    if (![sendman.categories isEqualToArray:categories]) {
-        sendman.categories = categories;
-        [[NSNotificationCenter defaultCenter] postNotificationName:CategoriesRetrievedNotification object:nil];
-    }
-}
-
-+ (void)updateUserCategories:(NSArray<SMCategory *> *)categories {
-    if (categories) {
-        SendMan *sendman = [SendMan instance];
-        sendman.categories = categories;
-        [SMCategoriesHandler updateCategories:categories];
-    }
 }
 
 # pragma mark - User Properties
