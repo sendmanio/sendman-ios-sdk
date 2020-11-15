@@ -31,6 +31,7 @@
 @interface SMLifecycleHandler ()
 
 @property (strong, nonatomic, nullable) NSMutableArray *lastNotificationActivities;
+@property (strong, nonatomic, nullable) NSMutableArray *lastExternalNotifications;
 
 @end
 
@@ -49,6 +50,15 @@ static dispatch_once_t onceToken;
     return sharedManager;
 }
 
+- (instancetype)init {
+    self = [super init];
+    if (self) {
+        self.lastNotificationActivities = [[NSMutableArray alloc] init];
+        self.lastExternalNotifications = [[NSMutableArray alloc] init];
+    }
+    return self;
+}
+
 + (void)reset {
     @synchronized(self) {
         sharedManager = nil;
@@ -58,32 +68,48 @@ static dispatch_once_t onceToken;
 
 # pragma mark - Cache
 
-- (void)saveLastNotificationActivity:(NSString *)activityId {
-    if (!self.lastNotificationActivities) {
-        self.lastNotificationActivities = [[NSMutableArray alloc] init];
+- (void)saveLastNotification:(NSDictionary *)notification {
+    NSString *activityId = notification[@"smActivityId"];
+    if (activityId) {
+        self.lastNotificationActivities = [self addObject:activityId toArray:self.lastNotificationActivities withLimit:100];
+    } else {
+        self.lastExternalNotifications = [self addObject:notification toArray:self.lastExternalNotifications withLimit:100];
     }
-    [self.lastNotificationActivities addObject:activityId];
-    self.lastNotificationActivities = [NSMutableArray arrayWithArray:[self.lastNotificationActivities subarrayWithRange:NSMakeRange(0, MIN([self.lastNotificationActivities count], 100))]];
+}
+
+- (NSMutableArray *)addObject:(id)object toArray:(NSMutableArray *)array withLimit:(NSInteger)limit {
+    [array addObject:object];
+    return [NSMutableArray arrayWithArray:[array subarrayWithRange:NSMakeRange(0, MIN([array count], limit))]];
 }
 
 # pragma mark - Data collection
 
-- (void)didOpenNotification:(NSString *)templateId forActivity:(NSString *)activityId atState:(UIApplicationState)appState {
-    [self didOpenNotification:templateId forActivity:activityId atState:appState withOnSuccess:nil];
+- (void)didOpenNotification:(NSDictionary *)notification atState:(UIApplicationState)appState {
+    [self didOpenNotification:notification atState:appState withOnSuccess:nil];
 }
 
-- (void)didOpenNotification:(NSString *)templateId forActivity:(NSString *)activityId atState:(UIApplicationState)appState withOnSuccess:(void (^)(void))onSuccess {
-    if ([self.lastNotificationActivities containsObject:activityId]) {
+- (void)didOpenNotification:(NSDictionary *)notification atState:(UIApplicationState)appState withOnSuccess:(void (^)(void))onSuccess {
+    if (!notification) return;
+
+    NSString *templateId = notification[@"smTemplateId"];
+    NSString *activityId = notification[@"smActivityId"];
+
+    if (activityId && [self.lastNotificationActivities containsObject:activityId]) {
         SENDMAN_LOG(@"Activity already handled previously");
+    } else if (!activityId && [self.lastExternalNotifications indexOfObjectIdenticalTo:notification] != NSNotFound) {
+        SENDMAN_LOG(@"External notification already handled previously");
     } else {
         [[UNUserNotificationCenter currentNotificationCenter] getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
-            [self saveLastNotificationActivity:activityId];
+            [self saveLastNotification:notification];
 
             SMSDKEvent *event = [SMSDKEvent new];
             event.key = [self eventNameByAppState:appState andAuthorizationStatus:settings.authorizationStatus];
             event.appState = [self appStateStringFromState:appState];
             event.templateId = templateId;
             event.activityId = activityId;
+            if (!activityId && !templateId) {
+                event.externalNotificationData = notification;
+            }
             [SMDataCollector addSdkEvent:event];
 
             if (onSuccess) onSuccess();
@@ -121,9 +147,9 @@ static dispatch_once_t onceToken;
 }
 
 - (void)applicationDidFinishLaunchingWithOptions:(NSDictionary<UIApplicationLaunchOptionsKey, id> *)launchOptions {
-    NSDictionary *pushNotification = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
-    if ([self shouldHandleNotification:pushNotification]) {
-        [self didOpenNotification:pushNotification[@"smTemplateId"] forActivity:pushNotification[@"smActivityId"] atState:-1 withOnSuccess:^{
+    NSDictionary *notification = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
+    if (notification) {
+        [self didOpenNotification:notification atState:-1 withOnSuccess:^{
             [self didOpenApp];
         }];
     } else {
@@ -152,17 +178,8 @@ static dispatch_once_t onceToken;
     [SMDataCollector addSdkEvent:event];
 }
 
-- (BOOL)shouldHandleNotification:(NSDictionary *)userInfo {
-    if (userInfo && userInfo[@"smTemplateId"] && userInfo[@"smActivityId"]) return YES;
-
-    SENDMAN_LOG(@"Discarding notification since it did not originate from SendMan.");
-    return NO;
-}
-
 - (void)applicationDidReceiveRemoteNotificationWithInfo:(NSDictionary *)userInfo {
-    if ([self shouldHandleNotification:userInfo]) {
-        [self didOpenNotification:userInfo[@"smTemplateId"] forActivity:userInfo[@"smActivityId"] atState:[[UIApplication sharedApplication] applicationState]];
-    }
+    [self didOpenNotification:userInfo atState:[[UIApplication sharedApplication] applicationState]];
 }
 
 - (void)userNotificationCenterWillPresentNotification:(UNNotification *)notification {

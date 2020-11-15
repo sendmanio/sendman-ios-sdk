@@ -37,5 +37,6 @@
 @property (nonatomic) NSNumber *timestamp;
 @property (nonatomic) NSString *notificationsRegistrationState;
 @property (nonatomic) NSString <Optional> *appState;
+@property (nonatomic) NSDictionary <Optional> *externalNotificationData;
 
 @end

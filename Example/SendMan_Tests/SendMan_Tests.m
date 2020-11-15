@@ -172,7 +172,48 @@
 
     SMDataCollector *dataCollector = [SMDataCollector sharedManager];
     XCTAssertEqual(1, [dataCollector.sdkEvents count], @"Expected only a single event");
-    XCTAssertEqualObjects(@"Foreground Notification Received", [dataCollector.sdkEvents firstObject].key, @"Expected the app launch event");
+    XCTAssertEqualObjects(@"Foreground Notification Received", [dataCollector.sdkEvents firstObject].key, @"Expected foreground message event");
+    XCTAssertNil([dataCollector.sdkEvents firstObject].externalNotificationData, @"Should not store the entire userInfo payload for SendMan notifications");
+}
+
+- (void)testWillPresentNotificationFromExternalSource {
+    [self stubCurrentNotificationsStatus:UNAuthorizationStatusAuthorized];
+
+    [self initializeSDK];
+    [SendMan userNotificationCenterWillPresentNotification:[self notificationWithUserInfo:@{ @"param": @"value" }]];
+
+    SMDataCollector *dataCollector = [SMDataCollector sharedManager];
+    XCTAssertEqual(1, [dataCollector.sdkEvents count], @"Expected only a single event");
+    XCTAssertEqualObjects(@"Foreground Notification Received", [dataCollector.sdkEvents firstObject].key, @"Expected foreground message event");
+    XCTAssertNotNil([dataCollector.sdkEvents firstObject].externalNotificationData, @"Should store the entire userInfo payload for non-SendMan notifications");
+}
+
+- (void)testWillPresentNotificationFromRun {
+    [self stubCurrentNotificationsStatus:UNAuthorizationStatusAuthorized];
+
+    [self initializeSDK];
+    NSDictionary *userInfo = @{ @"param": @"value" };
+    [SendMan applicationDidFinishLaunchingWithOptions:@{ UIApplicationLaunchOptionsRemoteNotificationKey: userInfo }];
+    [SendMan userNotificationCenterWillPresentNotification:[self notificationWithUserInfo:userInfo]];
+
+    SMDataCollector *dataCollector = [SMDataCollector sharedManager];
+    XCTAssertEqual(2, [dataCollector.sdkEvents count], @"Expected app launch and notification open events");
+    XCTAssertEqualObjects(@"Background Notification Opened", [dataCollector.sdkEvents firstObject].key, @"Expected open notification event to appear before app launch event");
+    XCTAssertEqualObjects(@"App launched", [dataCollector.sdkEvents lastObject].key, @"Expected the app launch event to appear after the notification event");
+}
+
+- (void)testWillPresentNotificationIdenticalPayloadsFromDifferentNotifications {
+    [self stubCurrentNotificationsStatus:UNAuthorizationStatusAuthorized];
+
+    [self initializeSDK];
+    NSDictionary *userInfo = @{ @"param": @"value" };
+    [SendMan userNotificationCenterWillPresentNotification:[self notificationWithUserInfo:userInfo]];
+    [SendMan userNotificationCenterWillPresentNotification:[self notificationWithUserInfo:[NSDictionary dictionaryWithDictionary:userInfo]]];
+
+    SMDataCollector *dataCollector = [SMDataCollector sharedManager];
+    XCTAssertEqual(2, [dataCollector.sdkEvents count], @"Expected two events as they are different notifications");
+    XCTAssertEqualObjects(@"Foreground Notification Received", [dataCollector.sdkEvents firstObject].key, @"Expected foreground message event");
+    XCTAssertEqualObjects(@"Foreground Notification Received", [dataCollector.sdkEvents lastObject].key, @"Expected foreground message event");
 }
 
 # pragma mark - Disable SDK
