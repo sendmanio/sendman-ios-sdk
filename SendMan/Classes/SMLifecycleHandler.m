@@ -38,14 +38,22 @@
 
 # pragma mark - Constructor and Singletong Access
 
+static SMDataCollector *sharedManager = nil;
+static dispatch_once_t onceToken;
+
 + (id)sharedManager {
-    static SMDataCollector *sharedManager = nil;
-    static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedManager = [[self alloc] init];
         [[NSNotificationCenter defaultCenter] addObserver:sharedManager selector:@selector(applicationWillEnterForeground) name:UIApplicationWillEnterForegroundNotification object:nil];
     });
     return sharedManager;
+}
+
++ (void)reset {
+    @synchronized(self) {
+        sharedManager = nil;
+        onceToken = 0;
+    }
 }
 
 # pragma mark - Cache

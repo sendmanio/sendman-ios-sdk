@@ -5,3 +5,8 @@ platform :ios, '10.0'
 target 'SendMan2_Example' do
   pod 'SendMan', :path => '../'
 end
+
+target 'SendMan_Tests' do
+  pod 'SendMan', :path => '../'
+  pod 'OCMock', '~> 3.7'
+end

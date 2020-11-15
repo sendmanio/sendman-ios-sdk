@@ -15,13 +15,27 @@
 		6003F59E195388D20070C39A /* SMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* SMAppDelegate.m */; };
 		6003F5A7195388D20070C39A /* SMViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5A6195388D20070C39A /* SMViewController.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
+		627B9512255DA79C00AECB1C /* SendMan_Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 627B9511255DA79C00AECB1C /* SendMan_Tests.m */; };
 		62CA78D024029BE300BCAAC9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62CA78CF24029BE300BCAAC9 /* SystemConfiguration.framework */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
 		ABC5BC53088678415654FF83 /* Pods_SendMan2_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 266193BAA1420692B6965BDC /* Pods_SendMan2_Example.framework */; };
+		FC0703695CD2F5158CEDD790 /* Pods_SendMan_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1E6D63CD00B07ABB84697CB /* Pods_SendMan_Tests.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		627B9514255DA79C00AECB1C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6003F582195388D10070C39A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6003F589195388D20070C39A;
+			remoteInfo = SendMan2_Example;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		04A421A51CC317760C29CE41 /* Pods-SendMan_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SendMan_Tests.release.xcconfig"; path = "Target Support Files/Pods-SendMan_Tests/Pods-SendMan_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		214E0AF4BDFE1A13DFC7E59C /* Pods-SendMan_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SendMan_Tests.debug.xcconfig"; path = "Target Support Files/Pods-SendMan_Tests/Pods-SendMan_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		266193BAA1420692B6965BDC /* Pods_SendMan2_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SendMan2_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58A195388D20070C39A /* SendMan2_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SendMan2_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -36,6 +50,9 @@
 		6003F5A5195388D20070C39A /* SMViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMViewController.h; sourceTree = "<group>"; };
 		6003F5A6195388D20070C39A /* SMViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMViewController.m; sourceTree = "<group>"; };
 		6003F5A8195388D20070C39A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		627B950F255DA79C00AECB1C /* SendMan_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SendMan_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		627B9511255DA79C00AECB1C /* SendMan_Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SendMan_Tests.m; sourceTree = "<group>"; };
+		627B9513255DA79C00AECB1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		628E5EBF23B8D3660042DBAD /* SendMan2_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SendMan2_Example.entitlements; sourceTree = "<group>"; };
 		62CA78CF24029BE300BCAAC9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		656896E790CCED51FE61B175 /* SendMan.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SendMan.podspec; path = ../SendMan.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -44,6 +61,7 @@
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8DB969D07B062EB425EC904A /* Pods-SendMan2_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SendMan2_Example.debug.xcconfig"; path = "Target Support Files/Pods-SendMan2_Example/Pods-SendMan2_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		9E63EA8B277BF16F4C42254E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		E1E6D63CD00B07ABB84697CB /* Pods_SendMan_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SendMan_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9338398090EBEB46C4BAA25 /* Pods-SendMan2_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SendMan2_Example.release.xcconfig"; path = "Target Support Files/Pods-SendMan2_Example/Pods-SendMan2_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,6 +78,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		627B950C255DA79C00AECB1C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC0703695CD2F5158CEDD790 /* Pods_SendMan_Tests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -68,6 +94,8 @@
 			children = (
 				8DB969D07B062EB425EC904A /* Pods-SendMan2_Example.debug.xcconfig */,
 				F9338398090EBEB46C4BAA25 /* Pods-SendMan2_Example.release.xcconfig */,
+				214E0AF4BDFE1A13DFC7E59C /* Pods-SendMan_Tests.debug.xcconfig */,
+				04A421A51CC317760C29CE41 /* Pods-SendMan_Tests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -78,6 +106,7 @@
 				628E5EBF23B8D3660042DBAD /* SendMan2_Example.entitlements */,
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
 				6003F593195388D20070C39A /* Example for SendMan */,
+				627B9510255DA79C00AECB1C /* SendMan_Tests */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
 				0228A5C2FEA3D6AA0C354FEA /* Pods */,
@@ -88,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				6003F58A195388D20070C39A /* SendMan2_Example.app */,
+				627B950F255DA79C00AECB1C /* SendMan_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -100,6 +130,7 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				266193BAA1420692B6965BDC /* Pods_SendMan2_Example.framework */,
+				E1E6D63CD00B07ABB84697CB /* Pods_SendMan_Tests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -141,6 +172,15 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		627B9510255DA79C00AECB1C /* SendMan_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				627B9511255DA79C00AECB1C /* SendMan_Tests.m */,
+				627B9513255DA79C00AECB1C /* Info.plist */,
+			);
+			path = SendMan_Tests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -163,6 +203,26 @@
 			productReference = 6003F58A195388D20070C39A /* SendMan2_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
+		627B950E255DA79C00AECB1C /* SendMan_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 627B9516255DA79C00AECB1C /* Build configuration list for PBXNativeTarget "SendMan_Tests" */;
+			buildPhases = (
+				990EE957F6C04062A5B17857 /* [CP] Check Pods Manifest.lock */,
+				627B950B255DA79C00AECB1C /* Sources */,
+				627B950C255DA79C00AECB1C /* Frameworks */,
+				627B950D255DA79C00AECB1C /* Resources */,
+				B94CD5D29B8A80F1EF6A45D0 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				627B9515255DA79C00AECB1C /* PBXTargetDependency */,
+			);
+			name = SendMan_Tests;
+			productName = SendMan_Tests;
+			productReference = 627B950F255DA79C00AECB1C /* SendMan_Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -175,6 +235,11 @@
 				TargetAttributes = {
 					6003F589195388D20070C39A = {
 						DevelopmentTeam = N7PBK64XW4;
+					};
+					627B950E255DA79C00AECB1C = {
+						CreatedOnToolsVersion = 12.1;
+						DevelopmentTeam = N7PBK64XW4;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -192,6 +257,7 @@
 			projectRoot = "";
 			targets = (
 				6003F589195388D20070C39A /* SendMan2_Example */,
+				627B950E255DA79C00AECB1C /* SendMan_Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -205,6 +271,13 @@
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		627B950D255DA79C00AECB1C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,6 +324,48 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SendMan2_Example/Pods-SendMan2_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		990EE957F6C04062A5B17857 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SendMan_Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B94CD5D29B8A80F1EF6A45D0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SendMan_Tests/Pods-SendMan_Tests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SendMan/SendMan.framework",
+				"${BUILT_PRODUCTS_DIR}/OCMock/OCMock.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SendMan.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/OCMock.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SendMan_Tests/Pods-SendMan_Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -264,7 +379,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		627B950B255DA79C00AECB1C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				627B9512255DA79C00AECB1C /* SendMan_Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		627B9515255DA79C00AECB1C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6003F589195388D20070C39A /* SendMan2_Example */;
+			targetProxy = 627B9514255DA79C00AECB1C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		6003F596195388D20070C39A /* InfoPlist.strings */ = {
@@ -429,6 +560,57 @@
 			};
 			name = Release;
 		};
+		627B9517255DA79C00AECB1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 214E0AF4BDFE1A13DFC7E59C /* Pods-SendMan_Tests.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = N7PBK64XW4;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = SendMan_Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.sendman.SendMan-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		627B9518255DA79C00AECB1C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04A421A51CC317760C29CE41 /* Pods-SendMan_Tests.release.xcconfig */;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = N7PBK64XW4;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = SendMan_Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "io.sendman.SendMan-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -446,6 +628,15 @@
 			buildConfigurations = (
 				6003F5C0195388D20070C39A /* Debug */,
 				6003F5C1195388D20070C39A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		627B9516255DA79C00AECB1C /* Build configuration list for PBXNativeTarget "SendMan_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				627B9517255DA79C00AECB1C /* Debug */,
+				627B9518255DA79C00AECB1C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

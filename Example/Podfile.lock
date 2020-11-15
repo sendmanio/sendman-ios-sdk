@@ -1,16 +1,23 @@
 PODS:
-  - SendMan (0.1.0)
+  - OCMock (3.7.1)
+  - SendMan (1.0.2)
 
 DEPENDENCIES:
+  - OCMock (~> 3.7)
   - SendMan (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - OCMock
 
 EXTERNAL SOURCES:
   SendMan:
     :path: "../"
 
 SPEC CHECKSUMS:
-  SendMan: 4d8cadb17e47b63eafc28f0b82ff5fbc29b22f92
+  OCMock: 75fbeaa46a9b11f8c182bbb1d1f7e9a35ccc9955
+  SendMan: 83a16f465157ec82f9ad3cc29a256d6b1661d7ea
 
-PODFILE CHECKSUM: ef0139c10b4936cda34340103fbe327c0a551f98
+PODFILE CHECKSUM: c09b5d6faa17ffcdea9e0cd3952700a7bf5335d1
 
 COCOAPODS: 1.9.3

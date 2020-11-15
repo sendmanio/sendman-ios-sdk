@@ -20,6 +20,20 @@
                ReferencedContainer = "container:SendMan.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "627B950E255DA79C00AECB1C"
+               BuildableName = "SendMan_Tests.xctest"
+               BlueprintName = "SendMan_Tests"
+               ReferencedContainer = "container:SendMan.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -41,7 +55,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "6003F5AD195388D20070C39A"
+               BlueprintIdentifier = "627B950E255DA79C00AECB1C"
                BuildableName = "SendMan_Tests.xctest"
                BlueprintName = "SendMan_Tests"
                ReferencedContainer = "container:SendMan.xcodeproj">

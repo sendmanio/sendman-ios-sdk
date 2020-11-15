@@ -50,14 +50,22 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
 
 # pragma mark - Constructor and Singletong Access
 
+static SMDataCollector *sharedManager = nil;
+static dispatch_once_t onceToken;
+
 + (id)sharedManager {
-    static SMDataCollector *sharedManager = nil;
-    static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedManager = [[self alloc] init];
         sharedManager.exponentialNetworkFailureBackOff = 1;
     });
     return sharedManager;
+}
+
++ (void)reset {
+    @synchronized(self) {
+        sharedManager = nil;
+        onceToken = 0;
+    }
 }
 
 - (instancetype)init {

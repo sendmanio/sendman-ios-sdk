@@ -43,17 +43,25 @@ NSString *const SMTokenTypeKey = @"SMTokenType";
 
 @implementation SendMan
 
-# pragma mark - Constructor and Singletong Access
+# pragma mark - Constructor and Singleton Access
+
+static SendMan *instance = nil;
+static dispatch_once_t onceToken;
 
 + (id)instance {
-    static SendMan *instance = nil;
-    static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         instance = [[self alloc] init];
         instance.sdkInitialized = NO;
         instance.sdkDisabled = NO;
     });
     return instance;
+}
+
++ (void)reset {
+    @synchronized(self) {
+        instance = nil;
+        onceToken = 0;
+    }
 }
 
 # pragma mark - Getters
