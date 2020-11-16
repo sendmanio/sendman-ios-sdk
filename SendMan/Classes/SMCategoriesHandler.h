@@ -31,7 +31,7 @@
 
 @property (strong, nonatomic, nullable) NSArray<SMCategory *> *categories;
 
-+ (id)sharedManager;
++ (id _Nonnull )sharedManager;
 + (void)getCategories;
 + (void)updateCategories:(NSArray<SMCategory *> *_Nullable)categories;
 
