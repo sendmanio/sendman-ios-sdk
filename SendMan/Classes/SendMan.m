@@ -172,7 +172,9 @@ static dispatch_once_t onceToken;
     if (!sendman.sdkInitialized && sendman.config && sendman.smUserId) {
         sendman.sdkInitialized = YES;
         [SMDataCollector startSession];
-        [SMCategoriesHandler getCategories];
+        if (sendman.config.useCategories == YES) {
+            [SMCategoriesHandler getCategories];
+        }
     }
 }
 

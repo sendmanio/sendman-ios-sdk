@@ -30,5 +30,6 @@
 @property (strong, nonatomic, nonnull) NSString *appSecret;
 @property (strong, nonatomic, nonnull) NSString *serverUrl;
 @property (nonatomic) BOOL autoGenerateUsers;
+@property (nonatomic) BOOL useCategories;
 
 @end

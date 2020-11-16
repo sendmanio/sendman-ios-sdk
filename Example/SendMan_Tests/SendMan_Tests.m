@@ -28,7 +28,9 @@
 #import "SendMan/SMDataCollector.h"
 #import "SendMan/SMAPIHandler.h"
 #import "SendMan/SMLifecycleHandler.h"
+#import "SendMan/SMCategoriesHandler.h"
 
+NSString *const userId = @"userId";
 
 @interface SendMan (Tests)
 + (void)reset;
@@ -48,6 +50,9 @@
 @property (strong, nonatomic, nullable) NSMutableArray *lastNotificationActivities;
 @end
 
+@interface SMCategoriesHandler (Tests)
+@property (strong, nonatomic, nullable) NSArray<SMCategory *> *categories;
+@end
 
 @interface UNNotificationSettings (Tests)
 - (instancetype)init;
@@ -66,9 +71,7 @@
     [SendMan reset];
     [SMDataCollector reset];
     [SMLifecycleHandler reset];
-
-    self.apiHandlerMock = OCMClassMock([SMAPIHandler class]);
-    OCMStub([self.apiHandlerMock getDataForUrl:[OCMArg any] responseHandler:[OCMArg any]]).andDo(nil);
+    [self initCategoriesHandler];
 }
 
 - (void)tearDown {}
@@ -301,6 +304,21 @@
 }
 
 
+# pragma mark - Categories
+
+- (void)testUseOfCategories {
+    [self initializeSDKWithCategories:YES];
+    SMCategoriesHandler *categoriesHandler = [SMCategoriesHandler sharedManager];
+    XCTAssertEqual(1, [categoriesHandler.categories count], @"Categories should contain a single category");
+}
+
+- (void)testNoUseOfCategories {
+    [self initializeSDKWithCategories:NO];
+    SMCategoriesHandler *categoriesHandler = [SMCategoriesHandler sharedManager];
+    XCTAssertEqual(0, [categoriesHandler.categories count], @"Categories should should not have fetched categories");
+}
+
+
 # pragma mark - Private Helper Methods
 
 - (void)logSomeAttributesUsingSDK {
@@ -328,9 +346,15 @@
     return notificationMock;
 }
 
+- (void)initializeSDKWithCategories:(BOOL)useCategories {
+    SMConfig *config = [[SMConfig alloc] initWithKey:@"key" andSecret:@"secret"];
+    config.useCategories = useCategories;
+    [SendMan setAppConfig:config];
+    [SendMan setUserId:userId];
+}
+
 - (void)initializeSDK {
-    [SendMan setAppConfig:[[SMConfig alloc] initWithKey:@"key" andSecret:@"secret"]];
-    [SendMan setUserId:@"userId"];
+    [self initializeSDKWithCategories:nil];
 }
 
 - (BOOL)compareDictKeys:(NSDictionary *)dict withOtherDict:(NSDictionary *)other {
@@ -344,6 +368,14 @@
     UNNotificationSettings *settings = OCMClassMock([UNNotificationSettings class]);
     OCMStub([settings authorizationStatus]).andReturn(status);
     OCMStub([notificationCenterMock getNotificationSettingsWithCompletionHandler:([OCMArg invokeBlockWithArgs:settings, nil])]);
+}
+
+- (void)initCategoriesHandler {
+    NSString *categoriesUrl = [NSString stringWithFormat:@"categories/user/%@", userId];
+    NSDictionary *categories = @{@"categories": [NSArray arrayWithObjects:  @{@"id": @"id1"}, nil]};
+    self.apiHandlerMock = OCMClassMock([SMAPIHandler class]);
+    NSHTTPURLResponse *response = [[NSHTTPURLResponse alloc] initWithURL:[[NSURL alloc] initWithString:@""] statusCode:200 HTTPVersion:nil headerFields:nil];
+    OCMStub([self.apiHandlerMock getDataForUrl:categoriesUrl responseHandler:([OCMArg invokeBlockWithArgs:response, categories, nil])]);
 }
 
 @end
