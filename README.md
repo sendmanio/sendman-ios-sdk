@@ -58,7 +58,7 @@ github "sendmanio/sendman-ios-sdk" ~> 1.0.3
 2. **Registering for push notifications with iOS**
 
     ``` Swift
-    SendMan.register()
+    SendMan.requestPushAuthorization()
     ```
 
 For a detailed integration guide (including integrating using Objective-C, tracking user interaction with notifications and storing custom user properties), head to [our docs](https://docs.sendman.io/mobile-integration/ios).
