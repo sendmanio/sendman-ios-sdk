@@ -29,16 +29,16 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    SMConfig *config = [[SMConfig alloc] initWithKey:@"81b2b9a9213a2cd0d664ad6673d84b5156121166" andSecret:@"2728a0301adda50dce376e6eedc8de5c3a8af82a"];
+    SMConfig *config = [[SMConfig alloc] initWithKey:@"d3b532bc03863709c219bb4abe81901e4da40159" andSecret:@"032d8ea194b263cf1d892af9cb231775e7e17588"];
     config.useCategories = YES;
-    config.serverUrl = @"http://192.168.1.100:4200";
+    config.serverUrl = @"http://localhost:4200";
     [SendMan setAppConfig:config];
 
-    [SendMan setUserId:@"test-auto-id15"];
+    [SendMan setUserId:@"123"];
     [SendMan setUserProperties:@{@"email": @"email@email.com", @"Native App": @"YES"}];
 
     [UNUserNotificationCenter currentNotificationCenter].delegate = self;
-//    [SendMan requestPushAuthorization:nil];
+    [SendMan requestPushAuthorization:nil];
 
     [SendMan applicationDidFinishLaunchingWithOptions:launchOptions];
 
