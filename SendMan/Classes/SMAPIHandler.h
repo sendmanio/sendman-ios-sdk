@@ -22,7 +22,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SMConfig.h"
+#import <SendMan/SMConfig.h>
 
 @import UIKit;
 

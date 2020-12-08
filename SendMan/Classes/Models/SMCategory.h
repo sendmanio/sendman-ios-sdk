@@ -22,7 +22,7 @@
 //
 
 
-#import "JSONModel.h"
+#import <SendMan/JSONModel.h>
 
 
 @protocol NSString;

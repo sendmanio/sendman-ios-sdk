@@ -23,7 +23,7 @@
 
 @import UIKit;
 #import <UserNotifications/UserNotifications.h>
-#import "SMConfig.h"
+#import <Sendman/SMConfig.h>
 
 @interface SMLifecycleHandler : NSObject
 

@@ -5,9 +5,9 @@
 
 #import <Foundation/Foundation.h>
 
-#import "JSONModelError.h"
-#import "JSONValueTransformer.h"
-#import "JSONKeyMapper.h"
+#import <SendMan/JSONModelError.h>
+#import <SendMan/JSONValueTransformer.h>
+#import <SendMan/JSONKeyMapper.h>
 
 /////////////////////////////////////////////////////////////////////////////////////////////
 #if TARGET_IPHONE_SIMULATOR

@@ -22,8 +22,8 @@
 //
 
 @import UIKit;
-#import "SMConfig.h"
-#import "SMCategory.h"
+#import <Sendman/SMConfig.h>
+#import <Sendman/SMCategory.h>
 
 #define CategoriesRetrievedNotification @"CategoriesRetrievedNotification"
 

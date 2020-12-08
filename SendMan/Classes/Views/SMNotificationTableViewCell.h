@@ -22,8 +22,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SMNotificationCellDelegate.h"
-#import "SMCategory.h"
+#import <SendMan/SMNotificationCellDelegate.h>
+#import <Sendman/SMCategory.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
