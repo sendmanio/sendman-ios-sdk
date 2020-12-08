@@ -72,10 +72,13 @@
 }
 
 + (void)updateCategories:(NSArray<SMCategory *> *)categories {
-    if (categories) {
-        SMCategoriesHandler *categoryHandler = [SMCategoriesHandler sharedManager];
-        categoryHandler.categories = categories;
+    if (!categories) {
+        SENDMAN_LOG(@"Categories are nil. Skipping update");
+        return;
     }
+
+    SMCategoriesHandler *categoryHandler = [SMCategoriesHandler sharedManager];
+    categoryHandler.categories = categories;
 
     if (![SendMan isSdkInitialized]) {
         SENDMAN_LOG(@"Cannot update categories if SDK is not initialized");
