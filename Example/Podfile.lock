@@ -1,6 +1,6 @@
 PODS:
   - OCMock (3.7.1)
-  - SendMan (1.0.2)
+  - SendMan (1.0.3)
 
 DEPENDENCIES:
   - OCMock (~> 3.7)
@@ -16,8 +16,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   OCMock: 75fbeaa46a9b11f8c182bbb1d1f7e9a35ccc9955
-  SendMan: 83a16f465157ec82f9ad3cc29a256d6b1661d7ea
+  SendMan: 6f5f8bd9ee38b65cbeff6c3829ae31d7a1b70c86
 
 PODFILE CHECKSUM: c09b5d6faa17ffcdea9e0cd3952700a7bf5335d1
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0
