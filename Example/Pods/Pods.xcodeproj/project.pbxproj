@@ -194,7 +194,7 @@
 		18D03E83940A99D7F9E4CCB4B4FFC34C /* OCMNotificationPoster.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMNotificationPoster.h; path = Source/OCMock/OCMNotificationPoster.h; sourceTree = "<group>"; };
 		1A9FA04A1016901F51161BDAF1AC8802 /* OCMRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMRecorder.h; path = Source/OCMock/OCMRecorder.h; sourceTree = "<group>"; };
 		1C801B52D3194B8AE64C44072F080405 /* SMLog.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SMLog.h; path = SendMan/Classes/SMLog.h; sourceTree = "<group>"; };
-		1D24E1217FB6E36575F021DEA88E50FD /* Pods_SendMan_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SendMan_Tests.framework; path = "Pods-SendMan_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D24E1217FB6E36575F021DEA88E50FD /* Pods_SendMan_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SendMan_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D86E1BCB29B40F7B82A8E782D9E3A16 /* SMData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMData.m; sourceTree = "<group>"; };
 		1EA5FB2831AE790D523EE1ECBE70B08A /* SMNotificationTableViewCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = SMNotificationTableViewCell.m; sourceTree = "<group>"; };
 		1F8D7F86706FF1AEE255B74B99BEF1E1 /* OCMObserverRecorder.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMObserverRecorder.m; path = Source/OCMock/OCMObserverRecorder.m; sourceTree = "<group>"; };
@@ -221,7 +221,7 @@
 		444515AA95563C771AEF95095FC2D889 /* SMSDKEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SMSDKEvent.h; sourceTree = "<group>"; };
 		466044B02167B4EE4EBEBB2B8225F231 /* Pods-SendMan2_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SendMan2_Example-umbrella.h"; sourceTree = "<group>"; };
 		4F7E5A3BBD12EA51F8298A4FA09855A0 /* NSInvocation+OCMAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSInvocation+OCMAdditions.h"; path = "Source/OCMock/NSInvocation+OCMAdditions.h"; sourceTree = "<group>"; };
-		5076EEDEB9ED223FB2705BC47C06140E /* SendMan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SendMan.framework; path = SendMan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5076EEDEB9ED223FB2705BC47C06140E /* SendMan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SendMan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		511C3D4C982970119665FCC833D374B8 /* OCMockObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMockObject.h; path = Source/OCMock/OCMockObject.h; sourceTree = "<group>"; };
 		5272F53870D035B5D83250DCF181D133 /* OCMockObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMockObject.m; path = Source/OCMock/OCMockObject.m; sourceTree = "<group>"; };
 		52956D4C6BAF9D94EB41D6EDE38B5374 /* NSMethodSignature+OCMAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSMethodSignature+OCMAdditions.h"; path = "Source/OCMock/NSMethodSignature+OCMAdditions.h"; sourceTree = "<group>"; };
@@ -229,7 +229,7 @@
 		531836A1011652B0F7CD64ED4B6C8F37 /* Pods-SendMan_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SendMan_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		532CF447D42C19A87C59A52EE8584DB3 /* SMNotificationsViewController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SMNotificationsViewController.h; sourceTree = "<group>"; };
 		537B39885FA660E2A33591712B6BDD38 /* OCMMacroState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMMacroState.m; path = Source/OCMock/OCMMacroState.m; sourceTree = "<group>"; };
-		5417A2F2937D484FE7F722A4CCB92915 /* SendMan.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = SendMan.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		5417A2F2937D484FE7F722A4CCB92915 /* SendMan.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = SendMan.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		58625BA52D47D843FAA9FD15816F8D3F /* OCMInvocationStub.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMInvocationStub.h; path = Source/OCMock/OCMInvocationStub.h; sourceTree = "<group>"; };
 		5AE8804FD6A951E9857A5E60CD50F6ED /* OCObserverMockObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCObserverMockObject.m; path = Source/OCMock/OCObserverMockObject.m; sourceTree = "<group>"; };
 		5C92C29EAD80B7B3AB15A03B912F56F7 /* SendMan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SendMan.release.xcconfig; sourceTree = "<group>"; };
@@ -260,7 +260,7 @@
 		81A6D36D61787A518497E45B10C110E9 /* Pods-SendMan2_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SendMan2_Example.release.xcconfig"; sourceTree = "<group>"; };
 		82EFC221DD5E8E1517F0774902FE0D3D /* OCMVerifier.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMVerifier.m; path = Source/OCMock/OCMVerifier.m; sourceTree = "<group>"; };
 		8451879EA3A682F22221471EDFBE7950 /* OCMQuantifier.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMQuantifier.m; path = Source/OCMock/OCMQuantifier.m; sourceTree = "<group>"; };
-		849886B066053D4FEBDFF55C4B88F47C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		849886B066053D4FEBDFF55C4B88F47C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		8A3C4437C6A752741E0B8BD6E4FCB894 /* Pods-SendMan2_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SendMan2_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		8B63BC8DDD837EFE42EA28C5858743DF /* OCMFunctionsPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMFunctionsPrivate.h; path = Source/OCMock/OCMFunctionsPrivate.h; sourceTree = "<group>"; };
 		8E582207796A151F6BFCED0AB19D1A49 /* SMConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SMConfig.h; path = SendMan/Classes/SMConfig.h; sourceTree = "<group>"; };
@@ -271,10 +271,10 @@
 		96E8473ABB196EDE3F40A069D01450D5 /* OCMArg.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMArg.m; path = Source/OCMock/OCMArg.m; sourceTree = "<group>"; };
 		9A39397969099ED523BED17430D57EF9 /* OCMObserverRecorder.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMObserverRecorder.h; path = Source/OCMock/OCMObserverRecorder.h; sourceTree = "<group>"; };
 		9B538F6FA2E4001318C2D6205BE91085 /* Pods-SendMan_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SendMan_Tests.modulemap"; sourceTree = "<group>"; };
-		9C13A57B63A6C871C2D6D8BF298272AA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		9C13A57B63A6C871C2D6D8BF298272AA /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		9CC37B2C09436223C812990F90286BA2 /* OCMArgAction.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMArgAction.m; path = Source/OCMock/OCMArgAction.m; sourceTree = "<group>"; };
 		9D2CF245E8A15B45E0C5B0CF1AF0B232 /* OCClassMockObject.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCClassMockObject.h; path = Source/OCMock/OCClassMockObject.h; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9E5BA424FF716B56E42C21D4FDC1C6C7 /* Pods-SendMan_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SendMan_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		A240D3224A1F477218916AF642283B8C /* NSInvocation+OCMAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSInvocation+OCMAdditions.m"; path = "Source/OCMock/NSInvocation+OCMAdditions.m"; sourceTree = "<group>"; };
 		A3150A92CAA1795C9FB7EAFCD0521543 /* Pods-SendMan_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SendMan_Tests-umbrella.h"; sourceTree = "<group>"; };
@@ -324,13 +324,13 @@
 		F0F9CB152ED8EE25CF4D22908B02233B /* OCMLocation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCMLocation.m; path = Source/OCMock/OCMLocation.m; sourceTree = "<group>"; };
 		F1CBB0B9DB8A241ABE13B4AB4737B090 /* OCMFunctions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OCMFunctions.h; path = Source/OCMock/OCMFunctions.h; sourceTree = "<group>"; };
 		F24789566EBE54DE2AE488BBA5AE1B24 /* SMLifecycleHandler.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SMLifecycleHandler.h; path = SendMan/Classes/SMLifecycleHandler.h; sourceTree = "<group>"; };
-		F30C125DB91902F63DC73AEF0B0E6111 /* OCMock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = OCMock.framework; path = OCMock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F30C125DB91902F63DC73AEF0B0E6111 /* OCMock.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OCMock.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3F5A4F37AFC396A88CCB7CB17C58C56 /* SendMan.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SendMan.m; path = SendMan/Classes/SendMan.m; sourceTree = "<group>"; };
 		F75B1A14D5DFD3225FD6B30702DEEC0F /* NSMethodSignature+OCMAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSMethodSignature+OCMAdditions.m"; path = "Source/OCMock/NSMethodSignature+OCMAdditions.m"; sourceTree = "<group>"; };
 		F977FD0D4FA8A429595CE120BC4B46FB /* SMAPIHandler.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SMAPIHandler.m; path = SendMan/Classes/SMAPIHandler.m; sourceTree = "<group>"; };
 		FB76B2FFB6494CFCC35F782A0E8612CA /* OCProtocolMockObject.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = OCProtocolMockObject.m; path = Source/OCMock/OCProtocolMockObject.m; sourceTree = "<group>"; };
 		FBF45391D97544BA329A692B4BC22646 /* SMPropertyValue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = SMPropertyValue.h; sourceTree = "<group>"; };
-		FC270BBC20FABA62D31BDB6511580732 /* Pods_SendMan2_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SendMan2_Example.framework; path = "Pods-SendMan2_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FC270BBC20FABA62D31BDB6511580732 /* Pods_SendMan2_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SendMan2_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD5DE719F79892440FA9E0C9FDB4137F /* JSONValueTransformer.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = JSONValueTransformer.m; sourceTree = "<group>"; };
 		FE3069AA08793A1ED7A98BB764771462 /* SMDataEnricher.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = SMDataEnricher.m; path = SendMan/Classes/SMDataEnricher.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -530,7 +530,6 @@
 				63D29B2E9CE5EBD23CC79F49E76E8E20 /* JSONModelError.h */,
 				B737A7AB7AD226FB2CCC020C84EAC48E /* JSONModelError.m */,
 			);
-			name = JSONModel;
 			path = JSONModel;
 			sourceTree = "<group>";
 		};
@@ -542,7 +541,6 @@
 				D21AAE2845115FBD69860BCB57BB110E /* JSONValueTransformer.h */,
 				FD5DE719F79892440FA9E0C9FDB4137F /* JSONValueTransformer.m */,
 			);
-			name = JSONModelTransformations;
 			path = JSONModelTransformations;
 			sourceTree = "<group>";
 		};
@@ -643,7 +641,6 @@
 				FB76B2FFB6494CFCC35F782A0E8612CA /* OCProtocolMockObject.m */,
 				1A72121211F6DA16E0ABD1EBD3D17462 /* Support Files */,
 			);
-			name = OCMock;
 			path = OCMock;
 			sourceTree = "<group>";
 		};
@@ -1098,7 +1095,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/OCMock/OCMock-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/OCMock/OCMock-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/OCMock/OCMock.modulemap";
 				PRODUCT_MODULE_NAME = OCMock;
@@ -1201,8 +1198,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -1357,7 +1353,7 @@
 				GCC_PREFIX_HEADER = "Target Support Files/OCMock/OCMock-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/OCMock/OCMock-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/OCMock/OCMock.modulemap";
 				PRODUCT_MODULE_NAME = OCMock;

@@ -29,6 +29,7 @@
 #import "SendMan/SMAPIHandler.h"
 #import "SendMan/SMLifecycleHandler.h"
 #import "SendMan/SMCategoriesHandler.h"
+#import "SendMan/SMLog.h"
 
 NSString *const userId = @"userId";
 
@@ -39,7 +40,8 @@ NSString *const userId = @"userId";
 @interface SMDataCollector (Tests)
 + (id)sharedManager;
 + (void)reset;
-- (void)sendData:(BOOL)presistSession;
+- (void)sendData;
+- (void)pollForNewData:(int)secondsInterval;
 @property (strong, nonatomic, nullable) NSDictionary *customProperties;
 @property (strong, nonatomic, nullable) NSDictionary *sdkProperties;
 @property (strong, nonatomic, nullable) NSMutableArray<SMSDKEvent *> <SMSDKEvent> *sdkEvents;
@@ -71,6 +73,7 @@ NSString *const userId = @"userId";
     [SendMan reset];
     [SMDataCollector reset];
     [SMLifecycleHandler reset];
+    [self initDataCollector];
     [self initCategoriesHandler];
 }
 
@@ -127,8 +130,6 @@ NSString *const userId = @"userId";
         @"view": [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 0)]
     }]; // Invalid properties
 
-    [self initializeSDK];
-
     SMDataCollector *dataCollector = [SMDataCollector sharedManager];
     XCTAssert([self compareDictKeys:dataCollector.customProperties withOtherDict:[self validValues]], @"Custom properties should contain exactly the validValues keys and nothing else.");
 }
@@ -136,7 +137,6 @@ NSString *const userId = @"userId";
 - (void)testAppLaunchWithoutNotifications {
     [self stubCurrentNotificationsStatus:UNAuthorizationStatusAuthorized];
 
-    [self initializeSDK];
     [SendMan applicationDidFinishLaunchingWithOptions:@{}];
 
     SMDataCollector *dataCollector = [SMDataCollector sharedManager];
@@ -147,7 +147,6 @@ NSString *const userId = @"userId";
 - (void)testAppLaunchWithNotifications {
     [self stubCurrentNotificationsStatus:UNAuthorizationStatusAuthorized];
 
-    [self initializeSDK];
     [SendMan applicationDidFinishLaunchingWithOptions:@{ UIApplicationLaunchOptionsRemoteNotificationKey: [self pushNotificationUserInfoPayload] }];
 
     SMDataCollector *dataCollector = [SMDataCollector sharedManager];
@@ -159,7 +158,6 @@ NSString *const userId = @"userId";
 - (void)testAppLaunchWithInvalidPayload {
     [self stubCurrentNotificationsStatus:UNAuthorizationStatusAuthorized];
 
-    [self initializeSDK];
     [SendMan applicationDidFinishLaunchingWithOptions:nil];
 
     SMDataCollector *dataCollector = [SMDataCollector sharedManager];
@@ -170,7 +168,6 @@ NSString *const userId = @"userId";
 - (void)testWillPresentNotification {
     [self stubCurrentNotificationsStatus:UNAuthorizationStatusAuthorized];
 
-    [self initializeSDK];
     [SendMan userNotificationCenterWillPresentNotification:[self notificationWithUserInfo:[self pushNotificationUserInfoPayload]]];
 
     SMDataCollector *dataCollector = [SMDataCollector sharedManager];
@@ -182,7 +179,6 @@ NSString *const userId = @"userId";
 - (void)testWillPresentNotificationFromExternalSource {
     [self stubCurrentNotificationsStatus:UNAuthorizationStatusAuthorized];
 
-    [self initializeSDK];
     [SendMan userNotificationCenterWillPresentNotification:[self notificationWithUserInfo:@{ @"param": @"value" }]];
 
     SMDataCollector *dataCollector = [SMDataCollector sharedManager];
@@ -194,7 +190,6 @@ NSString *const userId = @"userId";
 - (void)testWillPresentNotificationFromRun {
     [self stubCurrentNotificationsStatus:UNAuthorizationStatusAuthorized];
 
-    [self initializeSDK];
     NSDictionary *userInfo = @{ @"param": @"value" };
     [SendMan applicationDidFinishLaunchingWithOptions:@{ UIApplicationLaunchOptionsRemoteNotificationKey: userInfo }];
     [SendMan userNotificationCenterWillPresentNotification:[self notificationWithUserInfo:userInfo]];
@@ -203,12 +198,12 @@ NSString *const userId = @"userId";
     XCTAssertEqual(2, [dataCollector.sdkEvents count], @"Expected app launch and notification open events");
     XCTAssertEqualObjects(@"Background Notification Opened", [dataCollector.sdkEvents firstObject].key, @"Expected open notification event to appear before app launch event");
     XCTAssertEqualObjects(@"App launched", [dataCollector.sdkEvents lastObject].key, @"Expected the app launch event to appear after the notification event");
+    [self stubCurrentNotificationsStatus:UNAuthorizationStatusAuthorized];
 }
 
 - (void)testWillPresentNotificationIdenticalPayloadsFromDifferentNotifications {
     [self stubCurrentNotificationsStatus:UNAuthorizationStatusAuthorized];
 
-    [self initializeSDK];
     NSDictionary *userInfo = @{ @"param": @"value" };
     [SendMan userNotificationCenterWillPresentNotification:[self notificationWithUserInfo:userInfo]];
     [SendMan userNotificationCenterWillPresentNotification:[self notificationWithUserInfo:[NSDictionary dictionaryWithDictionary:userInfo]]];
@@ -252,8 +247,6 @@ NSString *const userId = @"userId";
 # pragma mark - User Properties
 
 - (void)testSetUserPropertiesAfterInitialization {
-    [self initializeSDK];
-
     [SendMan setUserProperties:[self validValues]];
     [SendMan setUserProperties:@{
         @"null": [NSNull null],
@@ -269,36 +262,40 @@ NSString *const userId = @"userId";
 # pragma mark - API Error Handling
 
 - (void)testSuccessfulSendData {
-    [self initializeSDK];
     NSHTTPURLResponse *response = [[NSHTTPURLResponse alloc] initWithURL:[[NSURL alloc] initWithString:@""] statusCode:204 HTTPVersion:nil headerFields:nil];
     OCMStub([self.apiHandlerMock sendDataWithJson:[OCMArg any] forUrl:[OCMArg any] withResponseHandler:([OCMArg invokeBlockWithArgs:response, [NSNull null], nil])]);
 
+    [self stubCurrentNotificationsStatus:UNAuthorizationStatusAuthorized];
+    [self initializeSDK];
+
     [SendMan setUserProperties:[self validValues]];
     SMDataCollector *dataCollector = [SMDataCollector sharedManager];
-    [dataCollector sendData:YES];
+    [dataCollector sendData];
 
     XCTAssertEqual(0, [dataCollector.customProperties count], @"Custom properties should be empty after a 204 response from the API.");
 }
 
 - (void)testSendDataWithAPIError {
-    [self initializeSDK];
     NSHTTPURLResponse *response = [[NSHTTPURLResponse alloc] initWithURL:[[NSURL alloc] initWithString:@""] statusCode:400 HTTPVersion:nil headerFields:nil];
     OCMStub([self.apiHandlerMock sendDataWithJson:[OCMArg any] forUrl:[OCMArg any] withResponseHandler:([OCMArg invokeBlockWithArgs:response, [NSNull null], nil])]);
 
+    [self initializeSDK];
+
     [SendMan setUserProperties:[self validValues]];
     SMDataCollector *dataCollector = [SMDataCollector sharedManager];
-    [dataCollector sendData:YES];
+    [dataCollector sendData];
 
     XCTAssert([self compareDictKeys:dataCollector.customProperties withOtherDict:[self validValues]], @"Custom properties should be restored and full after an error from the API.");
 }
 
 - (void)testSendDataWithNetworkError {
-    [self initializeSDK];
     OCMStub([self.apiHandlerMock sendDataWithJson:[OCMArg any] forUrl:[OCMArg any] withResponseHandler:([OCMArg invokeBlockWithArgs:[NSNull null], [NSError errorWithDomain:@"" code:0 userInfo:@{}], nil])]);
+
+    [self initializeSDK];
 
     [SendMan setUserProperties:[self validValues]];
     SMDataCollector *dataCollector = [SMDataCollector sharedManager];
-    [dataCollector sendData:YES];
+    [dataCollector sendData];
 
     XCTAssert([self compareDictKeys:dataCollector.customProperties withOtherDict:[self validValues]], @"Custom properties should be restored and full after an error from the API.");
 }
@@ -368,6 +365,11 @@ NSString *const userId = @"userId";
     UNNotificationSettings *settings = OCMClassMock([UNNotificationSettings class]);
     OCMStub([settings authorizationStatus]).andReturn(status);
     OCMStub([notificationCenterMock getNotificationSettingsWithCompletionHandler:([OCMArg invokeBlockWithArgs:settings, nil])]);
+}
+
+- (void)initDataCollector {
+    id dataCollectorMock = OCMClassMock([SMDataCollector class]);
+    OCMStub([dataCollectorMock pollForNewData:2]);
 }
 
 - (void)initCategoriesHandler {

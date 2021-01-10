@@ -99,7 +99,9 @@ static dispatch_once_t onceToken;
     } else if (!activityId && [self.lastExternalNotifications indexOfObjectIdenticalTo:notification] != NSNotFound) {
         SENDMAN_LOG(@"External notification already handled previously");
     } else {
+        SENDMAN_LOG(@"@@@ before: didOpenNotification :: %@", [NSThread currentThread]);
         [[UNUserNotificationCenter currentNotificationCenter] getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
+            SENDMAN_LOG(@"@@@ after: didOpenNotification :: %@", [NSThread currentThread]);
             [self saveLastNotification:notification];
 
             SMSDKEvent *event = [SMSDKEvent new];
@@ -200,18 +202,12 @@ static dispatch_once_t onceToken;
         [[UNUserNotificationCenter currentNotificationCenter] requestAuthorizationWithOptions:(UNAuthorizationOptionSound | UNAuthorizationOptionAlert | UNAuthorizationOptionBadge)
                                                                             completionHandler:^(BOOL granted, NSError * _Nullable error) {
             SENDMAN_LOG(@"Push notification permission granted: %@", granted ? @"✅" : @"❌");
-            dispatch_async(dispatch_get_main_queue(), ^() {
-                if (oneTimeAppleAuhtorizationDialogWasShown) {
-                    SMSDKEvent *event = [SMSDKEvent new];
-                    event.key = @"Push notification permissions popup displayed";
-                    [SMDataCollector addSdkEvent:event];
-                }
-
+            [SMDataCollector reportDialogDisplayed:oneTimeAppleAuhtorizationDialogWasShown andPerform:^{
                 if (granted) {
                     [[UIApplication sharedApplication] registerForRemoteNotifications];
                 }
                 if (success) success(granted);
-            });
+            }];
         }];
     }];
 }

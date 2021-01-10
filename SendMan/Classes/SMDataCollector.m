@@ -41,6 +41,8 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
 
 @property (nonatomic) BOOL sessionError;
 @property (nonatomic) BOOL checkActiveUser;
+@property (strong, nonatomic, nullable) NSNumber *lastDataSentTs;
+@property (nonatomic) UNAuthorizationStatus lastKnownAuthorizationStatus;
 
 @property (nonatomic) NSInteger exponentialNetworkFailureBackOff;
 
@@ -73,23 +75,22 @@ static dispatch_once_t onceToken;
     if (self) {
         self.sessionError = NO;
         self.checkActiveUser = YES;
-        
+        self.lastKnownAuthorizationStatus = -1;
         self.customProperties = [SMMutableProperties new];
         self.sdkProperties = [SMMutableProperties new];
         self.sdkEvents = [NSMutableArray<SMSDKEvent> new];
-        [self pollForNewData:2 withSessionPersistency:NO];
-        [self pollForNewData:60 withSessionPersistency:YES];
+        [self pollForNewData:2];
     }
     return self;
 }
 
-- (void) pollForNewData:(int)secondsInterval withSessionPersistency:(BOOL)presistSession {
+- (void) pollForNewData:(int)secondsInterval {
     dispatch_queue_t serverDelaySimulationThread = dispatch_queue_create("SendManDataPoller", nil);
     dispatch_async(serverDelaySimulationThread, ^{
-        [self sendData:presistSession];
+        [self sendData];
         if (!self.sessionError) {
             [NSThread sleepForTimeInterval:secondsInterval * self.exponentialNetworkFailureBackOff];
-            [self pollForNewData:secondsInterval withSessionPersistency:presistSession];
+            [self pollForNewData:secondsInterval];
         }
     });
 }
@@ -132,6 +133,7 @@ static dispatch_once_t onceToken;
     event.timestamp = [SMUtils now];
     event.id = [[[NSUUID UUID] UUIDString] lowercaseString];
     [[UNUserNotificationCenter currentNotificationCenter] getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
+        manager.lastKnownAuthorizationStatus = settings.authorizationStatus;
         event.notificationsRegistrationState = [self getRegistrationStateFromStatus:settings.authorizationStatus];
         [manager.sdkEvents addObject:event];
     }];
@@ -155,12 +157,39 @@ static dispatch_once_t onceToken;
     }
 }
 
-- (void)sendData:(BOOL)presistSession {
-    
-    if (self.sessionError || ![SendMan getConfig] || ![SendMan getUserId] || (!presistSession && ([self.customProperties count] == 0 && [self.sdkProperties count] == 0 && [self.sdkEvents count] == 0))) {
-        return;
++ (void)reportDialogDisplayed:(BOOL)reportDisplayEvent andPerform:(void (^)(void))completion {
+    if (reportDisplayEvent) {
+        SMSDKEvent *event = [SMSDKEvent new];
+        event.key = @"Push notification permissions popup displayed";
+        [SMDataCollector addSdkEvent:event];
     }
     
+    dispatch_async(dispatch_get_main_queue(), ^() {
+        if (completion) completion();
+    });
+}
+
+- (void)checkAuthorizationStatus {
+    if (self.lastKnownAuthorizationStatus != UNAuthorizationStatusNotDetermined) return;
+
+    [[UNUserNotificationCenter currentNotificationCenter] getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
+        if (settings.authorizationStatus != UNAuthorizationStatusNotDetermined && self.lastKnownAuthorizationStatus == UNAuthorizationStatusNotDetermined) {
+            SENDMAN_LOG(@"Push notification permissions requested for the first time (without using SendMan). Permission status is: %@", settings.authorizationStatus == UNAuthorizationStatusAuthorized ? @"✅" : @"❌");
+            [SMDataCollector reportDialogDisplayed:YES andPerform:nil];
+        }
+    }];
+}
+
+- (void)sendData {
+    BOOL hasNewData = [self.customProperties count] != 0 || [self.sdkProperties count] != 0 || [self.sdkEvents count] != 0;
+    BOOL shouldPersistData = !self.lastDataSentTs ||  [self.lastDataSentTs longLongValue] - [[SMUtils now] longLongValue] > 60;
+
+    if (self.sessionError || ![SendMan getConfig] || ![SendMan getUserId] || (!hasNewData && !shouldPersistData)) {
+        return;
+    }
+
+    [self checkAuthorizationStatus];
+
     SENDMAN_LOG(@"Preparing to submit periodical data to API");
 
     SMData *data = [SMData new];
@@ -188,7 +217,8 @@ static dispatch_once_t onceToken;
     [self.sdkEvents removeAllObjects];
 
     NSDictionary *dataDict = [data toDictionary];
-    
+
+    self.lastDataSentTs = [SMUtils now];
     [SMAPIHandler sendDataWithJson:dataDict forUrl:@"user/data" withResponseHandler:^(NSHTTPURLResponse *httpResponse, NSError *error) {
         if (!error && httpResponse.statusCode == 204) {
             if (data.autoUserId) { // This means auto Id was just overridden in the backend by an actual externalUserId

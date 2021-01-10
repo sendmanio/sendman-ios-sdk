@@ -34,6 +34,7 @@
 + (void)addSdkEventWithName:(NSString *_Nonnull)name andValue:(NSObject *_Nullable)value;
 
 + (NSString *_Nonnull)getRegistrationStateFromStatus:(UNAuthorizationStatus)status;
++ (void)reportDialogDisplayed:(BOOL)reportDisplayEvent andPerform:(void (^_Nullable)(void))completion;
 
 + (void)startSession;
 
