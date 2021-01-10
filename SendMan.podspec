@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'SendMan'
-  s.version          = '1.0.4'
+  s.version          = '1.0.5'
   s.summary          = 'SendMan push notification management SDK for iOS apps'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.homepage         = 'https://sendman.io'
