@@ -182,7 +182,7 @@ static dispatch_once_t onceToken;
 
 - (void)sendData {
     BOOL hasNewData = [self.customProperties count] != 0 || [self.sdkProperties count] != 0 || [self.sdkEvents count] != 0;
-    BOOL shouldPersistData = !self.lastDataSentTs ||  [self.lastDataSentTs longLongValue] - [[SMUtils now] longLongValue] > 60;
+    BOOL shouldPersistData = !self.lastDataSentTs || [[SMUtils now] longLongValue] - [self.lastDataSentTs longLongValue] > 60 * 1000;
 
     if (self.sessionError || ![SendMan getConfig] || ![SendMan getUserId] || (!hasNewData && !shouldPersistData)) {
         return;
