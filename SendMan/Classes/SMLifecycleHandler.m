@@ -99,11 +99,8 @@ static dispatch_once_t onceToken;
     } else if (!activityId && [self.lastExternalNotifications indexOfObjectIdenticalTo:notification] != NSNotFound) {
         SENDMAN_LOG(@"External notification already handled previously");
     } else {
-        SENDMAN_LOG(@"@@@ before: didOpenNotification :: %@", [NSThread currentThread]);
+        [self saveLastNotification:notification];
         [[UNUserNotificationCenter currentNotificationCenter] getNotificationSettingsWithCompletionHandler:^(UNNotificationSettings * _Nonnull settings) {
-            SENDMAN_LOG(@"@@@ after: didOpenNotification :: %@", [NSThread currentThread]);
-            [self saveLastNotification:notification];
-
             SMSDKEvent *event = [SMSDKEvent new];
             event.key = [self eventNameByAppState:appState andAuthorizationStatus:settings.authorizationStatus];
             event.appState = [self appStateStringFromState:appState];
