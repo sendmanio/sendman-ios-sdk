@@ -236,20 +236,21 @@ static dispatch_once_t onceToken;
                 SENDMAN_ERROR(@"An unknown error has occurred while submitting data to the server.");
             }
 
-            for (NSString* key in self.customProperties) {
-                [currentCustomProperties setObject:self.customProperties[key] forKey:key];
+            for (NSString* key in currentCustomProperties) {
+                if (self.customProperties[key] == nil) {
+                    self.customProperties[key] = currentCustomProperties[key];
+                }
             }
-            [self.customProperties setDictionary:currentCustomProperties];
             
-            for (NSString* key in self.sdkProperties) {
-                [currentSDKProperties setObject:self.sdkProperties[key] forKey:key];
+            for (NSString* key in currentSDKProperties) {
+                if (self.sdkProperties[key] == nil) {
+                    self.sdkProperties[key] = currentSDKProperties[key];
+                }
             }
-            [self.sdkProperties setDictionary:currentSDKProperties];
             
-            for (SMSDKEvent* sdkEvents in self.sdkEvents) {
-                [currentSDKEvents addObject:sdkEvents];
+            if ([currentSDKEvents count] > 0) {
+                [self.sdkEvents insertObjects:currentSDKEvents atIndexes:[NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0, [currentSDKEvents count])]];
             }
-            [self.sdkEvents setArray:currentSDKEvents];
 
             if (httpResponse.statusCode == 401) {
                 if (self.sessionError == false) {

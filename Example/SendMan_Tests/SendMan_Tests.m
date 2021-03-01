@@ -278,14 +278,19 @@ NSString *const userId = @"userId";
 - (void)testSendDataWithAPIError {
     NSHTTPURLResponse *response = [[NSHTTPURLResponse alloc] initWithURL:[[NSURL alloc] initWithString:@""] statusCode:400 HTTPVersion:nil headerFields:nil];
     OCMStub([self.apiHandlerMock sendDataWithJson:[OCMArg any] forUrl:[OCMArg any] withResponseHandler:([OCMArg invokeBlockWithArgs:response, [NSNull null], nil])]);
+    [self stubCurrentNotificationsStatus:UNAuthorizationStatusAuthorized];
 
     [self initializeSDK];
 
     [SendMan setUserProperties:[self validValues]];
     SMDataCollector *dataCollector = [SMDataCollector sharedManager];
+    NSString *testEventName = @"Test Event";
+    [SMDataCollector addSdkEventWithName:testEventName andValue:@""];
     [dataCollector sendData];
 
     XCTAssert([self compareDictKeys:dataCollector.customProperties withOtherDict:[self validValues]], @"Custom properties should be restored and full after an error from the API.");
+    XCTAssertEqual(1, [dataCollector.sdkEvents count], @"Expected one test event");
+    XCTAssertEqualObjects(testEventName, [dataCollector.sdkEvents firstObject].key, @"Expected test event");
 }
 
 - (void)testSendDataWithNetworkError {
