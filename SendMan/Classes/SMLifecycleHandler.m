@@ -137,6 +137,7 @@ static dispatch_once_t onceToken;
 }
 
 - (void)applicationWillEnterForeground {
+    [SMDataCollector updateForegroundTime];
     SMSDKEvent *event = [SMSDKEvent new];
     event.key = @"App entered foreground";
     event.appState = [self appStateStringFromState:UIApplicationStateBackground];

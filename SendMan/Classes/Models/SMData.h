@@ -37,5 +37,6 @@
 @property (nonatomic) NSDictionary<NSString *, SMPropertyValue *> <NSString, SMPropertyValue> *sdkProperties;
 @property (nonatomic) NSArray<SMSDKEvent *> <SMSDKEvent> *sdkEvents;
 @property (nonatomic) BOOL checkActiveUser;
+@property (nonatomic) NSNumber *lastForegroundTime;
 
 @end

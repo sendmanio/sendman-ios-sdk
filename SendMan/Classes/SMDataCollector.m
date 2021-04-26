@@ -42,6 +42,7 @@ typedef NSMutableDictionary<NSString *, SMPropertyValue *> <NSString, SMProperty
 @property (nonatomic) BOOL sessionError;
 @property (nonatomic) BOOL checkActiveUser;
 @property (strong, nonatomic, nullable) NSNumber *lastDataSentTs;
+@property (strong, nonatomic, nullable) NSNumber *lastForegroundTime;
 @property (nonatomic) UNAuthorizationStatus lastKnownAuthorizationStatus;
 
 @property (nonatomic) NSInteger exponentialNetworkFailureBackOff;
@@ -87,6 +88,7 @@ static dispatch_once_t onceToken;
 - (void) pollForNewData:(int)secondsInterval {
     dispatch_queue_t serverDelaySimulationThread = dispatch_queue_create("SendManDataPoller", nil);
     dispatch_async(serverDelaySimulationThread, ^{
+        [SMDataCollector updateForegroundTime];
         [self sendData];
         if (!self.sessionError) {
             [NSThread sleepForTimeInterval:secondsInterval * self.exponentialNetworkFailureBackOff];
@@ -142,6 +144,15 @@ static dispatch_once_t onceToken;
 + (void)addSdkEventWithName:(NSString *)name andValue:(NSObject *)value {
     SMSDKEvent *event = [SMSDKEvent newWithName:name andValue:value];
     [SMDataCollector addSdkEvent:event];
+}
+
++ (void)updateForegroundTime {
+    SMDataCollector *manager = [SMDataCollector sharedManager];
+    dispatch_async(dispatch_get_main_queue(), ^() {
+        if ([UIApplication sharedApplication].applicationState == UIApplicationStateActive) {
+            manager.lastForegroundTime = [SMUtils now];
+        }
+    });
 }
 
 + (NSString *)getRegistrationStateFromStatus:(UNAuthorizationStatus)status {
@@ -203,6 +214,7 @@ static dispatch_once_t onceToken;
     data.externalUserId = userId;
 
     data.currentSession = [[SMSessionManager sharedManager] getOrCreateSession];
+    data.lastForegroundTime = self.lastForegroundTime;
 
     SMMutableProperties *currentCustomProperties = [self.customProperties mutableCopy];
     data.customProperties = currentCustomProperties;

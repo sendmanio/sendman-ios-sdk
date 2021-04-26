@@ -35,6 +35,7 @@
 
 + (NSString *_Nonnull)getRegistrationStateFromStatus:(UNAuthorizationStatus)status;
 + (void)reportDialogDisplayed:(BOOL)reportDisplayEvent andPerform:(void (^_Nullable)(void))completion;
++ (void)updateForegroundTime;
 
 + (void)startSession;
 
