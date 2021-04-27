@@ -60,6 +60,7 @@ static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedManager = [[self alloc] init];
         sharedManager.exponentialNetworkFailureBackOff = 1;
+        [[NSNotificationCenter defaultCenter] addObserver:sharedManager selector:@selector(applicationWillGoToBackground) name:UIApplicationDidEnterBackgroundNotification object:nil];
     });
     return sharedManager;
 }
@@ -89,7 +90,7 @@ static dispatch_once_t onceToken;
     dispatch_queue_t serverDelaySimulationThread = dispatch_queue_create("SendManDataPoller", nil);
     dispatch_async(serverDelaySimulationThread, ^{
         [SMDataCollector updateForegroundTime];
-        [self sendData];
+        [self sendData:NO];
         if (!self.sessionError) {
             [NSThread sleepForTimeInterval:secondsInterval * self.exponentialNetworkFailureBackOff];
             [self pollForNewData:secondsInterval];
@@ -191,11 +192,16 @@ static dispatch_once_t onceToken;
     }];
 }
 
-- (void)sendData {
+- (void)applicationWillGoToBackground {
+    self.lastForegroundTime = [SMUtils now];
+    [self sendData:YES];
+}
+
+- (void)sendData:(BOOL)forcePersist {
     BOOL hasNewData = [self.customProperties count] != 0 || [self.sdkProperties count] != 0 || [self.sdkEvents count] != 0;
     BOOL shouldPersistData = !self.lastDataSentTs || [[SMUtils now] longLongValue] - [self.lastDataSentTs longLongValue] > 60 * 1000;
 
-    if (self.sessionError || ![SendMan getConfig] || ![SendMan getUserId] || (!hasNewData && !shouldPersistData)) {
+    if (self.sessionError || ![SendMan getConfig] || ![SendMan getUserId] || (!hasNewData && !shouldPersistData && !forcePersist)) {
         return;
     }
 

@@ -40,7 +40,7 @@ NSString *const userId = @"userId";
 @interface SMDataCollector (Tests)
 + (id)sharedManager;
 + (void)reset;
-- (void)sendData;
+- (void)sendData:(BOOL)forcePersist;
 - (void)pollForNewData:(int)secondsInterval;
 @property (strong, nonatomic, nullable) NSDictionary *customProperties;
 @property (strong, nonatomic, nullable) NSDictionary *sdkProperties;
@@ -270,7 +270,7 @@ NSString *const userId = @"userId";
 
     [SendMan setUserProperties:[self validValues]];
     SMDataCollector *dataCollector = [SMDataCollector sharedManager];
-    [dataCollector sendData];
+    [dataCollector sendData:NO];
 
     XCTAssertEqual(0, [dataCollector.customProperties count], @"Custom properties should be empty after a 204 response from the API.");
 }
@@ -286,7 +286,7 @@ NSString *const userId = @"userId";
     SMDataCollector *dataCollector = [SMDataCollector sharedManager];
     NSString *testEventName = @"Test Event";
     [SMDataCollector addSdkEventWithName:testEventName andValue:@""];
-    [dataCollector sendData];
+    [dataCollector sendData:NO];
 
     XCTAssert([self compareDictKeys:dataCollector.customProperties withOtherDict:[self validValues]], @"Custom properties should be restored and full after an error from the API.");
     XCTAssertEqual(1, [dataCollector.sdkEvents count], @"Expected one test event");
@@ -300,7 +300,7 @@ NSString *const userId = @"userId";
 
     [SendMan setUserProperties:[self validValues]];
     SMDataCollector *dataCollector = [SMDataCollector sharedManager];
-    [dataCollector sendData];
+    [dataCollector sendData:NO];
 
     XCTAssert([self compareDictKeys:dataCollector.customProperties withOtherDict:[self validValues]], @"Custom properties should be restored and full after an error from the API.");
 }
